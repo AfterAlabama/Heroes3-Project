@@ -13,7 +13,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: '[name].js',
-    clean: true
+    clean: true,
+    assetModuleFilename: '[name][ext]'
   },
   devServer: {
     static: {
@@ -37,6 +38,10 @@ module.exports = {
           'css-loader',
           'sass-loader'
         ]
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource'
       }
     ]
   },

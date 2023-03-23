@@ -1,10 +1,11 @@
 import Navbar from "./components/Navbar/Navbar";
 import './App.scss'
+import AppRouter from "./components/AppRouter/AppRouter";
 
 const App = () => {
 	return (
 		<>
-			<Navbar />
+			<AppRouter />
 		</>
 	);
 };
