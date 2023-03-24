@@ -21,6 +21,7 @@
     ],
     "rules": {
         "react/react-in-jsx-scope": "off",
-        "no-mixed-spaces-and-tabs": "off"
+        "no-mixed-spaces-and-tabs": "off",
+        "@typescript-eslint/no-non-null-assertion": "off"
     }
 }
