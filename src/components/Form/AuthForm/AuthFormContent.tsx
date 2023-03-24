@@ -1,4 +1,6 @@
 import Container from '@mui/material/Container';
+import FormHelperText from '@mui/material/FormHelperText';
+import Link from '@mui/material/Link';
 import { FormikErrors, FormikTouched } from 'formik';
 import { FormEvent, FocusEvent, ChangeEvent, FC } from 'react';
 import FormTitle from '../Shared/FormTitle';
@@ -47,7 +49,7 @@ const AuthFormContent: FC<FormContentProps> = ({
 				flexDirection: 'column',
 				justifyContent: 'space-around',
 				alignItems: 'center',
-				height: '50vh',
+				height: '70vh',
 				width: '30vw',
 			}}
 		>
@@ -79,6 +81,19 @@ const AuthFormContent: FC<FormContentProps> = ({
 					handleChange={handleChange}
 					labelText='Пароль'
 				/>
+				<FormHelperText sx={{
+					marginLeft: 24,
+					marginTop: -2,
+					marginBottom: 2
+				}}>
+					<Link sx={{
+						color: 'grey',
+						textDecoration: 'none',
+						cursor: 'pointer'
+					}} >
+						Забыли пароль?
+					</Link>
+				</FormHelperText>
 				<SubmitButton
 					isSubmitting={isSubmitting}
 					errors={errors}

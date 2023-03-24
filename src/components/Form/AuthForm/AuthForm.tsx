@@ -6,30 +6,23 @@ import { Formik } from 'formik';
 import BackgroundImage from '../../Common/BackgroundImage/BackgroundImage';
 import AuthFormContent from './AuthFormContent';
 import { FormValues } from '../RegisterForm/RegisterForm';
-
+import { AuthValidationHandler } from '../../../helpers/FormValidation/AuthValidationHandler';
+import { useAppDispatch } from '../../../hooks/reduxHooks';
+import { MainSlice } from '../../../store/Reducers/MainSlice';
+import { useNavigate } from 'react-router-dom';
+import { RouteNames } from '../../../types/Enums/RouteNames';
 
 const AuthForm = () => {
-	const ValidationHandler = (values: FormValues) => {
-		const errors: FormValues = {};
-		if (!values.email) {
-			errors.email = 'Поле email обязательно';
-		} else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
-			errors.email = 'Неверный Email';
-		}
-		if (!values.password) {
-			errors.password = 'Поле с паролем обязательно';
-		}
-		return errors;
-	};
+	const dispatch = useAppDispatch()
+	const navigate = useNavigate()
 
 	const SubmitHandler = (
 		values: FormValues,
 		{ setSubmitting }: { setSubmitting: (isSubmitting: boolean) => void }
 	) => {
-		setTimeout(() => {
-			alert(JSON.stringify(values, null, 2));
-			setSubmitting(false);
-		}, 400);
+		dispatch(MainSlice.actions.changeAuth(true))
+		setSubmitting(false)
+		navigate(RouteNames.DEFAULT)
 	};
 
 	return (
@@ -50,7 +43,7 @@ const AuthForm = () => {
 				<CardContent>
 					<Formik
 						initialValues={{ email: '', password: '' }}
-						validate={ValidationHandler}
+						validate={AuthValidationHandler}
 						onSubmit={SubmitHandler}
 					>
 						{({

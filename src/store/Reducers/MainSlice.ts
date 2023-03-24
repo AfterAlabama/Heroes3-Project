@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 
 interface SliceState {
@@ -12,7 +12,11 @@ const initialState: SliceState = {
 export const MainSlice = createSlice({
   name: 'MainSlice',
   initialState,
-  reducers: {}
+  reducers: {
+    changeAuth(state: SliceState, action: PayloadAction<boolean>){
+      state.isAuth = action.payload
+    }
+  }
 })
 
 export default MainSlice.reducer;
