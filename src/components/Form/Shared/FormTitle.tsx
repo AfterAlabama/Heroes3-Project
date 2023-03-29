@@ -13,7 +13,8 @@ const FormTitle: FC<FormTitleProps> = ({ text }) => {
 				cursor: 'default',
 				color: blue[400],
 				fontSize: 40,
-				marginBottom: 3,
+				marginBottom: 7,
+				marginTop: -5
 			}}
 		>
 			{text}

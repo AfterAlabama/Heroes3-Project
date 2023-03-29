@@ -26,7 +26,7 @@ const StyledInput: FC<StyledInputProps> = ({
 	return (
 		<FormControl
 			sx={{
-				marginBottom: 5,
+				marginBottom: 8,
 			}}
 		>
 			<InputLabel

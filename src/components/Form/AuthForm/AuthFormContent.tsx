@@ -1,8 +1,12 @@
+import green from '@mui/material/colors/green';
+import grey from '@mui/material/colors/grey';
+import red from '@mui/material/colors/red';
 import Container from '@mui/material/Container';
 import FormHelperText from '@mui/material/FormHelperText';
 import Link from '@mui/material/Link';
 import { FormikErrors, FormikTouched } from 'formik';
 import { FormEvent, FocusEvent, ChangeEvent, FC } from 'react';
+import { RouteNames } from '../../../types/Enums/RouteNames';
 import FormTitle from '../Shared/FormTitle';
 import StyledInput from '../Shared/StyledInput';
 import SubmitButton from '../Shared/SubmitButton';
@@ -31,6 +35,7 @@ export interface FormContentProps {
 		name?: string;
 		confirmedPassword?: string;
 	};
+	clickHandler?: () => void;
 }
 
 const AuthFormContent: FC<FormContentProps> = ({
@@ -42,6 +47,18 @@ const AuthFormContent: FC<FormContentProps> = ({
 	touched,
 	values,
 }) => {
+	const SubmitCondition =
+		(touched.email && errors.email) ||
+		(touched.password && errors.password)
+			? red[100]
+			: touched.email &&
+			  !errors.email &&
+			  touched.password &&
+			  !errors.password 
+			? green[100]
+			: grey[100];
+
+
 	return (
 		<Container
 			sx={{
@@ -49,20 +66,20 @@ const AuthFormContent: FC<FormContentProps> = ({
 				flexDirection: 'column',
 				justifyContent: 'space-around',
 				alignItems: 'center',
-				height: '70vh',
+				height: '65vh',
 				width: '30vw',
 			}}
 		>
-			<FormTitle text='Вход в аккаунт' />
 			<form
 				style={{
 					display: 'flex',
 					alignItems: 'center',
 					justifyContent: 'center',
-					flexDirection: 'column',
+					flexDirection: 'column'
 				}}
 				onSubmit={handleSubmit}
 			>
+				<FormTitle text='Вход в аккаунт' />
 				<StyledInput
 					instance='email'
 					isError={errors.email}
@@ -86,7 +103,7 @@ const AuthFormContent: FC<FormContentProps> = ({
 					marginTop: -2,
 					marginBottom: 2
 				}}>
-					<Link sx={{
+					<Link href={RouteNames.PASSWORD_CHANGE} sx={{
 						color: 'grey',
 						textDecoration: 'none',
 						cursor: 'pointer'
@@ -96,8 +113,7 @@ const AuthFormContent: FC<FormContentProps> = ({
 				</FormHelperText>
 				<SubmitButton
 					isSubmitting={isSubmitting}
-					errors={errors}
-					touched={touched}
+					SubmitCondition={SubmitCondition}
 					buttonText='Войти'
 				/>
 				<RegisterLink />

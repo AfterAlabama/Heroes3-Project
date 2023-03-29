@@ -4,6 +4,7 @@ import AuthForm from '../Form/AuthForm/AuthForm';
 import MainPage from '../MainPage';
 import NotFound from '../NotFound';
 import RegisterForm from '../Form/RegisterForm/RegisterForm';
+import PasswordChangeForm from '../Form/PasswordChangeForm/PasswordChangeForm';
 
 const AppRouter = () => {
 	return (
@@ -19,6 +20,10 @@ const AppRouter = () => {
 			<Route
 				path={RouteNames.REGISTER_FORM}
 				element={<RegisterForm />}
+			/>
+			<Route
+				path={RouteNames.PASSWORD_CHANGE}
+				element={<PasswordChangeForm />}
 			/>
 			<Route
 				path={RouteNames.NOT_FOUND}

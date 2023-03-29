@@ -1,3 +1,6 @@
+import green from '@mui/material/colors/green';
+import grey from '@mui/material/colors/grey';
+import red from '@mui/material/colors/red';
 import Container from '@mui/material/Container';
 import { FC } from 'react';
 import { FormContentProps } from '../AuthForm/AuthFormContent';
@@ -14,6 +17,23 @@ const RegisterFormContent: FC<FormContentProps> = ({
 	touched,
 	values,
 }) => {
+	const SubmitCondition =
+		(touched.email && errors.email) ||
+		(touched.password && errors.password) ||
+		(touched.name && errors.name) ||
+		(touched.confirmedPassword && errors.confirmedPassword)
+			? red[100]
+			: touched.email &&
+			  !errors.email &&
+			  touched.password &&
+			  !errors.password &&
+			  touched.name &&
+			  !errors.name &&
+			  touched.confirmedPassword &&
+			  !errors.confirmedPassword
+			? green[100]
+			: grey[100];
+
 	return (
 		<Container
 			sx={{
@@ -21,11 +41,10 @@ const RegisterFormContent: FC<FormContentProps> = ({
 				flexDirection: 'column',
 				justifyContent: 'space-around',
 				alignItems: 'center',
-				height: '80vh',
+				height: '90vh',
 				width: '30vw',
 			}}
 		>
-			<FormTitle text='Регистрация' />
 			<form
 				style={{
 					display: 'flex',
@@ -35,6 +54,7 @@ const RegisterFormContent: FC<FormContentProps> = ({
 				}}
 				onSubmit={handleSubmit}
 			>
+				<FormTitle text='Регистрация' />
 				<StyledInput
 					instance='name'
 					isError={errors.name}
@@ -73,8 +93,7 @@ const RegisterFormContent: FC<FormContentProps> = ({
 				/>
 				<SubmitButton
 					isSubmitting={isSubmitting}
-					errors={errors}
-					touched={touched}
+					SubmitCondition={SubmitCondition}
 					buttonText='Создать'
 				/>
 			</form>
