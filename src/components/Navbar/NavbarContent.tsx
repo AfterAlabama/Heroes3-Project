@@ -7,17 +7,15 @@ import NavbarLogin from './NavbarLogin';
 
 const NavbarContent = () => {
 	return (
-		<div>
-			<Box sx={{ flexGrow: 1 }}>
-				<AppBar position='static'>
-					<Toolbar>
-						<NavbarMenu />
-						<NavbarLogo />
-						<NavbarLogin />
-					</Toolbar>
-				</AppBar>
-			</Box>
-		</div>
+		<Box sx={{ flexGrow: 1 }}>
+			<AppBar position='static'>
+				<Toolbar>
+					<NavbarMenu />
+					<NavbarLogo />
+					<NavbarLogin />
+				</Toolbar>
+			</AppBar>
+		</Box>
 	);
 };
 
