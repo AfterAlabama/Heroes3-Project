@@ -15,7 +15,7 @@ const PasswordsForm = forwardRef<HTMLFormElement, FormContentProps>(
 		ref
 	) => {
 		const navigate = useNavigate();
-		const timer1 = useRef<number>()
+		const timer1 = useRef<number>(undefined!)
 
 		const submitHandler = () => {
 			CreateCookie('password', values.password as string, 365);

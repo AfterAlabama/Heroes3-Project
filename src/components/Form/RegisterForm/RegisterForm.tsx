@@ -30,9 +30,9 @@ const RegisterForm = () => {
 	};
 	const [loading, setLoading] = useState<boolean>(false);
 	const [success, setSuccess] = useState<boolean>(false);
-	const timer1 = useRef<number>();
-	const timer2 = useRef<number>();
-	const timer3 = useRef<number>();
+	const timer1 = useRef<number>(undefined!);
+	const timer2 = useRef<number>(undefined!);
+	const timer3 = useRef<number>(undefined!);
 	const navigate = useNavigate();
 
 	useEffect(() => {
