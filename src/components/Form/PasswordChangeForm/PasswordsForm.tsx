@@ -10,25 +10,40 @@ import FormTitle from '../Shared/FormTitle';
 import StyledInput from '../Shared/StyledInput';
 
 const PasswordsForm = forwardRef<HTMLFormElement, FormContentProps>(
-	(
-		{ values, errors, touched, handleChange, handleBlur },
-		ref
-	) => {
+	({ values, errors, touched, handleChange, handleBlur }, ref) => {
 		const navigate = useNavigate();
-		const timer1 = useRef<number>(undefined!)
+		const timer1 = useRef<number>(undefined!);
 
 		const submitHandler = () => {
 			CreateCookie('password', values.password as string, 365);
 			timer1.current = window.setTimeout(() => {
 				navigate(RouteNames.AUTH_FORM);
-			}, 500)
+			}, 500);
 		};
 
 		useEffect(() => {
 			return () => {
-				clearTimeout(timer1.current)
-			}
-		}, [])
+				clearTimeout(timer1.current);
+			};
+		}, []);
+
+		const DisabledCondition =
+			errors.password ||
+			!touched.password ||
+			errors.confirmedPassword ||
+			!touched.confirmedPassword
+				? true
+				: false
+		;
+
+		const BackgroundColorCondition =
+			touched.password &&
+			!errors.password &&
+			touched.confirmedPassword &&
+			!errors.confirmedPassword
+				? green[100]
+				: grey[100]
+		;
 
 		return (
 			<form
@@ -61,10 +76,10 @@ const PasswordsForm = forwardRef<HTMLFormElement, FormContentProps>(
 					labelText='Подтвердите пароль'
 				/>
 				<Button
-					disabled={((errors.password || !touched.password) || (errors.confirmedPassword || !touched.confirmedPassword)) ? true : false}
+					disabled={DisabledCondition}
 					sx={{
 						fontSize: 20,
-						backgroundColor: ((touched.password && !errors.password) && (touched.confirmedPassword && !errors.confirmedPassword)) ? green[100] : grey[100]
+						backgroundColor: BackgroundColorCondition,
 					}}
 					onClick={submitHandler}
 				>

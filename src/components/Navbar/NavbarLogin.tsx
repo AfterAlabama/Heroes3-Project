@@ -4,7 +4,7 @@ import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import { DeleteCookie } from '../../helpers/Cookie/DeleteCookie';
 import { GetCookieValue } from '../../helpers/Cookie/GetCookieValues';
-import { useAppDispatch, useAppSelector } from '../../hooks/reduxHooks';
+import { useAppDispatch, useAppSelector } from '../../hooks/ReduxHooks';
 import { MainSlice } from '../../store/Reducers/MainSlice';
 import { RouteNames } from '../../types/Enums/RouteNames';
 import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
@@ -17,22 +17,22 @@ const NavbarLogin = () => {
 	const { changeAuth } = MainSlice.actions;
 	const picRef = useRef<SVGSVGElement>({} as SVGSVGElement);
 
-	const leaveClickHandler = () => {
+	const LeaveButtonClickHandler = () => {
 		dispatch(changeAuth(false));
 	};
 
-	const deleteClickHandler = () => {
+	const DeleteAccountButtonClickHandler = () => {
 		dispatch(changeAuth(false));
 		DeleteCookie('email');
 		DeleteCookie('password');
 		DeleteCookie('name');
 	};
 
-	const enterHandler = () => {
+	const AvatarMouseEnterHandler = () => {
 		picRef.current.style.display = 'flex';
 	};
 
-	const leaveHandler = () => {
+	const AvatarMouseLeaveHandler = () => {
 		picRef.current.style.display = 'none';
 	};
 
@@ -48,8 +48,8 @@ const NavbarLogin = () => {
 			</Typography>
 			<Avatar
 				alt='ProfilePic'
-				onMouseEnter={enterHandler}
-				onMouseLeave={leaveHandler}
+				onMouseEnter={AvatarMouseEnterHandler}
+				onMouseLeave={AvatarMouseLeaveHandler}
 				sx={{
 					marginLeft: 2,
 					marginRight: 2,
@@ -72,7 +72,7 @@ const NavbarLogin = () => {
 					},
 				}}
 			>
-				<PermIdentityIcon />{' '}
+				<PermIdentityIcon />
 				<AddAPhotoIcon
 					ref={picRef}
 					sx={{ display: 'none', zIndex: 2, position: 'absolute' }}
@@ -83,13 +83,13 @@ const NavbarLogin = () => {
 					marginLeft: 2,
 					marginRight: 2,
 				}}
-				onClick={leaveClickHandler}
+				onClick={LeaveButtonClickHandler}
 				color='inherit'
 			>
 				Выйти
 			</Button>
 			<Button
-				onClick={deleteClickHandler}
+				onClick={DeleteAccountButtonClickHandler}
 				color='inherit'
 				sx={{
 					marginLeft: 2,

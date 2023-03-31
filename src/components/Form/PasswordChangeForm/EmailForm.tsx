@@ -19,6 +19,11 @@ export const EmailForm = forwardRef<HTMLFormElement, FormContentProps>(
 		},
 		ref
 	) => {
+
+		const DisabledCondition = errors.email || !touched.email ? true : false;
+
+		const BackgroundColorCondition = touched.email && !errors.email ? green[100] : grey[100];
+
 		return (
 			<form
 				ref={ref}
@@ -41,10 +46,10 @@ export const EmailForm = forwardRef<HTMLFormElement, FormContentProps>(
 					labelText='Email Адрес'
 				/>
 				<Button
-					disabled={(errors.email || !touched.email) ? true : false}
+					disabled={DisabledCondition}
 					sx={{
 						fontSize: 20,
-						backgroundColor: touched.email && !errors.email ? green[100] : grey[100]
+						backgroundColor: BackgroundColorCondition
 					}}
 					onClick={clickHandler}
 				>

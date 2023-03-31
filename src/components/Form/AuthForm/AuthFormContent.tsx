@@ -48,16 +48,11 @@ const AuthFormContent: FC<FormContentProps> = ({
 	values,
 }) => {
 	const SubmitCondition =
-		(touched.email && errors.email) ||
-		(touched.password && errors.password)
+		(touched.email && errors.email) || (touched.password && errors.password)
 			? red[100]
-			: touched.email &&
-			  !errors.email &&
-			  touched.password &&
-			  !errors.password 
+			: touched.email && !errors.email && touched.password && !errors.password
 			? green[100]
 			: grey[100];
-
 
 	return (
 		<Container
@@ -75,7 +70,7 @@ const AuthFormContent: FC<FormContentProps> = ({
 					display: 'flex',
 					alignItems: 'center',
 					justifyContent: 'center',
-					flexDirection: 'column'
+					flexDirection: 'column',
 				}}
 				onSubmit={handleSubmit}
 			>
@@ -98,16 +93,21 @@ const AuthFormContent: FC<FormContentProps> = ({
 					handleChange={handleChange}
 					labelText='Пароль'
 				/>
-				<FormHelperText sx={{
-					marginLeft: 24,
-					marginTop: -2,
-					marginBottom: 2
-				}}>
-					<Link href={RouteNames.PASSWORD_CHANGE} sx={{
-						color: 'grey',
-						textDecoration: 'none',
-						cursor: 'pointer'
-					}} >
+				<FormHelperText
+					sx={{
+						marginLeft: 24,
+						marginTop: -2,
+						marginBottom: 2,
+					}}
+				>
+					<Link
+						href={RouteNames.PASSWORD_CHANGE}
+						sx={{
+							color: 'grey',
+							textDecoration: 'none',
+							cursor: 'pointer',
+						}}
+					>
 						Забыли пароль?
 					</Link>
 				</FormHelperText>

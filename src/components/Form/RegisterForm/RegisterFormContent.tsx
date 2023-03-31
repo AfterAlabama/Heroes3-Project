@@ -32,7 +32,8 @@ const RegisterFormContent: FC<FormContentProps> = ({
 			  touched.confirmedPassword &&
 			  !errors.confirmedPassword
 			? green[100]
-			: grey[100];
+			: grey[100]
+	;
 
 	return (
 		<Container

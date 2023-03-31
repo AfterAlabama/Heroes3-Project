@@ -1,12 +1,15 @@
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import { useAppSelector } from '../../hooks/reduxHooks';
+import { useAppSelector } from '../../hooks/ReduxHooks';
 
 const NavbarMenu = () => {
-  const { isAuth } = useAppSelector(state => state.mainReducer)
+	const { isAuth } = useAppSelector((state) => state.mainReducer);
+
+	const DisabledCondition = isAuth ? false : true;
+
 	return (
 		<IconButton
-			disabled = {isAuth ? false : true}
+			disabled={DisabledCondition}
 			size='large'
 			edge='start'
 			color='inherit'

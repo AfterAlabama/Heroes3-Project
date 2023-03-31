@@ -21,6 +21,10 @@ export interface FormValues {
 	confirmedPassword?: string;
 }
 
+interface SetSubmittingType {
+	setSubmitting: (isSubmitting: boolean) => void;
+}
+
 const RegisterForm = () => {
 	const initValues = {
 		email: '',
@@ -45,7 +49,7 @@ const RegisterForm = () => {
 
 	const RegSubmitHandler = (
 		values: FormValues,
-		{ setSubmitting }: { setSubmitting: (isSubmitting: boolean) => void }
+		{ setSubmitting }: SetSubmittingType
 	) => {
 		setLoading(true);
 		timer1.current = window.setTimeout(() => {
@@ -63,6 +67,8 @@ const RegisterForm = () => {
 			navigate(RouteNames.AUTH_FORM);
 		}, 4000);
 	};
+
+	
 
 	return (
 		<Container

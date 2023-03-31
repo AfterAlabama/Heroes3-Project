@@ -23,6 +23,18 @@ const StyledInput: FC<StyledInputProps> = ({
 	labelText,
 	instance,
 }) => {
+	const ColorCondition = isError ? 'error' : 'primary';
+
+	const ErrorPopupCondition = isError && isTouched && (
+		<FormHelperText
+			sx={{
+				color: 'red',
+			}}
+		>
+			{isError}
+		</FormHelperText>
+	);
+
 	return (
 		<FormControl
 			sx={{
@@ -30,7 +42,7 @@ const StyledInput: FC<StyledInputProps> = ({
 			}}
 		>
 			<InputLabel
-				color={isError ? 'error' : 'primary'}
+				color={ColorCondition}
 				sx={{
 					fontSize: 20,
 				}}
@@ -43,17 +55,9 @@ const StyledInput: FC<StyledInputProps> = ({
 				onChange={handleChange}
 				onBlur={handleBlur}
 				value={isValue}
-				color={isError ? 'error' : 'primary'}
+				color={ColorCondition}
 			/>
-			{isError && isTouched && (
-				<FormHelperText
-					sx={{
-						color: 'red',
-					}}
-				>
-					{isError}
-				</FormHelperText>
-			)}
+			{ErrorPopupCondition}
 		</FormControl>
 	);
 };

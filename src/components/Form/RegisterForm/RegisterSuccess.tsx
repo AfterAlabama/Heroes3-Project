@@ -7,38 +7,38 @@ interface RegisterSuccessProps {
 }
 
 const RegisterSuccess: FC<RegisterSuccessProps> = ({ success }) => {
-	return (
+	const SuccessBackdrop = (
 		<>
-			{success && (
-				<>
-					<h1
-						style={{
-							fontSize: 50,
-							color: blue[100],
-							position: 'absolute',
-							top: '30%',
-							left: '30%',
-							marginTop: '-12px',
-							marginLeft: '-12px',
-						}}
-					>
-						Регистрация Прошла Успешно
-					</h1>
-					<CheckIcon
-						sx={{
-							color: blue[300],
-							fontSize: 60,
-							position: 'absolute',
-							top: '50%',
-							left: '50%',
-							marginTop: '-12px',
-							marginLeft: '-12px',
-						}}
-					/>
-				</>
-			)}
+			<h1
+				style={{
+					fontSize: 50,
+					color: blue[100],
+					position: 'absolute',
+					top: '30%',
+					left: '30%',
+					marginTop: '-12px',
+					marginLeft: '-12px',
+				}}
+			>
+				Регистрация Прошла Успешно
+			</h1>
+			<CheckIcon
+				sx={{
+					color: blue[300],
+					fontSize: 60,
+					position: 'absolute',
+					top: '50%',
+					left: '50%',
+					marginTop: '-12px',
+					marginLeft: '-12px',
+				}}
+			/>
 		</>
 	);
+
+	const SuccessCondition = success && SuccessBackdrop;
+
+	return <>{SuccessCondition}</>;
 };
 
 export default RegisterSuccess;

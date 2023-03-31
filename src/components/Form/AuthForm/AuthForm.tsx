@@ -7,22 +7,22 @@ import BackgroundImage from '../../Common/BackgroundImage/BackgroundImage';
 import AuthFormContent from './AuthFormContent';
 import { FormValues } from '../RegisterForm/RegisterForm';
 import { AuthValidationHandler } from '../../../helpers/FormValidation/AuthValidationHandler';
-import { useAppDispatch } from '../../../hooks/reduxHooks';
+import { useAppDispatch } from '../../../hooks/ReduxHooks';
 import { MainSlice } from '../../../store/Reducers/MainSlice';
 import { useNavigate } from 'react-router-dom';
 import { RouteNames } from '../../../types/Enums/RouteNames';
 
 const AuthForm = () => {
-	const dispatch = useAppDispatch()
-	const navigate = useNavigate()
+	const dispatch = useAppDispatch();
+	const navigate = useNavigate();
 
 	const SubmitHandler = (
 		values: FormValues,
 		{ setSubmitting }: { setSubmitting: (isSubmitting: boolean) => void }
 	) => {
-		dispatch(MainSlice.actions.changeAuth(true))
-		setSubmitting(false)
-		navigate(RouteNames.DEFAULT)
+		dispatch(MainSlice.actions.changeAuth(true));
+		setSubmitting(false);
+		navigate(RouteNames.DEFAULT);
 	};
 
 	return (

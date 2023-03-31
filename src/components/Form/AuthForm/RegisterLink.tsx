@@ -10,7 +10,7 @@ const RegisterLink = () => {
 				color: 'gray',
 			}}
 		>
-			Ещё нет аккаунта?{' '}
+			Ещё нет аккаунта?
 			<Link
 				href={RouteNames.REGISTER_FORM}
 				sx={{
@@ -18,7 +18,7 @@ const RegisterLink = () => {
 				}}
 			>
 				Зарегистрироваться
-			</Link>{' '}
+			</Link>
 		</Typography>
 	);
 };
