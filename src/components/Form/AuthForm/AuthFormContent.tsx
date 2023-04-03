@@ -52,7 +52,14 @@ const AuthFormContent: FC<FormContentProps> = ({
 			? red[100]
 			: touched.email && !errors.email && touched.password && !errors.password
 			? green[100]
-			: grey[100];
+			: grey[100]
+	;
+
+	const FormHeightCondition =
+		(errors.email && touched.email) || (errors.password && touched.password)
+			? '60vh'
+			: '55vh'
+	;
 
 	return (
 		<Container
@@ -61,8 +68,8 @@ const AuthFormContent: FC<FormContentProps> = ({
 				flexDirection: 'column',
 				justifyContent: 'space-around',
 				alignItems: 'center',
-				height: '65vh',
-				width: '30vw',
+				height: FormHeightCondition,
+				width: '23vw',
 			}}
 		>
 			<form

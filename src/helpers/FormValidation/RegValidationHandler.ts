@@ -1,7 +1,7 @@
 import { FormValues } from '../../components/Form/RegisterForm/RegisterForm';
 import { GetCookieValue } from '../Cookie/GetCookieValues';
 
-export const RegValidationHandler = (values: FormValues) => {
+export const RegValidationHandler = (values: FormValues): FormValues => {
 	const errors: FormValues = {};
 	if (values.name?.trim().length === 0) {
 		errors.name = 'Поле с именем обязательно';
@@ -12,8 +12,7 @@ export const RegValidationHandler = (values: FormValues) => {
 
 	if (values.email?.trim().length === 0) {
 		errors.email = 'Поле email обязательно';
-	} else
-   if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email!)) {
+	} else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email!)) {
 		errors.email = 'Неверный Email';
 	}
 	if (values.email === GetCookieValue('email')) {

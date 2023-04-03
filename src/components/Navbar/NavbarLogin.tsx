@@ -10,15 +10,18 @@ import { RouteNames } from '../../types/Enums/RouteNames';
 import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
 import { useRef } from 'react';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
+import { useNavigate } from 'react-router-dom';
 
 const NavbarLogin = () => {
 	const { isAuth } = useAppSelector((state) => state.mainReducer);
 	const dispatch = useAppDispatch();
 	const { changeAuth } = MainSlice.actions;
 	const picRef = useRef<SVGSVGElement>({} as SVGSVGElement);
+	const navigate = useNavigate()
 
 	const LeaveButtonClickHandler = () => {
 		dispatch(changeAuth(false));
+		navigate(RouteNames.DEFAULT)
 	};
 
 	const DeleteAccountButtonClickHandler = () => {
@@ -26,6 +29,7 @@ const NavbarLogin = () => {
 		DeleteCookie('email');
 		DeleteCookie('password');
 		DeleteCookie('name');
+		navigate(RouteNames.DEFAULT)
 	};
 
 	const AvatarMouseEnterHandler = () => {

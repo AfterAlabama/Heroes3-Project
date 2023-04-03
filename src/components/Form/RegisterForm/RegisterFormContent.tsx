@@ -35,6 +35,15 @@ const RegisterFormContent: FC<FormContentProps> = ({
 			: grey[100]
 	;
 
+	const FormHeightCondition =
+		(errors.email && touched.email) ||
+		(errors.confirmedPassword && touched.confirmedPassword) ||
+		(errors.name && touched.name) ||
+		(errors.password && touched.password)
+			? '75vh'
+			: '67vh'
+	;
+
 	return (
 		<Container
 			sx={{
@@ -42,8 +51,8 @@ const RegisterFormContent: FC<FormContentProps> = ({
 				flexDirection: 'column',
 				justifyContent: 'space-around',
 				alignItems: 'center',
-				height: '90vh',
-				width: '30vw',
+				height: FormHeightCondition,
+				width: '23vw',
 			}}
 		>
 			<form

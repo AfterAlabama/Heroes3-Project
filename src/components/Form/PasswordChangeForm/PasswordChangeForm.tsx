@@ -71,8 +71,8 @@ const PasswordChangeForm = () => {
 									flexDirection: 'column',
 									justifyContent: 'center',
 									alignItems: 'center',
-									height: '53vh',
-									width: '30vw',
+									height: '40vh',
+									width: '20vw',
 								}}
 							>
 								<EmailForm

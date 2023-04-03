@@ -5,7 +5,7 @@ import MainContent from './MainContent';
 
 const Main = () => {
 	return (
-		<main>
+		<header>
 			<Box
 				sx={{
 					height: '100vh',
@@ -21,7 +21,7 @@ const Main = () => {
 				<LayoutImage />
 				<LayoutCircle />
 			</Box>
-		</main>
+		</header>
 	);
 };
 

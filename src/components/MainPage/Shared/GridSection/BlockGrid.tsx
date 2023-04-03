@@ -7,9 +7,25 @@ import blue from '@mui/material/colors/blue';
 import { useAppSelector } from '../../../../hooks/ReduxHooks';
 import Button from '@mui/material/Button';
 import LoginButton from '../Common/LoginButton';
+import { RouteNames } from '../../../../types/Enums/RouteNames';
+import { useNavigate } from 'react-router-dom';
 
 const BlockGrid = () => {
 	const { isAuth } = useAppSelector((state) => state.mainReducer);
+	const navigate = useNavigate();
+
+	const BlockClickhandler = (direction: string) => {
+		navigate(direction);
+		window.scrollTo(0,0)
+	};
+
+	const AuthBlockCondition = isAuth ? (
+		<Button onClick={() => BlockClickhandler(RouteNames.HEROES_HISTORY)}>
+			Смотреть
+		</Button>
+	) : (
+		<LoginButton />
+	);
 
 	return (
 		<Grid
@@ -28,10 +44,8 @@ const BlockGrid = () => {
 						/>
 					}
 					BlockTitle='Истории'
-					BlockContent='Жизненные истории всех героев в герои 3'
-					BlockButtonOrInfo={
-						isAuth ? <Button>Истории</Button> : <LoginButton />
-					}
+					BlockContent='Описание и жизненный путь всех героев в Heroes Might & Magic 3'
+					BlockButtonOrInfo={AuthBlockCondition}
 				/>
 			</Grid>
 			<Grid item>

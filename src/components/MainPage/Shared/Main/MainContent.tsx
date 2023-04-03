@@ -6,7 +6,7 @@ import { useContext } from 'react';
 import { MainPageContext } from './MainPage';
 
 const MainContent = () => {
-	const { Text, loginButton } = useContext(MainPageContext);
+	const { Text, loginButtonOrContent } = useContext(MainPageContext);
 
 	return (
 		<Box
@@ -27,9 +27,9 @@ const MainContent = () => {
 			>
 				<AcUnitIcon /> Абсолютно бесплатное пользование
 			</Typography>
-			<Typography
+			<Box
 				sx={{
-					fontSize: 70,
+					fontSize: 75,
 					cursor: 'default',
 				}}
 			>
@@ -43,9 +43,9 @@ const MainContent = () => {
 				>
 					Поколений
 				</Box>
-			</Typography>
+			</Box>
 			{Text}
-			{loginButton}
+			{loginButtonOrContent}
 		</Box>
 	);
 };

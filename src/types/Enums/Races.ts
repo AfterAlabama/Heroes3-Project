@@ -1,0 +1,17 @@
+export enum Races {
+	HUMAN = 'Человек',
+	ELEMENTAL = 'Элементаль',
+	GENIE = 'Джинн',
+	ELF = 'Эльф',
+	DWARF = 'Гном',
+	TROGLODYTE = 'Троглодит',
+	MINOTAUR = 'Минотавр',
+	GNOLL = 'Гнолл',
+	LIZARDMAN = 'Ящер',
+	DEMON = 'Демон',
+	EFREET = 'Ифрит',
+	VAMPIRE = 'Вампир',
+	LICH = 'Лич',
+	GOBLIN = 'Гоблин',
+	OGRE = 'Огр',
+}

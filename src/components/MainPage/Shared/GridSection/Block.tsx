@@ -20,7 +20,7 @@ const Block: FC<BlockProps> = ({
 			sx={{
 				height: '100%',
 				width: '100%',
-				padding: 10,
+				padding: 5,
 				display: 'flex',
 				flexDirection: 'column',
 				alignItems: 'center',
@@ -37,7 +37,9 @@ const Block: FC<BlockProps> = ({
 				sx={{
 					fontSize: 30,
 					textAlign: 'center',
-          cursor: 'default'
+          cursor: 'default',
+					marginBottom: 1,
+					marginTop: 1
 				}}
 			>
 				{BlockTitle}
@@ -46,7 +48,9 @@ const Block: FC<BlockProps> = ({
 				sx={{
 					color: 'gray',
 					textAlign: 'center',
-          cursor: 'default'
+          cursor: 'default',
+					width:'50%',
+					marginBottom: 1
 				}}
 			>
 				{BlockContent}

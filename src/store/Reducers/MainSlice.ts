@@ -2,11 +2,13 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { GetCookieValue } from "../../helpers/Cookie/GetCookieValues";
 
 interface SliceState {
-  isAuth: boolean
+  isAuth: boolean,
+  isLeftDrawerOpen: boolean
 }
 
 const initialState: SliceState = {
-  isAuth: GetCookieValue('email') && GetCookieValue('password') ? true : false
+  isAuth: GetCookieValue('email') && GetCookieValue('password') ? true : false,
+  isLeftDrawerOpen: false
 }
 
 export const MainSlice = createSlice({
@@ -15,6 +17,9 @@ export const MainSlice = createSlice({
   reducers: {
     changeAuth(state: SliceState, action: PayloadAction<boolean>){
       state.isAuth = action.payload
+    },
+    changeLeftDrawer(state: SliceState, action: PayloadAction<boolean>){
+      state.isLeftDrawerOpen = action.payload
     }
   }
 })

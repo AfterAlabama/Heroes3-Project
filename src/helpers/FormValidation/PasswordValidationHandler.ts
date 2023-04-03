@@ -1,7 +1,7 @@
 import { FormValues } from '../../components/Form/RegisterForm/RegisterForm';
 import { GetCookieValue } from '../Cookie/GetCookieValues';
 
-export const PasswordValidationHandler = (values: FormValues) => {
+export const PasswordValidationHandler = (values: FormValues): FormValues => {
 	const errors: FormValues = {};
 
 	if (values.email?.trim().length === 0) {
@@ -13,15 +13,14 @@ export const PasswordValidationHandler = (values: FormValues) => {
 		errors.email = 'Неверный Email';
 	}
 
-  if(values.password?.trim().length === 0){
-    errors.password = 'Поле с паролем обязательно'
-  }
-  
-  if(values.confirmedPassword?.trim().length === 0){
-    errors.confirmedPassword = 'Подтвердите пароль'
-  } else
-  if(values.confirmedPassword !== values.password){
-    errors.confirmedPassword = 'Пароли не совпадают'
-  }
+	if (values.password?.trim().length === 0) {
+		errors.password = 'Поле с паролем обязательно';
+	}
+
+	if (values.confirmedPassword?.trim().length === 0) {
+		errors.confirmedPassword = 'Подтвердите пароль';
+	} else if (values.confirmedPassword !== values.password) {
+		errors.confirmedPassword = 'Пароли не совпадают';
+	}
 	return errors;
 };

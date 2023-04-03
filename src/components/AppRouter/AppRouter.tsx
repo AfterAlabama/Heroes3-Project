@@ -7,6 +7,7 @@ import PasswordChangeForm from '../Form/PasswordChangeForm/PasswordChangeForm';
 import UnAuthMainPage from '../MainPage/UnAuthMainPage/UnAuthMainPage';
 import AuthMainPage from '../MainPage/AuthMainPage/AuthMainPage';
 import { useAppSelector } from '../../hooks/ReduxHooks';
+import HeroesHistory from '../HeroesHistory/HeroesHistory';
 
 const AppRouter = () => {
 	const { isAuth } = useAppSelector((state) => state.mainReducer);
@@ -27,6 +28,10 @@ const AppRouter = () => {
 			<Route
 				path={RouteNames.PASSWORD_CHANGE}
 				element={<PasswordChangeForm />}
+			/>
+			<Route
+				path={RouteNames.HEROES_HISTORY}
+				element={<HeroesHistory />}
 			/>
 			<Route
 				path={RouteNames.NOT_FOUND}
