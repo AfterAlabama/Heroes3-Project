@@ -11,11 +11,14 @@ import HeroesHistory from '../HeroesHistory/HeroesHistory';
 
 const AppRouter = () => {
 	const { isAuth } = useAppSelector((state) => state.mainReducer);
+
+	const isAuthCondition = isAuth ? <AuthMainPage /> : <UnAuthMainPage />;
+
 	return (
 		<Routes>
 			<Route
 				path={RouteNames.DEFAULT}
-				element={isAuth ? <AuthMainPage /> : <UnAuthMainPage />}
+				element={isAuthCondition}
 			/>
 			<Route
 				path={RouteNames.AUTH_FORM}

@@ -1,5 +1,5 @@
 import { CreateCookie } from "./CreateCookie";
 
-export const DeleteCookie = (name:string): void => {
+export const DeleteCookie = (name:string) => {
   CreateCookie(name, null, null)
 }

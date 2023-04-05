@@ -1,8 +1,9 @@
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import blue from '@mui/material/colors/blue';
 import FooterCaption from './FooterCaption';
 import FooterGrid from './FooterGrid';
+import FooterRights from './FooterRights';
+import Divider from '@mui/material/Divider';
 
 const Footer = () => {
 	return (
@@ -30,13 +31,13 @@ const Footer = () => {
 					<FooterCaption />
 					<FooterGrid />
 				</Box>
-				<Box>
-					<Typography sx={{
-						color: 'white',
-					}} >
-						  <>&copy;</> 2023 Hero Progeny Все права сохранены ...
-					</Typography>
-				</Box>
+				<Divider sx={{
+					backgroundColor: 'white',
+					opacity: '0.2',
+					marginTop: 3,
+					marginBottom: 3,
+				}} />
+				<FooterRights />
 			</Box>
 		</footer>
 	);

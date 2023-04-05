@@ -2,7 +2,7 @@ export const CreateCookie = (
 	name: string,
 	value: string | null,
 	expirationDate: number | null
-): void => {
+) => {
 	const date = new Date();
 	date.setTime(
 		date.getTime() +
