@@ -3,25 +3,27 @@ import { FC, ReactElement } from 'react';
 
 interface BackDropComponentProps {
 	openCondition: boolean;
-	LoadingComponent?: ReactElement;
+	loadingComponent?: ReactElement;
 	successComponent?: ReactElement;
 }
 
 const BackdropComponent: FC<BackDropComponentProps> = ({
 	openCondition,
-	LoadingComponent,
+	loadingComponent,
 	successComponent,
 }) => {
+	const backdropOpenCondition = openCondition ? true : false;
+
 	return (
 		<Backdrop
 			sx={{
 				color: '#fff',
 				zIndex: (theme) => theme.zIndex.drawer + 1,
 			}}
-			open={openCondition ? true : false}
+			open={backdropOpenCondition}
 		>
-			{LoadingComponent}
-			{successComponent}
+			{loadingComponent && loadingComponent}
+			{successComponent && successComponent}
 		</Backdrop>
 	);
 };

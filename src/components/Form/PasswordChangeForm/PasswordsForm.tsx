@@ -1,21 +1,50 @@
-import Button from '@mui/material/Button';
 import green from '@mui/material/colors/green';
 import grey from '@mui/material/colors/grey';
-import { forwardRef, useEffect, useRef } from 'react';
+import { FormEvent, forwardRef, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CreateCookie } from '../../../helpers/Cookie/CreateCookie';
 import { RouteNames } from '../../../types/Enums/RouteNames';
 import { FormContentProps } from '../AuthForm/AuthFormContent';
 import FormTitle from '../Shared/FormTitle';
 import StyledInput from '../Shared/StyledInput';
+import SubmitButton from '../Shared/SubmitButton';
+import red from '@mui/material/colors/red';
+import Box from '@mui/material/Box';
+import { PasswordFormValues } from './PasswordChangeFormCard';
 
-const PasswordsForm = forwardRef<HTMLFormElement, FormContentProps>(
-	({ values, errors, touched, handleChange, handleBlur }, ref) => {
+const PasswordsForm = forwardRef<
+	HTMLDivElement,
+	FormContentProps<PasswordFormValues>
+>(
+	(
+		{
+			values,
+			errors,
+			touched,
+			handleChange,
+			handleBlur,
+			isSubmitting,
+		},
+		ref
+	) => {
 		const navigate = useNavigate();
 		const timer1 = useRef<number>(undefined!);
 
-		const submitHandler = () => {
-			CreateCookie('password', values.password as string, 365);
+		const submitCondition =
+			(touched.password && errors.password) ||
+			(touched.confirmedPassword && errors.confirmedPassword)
+				? red[100]
+				: touched.password &&
+				  !errors.password &&
+				  touched.confirmedPassword &&
+				  !errors.confirmedPassword
+				? green[100]
+				: grey[100]
+		;
+
+		const submitHandler = (e: FormEvent<HTMLFormElement>) => {
+			e.preventDefault();
+			CreateCookie('password', values.password, 365);
 			timer1.current = window.setTimeout(() => {
 				navigate(RouteNames.AUTH_FORM);
 			}, 500);
@@ -27,64 +56,44 @@ const PasswordsForm = forwardRef<HTMLFormElement, FormContentProps>(
 			};
 		}, []);
 
-		const DisabledCondition =
-			errors.password ||
-			!touched.password ||
-			errors.confirmedPassword ||
-			!touched.confirmedPassword
-				? true
-				: false
-		;
-
-		const BackgroundColorCondition =
-			touched.password &&
-			!errors.password &&
-			touched.confirmedPassword &&
-			!errors.confirmedPassword
-				? green[100]
-				: grey[100]
-		;
-
 		return (
 			<form
-				ref={ref}
-				style={{
-					display: 'none',
-					alignItems: 'center',
-					justifyContent: 'center',
-					flexDirection: 'column',
-				}}
 				onSubmit={submitHandler}
 			>
-				<FormTitle text='Смена Пароля' />
-				<StyledInput
-					instance='password'
-					isError={errors.password}
-					isValue={values.password}
-					isTouched={touched.password}
-					handleBlur={handleBlur}
-					handleChange={handleChange}
-					labelText='Новый Пароль'
-				/>
-				<StyledInput
-					instance='confirmedPassword'
-					isError={errors.confirmedPassword}
-					isValue={values.confirmedPassword}
-					isTouched={touched.confirmedPassword}
-					handleBlur={handleBlur}
-					handleChange={handleChange}
-					labelText='Подтвердите пароль'
-				/>
-				<Button
-					disabled={DisabledCondition}
+				<Box
+					ref={ref}
 					sx={{
-						fontSize: 20,
-						backgroundColor: BackgroundColorCondition,
+						display: 'none',
+						alignItems: 'center',
+						justifyContent: 'center',
+						flexDirection: 'column',
 					}}
-					onClick={submitHandler}
 				>
-					Готово
-				</Button>
+					<FormTitle text='Смена Пароля' />
+					<StyledInput
+						instance='password'
+						isError={errors.password}
+						isValue={values.password}
+						isTouched={touched.password}
+						handleBlur={handleBlur}
+						handleChange={handleChange}
+						labelText='Новый Пароль'
+					/>
+					<StyledInput
+						instance='confirmedPassword'
+						isError={errors.confirmedPassword}
+						isValue={values.confirmedPassword}
+						isTouched={touched.confirmedPassword}
+						handleBlur={handleBlur}
+						handleChange={handleChange}
+						labelText='Подтвердите пароль'
+					/>
+					<SubmitButton
+						isSubmitting={isSubmitting}
+						SubmitCondition={submitCondition}
+						buttonText='Готово'
+					/>
+				</Box>
 			</form>
 		);
 	}

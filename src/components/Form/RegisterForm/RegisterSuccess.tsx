@@ -1,12 +1,9 @@
 import CheckIcon from '@mui/icons-material/Check';
 import blue from '@mui/material/colors/blue';
-import { FC } from 'react';
+import { useAppSelector } from '../../../hooks/ReduxHooks';
 
-interface RegisterSuccessProps {
-	success: boolean;
-}
-
-const RegisterSuccess: FC<RegisterSuccessProps> = ({ success }) => {
+const RegisterSuccess = () => {
+	const { isAccountCreated } = useAppSelector((state) => state.mainReducer);
 	const SuccessBackdrop = (
 		<>
 			<h1
@@ -15,9 +12,7 @@ const RegisterSuccess: FC<RegisterSuccessProps> = ({ success }) => {
 					color: blue[100],
 					position: 'absolute',
 					top: '30%',
-					left: '30%',
-					marginTop: '-12px',
-					marginLeft: '-12px',
+					left: '35%'
 				}}
 			>
 				Регистрация Прошла Успешно
@@ -27,16 +22,14 @@ const RegisterSuccess: FC<RegisterSuccessProps> = ({ success }) => {
 					color: blue[300],
 					fontSize: 60,
 					position: 'absolute',
-					top: '50%',
-					left: '50%',
-					marginTop: '-12px',
-					marginLeft: '-12px',
+					top: '45%',
+					left: '50%'
 				}}
 			/>
 		</>
 	);
 
-	const SuccessCondition = success && SuccessBackdrop;
+	const SuccessCondition = isAccountCreated && SuccessBackdrop;
 
 	return <>{SuccessCondition}</>;
 };

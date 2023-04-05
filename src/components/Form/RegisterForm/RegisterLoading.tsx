@@ -1,12 +1,11 @@
 import CircularProgress from '@mui/material/CircularProgress';
 import blue from '@mui/material/colors/blue';
-import { FC } from 'react';
+import { useAppSelector } from '../../../hooks/ReduxHooks';
 
-interface RegisterLoadingProps {
-	loading: boolean;
-}
-
-const RegisterLoading: FC<RegisterLoadingProps> = ({ loading }) => {
+const RegisterLoading = () => {
+	const { isAccountBeingCreated } = useAppSelector(
+		(state) => state.mainReducer
+	);
 	const LoadingBackDrop = (
 		<>
 			<h1
@@ -15,9 +14,7 @@ const RegisterLoading: FC<RegisterLoadingProps> = ({ loading }) => {
 					color: blue[100],
 					position: 'absolute',
 					top: '30%',
-					left: '30%',
-					marginTop: '-12px',
-					marginLeft: '-12px',
+					left: '35%'
 				}}
 			>
 				Регистрация Аккаунта...
@@ -27,16 +24,14 @@ const RegisterLoading: FC<RegisterLoadingProps> = ({ loading }) => {
 				sx={{
 					color: blue[300],
 					position: 'absolute',
-					top: '50%',
-					left: '50%',
-					marginTop: '-12px',
-					marginLeft: '-12px',
+					top: '45%',
+					left: '50%'
 				}}
 			/>
 		</>
 	);
 
-	const LoadingCondition = loading && LoadingBackDrop;
+	const LoadingCondition = isAccountBeingCreated && LoadingBackDrop;
 
 	return <>{LoadingCondition}</>;
 };
