@@ -5,13 +5,13 @@ import { RouteNames } from '../../../../types/Enums/RouteNames';
 
 const LoginButton = () => {
 	const navigate = useNavigate();
-	const LoginButtonClickHandler = () => {
+	const loginButtonClickHandler = () => {
 		navigate(RouteNames.AUTH_FORM);
 	};
 
 	return (
 		<Button
-			onClick={LoginButtonClickHandler}
+			onClick={loginButtonClickHandler}
 			sx={{
 				marginTop: 2,
 				color: 'white',

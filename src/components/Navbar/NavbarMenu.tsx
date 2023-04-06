@@ -41,7 +41,7 @@ const NavbarMenu = () => {
 
 			dispatch(changeLeftDrawer(open));
 		};
-	const DisabledCondition = isAuth ? false : true;
+	const disabledCondition = isAuth ? false : true;
 
 	const list = () => (
 		<Box
@@ -88,7 +88,7 @@ const NavbarMenu = () => {
 
 	return (
 		<IconButton
-			disabled={DisabledCondition}
+			disabled={disabledCondition}
 			size='large'
 			edge='start'
 			color='inherit'

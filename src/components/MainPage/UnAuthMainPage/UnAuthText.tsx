@@ -1,15 +1,10 @@
 import Link from '@mui/material/Link';
-import Typography from '@mui/material/Typography';
 import { RouteNames } from '../../../types/Enums/RouteNames';
+import { MainPageCaption } from '../../../styles/MainPageCaption';
 
 const UnAuthText = () => {
 	return (
-		<Typography
-			sx={{
-				marginTop: 1,
-				cursor: 'default',
-			}}
-		>
+		<MainPageCaption>
 			<Link
 				sx={{
 					textDecoration: 'none',
@@ -23,7 +18,7 @@ const UnAuthText = () => {
 			</Link>{' '}
 			в аккаунт и узнайте все о великом противостоянии наций Эрафии и Антагрича,
 			продлившемся тысячелетия
-		</Typography>
+		</MainPageCaption>
 	);
 };
 

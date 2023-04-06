@@ -1,7 +1,6 @@
 import green from '@mui/material/colors/green';
 import grey from '@mui/material/colors/grey';
 import red from '@mui/material/colors/red';
-import Container from '@mui/material/Container';
 import { FormikErrors, FormikTouched } from 'formik';
 import { FormEvent, FocusEvent, ChangeEvent, FC } from 'react';
 import FormTitle from '../Shared/FormTitle';
@@ -9,8 +8,9 @@ import StyledInput from '../Shared/StyledInput';
 import SubmitButton from '../Shared/SubmitButton';
 import RegisterLink from './RegisterLink';
 import { AuthFormValues } from './AuthFormCard';
-import Box from '@mui/material/Box';
 import AuthFormHelperText from './AuthFormHelperText';
+import { FormContentContainer } from '../../../styles/FormContentContainer';
+import { ColumnedFlex } from '../../../styles/ColumnedFlex';
 
 export interface FormContentProps<T extends object> {
 	handleSubmit: (e: FormEvent<HTMLFormElement>) => void;
@@ -47,25 +47,9 @@ const AuthFormContent: FC<FormContentProps<AuthFormValues>> = ({
 	;
 			
 	return (
-		<Container
-			sx={{
-				display: 'flex',
-				flexDirection: 'column',
-				justifyContent: 'space-around',
-				alignItems: 'center',
-				height: formHeightCondition,
-				width: '23vw',
-			}}
-		>
+		<FormContentContainer height={formHeightCondition} >
 			<form onSubmit={handleSubmit}>
-				<Box
-					sx={{
-						display: 'flex',
-						alignItems: 'center',
-						justifyContent: 'center',
-						flexDirection: 'column',
-					}}
-				>
+				<ColumnedFlex>
 					<FormTitle text='Вход в аккаунт' />
 					<StyledInput
 						instance='email'
@@ -92,9 +76,9 @@ const AuthFormContent: FC<FormContentProps<AuthFormValues>> = ({
 						buttonText='Войти'
 					/>
 					<RegisterLink />
-				</Box>
+				</ColumnedFlex>
 			</form>
-		</Container>
+		</FormContentContainer>
 	);
 };
 

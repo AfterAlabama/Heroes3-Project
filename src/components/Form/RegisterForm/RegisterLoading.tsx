@@ -1,6 +1,7 @@
 import CircularProgress from '@mui/material/CircularProgress';
 import blue from '@mui/material/colors/blue';
 import { useAppSelector } from '../../../hooks/ReduxHooks';
+import { BackdropCaption } from '../../../styles/BackdropCaption';
 
 const RegisterLoading = () => {
 	const { isAccountBeingCreated } = useAppSelector(
@@ -8,17 +9,9 @@ const RegisterLoading = () => {
 	);
 	const LoadingBackDrop = (
 		<>
-			<h1
-				style={{
-					fontSize: 50,
-					color: blue[100],
-					position: 'absolute',
-					top: '30%',
-					left: '35%'
-				}}
-			>
+			<BackdropCaption>
 				Регистрация Аккаунта...
-			</h1>
+			</BackdropCaption>
 			<CircularProgress
 				size={60}
 				sx={{

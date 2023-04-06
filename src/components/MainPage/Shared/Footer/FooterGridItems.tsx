@@ -12,7 +12,7 @@ const FooterGridItems: FC<FooterGridItemsProps> = ({
 	GridItemsHead,
 	GridItems,
 }) => {
-	const GridItemsArray = GridItems.map((item, index) => (
+	const gridItemsArray = GridItems.map((item, index) => (
 		<Typography
 			key={index}
 			sx={{
@@ -40,7 +40,7 @@ const FooterGridItems: FC<FooterGridItemsProps> = ({
 				>
 					{GridItemsHead}
 				</Typography>
-				{GridItemsArray}
+				{gridItemsArray}
 			</Box>
 		</Grid>
 	);

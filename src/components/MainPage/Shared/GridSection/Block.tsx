@@ -1,6 +1,6 @@
-import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { FC, ReactElement } from 'react';
+import { ColumnedFlex } from '../../../../styles/ColumnedFlex';
 
 interface BlockProps {
 	BlockIcon: ReactElement<SVGSVGElement>;
@@ -16,15 +16,11 @@ const Block: FC<BlockProps> = ({
 	BlockButtonOrInfo,
 }) => {
 	return (
-		<Box
+		<ColumnedFlex
 			sx={{
 				height: '100%',
 				width: '100%',
 				padding: 5,
-				display: 'flex',
-				flexDirection: 'column',
-				alignItems: 'center',
-				justifyContent: 'center',
 				boxShadow: '0 0 5px 5px rgba(51,51,255,0.2)',
 				'&:hover': {
 					boxShadow: '0 0 10px 5px rgba(51,51,255,0.1)',
@@ -56,7 +52,7 @@ const Block: FC<BlockProps> = ({
 				{BlockContent}
 			</Typography>
 			{BlockButtonOrInfo}
-		</Box>
+		</ColumnedFlex>
 	);
 };
 

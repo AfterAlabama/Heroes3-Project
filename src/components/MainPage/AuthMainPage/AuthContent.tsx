@@ -5,13 +5,13 @@ import ColorizeIcon from '@mui/icons-material/Colorize';
 import blue from '@mui/material/colors/blue';
 
 const AuthContent = () => {
-	const Icons = [
+	const icons = [
 		<AutoFixHighIcon key={0} />,
 		<AnchorIcon key={1} />,
 		<ColorizeIcon key={2} />,
 	];
 
-	const IconsArray = Icons.map((icon, index) => (
+	const IconsArray = icons.map((icon, index) => (
 		<Box
 			key={index}
 			sx={{

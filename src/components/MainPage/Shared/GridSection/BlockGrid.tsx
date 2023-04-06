@@ -14,13 +14,13 @@ const BlockGrid = () => {
 	const { isAuth } = useAppSelector((state) => state.mainReducer);
 	const navigate = useNavigate();
 
-	const BlockClickhandler = (direction: string) => {
+	const blockClickhandler = (direction: string) => {
 		navigate(direction);
 		window.scrollTo(0,0)
 	};
 
-	const AuthBlockCondition = isAuth ? (
-		<Button onClick={() => BlockClickhandler(RouteNames.HEROES_HISTORY)}>
+	const authBlockCondition = isAuth ? (
+		<Button onClick={() => blockClickhandler(RouteNames.HEROES_HISTORY)}>
 			Смотреть
 		</Button>
 	) : (
@@ -45,7 +45,7 @@ const BlockGrid = () => {
 					}
 					BlockTitle='Истории'
 					BlockContent='Описание и жизненный путь всех героев в Heroes Might & Magic 3'
-					BlockButtonOrInfo={AuthBlockCondition}
+					BlockButtonOrInfo={authBlockCondition}
 				/>
 			</Grid>
 			<Grid item>

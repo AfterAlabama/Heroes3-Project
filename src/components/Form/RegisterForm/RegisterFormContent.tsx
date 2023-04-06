@@ -1,14 +1,14 @@
 import green from '@mui/material/colors/green';
 import grey from '@mui/material/colors/grey';
 import red from '@mui/material/colors/red';
-import Container from '@mui/material/Container';
 import { FC } from 'react';
 import { FormContentProps } from '../AuthForm/AuthFormContent';
 import FormTitle from '../Shared/FormTitle';
 import StyledInput from '../Shared/StyledInput';
 import SubmitButton from '../Shared/SubmitButton';
 import { RegisterFormValues } from './RegisterFormCard';
-import Box from '@mui/material/Box';
+import { FormContentContainer } from '../../../styles/FormContentContainer';
+import { ColumnedFlex } from '../../../styles/ColumnedFlex';
 
 const RegisterFormContent: FC<FormContentProps<RegisterFormValues>> = ({
 	handleSubmit,
@@ -47,25 +47,9 @@ const RegisterFormContent: FC<FormContentProps<RegisterFormValues>> = ({
 	;
 
 	return (
-		<Container
-			sx={{
-				display: 'flex',
-				flexDirection: 'column',
-				justifyContent: 'space-around',
-				alignItems: 'center',
-				height: formHeightCondition,
-				width: '23vw',
-			}}
-		>
+		<FormContentContainer height={formHeightCondition} >
 			<form onSubmit={handleSubmit}>
-				<Box
-					sx={{
-						display: 'flex',
-						alignItems: 'center',
-						justifyContent: 'center',
-						flexDirection: 'column',
-					}}
-				>
+				<ColumnedFlex>
 					<FormTitle text='Регистрация' />
 					<StyledInput
 						instance='name'
@@ -108,9 +92,9 @@ const RegisterFormContent: FC<FormContentProps<RegisterFormValues>> = ({
 						SubmitCondition={submitCondition}
 						buttonText='Создать'
 					/>
-				</Box>
+				</ColumnedFlex>
 			</form>
-		</Container>
+		</FormContentContainer>
 	);
 };
 

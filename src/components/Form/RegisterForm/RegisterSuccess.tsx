@@ -1,22 +1,15 @@
 import CheckIcon from '@mui/icons-material/Check';
 import blue from '@mui/material/colors/blue';
 import { useAppSelector } from '../../../hooks/ReduxHooks';
+import { BackdropCaption } from '../../../styles/BackdropCaption';
 
 const RegisterSuccess = () => {
 	const { isAccountCreated } = useAppSelector((state) => state.mainReducer);
 	const SuccessBackdrop = (
 		<>
-			<h1
-				style={{
-					fontSize: 50,
-					color: blue[100],
-					position: 'absolute',
-					top: '30%',
-					left: '35%'
-				}}
-			>
+			<BackdropCaption>
 				Регистрация Прошла Успешно
-			</h1>
+			</BackdropCaption>
 			<CheckIcon
 				sx={{
 					color: blue[300],

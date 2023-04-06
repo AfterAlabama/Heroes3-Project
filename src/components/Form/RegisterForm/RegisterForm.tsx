@@ -1,25 +1,17 @@
-import Container from '@mui/material/Container';
 import BackgroundImage from '../../Common/BackgroundImage/BackgroundImage';
 import regPic from '../../../assets/authPic.jpg';
 import RegisterFormCard from './RegisterFormCard';
+import { FormContainer } from '../../../styles/FormContainer';
 
 const RegisterForm = () => {
 	return (
-		<Container
-			sx={{
-				height: '100vh',
-				width: '100vw',
-				display: 'flex',
-				alignItems: 'center',
-				justifyContent: 'center',
-			}}
-		>
+		<FormContainer>
 			<BackgroundImage
 				alt='regPic'
 				src={regPic}
 			/>
 			<RegisterFormCard />
-		</Container>
+		</FormContainer>
 	);
 };
 

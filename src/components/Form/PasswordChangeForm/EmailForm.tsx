@@ -5,9 +5,9 @@ import { FormContentProps } from '../AuthForm/AuthFormContent';
 import FormTitle from '../Shared/FormTitle';
 import StyledInput from '../Shared/StyledInput';
 import SubmitButton from '../Shared/SubmitButton';
-import Box from '@mui/material/Box';
 import red from '@mui/material/colors/red';
 import { EmailFormValues } from './PasswordChangeFormCard';
+import { ColumnedFlex } from '../../../styles/ColumnedFlex';
 
 export const EmailForm = forwardRef<HTMLDivElement, FormContentProps<EmailFormValues>>(
 	(
@@ -37,15 +37,7 @@ export const EmailForm = forwardRef<HTMLDivElement, FormContentProps<EmailFormVa
 			<form
 				onSubmit={handleSubmit}
 			>
-				<Box
-					ref={ref}
-					sx={{
-						display: 'flex',
-						alignItems: 'center',
-						justifyContent: 'center',
-						flexDirection: 'column',
-					}}
-				>
+				<ColumnedFlex ref={ref} >
 					<FormTitle text='Введите email' />
 					<StyledInput
 						instance='email'
@@ -62,7 +54,7 @@ export const EmailForm = forwardRef<HTMLDivElement, FormContentProps<EmailFormVa
 						buttonText='Далее'
 						clickHandler={clickCondition}
 					/>
-				</Box>
+				</ColumnedFlex>
 			</form>
 		);
 	}

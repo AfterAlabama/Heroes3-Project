@@ -1,15 +1,15 @@
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import { Formik } from 'formik';
+import { Formik, FormikErrors, FormikTouched } from 'formik';
 import { useRef } from 'react';
 import { PasswordValidationHandler } from '../../../helpers/FormValidation/PasswordValidationHandler';
-import Container from '@mui/material/Container';
 import { EmailForm } from './EmailForm';
 import PasswordsForm from './PasswordsForm';
-import { gsap } from 'gsap'
+import { gsap } from 'gsap';
+import { FormContentContainer } from '../../../styles/FormContentContainer';
 
 export interface EmailFormValues {
-	email:string
+	email: string;
 }
 
 export interface PasswordFormValues {
@@ -17,7 +17,7 @@ export interface PasswordFormValues {
 	confirmedPassword: string;
 }
 
-export interface PasswordChangeFormValues extends EmailFormValues, PasswordFormValues{}
+export interface PasswordChangeFormValues extends  EmailFormValues, PasswordFormValues {}
 
 const PasswordChangeFormCard = () => {
 	const emailRef = useRef<HTMLDivElement>({} as HTMLDivElement);
@@ -44,6 +44,18 @@ const PasswordChangeFormCard = () => {
 		);
 	};
 
+	const heightFormCondition = (
+		touched: FormikTouched<PasswordFormValues>,
+		errors: FormikErrors<PasswordFormValues>
+	) => {
+		if (
+			(touched.password && errors.password) ||
+			(touched.confirmedPassword && errors.confirmedPassword)
+		) {
+			return '50vh';
+		} else return '40vh';
+	};
+
 	return (
 		<Card>
 			<CardContent>
@@ -61,16 +73,7 @@ const PasswordChangeFormCard = () => {
 						handleSubmit,
 						isSubmitting,
 					}) => (
-						<Container
-							sx={{
-								display: 'flex',
-								flexDirection: 'column',
-								justifyContent: 'center',
-								alignItems: 'center',
-								height: ((touched.password && errors.password) || (touched.confirmedPassword && errors.confirmedPassword)) ? '50vh' : '40vh',
-								width: '20vw',
-							}}
-						>
+						<FormContentContainer height={heightFormCondition(touched, errors)}>
 							<EmailForm
 								ref={emailRef}
 								values={values}
@@ -92,7 +95,7 @@ const PasswordChangeFormCard = () => {
 								handleSubmit={handleSubmit}
 								isSubmitting={isSubmitting}
 							/>
-						</Container>
+						</FormContentContainer>
 					)}
 				</Formik>
 			</CardContent>

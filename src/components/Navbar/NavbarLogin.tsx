@@ -19,12 +19,12 @@ const NavbarLogin = () => {
 	const picRef = useRef<SVGSVGElement>({} as SVGSVGElement);
 	const navigate = useNavigate()
 
-	const LeaveButtonClickHandler = () => {
+	const leaveButtonClickHandler = () => {
 		dispatch(changeAuth(false));
 		navigate(RouteNames.DEFAULT)
 	};
 
-	const DeleteAccountButtonClickHandler = () => {
+	const deleteAccountButtonClickHandler = () => {
 		dispatch(changeAuth(false));
 		DeleteCookie('email');
 		DeleteCookie('password');
@@ -33,11 +33,11 @@ const NavbarLogin = () => {
 		navigate(RouteNames.DEFAULT)
 	};
 
-	const AvatarMouseEnterHandler = () => {
+	const avatarMouseEnterHandler = () => {
 		picRef.current.style.display = 'flex';
 	};
 
-	const AvatarMouseLeaveHandler = () => {
+	const avatarMouseLeaveHandler = () => {
 		picRef.current.style.display = 'none';
 	};
 
@@ -53,8 +53,8 @@ const NavbarLogin = () => {
 			</Typography>
 			<Avatar
 				alt='ProfilePic'
-				onMouseEnter={AvatarMouseEnterHandler}
-				onMouseLeave={AvatarMouseLeaveHandler}
+				onMouseEnter={avatarMouseEnterHandler}
+				onMouseLeave={avatarMouseLeaveHandler}
 				sx={{
 					marginLeft: 2,
 					marginRight: 2,
@@ -88,13 +88,13 @@ const NavbarLogin = () => {
 					marginLeft: 2,
 					marginRight: 2,
 				}}
-				onClick={LeaveButtonClickHandler}
+				onClick={leaveButtonClickHandler}
 				color='inherit'
 			>
 				Выйти
 			</Button>
 			<Button
-				onClick={DeleteAccountButtonClickHandler}
+				onClick={deleteAccountButtonClickHandler}
 				color='inherit'
 				sx={{
 					marginLeft: 2,

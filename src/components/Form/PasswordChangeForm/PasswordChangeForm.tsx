@@ -1,25 +1,17 @@
-import Container from '@mui/material/Container';
 import BackgroundImage from '../../Common/BackgroundImage/BackgroundImage';
 import authPic from '../../../assets/authPic.jpg';
 import PasswordChangeFormCard from './PasswordChangeFormCard';
+import { FormContainer } from '../../../styles/FormContainer';
 
 const PasswordChangeForm = () => {
 	return (
-		<Container
-			sx={{
-				height: '100vh',
-				width: '100vw',
-				display: 'flex',
-				alignItems: 'center',
-				justifyContent: 'center',
-			}}
-		>
+		<FormContainer>
 			<BackgroundImage
 				alt='authPic'
 				src={authPic}
 			/>
 			<PasswordChangeFormCard />
-		</Container>
+		</FormContainer>
 	);
 };
 
