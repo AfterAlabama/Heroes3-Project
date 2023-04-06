@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../../../hooks/ReduxHooks';
 import { RouteNames } from '../../../types/Enums/RouteNames';
 import { MainSlice } from '../../../store/Reducers/MainSlice';
+import { CreateCookie } from '../../../helpers/Cookie/CreateCookie';
 
 export interface AuthFormValues {
 	email: string;
@@ -23,6 +24,7 @@ const AuthFormCard = () => {
 		{ setSubmitting }: { setSubmitting: (isSubmitting: boolean) => void }
 	) => {
 		dispatch(changeAuth(true));
+		CreateCookie('Login', 'Logged', 365)
 		setSubmitting(false);
 		navigate(RouteNames.DEFAULT);
 	};

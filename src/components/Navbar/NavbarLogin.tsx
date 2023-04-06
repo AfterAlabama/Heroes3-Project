@@ -29,6 +29,7 @@ const NavbarLogin = () => {
 		DeleteCookie('email');
 		DeleteCookie('password');
 		DeleteCookie('name');
+		DeleteCookie('Login')
 		navigate(RouteNames.DEFAULT)
 	};
 

@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { GetCookieValue } from "../../helpers/Cookie/GetCookieValues";
 
 interface SliceState {
   isAuth: boolean,
@@ -8,7 +9,7 @@ interface SliceState {
 }
 
 const initialState: SliceState = {
-  isAuth: false,
+  isAuth: GetCookieValue('Login') ? true : false,
   isLeftDrawerOpen: false,
   isAccountBeingCreated: false,
   isAccountCreated: false,
