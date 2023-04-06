@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box';
-import headerPic1 from '../../assets/headerimg1.jpg';
-import headerPic2 from '../../assets/headerimg2.png';
-import BlackOverlay from '../Common/BlackOverlay/BlackOverlay';
+import headerPic1 from '../../../assets/headerimg1.jpg';
+import headerPic2 from '../../../assets/headerimg2.png';
+import BlackOverlay from '../../Common/BlackOverlay/BlackOverlay';
 import { forwardRef } from 'react';
 
 const HistoryHeaderImages = forwardRef<HTMLDivElement>((_, ref) => {
@@ -15,7 +15,7 @@ const HistoryHeaderImages = forwardRef<HTMLDivElement>((_, ref) => {
 				width: '100%',
 				height: '20%',
 				paddingTop: 2,
-				transform: 'translate(0, 1000px)'
+				transform: 'translate(0, 1000px)',
 			}}
 		>
 			<Box
@@ -56,6 +56,6 @@ const HistoryHeaderImages = forwardRef<HTMLDivElement>((_, ref) => {
 			</Box>
 		</Box>
 	);
-})
+});
 
 export default HistoryHeaderImages;

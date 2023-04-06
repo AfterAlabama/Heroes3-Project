@@ -6,6 +6,7 @@ interface SliceState {
   isLeftDrawerOpen: boolean,
   isAccountBeingCreated: boolean,
   isAccountCreated: boolean,
+  heroesMenuTabValue: number
 }
 
 const initialState: SliceState = {
@@ -13,6 +14,7 @@ const initialState: SliceState = {
   isLeftDrawerOpen: false,
   isAccountBeingCreated: false,
   isAccountCreated: false,
+  heroesMenuTabValue: 0
 }
 
 export const MainSlice = createSlice({
@@ -31,6 +33,9 @@ export const MainSlice = createSlice({
     changeIsAccountCreated(state: SliceState, action: PayloadAction<boolean>){
       state.isAccountCreated = action.payload
     },
+    changeHeroesMenuTabValue(state: SliceState, action: PayloadAction<number>){
+      state.heroesMenuTabValue = action.payload
+    }
   }
 })
 

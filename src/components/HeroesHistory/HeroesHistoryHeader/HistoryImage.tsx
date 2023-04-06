@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box';
-import heroesOverview from '../../assets/heroesoverview.jpg';
-import BlackOverlay from '../Common/BlackOverlay/BlackOverlay';
+import heroesOverview from '../../../assets/heroesoverview.jpg';
+import BlackOverlay from '../../Common/BlackOverlay/BlackOverlay';
 import { forwardRef } from 'react';
 
 const HistoryImage = forwardRef<HTMLDivElement>((_, ref) => {
@@ -12,14 +12,16 @@ const HistoryImage = forwardRef<HTMLDivElement>((_, ref) => {
 				height: '100%',
 				display: 'flex',
 				alignItems: 'center',
-				transform: 'translate(1000px, 0)'
+				transform: 'translate(1000px, 0)',
 			}}
 		>
-			<Box sx={{
-				width:'100%',
-				height:'70%',
-				position:'relative'
-			}} >
+			<Box
+				sx={{
+					width: '100%',
+					height: '70%',
+					position: 'relative',
+				}}
+			>
 				<BlackOverlay />
 				<img
 					style={{
@@ -32,6 +34,6 @@ const HistoryImage = forwardRef<HTMLDivElement>((_, ref) => {
 			</Box>
 		</Box>
 	);
-})
+});
 
 export default HistoryImage;
