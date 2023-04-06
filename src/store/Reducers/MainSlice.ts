@@ -6,7 +6,8 @@ interface SliceState {
   isLeftDrawerOpen: boolean,
   isAccountBeingCreated: boolean,
   isAccountCreated: boolean,
-  heroesMenuTabValue: number
+  heroesMenuTabValue: number,
+  isAccordionExpended: string | boolean
 }
 
 const initialState: SliceState = {
@@ -14,7 +15,8 @@ const initialState: SliceState = {
   isLeftDrawerOpen: false,
   isAccountBeingCreated: false,
   isAccountCreated: false,
-  heroesMenuTabValue: 0
+  heroesMenuTabValue: 0,
+  isAccordionExpended: 'panel1'
 }
 
 export const MainSlice = createSlice({
@@ -35,6 +37,9 @@ export const MainSlice = createSlice({
     },
     changeHeroesMenuTabValue(state: SliceState, action: PayloadAction<number>){
       state.heroesMenuTabValue = action.payload
+    },
+    toggleAccordion(state: SliceState, action: PayloadAction<string | boolean>){
+      state.isAccordionExpended = action.payload
     }
   }
 })

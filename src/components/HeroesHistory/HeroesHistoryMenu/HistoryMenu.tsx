@@ -19,7 +19,7 @@ const HistoryMenu = () => {
 			<Box
 				sx={{
 					bgcolor: 'background.paper',
-					height: '60vh',
+					height: '120vh',
 					display: 'flex',
 					alignItems: 'center',
 					flexDirection: 'column',

@@ -5,6 +5,7 @@ import { MainSlice } from '../../../store/Reducers/MainSlice';
 import useTheme from '@mui/material/styles/useTheme';
 import { Alignments } from '../../../types/Enums/Alignments';
 import Box from '@mui/material/Box';
+import HistoryMenuAccordions from './HistoryMenuAccordions';
 
 const HistoryMenuTabPanels = () => {
 	const { heroesMenuTabValue } = useAppSelector((state) => state.mainReducer);
@@ -18,7 +19,7 @@ const HistoryMenuTabPanels = () => {
 
 	const menuPanelsArray = Object.values(Alignments).map((panel, index) => (
 		<HistoryMenuTabPanel
-			key={index}
+			key={panel}
 			value={heroesMenuTabValue}
 			index={index}
 			dir={theme.direction}
@@ -27,7 +28,7 @@ const HistoryMenuTabPanels = () => {
 				display: 'flex',
 				flexDirection: 'column'
 			}}>
-				{panel}
+				<HistoryMenuAccordions />
 			</Box>
 		</HistoryMenuTabPanel>
 	));
