@@ -32,8 +32,9 @@ const HistoryMenuTabs = () => {
 				opacity: 0.8,
 				fontSize: 18,
 				'&:hover': {
-					borderBottom: heroesMenuTabValue !== index ? `solid 1px ${blue[200]}` : ''
-				}
+					borderBottom: heroesMenuTabValue !== index ? `solid 2px ${blue[400]}` : ''
+				},
+
 			}}
 		/>
 	));

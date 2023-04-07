@@ -1,10 +1,12 @@
+import { HeroPics } from "c:/Users/pavelling/Desktop/heroes34/src/types/Enums/HeroPics";
+
 export interface HeroCharsType {
 	name: string;
 	heroClass: string;
 	gender: string;
 	race: string;
 	specialization: string;
-	pic: string;
+	pic: HeroPics;
 	attack: number;
 	defense: number;
 	power: number;
@@ -23,7 +25,7 @@ export class Hero implements HeroCharsType {
 		public gender: string,
 		public race: string,
 		public specialization: string,
-		public pic: string,
+		public pic: HeroPics,
 		public attack: number,
 		public defense: number,
 		public power: number,

@@ -3,9 +3,12 @@ import HistoryMenuTabPanel from './HistoryMenuTabPanel';
 import { useAppDispatch, useAppSelector } from '../../../hooks/ReduxHooks';
 import { MainSlice } from '../../../store/Reducers/MainSlice';
 import useTheme from '@mui/material/styles/useTheme';
-import { Alignments } from '../../../types/Enums/Alignments';
+import { AlignmentPics, Alignments } from '../../../types/Enums/Alignments';
 import Box from '@mui/material/Box';
 import HistoryMenuAccordions from './HistoryMenuAccordions';
+import BackgroundImage from '../../Common/BackgroundImage/BackgroundImage'
+import BlackOverlay from '../../Common/BlackOverlay/BlackOverlay';
+import { heroesArray } from '../../../heroes/HeroesArray';
 
 const HistoryMenuTabPanels = () => {
 	const { heroesMenuTabValue } = useAppSelector((state) => state.mainReducer);
@@ -24,18 +27,25 @@ const HistoryMenuTabPanels = () => {
 			index={index}
 			dir={theme.direction}
 		>
-			<Box sx={{
-				display: 'flex',
-				flexDirection: 'column'
-			}}>
-				<HistoryMenuAccordions />
+			<Box
+				sx={{
+					display: 'flex',
+					flexDirection: 'column',
+					position:'relative'
+				}}
+			>
+				<BlackOverlay />
+				<BackgroundImage alt='Alignment city' src={AlignmentPics[index]} borderRadius='30px' />
+				<HistoryMenuAccordions heroesArray={heroesArray[index]} />
 			</Box>
 		</HistoryMenuTabPanel>
 	));
 
+	const axisCondition = theme.direction === 'rtl' ? 'x-reverse' : 'x';
+
 	return (
 		<SwipeableViews
-			axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+			axis={axisCondition}
 			index={heroesMenuTabValue}
 			onChangeIndex={handleChangeIndex}
 		>

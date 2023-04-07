@@ -44,7 +44,7 @@ export const Adella = new Hero(
 );
 
 export const Adelaide = new Hero(
-  'Аделла',
+  'Аделаида',
   HeroClasses.CLERIC,
   Genders.FEMALE,
   Races.HUMAN,

@@ -1,17 +1,32 @@
-import { CastleHeroes } from '../../../heroes/Castle/CastleHeroes';
+import { FC } from 'react';
+import { Hero } from '../../../heroes/Hero';
 import HistoryMenuAccordion from './HistoryMenuAccordion';
+import Box from '@mui/material/Box';
 
-const HistoryMenuAccordions = () => {
+interface AccordionsProps {
+	heroesArray: Hero[];
+}
+
+const HistoryMenuAccordions: FC<AccordionsProps> = ({ heroesArray }) => {
+	const showAccordions = heroesArray.map((hero, index) => (
+		<HistoryMenuAccordion
+			key={index}
+			hero={hero}
+			panelNumber={`panel${index + 1}`}
+			heroName={hero.name}
+			heroSpec={hero.specialization}
+			heroPic={hero.pic as unknown as string}
+		/>
+	));
+
 	return (
-		<>
-			{CastleHeroes.map((hero, index) => (
-				<HistoryMenuAccordion
-					key={index}
-					panelNumber={`panel${index + 1}`}
-					hero={hero.name}
-				/>
-			))}
-		</>
+		<Box
+			sx={{
+				margin: 4
+			}}
+		>
+			{showAccordions}
+		</Box>
 	);
 };
 

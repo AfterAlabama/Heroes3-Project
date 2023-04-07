@@ -6,14 +6,14 @@ interface BlockProps {
 	BlockIcon: ReactElement<SVGSVGElement>;
 	BlockTitle: string;
 	BlockContent: string;
-	BlockButtonOrInfo: ReactElement<HTMLButtonElement>;
+	BlockButton: ReactElement<HTMLButtonElement>;
 }
 
 const Block: FC<BlockProps> = ({
 	BlockIcon,
 	BlockTitle,
 	BlockContent,
-	BlockButtonOrInfo,
+	BlockButton,
 }) => {
 	return (
 		<ColumnedFlex
@@ -51,7 +51,7 @@ const Block: FC<BlockProps> = ({
 			>
 				{BlockContent}
 			</Typography>
-			{BlockButtonOrInfo}
+			{BlockButton}
 		</ColumnedFlex>
 	);
 };

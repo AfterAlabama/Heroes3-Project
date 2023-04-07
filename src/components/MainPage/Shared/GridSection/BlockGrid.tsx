@@ -45,7 +45,7 @@ const BlockGrid = () => {
 					}
 					BlockTitle='Истории'
 					BlockContent='Описание и жизненный путь всех героев в Heroes Might & Magic 3'
-					BlockButtonOrInfo={authBlockCondition}
+					BlockButton={authBlockCondition}
 				/>
 			</Grid>
 			<Grid item>
@@ -60,7 +60,7 @@ const BlockGrid = () => {
 					}
 					BlockTitle='Характеристика'
 					BlockContent='Описание Характеристик Всех Юнитов в герои 3'
-					BlockButtonOrInfo={
+					BlockButton={
 						isAuth ? <Button>Характеристики</Button> : <LoginButton />
 					}
 				/>
@@ -77,7 +77,7 @@ const BlockGrid = () => {
 					}
 					BlockTitle='Арена'
 					BlockContent='Возможность травить армии друг на друга'
-					BlockButtonOrInfo={isAuth ? <Button>Арена</Button> : <LoginButton />}
+					BlockButton={isAuth ? <Button>Арена</Button> : <LoginButton />}
 				/>
 			</Grid>
 		</Grid>

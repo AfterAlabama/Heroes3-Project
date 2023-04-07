@@ -1,5 +1,4 @@
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import { FC, ReactNode } from 'react';
 
 interface TabPanelProps {
@@ -16,8 +15,8 @@ const HistoryMenuTabPanel: FC<TabPanelProps> = ({
 	...other
 }) => {
 	const tabPanel = value === index && (
-		<Box sx={{ p: 3 }}>
-			<Typography>{children}</Typography>
+		<Box>
+			{children}
 		</Box>
 	);
 
