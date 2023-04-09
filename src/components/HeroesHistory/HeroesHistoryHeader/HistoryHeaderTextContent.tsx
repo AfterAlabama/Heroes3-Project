@@ -22,7 +22,7 @@ const HistoryHeaderTextContent = forwardRef<HTMLDivElement>((_, ref) => {
 					display: 'flex',
 					justifyContent: 'space-between',
 					flexDirection: 'column',
-					padding: 5,
+					p: 5,
 					cursor: 'default',
 				}}
 			>

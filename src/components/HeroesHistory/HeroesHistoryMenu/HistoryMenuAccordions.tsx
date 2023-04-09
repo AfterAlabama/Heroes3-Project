@@ -22,7 +22,7 @@ const HistoryMenuAccordions: FC<AccordionsProps> = ({ heroesArray }) => {
 	return (
 		<Box
 			sx={{
-				margin: 4
+				m: 4
 			}}
 		>
 			{showAccordions}

@@ -39,7 +39,8 @@ const HistoryMenuAccordionHead: FC<HistoryMenuAccordionProps> = ({
 			? brown[900]
 			: FortressHeroes.includes(hero)
 			? green[900]
-			: 'orange';
+			: 'orange'
+	;
 
 	return (
 		<MenuAccordionSummary
@@ -53,7 +54,7 @@ const HistoryMenuAccordionHead: FC<HistoryMenuAccordionProps> = ({
 					height: 40,
 					backgroundColor: backgroundColorCondition,
 					borderRadius: '5px',
-					marginRight: 3,
+					mr: 3,
 					display: 'flex',
 					alignItems: 'center',
 					justifyContent: 'center',

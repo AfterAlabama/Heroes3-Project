@@ -5,11 +5,11 @@ import blue from '@mui/material/colors/blue';
 const HistoryMenuTitle = () => {
 	return (
 		<Typography
+			variant='h3'
 			sx={{
-				marginLeft: 10,
+				ml: 10,
 				cursor: 'default',
-				marginBottom: 5,
-				fontSize: 40,
+				mb: 5,
 			}}
 		>
 			Просмотр Героев{' '}

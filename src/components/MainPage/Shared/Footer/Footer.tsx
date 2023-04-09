@@ -12,7 +12,6 @@ const Footer = () => {
 				sx={{
 					height: '40vh',
 					cursor: 'default',
-					marginTop: '25vh',
 					backgroundColor: blue[800],
 					display: 'flex',
 					alignItems: 'space-around',
@@ -34,8 +33,8 @@ const Footer = () => {
 				<Divider sx={{
 					backgroundColor: 'white',
 					opacity: '0.2',
-					marginTop: 3,
-					marginBottom: 3,
+					mt: 3,
+					mb: 3,
 				}} />
 				<FooterRights />
 			</Box>

@@ -12,17 +12,17 @@ const FooterCaption = () => {
 			}}
 		>
 			<Typography
+				variant='h4'
 				sx={{
 					display: 'flex',
 					alignItems: 'center',
 					justifyContent: 'left',
-					fontSize: 30,
-					marginBottom: 3,
+					mb: 3,
 				}}
 			>
 				<AutoFixHighIcon
 					sx={{
-						marginRight: 1,
+						mr: 1,
 					}}
 				/>{' '}
 				Hero Progeny

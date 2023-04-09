@@ -32,6 +32,9 @@ const BlockGrid = () => {
 			container
 			justifyContent='center'
 			spacing={12}
+			sx={{
+				mb:35
+			}}
 		>
 			<Grid item>
 				<Block

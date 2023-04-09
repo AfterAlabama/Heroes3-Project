@@ -5,10 +5,10 @@ import { FC } from 'react';
 import { FormContentProps } from '../AuthForm/AuthFormContent';
 import FormTitle from '../Shared/FormTitle';
 import StyledInput from '../Shared/StyledInput';
-import SubmitButton from '../Shared/SubmitButton';
 import { RegisterFormValues } from './RegisterFormCard';
 import { FormContentContainer } from '../../../styles/FormContentContainer';
 import { ColumnedFlex } from '../../../styles/ColumnedFlex';
+import FormButtons from '../Shared/FormButtons';
 
 const RegisterFormContent: FC<FormContentProps<RegisterFormValues>> = ({
 	handleSubmit,
@@ -45,12 +45,15 @@ const RegisterFormContent: FC<FormContentProps<RegisterFormValues>> = ({
 			? '75vh'
 			: '67vh'
 	;
-
+	
 	return (
-		<FormContentContainer height={formHeightCondition} >
+		<FormContentContainer height={formHeightCondition}>
 			<form onSubmit={handleSubmit}>
 				<ColumnedFlex>
-					<FormTitle text='Регистрация' />
+					<FormTitle
+						height={-15}
+						text='Регистрация'
+					/>
 					<StyledInput
 						instance='name'
 						isError={errors.name}
@@ -87,10 +90,11 @@ const RegisterFormContent: FC<FormContentProps<RegisterFormValues>> = ({
 						handleChange={handleChange}
 						labelText='Подтвердите пароль'
 					/>
-					<SubmitButton
-						isSubmitting={isSubmitting}
-						SubmitCondition={submitCondition}
+					<FormButtons
 						buttonText='Создать'
+						isSubmitting={isSubmitting}
+						submitCondition={submitCondition}
+						margin={-10}
 					/>
 				</ColumnedFlex>
 			</form>

@@ -3,6 +3,7 @@ import FormHelperText from '@mui/material/FormHelperText/FormHelperText';
 import Input from '@mui/material/Input';
 import InputLabel from '@mui/material/InputLabel';
 import { ChangeEvent, FC } from 'react';
+import IsLoading from '../../Common/IsLoading/IsLoading';
 
 interface StyledInputProps {
 	instance: string;
@@ -38,25 +39,29 @@ const StyledInput: FC<StyledInputProps> = ({
 	return (
 		<FormControl
 			sx={{
-				marginBottom: 8,
+				mb: 8,
 			}}
 		>
-			<InputLabel
-				color={ColorCondition}
-				sx={{
-					fontSize: 20,
-				}}
-			>
-				{labelText}
-			</InputLabel>
-			<Input
-				type={instance}
-				name={instance}
-				onChange={handleChange}
-				onBlur={handleBlur}
-				value={isValue}
-				color={ColorCondition}
-			/>
+			<IsLoading>
+				<InputLabel
+					color={ColorCondition}
+					sx={{
+						fontSize: 20,
+					}}
+				>
+					{labelText}
+				</InputLabel>
+			</IsLoading>
+			<IsLoading>
+				<Input
+					type={instance}
+					name={instance}
+					onChange={handleChange}
+					onBlur={handleBlur}
+					value={isValue}
+					color={ColorCondition}
+				/>
+			</IsLoading>
 			{ErrorPopupCondition}
 		</FormControl>
 	);

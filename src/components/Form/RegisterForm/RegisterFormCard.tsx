@@ -5,7 +5,6 @@ import { RegValidationHandler } from '../../../helpers/FormValidation/RegValidat
 import { useEffect, useRef } from 'react';
 import { CreateCookie } from '../../../helpers/Cookie/CreateCookie';
 import { useNavigate } from 'react-router-dom';
-import { RouteNames } from '../../../types/Enums/RouteNames';
 import { useAppDispatch } from '../../../hooks/ReduxHooks';
 import { MainSlice } from '../../../store/Reducers/MainSlice';
 import RegisterFormContent from './RegisterFormContent';
@@ -51,7 +50,7 @@ const RegisterFormCard = () => {
 		}, 4000);
 
 		timer3.current = window.setTimeout(() => {
-			navigate(RouteNames.AUTH_FORM);
+			navigate(-1);
 		}, 4000);
 	};
 

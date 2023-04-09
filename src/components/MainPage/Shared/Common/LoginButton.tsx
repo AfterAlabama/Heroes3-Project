@@ -13,7 +13,7 @@ const LoginButton = () => {
 		<Button
 			onClick={loginButtonClickHandler}
 			sx={{
-				marginTop: 2,
+				mt: 2,
 				color: 'white',
 				backgroundColor: blue[500],
 				'&:hover': {

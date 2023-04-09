@@ -9,8 +9,8 @@ import FormTitle from '../Shared/FormTitle';
 import StyledInput from '../Shared/StyledInput';
 import SubmitButton from '../Shared/SubmitButton';
 import red from '@mui/material/colors/red';
-import { PasswordFormValues } from './PasswordChangeFormCard';
 import { ColumnedFlex } from '../../../styles/ColumnedFlex';
+import { PasswordFormValues } from './PasswordChangeFormContent';
 
 const PasswordsForm = forwardRef<
 	HTMLDivElement,
@@ -63,7 +63,7 @@ const PasswordsForm = forwardRef<
 				<ColumnedFlex ref={ref} sx={{
 					display: 'none'
 				}} >
-					<FormTitle text='Смена Пароля' />
+					<FormTitle height={-5} text='Смена Пароля' />
 					<StyledInput
 						instance='password'
 						isError={errors.password}

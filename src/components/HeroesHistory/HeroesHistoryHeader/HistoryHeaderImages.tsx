@@ -14,7 +14,7 @@ const HistoryHeaderImages = forwardRef<HTMLDivElement>((_, ref) => {
 				justifyContent: 'space-between',
 				width: '100%',
 				height: '20%',
-				paddingTop: 2,
+				pt: 2,
 				transform: 'translate(0, 1000px)',
 			}}
 		>

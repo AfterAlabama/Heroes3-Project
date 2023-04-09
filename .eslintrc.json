@@ -23,6 +23,7 @@
         "react/react-in-jsx-scope": "off",
         "no-mixed-spaces-and-tabs": "off",
         "@typescript-eslint/no-non-null-assertion": "off",
-        "react/display-name": "off"
+        "react/display-name": "off",
+        "@typescript-eslint/no-empty-function": "off"
     }
 }

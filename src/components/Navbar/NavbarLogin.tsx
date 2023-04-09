@@ -45,7 +45,7 @@ const NavbarLogin = () => {
 		<>
 			<Typography
 				sx={{
-					marginRight: 2,
+					mr: 2,
 					cursor: 'default',
 				}}
 			>
@@ -56,8 +56,8 @@ const NavbarLogin = () => {
 				onMouseEnter={avatarMouseEnterHandler}
 				onMouseLeave={avatarMouseLeaveHandler}
 				sx={{
-					marginLeft: 2,
-					marginRight: 2,
+					ml: 2,
+					mr: 2,
 					cursor: 'pointer',
 					transition: 'all ease-in-out 0.4s',
 					'&:hover': {
@@ -85,8 +85,8 @@ const NavbarLogin = () => {
 			</Avatar>
 			<Button
 				sx={{
-					marginLeft: 2,
-					marginRight: 2,
+					ml: 2,
+					mr: 2,
 				}}
 				onClick={leaveButtonClickHandler}
 				color='inherit'
@@ -97,8 +97,8 @@ const NavbarLogin = () => {
 				onClick={deleteAccountButtonClickHandler}
 				color='inherit'
 				sx={{
-					marginLeft: 2,
-					marginRight: 2,
+					ml: 2,
+					mr: 2,
 				}}
 			>
 				Удалить Аккаунт
@@ -107,7 +107,7 @@ const NavbarLogin = () => {
 	) : (
 		<Button
 			sx={{
-				marginLeft: 2,
+				ml: 2,
 				marginRight: 2,
 			}}
 			color='inherit'

@@ -6,7 +6,7 @@ import HistoryMenuTitle from './HistoryMenuTitle';
 const HistoryMenu = () => {
 	return (
 		<Box sx={{
-			marginBottom: -15
+			mb: -15
 		}} >
 			<HistoryMenuTitle />
 			<Box
@@ -16,8 +16,9 @@ const HistoryMenu = () => {
 					display: 'flex',
 					alignItems: 'center',
 					flexDirection: 'column',
-					marginLeft: 10,
-					marginRight: 10
+					ml: 10,
+					mr: 10,
+					mb:30
 				}}
 			>
 				<HistoryMenuTabs />

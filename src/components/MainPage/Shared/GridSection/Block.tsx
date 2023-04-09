@@ -20,7 +20,7 @@ const Block: FC<BlockProps> = ({
 			sx={{
 				height: '100%',
 				width: '100%',
-				padding: 5,
+				p: 5,
 				boxShadow: '0 0 5px 5px rgba(51,51,255,0.2)',
 				'&:hover': {
 					boxShadow: '0 0 10px 5px rgba(51,51,255,0.1)',
@@ -30,12 +30,12 @@ const Block: FC<BlockProps> = ({
 		>
 			{BlockIcon}
 			<Typography
+				variant='h4'
 				sx={{
-					fontSize: 30,
 					textAlign: 'center',
           cursor: 'default',
-					marginBottom: 1,
-					marginTop: 1
+					mb: 1,
+					mt: 1
 				}}
 			>
 				{BlockTitle}
@@ -46,7 +46,7 @@ const Block: FC<BlockProps> = ({
 					textAlign: 'center',
           cursor: 'default',
 					width:'50%',
-					marginBottom: 1
+					mb: 1
 				}}
 			>
 				{BlockContent}

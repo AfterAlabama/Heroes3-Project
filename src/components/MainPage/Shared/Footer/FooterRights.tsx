@@ -11,8 +11,8 @@ const FooterRights = () => {
       display: 'flex',
       alignItems:'center',
       justifyContent: 'space-between',
-      marginLeft:23,
-      marginRight:23,
+      ml:23,
+      mr:23,
     }} >
 			<Typography
 				sx={{

@@ -16,7 +16,7 @@ const AuthContent = () => {
 			key={index}
 			sx={{
 				border: 'solid rgba(0,0,0,0.3) 1px',
-				padding: 1,
+				p: 1,
 				display: 'flex',
 				alignItems: 'center',
 				justifyContent: 'center',
@@ -30,7 +30,7 @@ const AuthContent = () => {
 	return (
 		<Box
 			sx={{
-				marginTop: 5,
+				mt: 5,
 				color: blue[200],
 				display: 'flex',
 				alignItems: 'center',

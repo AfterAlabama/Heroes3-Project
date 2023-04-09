@@ -50,7 +50,10 @@ const AuthFormContent: FC<FormContentProps<AuthFormValues>> = ({
 		<FormContentContainer height={formHeightCondition} >
 			<form onSubmit={handleSubmit}>
 				<ColumnedFlex>
-					<FormTitle text='Вход в аккаунт' />
+					<FormTitle 
+						height={-5} 
+						text='Вход в аккаунт' 
+					/>
 					<StyledInput
 						instance='email'
 						isError={errors.email}
