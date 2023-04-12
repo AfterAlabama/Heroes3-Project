@@ -1,6 +1,7 @@
 import Typography from '@mui/material/Typography';
 import { FC, ReactElement } from 'react';
 import { ColumnedFlex } from '../../../../styles/ColumnedFlex';
+import IsLoading from '../../../Common/IsLoading/IsLoading';
 
 interface BlockProps {
 	BlockIcon: ReactElement<SVGSVGElement>;
@@ -29,28 +30,32 @@ const Block: FC<BlockProps> = ({
 			}}
 		>
 			{BlockIcon}
-			<Typography
-				variant='h4'
-				sx={{
-					textAlign: 'center',
-          cursor: 'default',
-					mb: 1,
-					mt: 1
-				}}
-			>
-				{BlockTitle}
-			</Typography>
-			<Typography
-				sx={{
-					color: 'gray',
-					textAlign: 'center',
-          cursor: 'default',
-					width:'50%',
-					mb: 1
-				}}
-			>
-				{BlockContent}
-			</Typography>
+			<IsLoading>
+				<Typography
+					variant='h4'
+					sx={{
+						textAlign: 'center',
+						cursor: 'default',
+						mb: 1,
+						mt: 1
+					}}
+				>
+					{BlockTitle}
+				</Typography>
+			</IsLoading>
+			<IsLoading>
+				<Typography
+					sx={{
+						color: 'gray',
+						textAlign: 'center',
+						cursor: 'default',
+						width:'50%',
+						mb: 1
+					}}
+				>
+					{BlockContent}
+				</Typography>
+			</IsLoading>
 			{BlockButton}
 		</ColumnedFlex>
 	);

@@ -1,11 +1,14 @@
 import { MainPageCaption } from '../../../styles/MainPageCaption';
+import IsLoading from '../../Common/IsLoading/IsLoading';
 
 const AuthText = () => {
 	return (
-		<MainPageCaption>
-			Погрузитесь в мир удивительных баталий и отважных героев из всемилюбимой
-			серии Heroes Might & Magic 3!
-		</MainPageCaption>
+		<IsLoading>
+			<MainPageCaption>
+				Погрузитесь в мир удивительных баталий и отважных героев из всемилюбимой
+				серии Heroes Might & Magic 3!
+			</MainPageCaption>
+		</IsLoading>
 	);
 };
 

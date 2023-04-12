@@ -9,6 +9,7 @@ import Button from '@mui/material/Button';
 import LoginButton from '../Common/LoginButton';
 import { RouteNames } from '../../../../types/Enums/RouteNames';
 import { useNavigate } from 'react-router-dom';
+import IsLoading from '../../../Common/IsLoading/IsLoading';
 
 const BlockGrid = () => {
 	const { isAuth } = useAppSelector((state) => state.mainReducer);
@@ -20,11 +21,15 @@ const BlockGrid = () => {
 	};
 
 	const authBlockCondition = isAuth ? (
-		<Button onClick={() => blockClickhandler(RouteNames.HEROES_HISTORY)}>
-			Смотреть
-		</Button>
+		<IsLoading>
+			<Button onClick={() => blockClickhandler(RouteNames.HEROES_HISTORY)}>
+				Смотреть
+			</Button>
+		</IsLoading>
 	) : (
-		<LoginButton />
+		<IsLoading>
+			<LoginButton />
+		</IsLoading>
 	);
 
 	return (
@@ -39,12 +44,14 @@ const BlockGrid = () => {
 			<Grid item>
 				<Block
 					BlockIcon={
-						<AutoStoriesIcon
-							sx={{
-								color: 'orange',
-								fontSize: 40,
-							}}
-						/>
+						<IsLoading>
+							<AutoStoriesIcon
+								sx={{
+									color: 'orange',
+									fontSize: 40,
+								}}
+							/>
+						</IsLoading>
 					}
 					BlockTitle='Истории'
 					BlockContent='Описание и жизненный путь всех героев в Heroes Might & Magic 3'
@@ -54,33 +61,35 @@ const BlockGrid = () => {
 			<Grid item>
 				<Block
 					BlockIcon={
-						<BuildIcon
-							sx={{
-								fontSize: 40,
-								color: 'gray',
-							}}
-						/>
+						<IsLoading>
+							<BuildIcon
+								sx={{
+									fontSize: 40,
+									color: 'gray',
+								}}
+							/>
+						</IsLoading>
 					}
 					BlockTitle='Характеристика'
 					BlockContent='Описание Характеристик Всех Юнитов в герои 3'
-					BlockButton={
-						isAuth ? <Button>Характеристики</Button> : <LoginButton />
-					}
+					BlockButton={authBlockCondition}
 				/>
 			</Grid>
 			<Grid item>
 				<Block
 					BlockIcon={
-						<CastleIcon
-							sx={{
-								color: blue[400],
-								fontSize: 40,
-							}}
-						/>
+						<IsLoading>
+							<CastleIcon
+								sx={{
+									color: blue[400],
+									fontSize: 40,
+								}}
+							/>
+						</IsLoading>
 					}
 					BlockTitle='Арена'
 					BlockContent='Возможность травить армии друг на друга'
-					BlockButton={isAuth ? <Button>Арена</Button> : <LoginButton />}
+					BlockButton={authBlockCondition}
 				/>
 			</Grid>
 		</Grid>

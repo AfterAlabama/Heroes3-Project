@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography';
 import AcUnitIcon from '@mui/icons-material/AcUnit';
 import { useContext } from 'react';
 import { MainPageContext } from './MainPage';
+import IsLoading from '../../../Common/IsLoading/IsLoading';
 
 const MainContent = () => {
 	const { Text, loginButtonOrContent } = useContext(MainPageContext);
@@ -16,34 +17,41 @@ const MainContent = () => {
 				width: '25%',
 			}}
 		>
-			<Typography
-				sx={{
-					fontSize: 14,
-					color: 'grey',
-					display: 'flex',
-					alignItems: 'center',
-					cursor: 'default',
-				}}
-			>
-				<AcUnitIcon /> Абсолютно бесплатное пользование
-			</Typography>
-			<Box
-				sx={{
-					fontSize: 75,
-					cursor: 'default',
-				}}
-			>
-				Война Позабытых
-				<Box
+			<IsLoading>
+				<Typography
 					sx={{
-						background: `linear-gradient( to right, black, ${blue[600]})`,
-						WebkitBackgroundClip: 'text',
-						WebkitTextFillColor: 'transparent',
+						fontSize: 14,
+						color: 'grey',
+						display: 'flex',
+						alignItems: 'center',
+						cursor: 'default',
 					}}
 				>
-					Поколений
+					<AcUnitIcon /> Абсолютно бесплатное пользование
+				</Typography>
+			</IsLoading>
+			<IsLoading sx={() => ({
+				width: '80%',
+				height: '100%'
+			})} >
+				<Box
+					sx={{
+						fontSize: 75,
+						cursor: 'default',
+					}}
+				>
+					Война Позабытых
+					<Box
+						sx={{
+							background: `linear-gradient( to right, black, ${blue[600]})`,
+							WebkitBackgroundClip: 'text',
+							WebkitTextFillColor: 'transparent',
+						}}
+					>
+						Поколений
+					</Box>
 				</Box>
-			</Box>
+			</IsLoading>
 			{Text}
 			{loginButtonOrContent}
 		</Box>
