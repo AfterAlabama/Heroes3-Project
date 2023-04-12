@@ -1,3 +1,4 @@
+import { RangersDescription } from "../../../types/Enums/Descriptions/Rampart/RangerDescription";
 import { Genders } from "../../../types/Enums/Genders";
 import { HeroClasses } from "../../../types/Enums/HeroClasses";
 import { HeroPics } from "../../../types/Enums/HeroPics";
@@ -21,7 +22,8 @@ export const Clancy = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.RESISTANCE, SecondarySkills.PATH_FINDING]
+	[SecondarySkills.RESISTANCE, SecondarySkills.PATH_FINDING],
+	RangersDescription.CLANCY
 );
 
 export const Ivor = new Hero(
@@ -39,11 +41,12 @@ export const Ivor = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.ARCHERY, SecondarySkills.OFFENSE]
+	[SecondarySkills.ARCHERY, SecondarySkills.OFFENSE],
+	RangersDescription.IVOR
 );
 
 export const Jenova = new Hero(
-	'Дженова',
+	'Янова',
 	HeroClasses.RANGER,
 	Genders.FEMALE,
 	Races.ELF,
@@ -57,11 +60,12 @@ export const Jenova = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.ARCHERY]
+	[SecondarySkills.ARCHERY],
+	RangersDescription.JENOVA
 );
 
 export const Kyrre = new Hero(
-	'Кирра',
+	'Киррь',
 	HeroClasses.RANGER,
 	Genders.FEMALE,
 	Races.ELF,
@@ -75,7 +79,8 @@ export const Kyrre = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.ARCHERY, SecondarySkills.LOGISTICS]
+	[SecondarySkills.ARCHERY, SecondarySkills.LOGISTICS],
+	RangersDescription.KYRRE
 );
 
 export const Mephala = new Hero(
@@ -93,7 +98,8 @@ export const Mephala = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.LEADERSHIP, SecondarySkills.DEFENSE]
+	[SecondarySkills.LEADERSHIP, SecondarySkills.DEFENSE],
+	RangersDescription.MEPHALA
 );
 
 export const Ryland = new Hero(
@@ -111,7 +117,8 @@ export const Ryland = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.LEADERSHIP, SecondarySkills.DIPLOMACY]
+	[SecondarySkills.LEADERSHIP, SecondarySkills.DIPLOMACY],
+	RangersDescription.RYLAND
 );
 
 export const Thorgrim = new Hero(
@@ -129,7 +136,8 @@ export const Thorgrim = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.RESISTANCE]
+	[SecondarySkills.RESISTANCE],
+	RangersDescription.THORGRIM
 );
 
 export const Ufretin = new Hero(
@@ -147,5 +155,6 @@ export const Ufretin = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.LUCK, SecondarySkills.RESISTANCE]
+	[SecondarySkills.LUCK, SecondarySkills.RESISTANCE],
+	RangersDescription.UFRETIN
 );

@@ -1,3 +1,4 @@
+import { ClericsDescription } from "../../../types/Enums/Descriptions/Castle/ClericsDescription";
 import { Genders } from "../../../types/Enums/Genders";
 import { HeroClasses } from "../../../types/Enums/HeroClasses";
 import { HeroPics } from "../../../types/Enums/HeroPics";
@@ -22,7 +23,8 @@ export const Rion = new Hero(
   0,
   20,
   Spells.STONE_SKIN,
-  [SecondarySkills.WISDOM, SecondarySkills.FIRST_AID]
+  [SecondarySkills.WISDOM, SecondarySkills.FIRST_AID],
+  ClericsDescription.RION
 );
 
 export const Adella = new Hero(
@@ -40,7 +42,8 @@ export const Adella = new Hero(
   0,
   20,
   Spells.BLESS,
-  [SecondarySkills.WISDOM, SecondarySkills.DIPLOMACY]
+  [SecondarySkills.WISDOM, SecondarySkills.DIPLOMACY],
+  ClericsDescription.ADELLA
 );
 
 export const Adelaide = new Hero(
@@ -58,7 +61,8 @@ export const Adelaide = new Hero(
   0,
   30,
   Spells.FROST_RING,
-  [SecondarySkills.WISDOM]
+  [SecondarySkills.WISDOM],
+  ClericsDescription.ADELAIDE
 );
 
 export const Caitlin = new Hero(
@@ -76,7 +80,8 @@ export const Caitlin = new Hero(
   0,
   25,
   Spells.CURE,
-  [SecondarySkills.WISDOM, SecondarySkills.INTELLIGENCE]
+  [SecondarySkills.WISDOM, SecondarySkills.INTELLIGENCE],
+  ClericsDescription.CAITLIN
 );
 
 export const Cuthbert = new Hero(
@@ -94,11 +99,12 @@ export const Cuthbert = new Hero(
   0,
   20,
   Spells.WEAKNESS,
-  [SecondarySkills.WISDOM, SecondarySkills.ESTATES]
+  [SecondarySkills.WISDOM, SecondarySkills.ESTATES],
+  ClericsDescription.CUTHBERT
 );
 
 export const Ingham = new Hero(
-  'Ингам',
+  'Ингэм',
   HeroClasses.CLERIC,
   Genders.MALE,
   Races.HUMAN,
@@ -112,7 +118,8 @@ export const Ingham = new Hero(
   1,
   20,
   Spells.CURSE,
-  [SecondarySkills.WISDOM, SecondarySkills.MYSTICISM]
+  [SecondarySkills.WISDOM, SecondarySkills.MYSTICISM],
+  ClericsDescription.INGHAM
 );
 
 export const Loynis = new Hero(
@@ -130,7 +137,8 @@ export const Loynis = new Hero(
   0,
   40,
   Spells.PRAYER,
-  [SecondarySkills.WISDOM, SecondarySkills.LEARNING]
+  [SecondarySkills.WISDOM, SecondarySkills.LEARNING],
+  ClericsDescription.LOYNIS
 );
 
 export const Sanya = new Hero(
@@ -148,5 +156,6 @@ export const Sanya = new Hero(
   0,
   20,
   Spells.DISPEL,
-  [SecondarySkills.WISDOM, SecondarySkills.EAGLE_EYE]
+  [SecondarySkills.WISDOM, SecondarySkills.EAGLE_EYE],
+  ClericsDescription.SANYA
 );

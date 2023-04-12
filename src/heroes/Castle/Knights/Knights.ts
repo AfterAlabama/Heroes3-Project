@@ -1,3 +1,4 @@
+import { KnightDescription } from "../../../types/Enums/Descriptions/Castle/KnightsDescription";
 import { Genders } from "../../../types/Enums/Genders";
 import { HeroClasses } from "../../../types/Enums/HeroClasses";
 import { HeroPics } from "../../../types/Enums/HeroPics";
@@ -21,7 +22,8 @@ export const Orrin = new Hero(
 	0,
 	10,
 	null,
-  [SecondarySkills.ARCHERY, SecondarySkills.LEADERSHIP]
+  [SecondarySkills.ARCHERY, SecondarySkills.LEADERSHIP],
+  KnightDescription.ORRIN
 );
 
 export const Valeska = new Hero(
@@ -39,7 +41,8 @@ export const Valeska = new Hero(
   0,
   10,
   null,
-  [SecondarySkills.ARCHERY, SecondarySkills.LEADERSHIP]
+  [SecondarySkills.ARCHERY, SecondarySkills.LEADERSHIP],
+  KnightDescription.VALESKA
 );
 
 export const Edric = new Hero(
@@ -57,7 +60,8 @@ export const Edric = new Hero(
   0,
   10,
   null,
-  [SecondarySkills.LEADERSHIP, SecondarySkills.DEFENSE]
+  [SecondarySkills.LEADERSHIP, SecondarySkills.DEFENSE],
+  KnightDescription.EDRIC
 );
 
 export const Sylvia = new Hero(
@@ -75,7 +79,8 @@ export const Sylvia = new Hero(
   0,
   10,
   null,
-  [SecondarySkills.LEADERSHIP, SecondarySkills.NAVIGATION]
+  [SecondarySkills.LEADERSHIP, SecondarySkills.NAVIGATION],
+  KnightDescription.SYLVIA
 );
 
 export const LordHaart = new Hero(
@@ -93,7 +98,8 @@ export const LordHaart = new Hero(
   0,
   10,
   null,
-  [SecondarySkills.LEADERSHIP, SecondarySkills.ESTATES]
+  [SecondarySkills.LEADERSHIP, SecondarySkills.ESTATES],
+  KnightDescription.LORD_HAART
 );
 
 export const Sorsha = new Hero(
@@ -111,7 +117,8 @@ export const Sorsha = new Hero(
   0,
   10,
   null,
-  [SecondarySkills.LEADERSHIP, SecondarySkills.OFFENSE]
+  [SecondarySkills.LEADERSHIP, SecondarySkills.OFFENSE],
+  KnightDescription.SORSHA
 );
 
 export const Christian = new Hero(
@@ -129,11 +136,12 @@ export const Christian = new Hero(
   0,
   10,
   null,
-  [SecondarySkills.LEADERSHIP, SecondarySkills.BALLISTA]
+  [SecondarySkills.LEADERSHIP, SecondarySkills.BALLISTA],
+  KnightDescription.CHRISTIAN
 );
 
 export const Tyris = new Hero(
-  'Турис',
+  'Тирис',
   HeroClasses.KNIGHT,
   Genders.FEMALE,
   Races.HUMAN,
@@ -147,7 +155,8 @@ export const Tyris = new Hero(
   0,
   10,
   null,
-  [SecondarySkills.LEADERSHIP, SecondarySkills.TACTICS]
+  [SecondarySkills.LEADERSHIP, SecondarySkills.TACTICS],
+  KnightDescription.TYRIS
 );
 
 export const Catherine = new Hero(
@@ -165,7 +174,8 @@ export const Catherine = new Hero(
   0,
   10,
   null,
-  [SecondarySkills.LEADERSHIP, SecondarySkills.OFFENSE]
+  [SecondarySkills.LEADERSHIP, SecondarySkills.OFFENSE],
+  KnightDescription.CATHERINE
 );
 
 export const Roland = new Hero(
@@ -183,7 +193,8 @@ export const Roland = new Hero(
   0,
   10,
   null,
-  [SecondarySkills.LEADERSHIP, SecondarySkills.DEFENSE]
+  [SecondarySkills.LEADERSHIP, SecondarySkills.DEFENSE],
+  KnightDescription.ROLAND
 );
 
 export const SirMullich = new Hero(
@@ -201,6 +212,7 @@ export const SirMullich = new Hero(
   1,
   10,
   null,
-  [SecondarySkills.LEADERSHIP]
+  [SecondarySkills.LEADERSHIP],
+  KnightDescription.SIR_MULLICH
 );
 

@@ -1,3 +1,4 @@
+import { ElementalistsDescription } from "../../../types/Enums/Descriptions/Conflux/ElementalistsDescription";
 import { Genders } from "../../../types/Enums/Genders";
 import { HeroClasses } from "../../../types/Enums/HeroClasses";
 import { HeroPics } from "../../../types/Enums/HeroPics";
@@ -23,7 +24,8 @@ export const Aenain = new Hero(
   0,
   30,
   Spells.DISRUPTING_RAY,
-  [SecondarySkills.WISDOM, SecondarySkills.AIR_MAGIC]
+  [SecondarySkills.WISDOM, SecondarySkills.AIR_MAGIC],
+  ElementalistsDescription.AENAIN
 );
 
 export const Brissa = new Hero(
@@ -41,7 +43,8 @@ export const Brissa = new Hero(
   0,
   30,
   Spells.HASTE,
-  [SecondarySkills.WISDOM, SecondarySkills.AIR_MAGIC]
+  [SecondarySkills.WISDOM, SecondarySkills.AIR_MAGIC],
+  ElementalistsDescription.BRISSA
 );
 
 export const Ciele = new Hero(
@@ -59,11 +62,12 @@ export const Ciele = new Hero(
   0,
   30,
   Spells.MAGIC_ARROW,
-  [SecondarySkills.WISDOM, SecondarySkills.WATER_MAGIC]
+  [SecondarySkills.WISDOM, SecondarySkills.WATER_MAGIC],
+  ElementalistsDescription.CIELE
 );
 
 export const Gelare = new Hero(
-  'Гелар',
+  'Джелар',
   HeroClasses.ELEMENTALIST,
   Genders.MALE,
   Races.ELF,
@@ -77,7 +81,8 @@ export const Gelare = new Hero(
   0,
   30,
   Spells.DISPEL,
-  [SecondarySkills.WISDOM, SecondarySkills.WATER_MAGIC]
+  [SecondarySkills.WISDOM, SecondarySkills.WATER_MAGIC],
+  ElementalistsDescription.GELARE
 );
 
 export const Grindan = new Hero(
@@ -95,11 +100,12 @@ export const Grindan = new Hero(
   0,
   30,
   Spells.SLOW,
-  [SecondarySkills.WISDOM, SecondarySkills.EARTH_MAGIC]
+  [SecondarySkills.WISDOM, SecondarySkills.EARTH_MAGIC],
+  ElementalistsDescription.GRINDAN
 );
 
 export const Inteus = new Hero(
-  'Интеус',
+  'Интей',
   HeroClasses.ELEMENTALIST,
   Genders.MALE,
   Races.HUMAN,
@@ -113,7 +119,8 @@ export const Inteus = new Hero(
   0,
   30,
   Spells.BLOOD_LUST,
-  [SecondarySkills.WISDOM, SecondarySkills.FIRE_MAGIC]
+  [SecondarySkills.WISDOM, SecondarySkills.FIRE_MAGIC],
+  ElementalistsDescription.INTEUS
 );
 
 export const Labetha = new Hero(
@@ -131,7 +138,8 @@ export const Labetha = new Hero(
   0,
   30,
   Spells.STONE_SKIN,
-  [SecondarySkills.WISDOM, SecondarySkills.EARTH_MAGIC]
+  [SecondarySkills.WISDOM, SecondarySkills.EARTH_MAGIC],
+  ElementalistsDescription.LABETHA
 );
 
 export const Luna = new Hero(
@@ -149,5 +157,6 @@ export const Luna = new Hero(
   0,
   30,
   Spells.FIRE_WALL,
-  [SecondarySkills.WISDOM, SecondarySkills.FIRE_MAGIC]
+  [SecondarySkills.WISDOM, SecondarySkills.FIRE_MAGIC],
+  ElementalistsDescription.LUNA
 );

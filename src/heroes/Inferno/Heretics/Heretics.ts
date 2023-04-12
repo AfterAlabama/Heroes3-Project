@@ -1,3 +1,4 @@
+import { HereticsDescription } from "../../../types/Enums/Descriptions/Inferno/HereticsDescription";
 import { Genders } from "../../../types/Enums/Genders";
 import { HeroClasses } from "../../../types/Enums/HeroClasses";
 import { HeroPics } from "../../../types/Enums/HeroPics";
@@ -8,7 +9,7 @@ import { Spells } from "../../../types/Enums/Spells";
 import { Hero } from "../../Hero";
 
 export const Ash = new Hero(
-	'Эш',
+	'Пепел',
 	HeroClasses.HERETIC,
 	Genders.FEMALE,
 	Races.DEMON,
@@ -22,7 +23,8 @@ export const Ash = new Hero(
 	0,
 	10,
 	Spells.BLOOD_LUST,
-	[SecondarySkills.WISDOM, SecondarySkills.EAGLE_EYE]
+	[SecondarySkills.WISDOM, SecondarySkills.EAGLE_EYE],
+	HereticsDescription.ASH
 );
 
 export const Axsis = new Hero(
@@ -40,11 +42,12 @@ export const Axsis = new Hero(
 	0,
 	10,
 	Spells.PROTECTION_FROM_AIR,
-	[SecondarySkills.WISDOM, SecondarySkills.MYSTICISM]
+	[SecondarySkills.WISDOM, SecondarySkills.MYSTICISM],
+	HereticsDescription.AXSIS
 );
 
 export const Ayden = new Hero(
-	'Эйден',
+	'Айден',
 	HeroClasses.HERETIC,
 	Genders.MALE,
 	Races.HUMAN,
@@ -58,7 +61,8 @@ export const Ayden = new Hero(
 	0,
 	10,
 	Spells.VIEW_EARTH,
-	[SecondarySkills.WISDOM, SecondarySkills.INTELLIGENCE]
+	[SecondarySkills.WISDOM, SecondarySkills.INTELLIGENCE],
+	HereticsDescription.AYDEN
 );
 
 export const Calid = new Hero(
@@ -76,7 +80,8 @@ export const Calid = new Hero(
 	0,
 	10,
 	Spells.HASTE,
-	[SecondarySkills.WISDOM, SecondarySkills.LEARNING]
+	[SecondarySkills.WISDOM, SecondarySkills.LEARNING],
+	HereticsDescription.CALID
 );
 
 export const Olema = new Hero(
@@ -94,7 +99,8 @@ export const Olema = new Hero(
 	0,
 	10,
 	Spells.WEAKNESS,
-	[SecondarySkills.WISDOM, SecondarySkills.BALISTICS]
+	[SecondarySkills.WISDOM, SecondarySkills.BALISTICS],
+	HereticsDescription.OLEMA
 );
 
 export const Xarfax = new Hero(
@@ -112,11 +118,12 @@ export const Xarfax = new Hero(
 	0,
 	10,
 	Spells.FIREBALL,
-	[SecondarySkills.WISDOM, SecondarySkills.LEARNING]
+	[SecondarySkills.WISDOM, SecondarySkills.LEARNING],
+	HereticsDescription.XARFAX
 );
 
 export const Xyron = new Hero(
-	'Ксурон',
+	'Ксирон',
 	HeroClasses.HERETIC,
 	Genders.MALE,
 	Races.EFREET,
@@ -130,8 +137,10 @@ export const Xyron = new Hero(
 	0,
 	10,
 	Spells.INFERNO,
-	[SecondarySkills.WISDOM, SecondarySkills.SCOLAR]
+	[SecondarySkills.WISDOM, SecondarySkills.SCOLAR],
+	HereticsDescription.XYRON
 );
+
 export const Zydar = new Hero(
 	'Зидар',
 	HeroClasses.HERETIC,
@@ -147,5 +156,6 @@ export const Zydar = new Hero(
 	0,
 	10,
 	Spells.STONE_SKIN,
-	[SecondarySkills.WISDOM, SecondarySkills.SORCERY]
+	[SecondarySkills.WISDOM, SecondarySkills.SORCERY],
+	HereticsDescription.ZYDAR
 );

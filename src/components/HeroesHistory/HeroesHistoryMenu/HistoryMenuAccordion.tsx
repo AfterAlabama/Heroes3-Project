@@ -8,12 +8,13 @@ import HistoryMenuAccordionHead from './HistoryMenuAccordionHead';
 import HistoryMenuAccordionContent from './HistoryMenuAccordionContent';
 import { Hero } from '../../../heroes/Hero';
 
-export interface HistoryMenuAccordionProps {
+interface HistoryMenuAccordionProps {
 	panelNumber: string;
 	heroName: string;
 	heroSpec: string;
 	heroPic: string;
-	hero: Hero
+	hero: Hero;
+	heroDescription: string
 }
 
 const HistoryMenuAccordion: FC<HistoryMenuAccordionProps> = ({
@@ -21,7 +22,8 @@ const HistoryMenuAccordion: FC<HistoryMenuAccordionProps> = ({
 	heroName,
 	heroSpec,
 	heroPic,
-	hero
+	hero,
+	heroDescription
 }) => {
 	const dispatch = useAppDispatch();
 	const { toggleAccordion } = MainSlice.actions;
@@ -51,7 +53,7 @@ const HistoryMenuAccordion: FC<HistoryMenuAccordionProps> = ({
 				heroPic={heroPic}
 				hero={hero}
 			/>
-			<HistoryMenuAccordionContent />
+			<HistoryMenuAccordionContent heroDescription={heroDescription} />
 		</MenuAccordion>
 	);
 };

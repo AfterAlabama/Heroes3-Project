@@ -1,3 +1,4 @@
+import { PlaneswalkersDescription } from '../../../types/Enums/Descriptions/Conflux/PlaneswalkersDescription';
 import { Genders } from '../../../types/Enums/Genders';
 import { HeroClasses } from '../../../types/Enums/HeroClasses';
 import { HeroPics } from '../../../types/Enums/HeroPics';
@@ -21,7 +22,8 @@ export const Erdamon = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.TACTICS, SecondarySkills.ESTATES]
+	[SecondarySkills.TACTICS, SecondarySkills.ESTATES],
+	PlaneswalkersDescription.ERDAMON
 );
 
 export const Fiur = new Hero(
@@ -39,7 +41,8 @@ export const Fiur = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.OFFENSE]
+	[SecondarySkills.OFFENSE],
+	PlaneswalkersDescription.FIUR
 );
 
 export const Ignissa = new Hero(
@@ -57,7 +60,8 @@ export const Ignissa = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.BALLISTA, SecondarySkills.OFFENSE]
+	[SecondarySkills.BALLISTA, SecondarySkills.OFFENSE],
+	PlaneswalkersDescription.IGNISSA
 );
 
 export const Lacus = new Hero(
@@ -75,11 +79,12 @@ export const Lacus = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.TACTICS]
+	[SecondarySkills.TACTICS],
+	PlaneswalkersDescription.LACUS
 );
 
 export const Kalt = new Hero(
-	'Калт',
+	'Кальт',
 	HeroClasses.PLANESWALKER,
 	Genders.FEMALE,
 	Races.ELEMENTAL,
@@ -93,11 +98,12 @@ export const Kalt = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.TACTICS, SecondarySkills.LEARNING]
+	[SecondarySkills.TACTICS, SecondarySkills.LEARNING],
+	PlaneswalkersDescription.KALT
 );
 
 export const Monere = new Hero(
-	'Монере',
+	'Монер',
 	HeroClasses.PLANESWALKER,
 	Genders.MALE,
 	Races.ELEMENTAL,
@@ -111,7 +117,8 @@ export const Monere = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.OFFENSE, SecondarySkills.LOGISTICS]
+	[SecondarySkills.OFFENSE, SecondarySkills.LOGISTICS],
+	PlaneswalkersDescription.MONERE
 );
 
 export const Pasis = new Hero(
@@ -129,7 +136,8 @@ export const Pasis = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.OFFENSE, SecondarySkills.BALLISTA]
+	[SecondarySkills.OFFENSE, SecondarySkills.BALLISTA],
+	PlaneswalkersDescription.PASIS
 );
 
 export const Thunar = new Hero(
@@ -147,5 +155,6 @@ export const Thunar = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.TACTICS, SecondarySkills.ESTATES]
+	[SecondarySkills.TACTICS, SecondarySkills.ESTATES],
+	PlaneswalkersDescription.THUNAR
 );

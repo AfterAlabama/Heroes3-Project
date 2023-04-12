@@ -1,3 +1,4 @@
+import { OverlordsDescription } from "../../../types/Enums/Descriptions/Dungeon/OverlordsDescription";
 import { Genders } from "../../../types/Enums/Genders";
 import { HeroClasses } from "../../../types/Enums/HeroClasses";
 import { HeroPics } from "../../../types/Enums/HeroPics";
@@ -21,11 +22,12 @@ export const Ajit = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.LEADERSHIP, SecondarySkills.RESISTANCE]
+	[SecondarySkills.LEADERSHIP, SecondarySkills.RESISTANCE],
+	OverlordsDescription.AJIT
 );
 
 export const Arlach = new Hero(
-	'Арлак',
+	'Арлаш',
 	HeroClasses.OVERLORD,
 	Genders.MALE,
 	Races.TROGLODYTE,
@@ -39,7 +41,8 @@ export const Arlach = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.OFFENSE, SecondarySkills.BALLISTA]
+	[SecondarySkills.OFFENSE, SecondarySkills.BALLISTA],
+	OverlordsDescription.ARLACH
 );
 
 export const Dace = new Hero(
@@ -57,7 +60,8 @@ export const Dace = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.OFFENSE, SecondarySkills.TACTICS]
+	[SecondarySkills.OFFENSE, SecondarySkills.TACTICS],
+	OverlordsDescription.DACE
 );
 
 export const Damacon = new Hero(
@@ -75,11 +79,12 @@ export const Damacon = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.OFFENSE]
+	[SecondarySkills.OFFENSE],
+	OverlordsDescription.DAMACON
 );
 
 export const Gunnar = new Hero(
-	'Гунар',
+	'Гуннар',
 	HeroClasses.OVERLORD,
 	Genders.MALE,
 	Races.MINOTAUR,
@@ -93,7 +98,8 @@ export const Gunnar = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.TACTICS, SecondarySkills.LOGISTICS]
+	[SecondarySkills.TACTICS, SecondarySkills.LOGISTICS],
+	OverlordsDescription.GUNNAR
 );
 
 export const Lorelei = new Hero(
@@ -111,7 +117,8 @@ export const Lorelei = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.LEADERSHIP, SecondarySkills.SCOUTING]
+	[SecondarySkills.LEADERSHIP, SecondarySkills.SCOUTING],
+	OverlordsDescription.LORELEI
 );
 
 export const Shakti = new Hero(
@@ -129,7 +136,8 @@ export const Shakti = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.OFFENSE, SecondarySkills.TACTICS]
+	[SecondarySkills.OFFENSE, SecondarySkills.TACTICS],
+	OverlordsDescription.SHAKTI
 );
 
 export const Synca = new Hero(
@@ -147,5 +155,6 @@ export const Synca = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.LEADERSHIP, SecondarySkills.SCOLAR]
+	[SecondarySkills.LEADERSHIP, SecondarySkills.SCOLAR],
+	OverlordsDescription.SYNCA
 );

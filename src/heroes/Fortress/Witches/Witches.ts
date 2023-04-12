@@ -1,3 +1,4 @@
+import { WitchesDescription } from "../../../types/Enums/Descriptions/Fortress/WitchesDescription";
 import { Genders } from "../../../types/Enums/Genders";
 import { HeroClasses } from "../../../types/Enums/HeroClasses";
 import { HeroPics } from "../../../types/Enums/HeroPics";
@@ -23,7 +24,8 @@ export const Andra = new Hero(
 	0,
 	25,
 	Spells.DISPEL,
-	[SecondarySkills.WISDOM, SecondarySkills.INTELLIGENCE]
+	[SecondarySkills.WISDOM, SecondarySkills.INTELLIGENCE],
+	WitchesDescription.ANDRA
 );
 
 export const Merist = new Hero(
@@ -41,7 +43,8 @@ export const Merist = new Hero(
 	0,
 	25,
 	Spells.STONE_SKIN,
-	[SecondarySkills.WISDOM, SecondarySkills.LEARNING]
+	[SecondarySkills.WISDOM, SecondarySkills.LEARNING],
+	WitchesDescription.MERIST
 );
 
 export const Mirlanda = new Hero(
@@ -59,7 +62,8 @@ export const Mirlanda = new Hero(
 	0,
 	25,
 	Spells.WEAKNESS,
-	[SecondarySkills.WISDOM]
+	[SecondarySkills.WISDOM],
+	WitchesDescription.MIRLANDA
 );
 
 export const Rosic = new Hero(
@@ -77,7 +81,8 @@ export const Rosic = new Hero(
 	0,
 	25,
 	Spells.MAGIC_ARROW,
-	[SecondarySkills.WISDOM, SecondarySkills.MYSTICISM]
+	[SecondarySkills.WISDOM, SecondarySkills.MYSTICISM],
+	WitchesDescription.ROSIC
 );
 
 export const Styg = new Hero(
@@ -95,7 +100,8 @@ export const Styg = new Hero(
 	0,
 	25,
 	Spells.SHIELD,
-	[SecondarySkills.WISDOM, SecondarySkills.SORCERY]
+	[SecondarySkills.WISDOM, SecondarySkills.SORCERY],
+	WitchesDescription.STYG
 );
 
 export const Tiva = new Hero(
@@ -113,7 +119,8 @@ export const Tiva = new Hero(
 	0,
 	25,
 	Spells.STONE_SKIN,
-	[SecondarySkills.WISDOM, SecondarySkills.EAGLE_EYE]
+	[SecondarySkills.WISDOM, SecondarySkills.EAGLE_EYE],
+	WitchesDescription.TIVA
 );
 
 export const Verdish = new Hero(
@@ -131,7 +138,8 @@ export const Verdish = new Hero(
 	0,
 	25,
 	Spells.PROTECTION_FROM_FIRE,
-	[SecondarySkills.WISDOM, SecondarySkills.FIRST_AID]
+	[SecondarySkills.WISDOM, SecondarySkills.FIRST_AID],
+	WitchesDescription.VERDISH
 );
 
 export const Voy = new Hero(
@@ -149,5 +157,6 @@ export const Voy = new Hero(
 	0,
 	25,
 	Spells.SLOW,
-	[SecondarySkills.WISDOM, SecondarySkills.NAVIGATION]
+	[SecondarySkills.WISDOM, SecondarySkills.NAVIGATION],
+	WitchesDescription.VOY
 );

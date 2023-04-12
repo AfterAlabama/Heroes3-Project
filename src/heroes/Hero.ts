@@ -34,7 +34,8 @@ export class Hero implements HeroCharsType {
 		public luck: number,
 		public initialSpellPoints: number,
 		public initialSpells: string | null,
-		public baseSpecialties: string[]
+		public baseSpecialties: string[],
+		public description: string
 	) {
 		this.name = name;
 		this.specialization = specialization;
@@ -50,6 +51,7 @@ export class Hero implements HeroCharsType {
 		this.initialSpells = initialSpells;
 		this.race = race;
 		this.gender = gender;
-		this.baseSpecialties = baseSpecialties
+		this.baseSpecialties = baseSpecialties;
+		this.description = description
 	}
 }

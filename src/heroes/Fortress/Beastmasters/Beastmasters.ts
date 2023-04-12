@@ -1,3 +1,4 @@
+import { BeastmastersDescription } from "../../../types/Enums/Descriptions/Fortress/BeastmastersDescription";
 import { Genders } from "../../../types/Enums/Genders";
 import { HeroClasses } from "../../../types/Enums/HeroClasses";
 import { HeroPics } from "../../../types/Enums/HeroPics";
@@ -21,11 +22,12 @@ export const Alkin = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.DEFENSE, SecondarySkills.OFFENSE]
+	[SecondarySkills.DEFENSE, SecondarySkills.OFFENSE],
+	BeastmastersDescription.ALKIN
 );
 
 export const Brogchild = new Hero(
-	'Брогчайлд',
+	'Брохильд',
 	HeroClasses.BEASTMASTER,
 	Genders.MALE,
 	Races.LIZARDMAN,
@@ -39,7 +41,8 @@ export const Brogchild = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.DEFENSE, SecondarySkills.SCOUTING]
+	[SecondarySkills.DEFENSE, SecondarySkills.SCOUTING],
+	BeastmastersDescription.BROGCHILD
 );
 
 export const Bron = new Hero(
@@ -57,7 +60,8 @@ export const Bron = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.DEFENSE, SecondarySkills.RESISTANCE]
+	[SecondarySkills.DEFENSE, SecondarySkills.RESISTANCE],
+	BeastmastersDescription.BRON
 );
 
 export const Drakon = new Hero(
@@ -75,7 +79,8 @@ export const Drakon = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.DEFENSE, SecondarySkills.LEADERSHIP]
+	[SecondarySkills.DEFENSE, SecondarySkills.LEADERSHIP],
+	BeastmastersDescription.DRAKON
 );
 
 export const Gerwulf = new Hero(
@@ -93,7 +98,8 @@ export const Gerwulf = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.DEFENSE, SecondarySkills.BALLISTA]
+	[SecondarySkills.DEFENSE, SecondarySkills.BALLISTA],
+	BeastmastersDescription.GERWULF
 );
 
 export const Korbac = new Hero(
@@ -111,7 +117,8 @@ export const Korbac = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.DEFENSE, SecondarySkills.PATH_FINDING]
+	[SecondarySkills.DEFENSE, SecondarySkills.PATH_FINDING],
+	BeastmastersDescription.KORBAC
 );
 
 export const Tazar = new Hero(
@@ -129,7 +136,8 @@ export const Tazar = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.DEFENSE]
+	[SecondarySkills.DEFENSE],
+	BeastmastersDescription.TAZAR
 );
 
 export const Wystan = new Hero(
@@ -147,5 +155,6 @@ export const Wystan = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.DEFENSE, SecondarySkills.ARCHERY]
+	[SecondarySkills.DEFENSE, SecondarySkills.ARCHERY],
+	BeastmastersDescription.WYSTAN
 );

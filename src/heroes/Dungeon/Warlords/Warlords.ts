@@ -1,3 +1,4 @@
+import { WarlordsDescription } from "../../../types/Enums/Descriptions/Dungeon/WarlordsDescription";
 import { Genders } from "../../../types/Enums/Genders";
 import { HeroClasses } from "../../../types/Enums/HeroClasses";
 import { HeroPics } from "../../../types/Enums/HeroPics";
@@ -23,11 +24,12 @@ export const Alamar = new Hero(
 	0,
 	20,
 	Spells.RESURRECTION,
-	[SecondarySkills.WISDOM, SecondarySkills.SCOLAR]
+	[SecondarySkills.WISDOM, SecondarySkills.SCOLAR],
+	WarlordsDescription.ALAMAR
 );
 
 export const Darkstorn = new Hero(
-	'Даркстоун',
+	'Дарксторм',
 	HeroClasses.WARLOCK,
 	Genders.MALE,
 	Races.MINOTAUR,
@@ -41,11 +43,12 @@ export const Darkstorn = new Hero(
 	0,
 	20,
 	Spells.STONE_SKIN,
-	[SecondarySkills.WISDOM, SecondarySkills.LEARNING]
+	[SecondarySkills.WISDOM, SecondarySkills.LEARNING],
+	WarlordsDescription.DARKSTORN
 );
 
 export const Deemer = new Hero(
-	'Дамир',
+	'Димeр',
 	HeroClasses.WARLOCK,
 	Genders.MALE,
 	Races.MINOTAUR,
@@ -59,7 +62,8 @@ export const Deemer = new Hero(
 	0,
 	20,
 	Spells.METEOR_SHOWER,
-	[SecondarySkills.SCOUTING, SecondarySkills.WISDOM]
+	[SecondarySkills.SCOUTING, SecondarySkills.WISDOM],
+	WarlordsDescription.DEEMER
 );
 
 export const Geon = new Hero(
@@ -77,11 +81,12 @@ export const Geon = new Hero(
 	0,
 	20,
 	Spells.SLOW,
-	[SecondarySkills.WISDOM, SecondarySkills.EAGLE_EYE]
+	[SecondarySkills.WISDOM, SecondarySkills.EAGLE_EYE],
+	WarlordsDescription.GEON
 );
 
 export const Jaegar = new Hero(
-	'Джаггер',
+	'Ягер',
 	HeroClasses.WARLOCK,
 	Genders.MALE,
 	Races.TROGLODYTE,
@@ -95,11 +100,12 @@ export const Jaegar = new Hero(
 	0,
 	20,
 	Spells.SHIELD,
-	[SecondarySkills.WISDOM, SecondarySkills.MYSTICISM]
+	[SecondarySkills.WISDOM, SecondarySkills.MYSTICISM],
+	WarlordsDescription.JAEGAR
 );
 
 export const Jeddite = new Hero(
-	'Джедит',
+	'Джеддит',
 	HeroClasses.WARLOCK,
 	Genders.MALE,
 	Races.HUMAN,
@@ -113,7 +119,8 @@ export const Jeddite = new Hero(
 	0,
 	20,
 	Spells.RESURRECTION,
-	[SecondarySkills.WISDOM]
+	[SecondarySkills.WISDOM],
+	WarlordsDescription.JEDDITE
 );
 
 export const Malekith = new Hero(
@@ -131,7 +138,8 @@ export const Malekith = new Hero(
 	0,
 	20,
 	Spells.BLOOD_LUST,
-	[SecondarySkills.WISDOM, SecondarySkills.SORCERY]
+	[SecondarySkills.WISDOM, SecondarySkills.SORCERY],
+	WarlordsDescription.MALEKITH
 );
 
 export const Sephinroth = new Hero(
@@ -149,5 +157,6 @@ export const Sephinroth = new Hero(
 	0,
 	20,
 	Spells.PROTECTION_FROM_AIR,
-	[SecondarySkills.WISDOM, SecondarySkills.INTELLIGENCE]
+	[SecondarySkills.WISDOM, SecondarySkills.INTELLIGENCE],
+	WarlordsDescription.SEPHINROTH
 );

@@ -16,6 +16,7 @@ const HistoryMenuAccordions: FC<AccordionsProps> = ({ heroesArray }) => {
 			heroName={hero.name}
 			heroSpec={hero.specialization}
 			heroPic={hero.pic as unknown as string}
+			heroDescription={hero.description}
 		/>
 	));
 

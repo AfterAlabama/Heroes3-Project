@@ -1,3 +1,4 @@
+import { AlchemistsDescription } from "../../../types/Enums/Descriptions/Tower/AlchemistsDescription";
 import { Genders } from "../../../types/Enums/Genders";
 import { HeroClasses } from "../../../types/Enums/HeroClasses";
 import { HeroPics } from "../../../types/Enums/HeroPics";
@@ -22,7 +23,8 @@ export const Fafner = new Hero(
 	0,
 	20,
 	Spells.HASTE,
-	[SecondarySkills.SCOLAR, SecondarySkills.RESISTANCE]
+	[SecondarySkills.SCOLAR, SecondarySkills.RESISTANCE],
+	AlchemistsDescription.FAFNER
 );
 
 export const Iona = new Hero(
@@ -40,11 +42,12 @@ export const Iona = new Hero(
 	0,
 	20,
 	Spells.MAGIC_ARROW,
-	[SecondarySkills.SCOLAR, SecondarySkills.INTELLIGENCE]
+	[SecondarySkills.SCOLAR, SecondarySkills.INTELLIGENCE],
+	AlchemistsDescription.IONA
 );
 
 export const Josephine = new Hero(
-	'Джозефина',
+	'Жозефина',
 	HeroClasses.ALCHEMIST,
 	Genders.FEMALE,
 	Races.HUMAN,
@@ -58,11 +61,12 @@ export const Josephine = new Hero(
 	0,
 	20,
 	Spells.HASTE,
-	[SecondarySkills.MYSTICISM, SecondarySkills.SORCERY]
+	[SecondarySkills.MYSTICISM, SecondarySkills.SORCERY],
+	AlchemistsDescription.JOSEPHINE
 );
 
 export const Neela = new Hero(
-	'Ниила',
+	'Нила',
 	HeroClasses.ALCHEMIST,
 	Genders.FEMALE,
 	Races.GENIE,
@@ -76,11 +80,12 @@ export const Neela = new Hero(
 	0,
 	20,
 	Spells.SHIELD,
-	[SecondarySkills.SCOLAR, SecondarySkills.DEFENSE]
+	[SecondarySkills.SCOLAR, SecondarySkills.DEFENSE],
+	AlchemistsDescription.NEELA
 );
 
 export const Piquedram = new Hero(
-	'Пикадрам',
+	'Пикедрам',
 	HeroClasses.ALCHEMIST,
 	Genders.MALE,
 	Races.HUMAN,
@@ -94,7 +99,8 @@ export const Piquedram = new Hero(
 	0,
 	20,
 	Spells.SHIELD,
-	[SecondarySkills.MYSTICISM, SecondarySkills.SCOUTING]
+	[SecondarySkills.MYSTICISM, SecondarySkills.SCOUTING],
+	AlchemistsDescription.PIQUEDRAM
 );
 
 export const Rissa = new Hero(
@@ -112,11 +118,12 @@ export const Rissa = new Hero(
 	0,
 	20,
 	Spells.MAGIC_ARROW,
-	[SecondarySkills.MYSTICISM, SecondarySkills.OFFENSE]
+	[SecondarySkills.MYSTICISM, SecondarySkills.OFFENSE],
+	AlchemistsDescription.RISSA
 );
 
 export const Thane = new Hero(
-	'Тейн',
+	'Тан',
 	HeroClasses.ALCHEMIST,
 	Genders.MALE,
 	Races.GENIE,
@@ -130,7 +137,8 @@ export const Thane = new Hero(
 	0,
 	20,
 	Spells.MAGIC_ARROW,
-	[SecondarySkills.SCOLAR]
+	[SecondarySkills.SCOLAR],
+	AlchemistsDescription.THANE
 );
 
 export const Torosar = new Hero(
@@ -148,5 +156,6 @@ export const Torosar = new Hero(
 	0,
 	20,
 	Spells.MAGIC_ARROW,
-	[SecondarySkills.MYSTICISM, SecondarySkills.TACTICS]
+	[SecondarySkills.MYSTICISM, SecondarySkills.TACTICS],
+	AlchemistsDescription.TOROSAR
 );

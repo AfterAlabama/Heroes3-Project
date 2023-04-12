@@ -1,3 +1,4 @@
+import { BattleMagesDescription } from "../../../types/Enums/Descriptions/Stronghold/BattleMagesDescription";
 import { Genders } from "../../../types/Enums/Genders";
 import { HeroClasses } from "../../../types/Enums/HeroClasses";
 import { HeroPics } from "../../../types/Enums/HeroPics";
@@ -22,11 +23,12 @@ export const Dessa = new Hero(
 	0,
 	10,
 	Spells.STONE_SKIN,
-	[SecondarySkills.WISDOM, SecondarySkills.LOGISTICS]
+	[SecondarySkills.WISDOM, SecondarySkills.LOGISTICS],
+	BattleMagesDescription.DESSA
 );
 
 export const Gird = new Hero(
-	'Герд',
+	'Гирд',
 	HeroClasses.BATTLE_MAGE,
 	Genders.FEMALE,
 	Races.HUMAN,
@@ -40,7 +42,8 @@ export const Gird = new Hero(
 	0,
 	10,
 	Spells.BLOOD_LUST,
-	[SecondarySkills.WISDOM, SecondarySkills.SORCERY]
+	[SecondarySkills.WISDOM, SecondarySkills.SORCERY],
+	BattleMagesDescription.GIRD
 );
 
 export const Gundula = new Hero(
@@ -58,7 +61,8 @@ export const Gundula = new Hero(
 	0,
 	10,
 	Spells.SLOW,
-	[SecondarySkills.WISDOM, SecondarySkills.OFFENSE]
+	[SecondarySkills.WISDOM, SecondarySkills.OFFENSE],
+	BattleMagesDescription.GUNDULA
 );
 
 export const Oris = new Hero(
@@ -76,11 +80,12 @@ export const Oris = new Hero(
 	0,
 	10,
 	Spells.PROTECTION_FROM_AIR,
-	[SecondarySkills.WISDOM, SecondarySkills.EAGLE_EYE]
+	[SecondarySkills.WISDOM, SecondarySkills.EAGLE_EYE],
+	BattleMagesDescription.ORIS
 );
 
 export const Saurug = new Hero(
-	'Сауруг',
+	'Соруг',
 	HeroClasses.BATTLE_MAGE,
 	Genders.MALE,
 	Races.OGRE,
@@ -94,7 +99,8 @@ export const Saurug = new Hero(
 	0,
 	10,
 	Spells.BLOOD_LUST,
-	[SecondarySkills.WISDOM, SecondarySkills.RESISTANCE]
+	[SecondarySkills.WISDOM, SecondarySkills.RESISTANCE],
+	BattleMagesDescription.SAURUG
 );
 
 export const Terek = new Hero(
@@ -112,7 +118,8 @@ export const Terek = new Hero(
 	0,
 	10,
 	Spells.HASTE,
-	[SecondarySkills.WISDOM, SecondarySkills.TACTICS]
+	[SecondarySkills.WISDOM, SecondarySkills.TACTICS],
+	BattleMagesDescription.TEREK
 );
 
 export const Vey = new Hero(
@@ -130,7 +137,8 @@ export const Vey = new Hero(
 	0,
 	10,
 	Spells.MAGIC_ARROW,
-	[SecondarySkills.WISDOM, SecondarySkills.LEADERSHIP]
+	[SecondarySkills.WISDOM, SecondarySkills.LEADERSHIP],
+	BattleMagesDescription.VEY
 );
 
 export const Zubin = new Hero(
@@ -148,5 +156,6 @@ export const Zubin = new Hero(
 	0,
 	10,
 	Spells.PRECISION,
-	[SecondarySkills.WISDOM, SecondarySkills.BALLISTA]
+	[SecondarySkills.WISDOM, SecondarySkills.BALLISTA],
+	BattleMagesDescription.ZUBIN
 );

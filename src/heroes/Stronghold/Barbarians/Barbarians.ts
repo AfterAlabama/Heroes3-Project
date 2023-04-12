@@ -1,3 +1,4 @@
+import { BarbariansDescription } from "../../../types/Enums/Descriptions/Stronghold/BarbariansDescription";
 import { Genders } from "../../../types/Enums/Genders";
 import { HeroClasses } from "../../../types/Enums/HeroClasses";
 import { HeroPics } from "../../../types/Enums/HeroPics";
@@ -7,7 +8,7 @@ import { Specialties } from "../../../types/Enums/Specialties";
 import { Hero } from "../../Hero";
 
 export const CragHack = new Hero(
-	'Крэг Хэк',
+	'Крэг Хак',
 	HeroClasses.BARBARIAN,
 	Genders.MALE,
 	Races.HUMAN,
@@ -21,11 +22,12 @@ export const CragHack = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.OFFENSE]
+	[SecondarySkills.OFFENSE],
+	BarbariansDescription.CRAG_HACK
 );
 
 export const Gretchin = new Hero(
-	'Гретчин',
+	'Гретхен',
 	HeroClasses.BARBARIAN,
 	Genders.FEMALE,
 	Races.GOBLIN,
@@ -39,7 +41,8 @@ export const Gretchin = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.OFFENSE, SecondarySkills.PATH_FINDING]
+	[SecondarySkills.OFFENSE, SecondarySkills.PATH_FINDING],
+	BarbariansDescription.GRETCHIN
 );
 
 export const Gurnisson = new Hero(
@@ -57,11 +60,12 @@ export const Gurnisson = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.OFFENSE, SecondarySkills.BALLISTA]
+	[SecondarySkills.OFFENSE, SecondarySkills.BALLISTA],
+	BarbariansDescription.GURNISSON
 );
 
 export const Jabarkas = new Hero(
-	'Джабаркас',
+	'Жабаркас',
 	HeroClasses.BARBARIAN,
 	Genders.MALE,
 	Races.GOBLIN,
@@ -75,11 +79,12 @@ export const Jabarkas = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.OFFENSE, SecondarySkills.ARCHERY]
+	[SecondarySkills.OFFENSE, SecondarySkills.ARCHERY],
+	BarbariansDescription.JABARKAS
 );
 
 export const Krellion = new Hero(
-	'Крелион',
+	'Креллион',
 	HeroClasses.BARBARIAN,
 	Genders.MALE,
 	Races.OGRE,
@@ -93,7 +98,8 @@ export const Krellion = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.OFFENSE, SecondarySkills.RESISTANCE]
+	[SecondarySkills.OFFENSE, SecondarySkills.RESISTANCE],
+	BarbariansDescription.KRELLION
 );
 
 export const Shiva = new Hero(
@@ -111,7 +117,8 @@ export const Shiva = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.OFFENSE, SecondarySkills.SCOUTING]
+	[SecondarySkills.OFFENSE, SecondarySkills.SCOUTING],
+	BarbariansDescription.SHIVA
 );
 
 export const Tyraxor = new Hero(
@@ -129,7 +136,8 @@ export const Tyraxor = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.OFFENSE, SecondarySkills.TACTICS]
+	[SecondarySkills.OFFENSE, SecondarySkills.TACTICS],
+	BarbariansDescription.TYRAXOR
 );
 
 export const Yog = new Hero(
@@ -147,6 +155,7 @@ export const Yog = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.OFFENSE, SecondarySkills.BALISTICS]
+	[SecondarySkills.OFFENSE, SecondarySkills.BALISTICS],
+	BarbariansDescription.YOG
 );
 

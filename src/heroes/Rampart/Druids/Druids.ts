@@ -1,3 +1,4 @@
+import { DruidsDescription } from "../../../types/Enums/Descriptions/Rampart/DruidsDescription";
 import { Genders } from "../../../types/Enums/Genders";
 import { HeroClasses } from "../../../types/Enums/HeroClasses";
 import { HeroPics } from "../../../types/Enums/HeroPics";
@@ -8,7 +9,7 @@ import { Spells } from "../../../types/Enums/Spells";
 import { Hero } from "../../Hero";
 
 export const Aeris = new Hero(
-	'Эйрис',
+	'Аэрис',
 	HeroClasses.DRUID,
 	Genders.MALE,
 	Races.ELF,
@@ -22,7 +23,8 @@ export const Aeris = new Hero(
 	0,
 	20,
 	Spells.PROTECTION_FROM_AIR,
-	[SecondarySkills.WISDOM, SecondarySkills.SCOUTING]
+	[SecondarySkills.WISDOM, SecondarySkills.SCOUTING],
+	DruidsDescription.AERIS
 );
 
 export const Alagar = new Hero(
@@ -40,11 +42,12 @@ export const Alagar = new Hero(
 	0,
 	20,
 	Spells.ICE_BOLT,
-	[SecondarySkills.WISDOM, SecondarySkills.SORCERY]
+	[SecondarySkills.WISDOM, SecondarySkills.SORCERY],
+	DruidsDescription.ALAGAR
 );
 
 export const Coronius = new Hero(
-	'Корониус',
+	'Короний',
 	HeroClasses.DRUID,
 	Genders.MALE,
 	Races.HUMAN,
@@ -58,11 +61,12 @@ export const Coronius = new Hero(
 	0,
 	20,
 	Spells.SLAYER,
-	[SecondarySkills.WISDOM, SecondarySkills.SCOLAR]
+	[SecondarySkills.WISDOM, SecondarySkills.SCOLAR],
+	DruidsDescription.CORONIUS
 );
 
 export const Elleshar = new Hero(
-	'Эллешар',
+	'Эльшар',
 	HeroClasses.DRUID,
 	Genders.MALE,
 	Races.ELF,
@@ -76,7 +80,8 @@ export const Elleshar = new Hero(
 	0,
 	20,
 	Spells.CURSE,
-	[SecondarySkills.WISDOM, SecondarySkills.INTELLIGENCE]
+	[SecondarySkills.WISDOM, SecondarySkills.INTELLIGENCE],
+	DruidsDescription.ELESHAR
 );
 
 export const Gem = new Hero(
@@ -94,7 +99,8 @@ export const Gem = new Hero(
 	0,
 	20,
 	Spells.SUMMON_BOAT,
-	[SecondarySkills.WISDOM, SecondarySkills.FIRST_AID]
+	[SecondarySkills.WISDOM, SecondarySkills.FIRST_AID],
+	DruidsDescription.GEM
 );
 
 export const Malcom = new Hero(
@@ -112,11 +118,12 @@ export const Malcom = new Hero(
 	0,
 	20,
 	Spells.MAGIC_ARROW,
-	[SecondarySkills.WISDOM, SecondarySkills.EAGLE_EYE]
+	[SecondarySkills.WISDOM, SecondarySkills.EAGLE_EYE],
+	DruidsDescription.MALCOM
 );
 
 export const Melodia = new Hero(
-	'Мэлоди',
+	'Мелодия',
 	HeroClasses.DRUID,
 	Genders.FEMALE,
 	Races.ELF,
@@ -130,7 +137,8 @@ export const Melodia = new Hero(
 	0,
 	20,
 	Spells.FORTUNE,
-	[SecondarySkills.WISDOM, SecondarySkills.LUCK]
+	[SecondarySkills.WISDOM, SecondarySkills.LUCK],
+	DruidsDescription.MELODIA
 );
 
 export const Uland = new Hero(
@@ -148,5 +156,6 @@ export const Uland = new Hero(
 	0,
 	20,
 	Spells.CURE,
-	[SecondarySkills.WISDOM, SecondarySkills.BALISTICS]
+	[SecondarySkills.WISDOM, SecondarySkills.BALISTICS],
+	DruidsDescription.ULAND
 );

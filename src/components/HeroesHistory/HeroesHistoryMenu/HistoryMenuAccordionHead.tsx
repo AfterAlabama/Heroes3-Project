@@ -3,7 +3,6 @@ import { MenuAccordionSummary } from '../../../styles/Accordion';
 import Typography from '@mui/material/Typography';
 import { FC } from 'react';
 import blue from '@mui/material/colors/blue';
-import { HistoryMenuAccordionProps } from './HistoryMenuAccordion';
 import { CastleHeroes } from '../../../heroes/Castle/CastleHeroes';
 import { RampartHeroes } from '../../../heroes/Rampart/RampartHeroes';
 import green from '@mui/material/colors/green';
@@ -16,8 +15,17 @@ import { StrongholdHeroes } from '../../../heroes/Stronghold/StrongholdHeroes';
 import brown from '@mui/material/colors/brown';
 import { DungeonHeroes } from '../../../heroes/Dungeon/DungeonHeroes';
 import { FortressHeroes } from '../../../heroes/Fortress/FortressHeroes';
+import { Hero } from '../../../heroes/Hero';
 
-const HistoryMenuAccordionHead: FC<HistoryMenuAccordionProps> = ({
+interface HistorymenuAccordionHeadprops {
+	panelNumber: string;
+	heroName: string;
+	heroSpec: string;
+	heroPic: string;
+	hero: Hero;
+}
+
+const HistoryMenuAccordionHead: FC<HistorymenuAccordionHeadprops> = ({
 	panelNumber,
 	heroName,
 	heroSpec,

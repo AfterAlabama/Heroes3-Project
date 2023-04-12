@@ -1,3 +1,4 @@
+import { DemoniacsDescription } from "../../../types/Enums/Descriptions/Inferno/DemoniacsDescription";
 import { Genders } from "../../../types/Enums/Genders";
 import { HeroClasses } from "../../../types/Enums/HeroClasses";
 import { HeroPics } from "../../../types/Enums/HeroPics";
@@ -7,7 +8,7 @@ import { Specialties } from "../../../types/Enums/Specialties";
 import { Hero } from "../../Hero";
 
 export const Calh = new Hero(
-	'Калх',
+	'Кэлх',
 	HeroClasses.DEMONIAC,
 	Genders.MALE,
 	Races.DEMON,
@@ -21,7 +22,8 @@ export const Calh = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.ARCHERY, SecondarySkills.SCOUTING]
+	[SecondarySkills.ARCHERY, SecondarySkills.SCOUTING],
+	DemoniacsDescription.CALH
 );
 
 export const Fiona = new Hero(
@@ -39,7 +41,8 @@ export const Fiona = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.SCOUTING]
+	[SecondarySkills.SCOUTING],
+	DemoniacsDescription.FIONA
 );
 
 export const Ignatius = new Hero(
@@ -57,7 +60,8 @@ export const Ignatius = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.TACTICS, SecondarySkills.RESISTANCE]
+	[SecondarySkills.TACTICS, SecondarySkills.RESISTANCE],
+	DemoniacsDescription.IGNATIUS
 );
 
 export const Marius = new Hero(
@@ -75,7 +79,8 @@ export const Marius = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.DEFENSE]
+	[SecondarySkills.DEFENSE],
+	DemoniacsDescription.Marius
 );
 
 export const Nymus = new Hero(
@@ -93,7 +98,8 @@ export const Nymus = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.OFFENSE]
+	[SecondarySkills.OFFENSE],
+	DemoniacsDescription.NYMUS
 );
 
 export const Octavia = new Hero(
@@ -111,11 +117,12 @@ export const Octavia = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.SCOLAR, SecondarySkills.OFFENSE]
+	[SecondarySkills.SCOLAR, SecondarySkills.OFFENSE],
+	DemoniacsDescription.OCTAVIA
 );
 
 export const Pyre = new Hero(
-	'Пайр',
+	'Пир',
 	HeroClasses.DEMONIAC,
 	Genders.FEMALE,
 	Races.HUMAN,
@@ -129,7 +136,8 @@ export const Pyre = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.LOGISTICS, SecondarySkills.BALLISTA]
+	[SecondarySkills.LOGISTICS, SecondarySkills.BALLISTA],
+	DemoniacsDescription.PYRE
 );
 
 export const Rashka = new Hero(
@@ -147,5 +155,6 @@ export const Rashka = new Hero(
 	0,
 	10,
 	null,
-	[SecondarySkills.LOGISTICS, SecondarySkills.WISDOM]
+	[SecondarySkills.LOGISTICS, SecondarySkills.WISDOM],
+	DemoniacsDescription.RASHKA
 );

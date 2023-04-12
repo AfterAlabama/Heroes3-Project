@@ -1,14 +1,18 @@
 import Typography from "@mui/material/Typography";
 import { MenuAccordionDetails } from "../../../styles/Accordion";
+import { FC } from "react";
 
-const HistoryMenuAccordionContent = () => {
+interface HistoryMenuAccordionContentProps {
+	heroDescription: string
+} 
+
+const HistoryMenuAccordionContent: FC<HistoryMenuAccordionContentProps> = ({ heroDescription }) => {
   return (
     <MenuAccordionDetails>
-				<Typography>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-					malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum
-					dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-					lacus ex, sit amet blandit leo lobortis eget.
+				<Typography sx={{
+					cursor: 'default'
+				}} >
+					{heroDescription.substring(0, 80)}...
 				</Typography>
 			</MenuAccordionDetails>
   )

@@ -1,3 +1,4 @@
+import { WizardsDescription } from "../../../types/Enums/Descriptions/Tower/WizardsDescription";
 import { Genders } from "../../../types/Enums/Genders";
 import { HeroClasses } from "../../../types/Enums/HeroClasses";
 import { HeroPics } from "../../../types/Enums/HeroPics";
@@ -8,7 +9,7 @@ import { Spells } from "../../../types/Enums/Spells";
 import { Hero } from "../../Hero";
 
 export const Aine = new Hero(
-	'Эйнэ',
+	'Эйне',
 	HeroClasses.WIZARD,
 	Genders.FEMALE,
 	Races.GENIE,
@@ -22,7 +23,8 @@ export const Aine = new Hero(
 	0,
 	30,
 	Spells.CURSE,
-	[SecondarySkills.WISDOM, SecondarySkills.SCOLAR]
+	[SecondarySkills.WISDOM, SecondarySkills.SCOLAR],
+	WizardsDescription.AINE
 );
 
 export const Astral = new Hero(
@@ -40,11 +42,12 @@ export const Astral = new Hero(
 	0,
 	30,
 	Spells.HYPNOTIZE,
-	[SecondarySkills.WISDOM]
+	[SecondarySkills.WISDOM],
+	WizardsDescription.ASTRAL
 );
 
 export const Cyra = new Hero(
-	'Кира',
+	'Сайра',
 	HeroClasses.WIZARD,
 	Genders.FEMALE,
 	Races.HUMAN,
@@ -58,11 +61,12 @@ export const Cyra = new Hero(
 	0,
 	30,
 	Spells.HASTE,
-	[SecondarySkills.WISDOM, SecondarySkills.DIPLOMACY]
+	[SecondarySkills.WISDOM, SecondarySkills.DIPLOMACY],
+	WizardsDescription.CYRA
 );
 
 export const Daremyth = new Hero(
-	'Даремиф',
+	'Дэрмит',
 	HeroClasses.WIZARD,
 	Genders.FEMALE,
 	Races.GENIE,
@@ -76,7 +80,8 @@ export const Daremyth = new Hero(
 	0,
 	30,
 	Spells.FORTUNE,
-	[SecondarySkills.WISDOM, SecondarySkills.INTELLIGENCE]
+	[SecondarySkills.WISDOM, SecondarySkills.INTELLIGENCE],
+	WizardsDescription.DAREMYTH
 );
 
 export const Halon = new Hero(
@@ -94,7 +99,8 @@ export const Halon = new Hero(
 	0,
 	30,
 	Spells.STONE_SKIN,
-	[SecondarySkills.WISDOM, SecondarySkills.MYSTICISM]
+	[SecondarySkills.WISDOM, SecondarySkills.MYSTICISM],
+	WizardsDescription.HALON
 );
 
 export const Serena = new Hero(
@@ -112,11 +118,12 @@ export const Serena = new Hero(
 	0,
 	30,
 	Spells.DISPEL,
-	[SecondarySkills.WISDOM, SecondarySkills.EAGLE_EYE]
+	[SecondarySkills.WISDOM, SecondarySkills.EAGLE_EYE],
+	WizardsDescription.SERENA
 );
 
 export const Solmyr = new Hero(
-	'Солмир',
+	'Сольмир',
 	HeroClasses.WIZARD,
 	Genders.MALE,
 	Races.GENIE,
@@ -130,7 +137,8 @@ export const Solmyr = new Hero(
 	0,
 	30,
 	Spells.CHAIN_LIGHTNING,
-	[SecondarySkills.WISDOM, SecondarySkills.SORCERY]
+	[SecondarySkills.WISDOM, SecondarySkills.SORCERY],
+	WizardsDescription.SOLMYR
 );
 
 export const Theodorus = new Hero(
@@ -148,5 +156,6 @@ export const Theodorus = new Hero(
 	0,
 	30,
 	Spells.SHIELD,
-	[SecondarySkills.WISDOM, SecondarySkills.BALISTICS]
+	[SecondarySkills.WISDOM, SecondarySkills.BALISTICS],
+	WizardsDescription.THEODORUS
 );

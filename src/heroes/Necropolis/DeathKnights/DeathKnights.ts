@@ -1,3 +1,4 @@
+import { DeathKnightsDescription } from "../../../types/Enums/Descriptions/Necropolis/DeathKnightsDescription";
 import { Genders } from "../../../types/Enums/Genders";
 import { HeroClasses } from "../../../types/Enums/HeroClasses";
 import { HeroPics } from "../../../types/Enums/HeroPics";
@@ -22,7 +23,8 @@ export const Charna = new Hero(
 	0,
 	10,
 	Spells.MAGIC_ARROW,
-	[SecondarySkills.NECROMANCY, SecondarySkills.TACTICS]
+	[SecondarySkills.NECROMANCY, SecondarySkills.TACTICS],
+	DeathKnightsDescription.CHARNA
 );
 
 export const Clavius = new Hero(
@@ -40,7 +42,8 @@ export const Clavius = new Hero(
 	0,
 	10,
 	Spells.MAGIC_ARROW,
-	[SecondarySkills.NECROMANCY, SecondarySkills.OFFENSE]
+	[SecondarySkills.NECROMANCY, SecondarySkills.OFFENSE],
+	DeathKnightsDescription.CLAVIUS
 );
 
 export const Galthran = new Hero(
@@ -58,11 +61,12 @@ export const Galthran = new Hero(
 	0,
 	10,
 	Spells.SHIELD,
-	[SecondarySkills.NECROMANCY, SecondarySkills.DEFENSE]
+	[SecondarySkills.NECROMANCY, SecondarySkills.DEFENSE],
+	DeathKnightsDescription.GALTHRAN
 );
 
 export const Isra = new Hero(
-	'Изра',
+	'Исра',
 	HeroClasses.DEATH_KNIGHT,
 	Genders.FEMALE,
 	Races.LICH,
@@ -76,11 +80,12 @@ export const Isra = new Hero(
 	0,
 	10,
 	Spells.MAGIC_ARROW,
-	[SecondarySkills.NECROMANCY]
+	[SecondarySkills.NECROMANCY],
+	DeathKnightsDescription.ISRA
 );
 
 export const Moandor = new Hero(
-	'Моандр',
+	'Моандер',
 	HeroClasses.DEATH_KNIGHT,
 	Genders.MALE,
 	Races.LICH,
@@ -94,7 +99,8 @@ export const Moandor = new Hero(
 	0,
 	10,
 	Spells.SLOW,
-	[SecondarySkills.NECROMANCY, SecondarySkills.LEARNING]
+	[SecondarySkills.NECROMANCY, SecondarySkills.LEARNING],
+	DeathKnightsDescription.MOANDOR
 );
 
 export const Straker = new Hero(
@@ -112,7 +118,8 @@ export const Straker = new Hero(
 	0,
 	10,
 	Spells.HASTE,
-	[SecondarySkills.NECROMANCY, SecondarySkills.RESISTANCE]
+	[SecondarySkills.NECROMANCY, SecondarySkills.RESISTANCE],
+	DeathKnightsDescription.STRAKER
 );
 
 export const Tamika = new Hero(
@@ -130,7 +137,8 @@ export const Tamika = new Hero(
 	0,
 	10,
 	Spells.MAGIC_ARROW,
-	[SecondarySkills.NECROMANCY, SecondarySkills.OFFENSE]
+	[SecondarySkills.NECROMANCY, SecondarySkills.OFFENSE],
+	DeathKnightsDescription.TAMIKA
 );
 
 export const Vokial = new Hero(
@@ -148,5 +156,6 @@ export const Vokial = new Hero(
 	0,
 	10,
 	Spells.STONE_SKIN,
-	[SecondarySkills.NECROMANCY, SecondarySkills.BALLISTA]
+	[SecondarySkills.NECROMANCY, SecondarySkills.BALLISTA],
+	DeathKnightsDescription.VOKIAL
 );
