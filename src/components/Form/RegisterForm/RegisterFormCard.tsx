@@ -11,6 +11,7 @@ import RegisterFormContent from './RegisterFormContent';
 import BackdropComponent from '../../Common/Backdrop/BackdropComponent';
 import RegisterLoading from './RegisterLoading';
 import RegisterSuccess from './RegisterSuccess';
+import { RouteNames } from '../../../types/Enums/RouteNames';
 
 export interface RegisterFormValues {
 	email: string;
@@ -22,7 +23,7 @@ export interface RegisterFormValues {
 const RegisterFormCard = () => {
 	
 	const dispatch = useAppDispatch();
-	const { changeIsAccountBeingCreated, changeIsAccountCreated } = MainSlice.actions;
+	const { changeIsAccountBeingCreated, changeIsAccountCreated, changeIsRegistrationSnackbarOpen } = MainSlice.actions;
 	const timer1 = useRef<number>(undefined!);
 	const timer2 = useRef<number>(undefined!);
 	const timer3 = useRef<number>(undefined!);
@@ -47,10 +48,11 @@ const RegisterFormCard = () => {
 
 		timer2.current = window.setTimeout(() => {
 			setSubmitting(false);
+			navigate(RouteNames.AUTH_FORM);
 		}, 4000);
 
 		timer3.current = window.setTimeout(() => {
-			navigate(-1);
+			dispatch(changeIsRegistrationSnackbarOpen(true))
 		}, 4000);
 	};
 

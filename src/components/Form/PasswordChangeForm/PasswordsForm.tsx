@@ -11,6 +11,8 @@ import SubmitButton from '../Shared/SubmitButton';
 import red from '@mui/material/colors/red';
 import { ColumnedFlex } from '../../../styles/ColumnedFlex';
 import { PasswordFormValues } from './PasswordChangeFormContent';
+import { useAppDispatch } from '../../../hooks/ReduxHooks';
+import { MainSlice } from '../../../store/Reducers/MainSlice';
 
 const PasswordsForm = forwardRef<
 	HTMLDivElement,
@@ -29,6 +31,8 @@ const PasswordsForm = forwardRef<
 	) => {
 		const navigate = useNavigate();
 		const timer1 = useRef<number>(undefined!);
+		const dispatch = useAppDispatch();
+		const { changeIsPasswordSnackbarOpen } = MainSlice.actions
 
 		const submitCondition =
 			(touched.password && errors.password) ||
@@ -47,6 +51,7 @@ const PasswordsForm = forwardRef<
 			CreateCookie('password', values.password, 365);
 			timer1.current = window.setTimeout(() => {
 				navigate(RouteNames.AUTH_FORM);
+				dispatch(changeIsPasswordSnackbarOpen(true))
 			}, 500);
 		};
 

@@ -1,4 +1,4 @@
-import { PasswordChangeFormValues } from '../../components/Form/PasswordChangeForm/PasswordChangeFormCard';
+import { PasswordChangeFormValues } from '../../components/Form/PasswordChangeForm/PasswordChangeFormContent';
 import { GetCookieValue } from '../Cookie/GetCookieValues';
 
 export const PasswordValidationHandler = (
@@ -17,6 +17,9 @@ export const PasswordValidationHandler = (
 
 	if (values.password.trim().length === 0) {
 		errors.password = 'Поле с паролем обязательно';
+	}
+	if(values.password === GetCookieValue('password')){
+		errors.password = 'Старый и новый пароли совпадают'
 	}
 
 	if (values.confirmedPassword.trim().length === 0) {

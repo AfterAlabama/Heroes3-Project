@@ -8,7 +8,9 @@ interface SliceState {
   isAccountCreated: boolean,
   heroesMenuTabValue: number,
   isAccordionExpended: string | boolean,
-  isComponentLoading: boolean
+  isComponentLoading: boolean,
+  isRegistrationSnackbarOpen: boolean,
+  isPasswordSnackbarOpen: boolean,
 }
 
 const initialState: SliceState = {
@@ -18,7 +20,9 @@ const initialState: SliceState = {
   isAccountCreated: false,
   heroesMenuTabValue: 0,
   isAccordionExpended: 'panel1',
-  isComponentLoading: true
+  isComponentLoading: true,
+  isPasswordSnackbarOpen: false,
+  isRegistrationSnackbarOpen: false,
 }
 
 export const MainSlice = createSlice({
@@ -45,7 +49,13 @@ export const MainSlice = createSlice({
     },
     componentLoaded(state: SliceState){
       state.isComponentLoading = false
-    }
+    },
+    changeIsRegistrationSnackbarOpen(state: SliceState, action: PayloadAction<boolean>){
+      state.isRegistrationSnackbarOpen = action.payload
+    },
+    changeIsPasswordSnackbarOpen(state: SliceState, action: PayloadAction<boolean>){
+      state.isPasswordSnackbarOpen = action.payload
+    },
   }
 })
 
