@@ -6,7 +6,7 @@ import useTheme from '@mui/material/styles/useTheme';
 import { AlignmentPics, Alignments } from '../../../types/Enums/Alignments';
 import Box from '@mui/material/Box';
 import HistoryMenuAccordions from './HistoryMenuAccordions';
-import BackgroundImage from '../../Common/BackgroundImage/BackgroundImage'
+import BackgroundImage from '../../Common/BackgroundImage/BackgroundImage';
 import BlackOverlay from '../../Common/BlackOverlay/BlackOverlay';
 import { heroesArray } from '../../../heroes/HeroesArray';
 
@@ -31,11 +31,17 @@ const HistoryMenuTabPanels = () => {
 				sx={{
 					display: 'flex',
 					flexDirection: 'column',
-					position:'relative'
+					position: 'relative',
+					overflow: 'hidden'
 				}}
 			>
 				<BlackOverlay />
-				<BackgroundImage alt='Alignment city' src={AlignmentPics[index]} borderRadius='30px' />
+				<BackgroundImage
+					alt='Alignment city'
+					src={AlignmentPics[index]}
+					borderRadius='30px'
+					height ='120vh'
+				/>
 				<HistoryMenuAccordions heroesArray={heroesArray[index]} />
 			</Box>
 		</HistoryMenuTabPanel>
