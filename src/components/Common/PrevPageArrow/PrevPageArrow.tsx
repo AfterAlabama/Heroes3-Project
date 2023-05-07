@@ -21,6 +21,14 @@ const PrevPageArrow = () => {
 				top: '15%',
 				left: '10%',
 				color: theme.palette.primary.main,
+				transition: 'all 0.5s ease',
+				'&:hover': {
+					backgroundColor: theme.palette.primary.main,
+					color: 'white',
+					transform: 'scale(1.2)',
+					border: `solid 1px ${theme.palette.primary.main}`,
+					boxShadow: `5px 5px 5px rgba(0,0,0,0.5)`,
+				},
 			})}
 			onClick={arrowClickHandler}
 		>
