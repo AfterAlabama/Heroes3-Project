@@ -1,6 +1,7 @@
 import Typography from "@mui/material/Typography";
 import { useHeroComponentContext } from "./HeroComponent";
 import HeroComponentSectionTitle from "./HeroComponentSectionTitle";
+import IsLoading from "../../Common/IsLoading/IsLoading";
 
 const HeroComponentDescription = () => {
   const { description } = useHeroComponentContext()
@@ -8,10 +9,12 @@ const HeroComponentDescription = () => {
   return (
     <>
       <HeroComponentSectionTitle text="Описание" />
-      <Typography sx={{
-        m:'0 5vh',
+      <IsLoading>
+        <Typography sx={{
+          m:'0 5vh',
 
-      }} >{description}</Typography>
+        }} >{description}</Typography>
+      </IsLoading>
     </>
   )
 }

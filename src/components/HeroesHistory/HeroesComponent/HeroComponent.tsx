@@ -4,7 +4,7 @@ import HeroComponentTitle from './HeroComponentTitle';
 import HeroComponentInfoAndPic from './HeroComponentInfoAndPic';
 import HeroComponentStats from './HeroComponentStats';
 import { CenteredFlex } from '../../../styles/CenteredFlex';
-import { createContext, useContext } from 'react';
+import { createContext, useContext, useEffect } from 'react';
 import { Hero } from '../../../heroes/Hero';
 import HeroComponentLuck from './HeroComponentLuck';
 import HeroComponentMagic from './HeroComponentMagic';
@@ -13,6 +13,8 @@ import HeroComponentDescription from './HeroComponentDescription';
 import { heroesArray } from '../../../heroes/HeroesArray';
 import Box from '@mui/material/Box';
 import PrevPageArrow from '../../Common/PrevPageArrow/PrevPageArrow';
+import { MainSlice } from '../../../store/Reducers/MainSlice';
+import { useAppDispatch } from '../../../hooks/ReduxHooks';
 
 const HeroComponentContext = createContext<Hero>({} as Hero);
 
@@ -20,12 +22,18 @@ export const useHeroComponentContext = () => useContext(HeroComponentContext);
 
 const HeroComponent = () => {
 	const { name } = useParams();
+	const { changeIsComponentLoading } = MainSlice.actions;
+	const dispatch = useAppDispatch();
 
 	const hero = heroesArray
 		.map((arr) => arr.filter((hero) => name && hero.name === name))
 		.filter((arr2) => arr2.length > 0)[0][0]
 	;
 	
+	useEffect(() => {
+		dispatch(changeIsComponentLoading(true));
+	}, []);
+
 	return (
 		<Box>
 			<PrevPageArrow />
@@ -34,7 +42,7 @@ const HeroComponent = () => {
 					width: '100%',
 					height: '200vh',
 					backgroundColor: '#f4f4f4',
-					flexDirection: 'column'
+					flexDirection: 'column',
 				}}
 			>
 				<HeroComponentContext.Provider value={hero}>

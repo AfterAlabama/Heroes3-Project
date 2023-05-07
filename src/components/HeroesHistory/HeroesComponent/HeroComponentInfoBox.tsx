@@ -2,6 +2,7 @@ import Box from '@mui/material/Box';
 import MuiTypography, { TypographyProps } from '@mui/material/Typography';
 import { FC } from 'react';
 import { styled } from '@mui/material/styles';
+import IsLoading from '../../Common/IsLoading/IsLoading';
 
 const Typography = styled((props: TypographyProps) => (
 	<MuiTypography {...props} />
@@ -28,8 +29,12 @@ const HeroComponentInfoBox: FC<HeroComponentInfoBoxProps> = ({
 				cursor: 'default'
 			})}
 		>
-			<Typography>{stat}:</Typography>
-			<Typography>{value}</Typography>
+			<IsLoading>
+				<Typography>{stat}:</Typography>
+			</IsLoading>
+			<IsLoading>
+				<Typography>{value}</Typography>
+			</IsLoading>
 		</Box>
 	);
 };

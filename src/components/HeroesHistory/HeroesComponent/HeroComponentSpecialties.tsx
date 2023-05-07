@@ -1,3 +1,4 @@
+import IsLoading from '../../Common/IsLoading/IsLoading';
 import { useHeroComponentContext } from './HeroComponent';
 import HeroComponentSectionTitle from './HeroComponentSectionTitle';
 
@@ -11,7 +12,9 @@ const HeroComponentSpecialties = () => {
         marginLeft: 50
       }} >
 				{baseSpecialties.map((spec, index) => (
-					<li key={index}>{spec}</li>
+					<IsLoading key={index} >
+						<li >{spec}</li>
+					</IsLoading>
 				))}
 			</ul>
 		</>

@@ -12,12 +12,12 @@ interface IsLoadingProps {
 const IsLoading: FC<IsLoadingProps> = ({ children, sx = [] }) => {
 	const { isComponentLoading } = useAppSelector((state) => state.mainReducer);
 	const dispatch = useAppDispatch();
-	const { componentLoaded } = MainSlice.actions;
+	const { changeIsComponentLoading } = MainSlice.actions;
 	const timer = useRef(0);
 
 	useEffect(() => {
 		timer.current = window.setTimeout(() => {
-			dispatch(componentLoaded());
+			dispatch(changeIsComponentLoading(false));
 		}, 1000);
 
 		return () => {

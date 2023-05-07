@@ -34,6 +34,7 @@ const HistoryMenuAccordion: FC<HistoryMenuAccordionProps> = ({
 
 	const mouseClickHandler = (name:string) => {
 		navigate(`${RouteNames.HEROES_HISTORY}/${name}`)
+		window.scrollTo(0,0)
 	}
 
 	const mouseEnterHandler = () => {

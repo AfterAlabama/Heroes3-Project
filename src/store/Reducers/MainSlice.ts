@@ -47,8 +47,8 @@ export const MainSlice = createSlice({
     toggleAccordion(state: SliceState, action: PayloadAction<string | boolean>){
       state.isAccordionExpended = action.payload
     },
-    componentLoaded(state: SliceState){
-      state.isComponentLoading = false
+    changeIsComponentLoading(state: SliceState, action: PayloadAction<boolean>){
+      state.isComponentLoading = action.payload
     },
     changeIsRegistrationSnackbarOpen(state: SliceState, action: PayloadAction<boolean>){
       state.isRegistrationSnackbarOpen = action.payload
