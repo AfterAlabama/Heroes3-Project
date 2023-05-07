@@ -8,6 +8,7 @@ import UnAuthMainPage from '../MainPage/UnAuthMainPage/UnAuthMainPage';
 import AuthMainPage from '../MainPage/AuthMainPage/AuthMainPage';
 import { useAppSelector } from '../../hooks/ReduxHooks';
 import HeroesHistory from '../HeroesHistory/HeroesHistory/HeroesHistory';
+import HeroComponent from '../HeroesHistory/HeroesComponent/HeroComponent';
 
 const AppRouter = () => {
 	const { isAuth } = useAppSelector((state) => state.mainReducer);
@@ -36,6 +37,7 @@ const AppRouter = () => {
 				path={RouteNames.HEROES_HISTORY}
 				element={<HeroesHistory />}
 			/>
+			<Route path={RouteNames.HERO} element={<HeroComponent />} />
 			<Route
 				path={RouteNames.NOT_FOUND}
 				element={<NotFound />}

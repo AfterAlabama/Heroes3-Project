@@ -2,7 +2,7 @@ import MuiBox, { BoxProps } from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 import { forwardRef } from 'react';
 
-export const ColumnedFlex = styled(
+export const CenteredFlex = styled(
 	forwardRef<HTMLDivElement, BoxProps>((props: BoxProps, ref) => (
 		<MuiBox
 			ref={ref}
@@ -12,6 +12,5 @@ export const ColumnedFlex = styled(
 )(() => ({
 	display: 'flex',
 	alignItems: 'center',
-	justifyContent: 'center',
-	flexDirection: 'column',
+	justifyContent: 'center'
 }));

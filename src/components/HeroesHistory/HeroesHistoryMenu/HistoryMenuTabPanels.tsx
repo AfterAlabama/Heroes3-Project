@@ -8,10 +8,9 @@ import Box from '@mui/material/Box';
 import HistoryMenuAccordions from './HistoryMenuAccordions';
 import BackgroundImage from '../../Common/BackgroundImage/BackgroundImage'
 import BlackOverlay from '../../Common/BlackOverlay/BlackOverlay';
-import { heroesArray } from '../../../heroes/HeroesArray';
 
 const HistoryMenuTabPanels = () => {
-	const { heroesMenuTabValue } = useAppSelector((state) => state.mainReducer);
+	const { heroesMenuTabValue, heroesArray } = useAppSelector((state) => state.mainReducer);
 	const dispatch = useAppDispatch();
 	const { changeHeroesMenuTabValue } = MainSlice.actions;
 	const theme = useTheme();

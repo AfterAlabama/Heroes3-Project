@@ -29,6 +29,7 @@ export const MenuAccordion = styled((props: MenuAccordionProps) => (
 ))(({ theme, hero }) => ({
 	border: `1px solid ${theme.palette.divider}`,
 	width: '40%',
+	cursor: 'pointer',
 	'&:hover': {
 		boxShadow: ` 0px 4px 18px 3px ${
 			CastleHeroes.includes(hero) || TowerHeroes.includes(hero)

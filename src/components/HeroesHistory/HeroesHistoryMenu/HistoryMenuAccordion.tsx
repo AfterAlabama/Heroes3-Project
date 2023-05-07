@@ -7,6 +7,8 @@ import { FC } from 'react';
 import HistoryMenuAccordionHead from './HistoryMenuAccordionHead';
 import HistoryMenuAccordionContent from './HistoryMenuAccordionContent';
 import { Hero } from '../../../heroes/Hero';
+import { useNavigate } from 'react-router-dom';
+import { RouteNames } from '../../../types/Enums/RouteNames';
 
 interface HistoryMenuAccordionProps {
 	panelNumber: string;
@@ -28,6 +30,11 @@ const HistoryMenuAccordion: FC<HistoryMenuAccordionProps> = ({
 	const dispatch = useAppDispatch();
 	const { toggleAccordion } = MainSlice.actions;
 	const { isAccordionExpended } = useAppSelector((state) => state.mainReducer);
+	const navigate = useNavigate()
+
+	const mouseClickHandler = (name:string) => {
+		navigate(`${RouteNames.HEROES_HISTORY}/${name}`)
+	}
 
 	const mouseEnterHandler = () => {
 		dispatch(toggleAccordion(panelNumber));
@@ -45,6 +52,7 @@ const HistoryMenuAccordion: FC<HistoryMenuAccordionProps> = ({
 			onMouseEnter={mouseEnterHandler}
 			onMouseLeave={mouseLeaveHandler}
 			hero={hero}
+			onClick={() => mouseClickHandler(hero.name)}
 		>
 			<HistoryMenuAccordionHead
 				panelNumber={panelNumber}

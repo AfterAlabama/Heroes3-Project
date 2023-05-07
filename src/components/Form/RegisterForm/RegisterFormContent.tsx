@@ -7,8 +7,8 @@ import FormTitle from '../Shared/FormTitle';
 import StyledInput from '../Shared/StyledInput';
 import { RegisterFormValues } from './RegisterFormCard';
 import { FormContentContainer } from '../../../styles/FormContentContainer';
-import { ColumnedFlex } from '../../../styles/ColumnedFlex';
 import FormButtons from '../Shared/FormButtons';
+import { CenteredFlex } from '../../../styles/CenteredFlex';
 
 const RegisterFormContent: FC<FormContentProps<RegisterFormValues>> = ({
 	handleSubmit,
@@ -34,22 +34,20 @@ const RegisterFormContent: FC<FormContentProps<RegisterFormValues>> = ({
 			  touched.confirmedPassword &&
 			  !errors.confirmedPassword
 			? green[100]
-			: grey[100]
-	;
-
+			: grey[100];
 	const formHeightCondition =
 		(errors.email && touched.email) ||
 		(errors.confirmedPassword && touched.confirmedPassword) ||
 		(errors.name && touched.name) ||
 		(errors.password && touched.password)
 			? '75vh'
-			: '67vh'
-	;
-	
+			: '67vh';
 	return (
 		<FormContentContainer height={formHeightCondition}>
 			<form onSubmit={handleSubmit}>
-				<ColumnedFlex>
+				<CenteredFlex sx={{
+					flexDirection: 'column'
+				}} >
 					<FormTitle
 						height={-15}
 						text='Регистрация'
@@ -96,7 +94,7 @@ const RegisterFormContent: FC<FormContentProps<RegisterFormValues>> = ({
 						submitCondition={submitCondition}
 						margin={-10}
 					/>
-				</ColumnedFlex>
+				</CenteredFlex>
 			</form>
 		</FormContentContainer>
 	);

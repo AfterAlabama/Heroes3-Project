@@ -9,30 +9,23 @@ import FormTitle from '../Shared/FormTitle';
 import StyledInput from '../Shared/StyledInput';
 import SubmitButton from '../Shared/SubmitButton';
 import red from '@mui/material/colors/red';
-import { ColumnedFlex } from '../../../styles/ColumnedFlex';
 import { PasswordFormValues } from './PasswordChangeFormContent';
 import { useAppDispatch } from '../../../hooks/ReduxHooks';
 import { MainSlice } from '../../../store/Reducers/MainSlice';
+import { CenteredFlex } from '../../../styles/CenteredFlex';
 
 const PasswordsForm = forwardRef<
 	HTMLDivElement,
 	FormContentProps<PasswordFormValues>
 >(
 	(
-		{
-			values,
-			errors,
-			touched,
-			handleChange,
-			handleBlur,
-			isSubmitting,
-		},
+		{ values, errors, touched, handleChange, handleBlur, isSubmitting },
 		ref
 	) => {
 		const navigate = useNavigate();
 		const timer1 = useRef<number>(undefined!);
 		const dispatch = useAppDispatch();
-		const { changeIsPasswordSnackbarOpen } = MainSlice.actions
+		const { changeIsPasswordSnackbarOpen } = MainSlice.actions;
 
 		const submitCondition =
 			(touched.password && errors.password) ||
@@ -43,15 +36,13 @@ const PasswordsForm = forwardRef<
 				  touched.confirmedPassword &&
 				  !errors.confirmedPassword
 				? green[100]
-				: grey[100]
-		;
-
+				: grey[100];
 		const submitHandler = (e: FormEvent<HTMLFormElement>) => {
 			e.preventDefault();
 			CreateCookie('password', values.password, 365);
 			timer1.current = window.setTimeout(() => {
 				navigate(RouteNames.AUTH_FORM);
-				dispatch(changeIsPasswordSnackbarOpen(true))
+				dispatch(changeIsPasswordSnackbarOpen(true));
 			}, 500);
 		};
 
@@ -62,13 +53,18 @@ const PasswordsForm = forwardRef<
 		}, []);
 
 		return (
-			<form
-				onSubmit={submitHandler}
-			>
-				<ColumnedFlex ref={ref} sx={{
-					display: 'none'
-				}} >
-					<FormTitle height={-5} text='Смена Пароля' />
+			<form onSubmit={submitHandler}>
+				<CenteredFlex
+					ref={ref}
+					sx={{
+						flexDirection: 'column',
+						display: 'none',
+					}}
+				>
+					<FormTitle
+						height={-5}
+						text='Смена Пароля'
+					/>
 					<StyledInput
 						instance='password'
 						isError={errors.password}
@@ -92,7 +88,7 @@ const PasswordsForm = forwardRef<
 						SubmitCondition={submitCondition}
 						buttonText='Готово'
 					/>
-				</ColumnedFlex>
+				</CenteredFlex>
 			</form>
 		);
 	}

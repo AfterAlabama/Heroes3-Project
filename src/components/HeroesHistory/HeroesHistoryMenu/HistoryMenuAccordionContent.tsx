@@ -9,9 +9,7 @@ interface HistoryMenuAccordionContentProps {
 const HistoryMenuAccordionContent: FC<HistoryMenuAccordionContentProps> = ({ heroDescription }) => {
   return (
     <MenuAccordionDetails>
-				<Typography sx={{
-					cursor: 'default'
-				}} >
+				<Typography>
 					{heroDescription.substring(0, 80)}...
 				</Typography>
 			</MenuAccordionDetails>

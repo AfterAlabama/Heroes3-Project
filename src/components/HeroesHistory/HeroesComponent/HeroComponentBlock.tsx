@@ -1,28 +1,26 @@
+import IsLoading from '../../Common/IsLoading/IsLoading';
 import Typography from '@mui/material/Typography';
+import { CenteredFlex } from '../../../styles/CenteredFlex';
 import { FC, ReactElement } from 'react';
-import { CenteredFlex } from '../../../../styles/CenteredFlex';
-import IsLoading from '../../../Common/IsLoading/IsLoading';
 
-interface BlockProps {
-	BlockIcon: ReactElement<SVGSVGElement>;
-	BlockTitle: string;
-	BlockContent: string;
-	BlockButton?: ReactElement<HTMLButtonElement>;
+interface HeroComponentBlockProps {
+	HeroBlockTitle: string;
+	HeroBlockIcon: ReactElement<SVGSVGElement>;
+	HeroBlockContent: string;
 }
 
-const Block: FC<BlockProps> = ({
-	BlockIcon,
-	BlockTitle,
-	BlockContent,
-	BlockButton,
+const HeroComponentBlock: FC<HeroComponentBlockProps> = ({
+	HeroBlockTitle,
+	HeroBlockIcon,
+	HeroBlockContent,
 }) => {
 	return (
 		<CenteredFlex
 			sx={{
 				height: '100%',
-				width: '100%',
-				flexDirection: 'column',
+				width: '30%',
 				p: 5,
+				flexDirection: 'column',
 				boxShadow: '0 0 5px 5px rgba(51,51,255,0.2)',
 				'&:hover': {
 					boxShadow: '0 0 10px 5px rgba(51,51,255,0.1)',
@@ -30,7 +28,6 @@ const Block: FC<BlockProps> = ({
 				},
 			}}
 		>
-			{BlockIcon}
 			<IsLoading>
 				<Typography
 					variant='h4'
@@ -41,9 +38,10 @@ const Block: FC<BlockProps> = ({
 						mt: 1,
 					}}
 				>
-					{BlockTitle}
+					{HeroBlockTitle}
 				</Typography>
 			</IsLoading>
+			{HeroBlockIcon}
 			<IsLoading>
 				<Typography
 					sx={{
@@ -54,12 +52,11 @@ const Block: FC<BlockProps> = ({
 						mb: 1,
 					}}
 				>
-					{BlockContent}
+					{HeroBlockContent}
 				</Typography>
 			</IsLoading>
-			{BlockButton && BlockButton}
 		</CenteredFlex>
 	);
 };
 
-export default Block;
+export default HeroComponentBlock;

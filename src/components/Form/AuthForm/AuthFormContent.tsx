@@ -10,7 +10,7 @@ import RegisterLink from './RegisterLink';
 import { AuthFormValues } from './AuthFormCard';
 import AuthFormHelperText from './AuthFormHelperText';
 import { FormContentContainer } from '../../../styles/FormContentContainer';
-import { ColumnedFlex } from '../../../styles/ColumnedFlex';
+import { CenteredFlex } from '../../../styles/CenteredFlex';
 
 export interface FormContentProps<T extends object> {
 	handleSubmit: (e: FormEvent<HTMLFormElement>) => void;
@@ -37,22 +37,20 @@ const AuthFormContent: FC<FormContentProps<AuthFormValues>> = ({
 			? red[100]
 			: touched.email && !errors.email && touched.password && !errors.password
 			? green[100]
-			: grey[100]
-	;
-
+			: grey[100];
 	const formHeightCondition =
 		(errors.email && touched.email) || (errors.password && touched.password)
 			? '60vh'
-			: '55vh'
-	;
-			
+			: '55vh';
 	return (
-		<FormContentContainer height={formHeightCondition} >
+		<FormContentContainer height={formHeightCondition}>
 			<form onSubmit={handleSubmit}>
-				<ColumnedFlex>
-					<FormTitle 
-						height={-5} 
-						text='Вход в аккаунт' 
+				<CenteredFlex sx={{
+					flexDirection: 'column'
+				}} >
+					<FormTitle
+						height={-5}
+						text='Вход в аккаунт'
 					/>
 					<StyledInput
 						instance='email'
@@ -79,7 +77,7 @@ const AuthFormContent: FC<FormContentProps<AuthFormValues>> = ({
 						buttonText='Войти'
 					/>
 					<RegisterLink />
-				</ColumnedFlex>
+				</CenteredFlex>
 			</form>
 		</FormContentContainer>
 	);
