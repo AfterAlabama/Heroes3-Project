@@ -15,7 +15,7 @@ const HistoryMenuAccordions: FC<AccordionsProps> = ({ heroesArray }) => {
 			panelNumber={`panel${index + 1}`}
 			heroName={hero.name}
 			heroSpec={hero.specialization}
-			heroPic={hero.pic as unknown as string}
+			heroPic={hero.pic}
 			heroDescription={hero.description}
 		/>
 	));

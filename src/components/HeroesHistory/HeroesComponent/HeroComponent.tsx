@@ -11,6 +11,8 @@ import HeroComponentMagic from './HeroComponentMagic';
 import HeroComponentSpecialties from './HeroComponentSpecialties';
 import HeroComponentDescription from './HeroComponentDescription';
 import { heroesArray } from '../../../heroes/HeroesArray';
+import Box from '@mui/material/Box';
+import PrevPageArrow from '../../Common/PrevPageArrow/PrevPageArrow';
 
 const HeroComponentContext = createContext<Hero>({} as Hero);
 
@@ -25,35 +27,38 @@ const HeroComponent = () => {
 	;
 	
 	return (
-		<CenteredFlex
-			sx={{
-				width: '100%',
-				height: '200vh',
-				backgroundColor: '#f4f4f4',
-				flexDirection: 'column'
-			}}
-		>
-			<HeroComponentContext.Provider value={hero}>
-				<HeroComponentTitle />
-				<Paper
-					sx={{
-						width: '80vh',
-						height: '170vh',
-						display: 'flex',
-						flexDirection: 'column',
-						borderRadius: '10px',
-					}}
-					elevation={3}
-				>
-					<HeroComponentInfoAndPic />
-					<HeroComponentStats />
-					<HeroComponentLuck />
-					<HeroComponentMagic />
-					<HeroComponentSpecialties />
-					<HeroComponentDescription />
-				</Paper>
-			</HeroComponentContext.Provider>
-		</CenteredFlex>
+		<Box>
+			<PrevPageArrow />
+			<CenteredFlex
+				sx={{
+					width: '100%',
+					height: '200vh',
+					backgroundColor: '#f4f4f4',
+					flexDirection: 'column'
+				}}
+			>
+				<HeroComponentContext.Provider value={hero}>
+					<HeroComponentTitle />
+					<Paper
+						sx={{
+							width: '80vh',
+							height: '170vh',
+							display: 'flex',
+							flexDirection: 'column',
+							borderRadius: '10px',
+						}}
+						elevation={3}
+					>
+						<HeroComponentInfoAndPic />
+						<HeroComponentStats />
+						<HeroComponentLuck />
+						<HeroComponentMagic />
+						<HeroComponentSpecialties />
+						<HeroComponentDescription />
+					</Paper>
+				</HeroComponentContext.Provider>
+			</CenteredFlex>
+		</Box>
 	);
 };
 

@@ -22,6 +22,9 @@ const HistoryMenuTabPanel: FC<TabPanelProps> = ({
 
 	return (
 		<Box
+			sx={{
+				width: '90vw'
+			}}
 			role='tabpanel'
 			hidden={value !== index}
 			id={`full-width-tabpanel-${index}`}

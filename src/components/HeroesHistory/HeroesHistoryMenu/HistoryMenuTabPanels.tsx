@@ -40,7 +40,7 @@ const HistoryMenuTabPanels = () => {
 					alt='Alignment city'
 					src={AlignmentPics[index]}
 					borderRadius='30px'
-					height ='120vh'
+					height ='125vh'
 				/>
 				<HistoryMenuAccordions heroesArray={heroesArray[index]} />
 			</Box>

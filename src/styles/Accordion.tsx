@@ -101,7 +101,6 @@ export const MenuAccordionSummary = styled(
 export const MenuAccordionDetails = styled(MuiAccordionDetails)(
 	({ theme }) => ({
 		padding: theme.spacing(2),
-		borderTop: '1px solid rgba(0, 0, 0, .125)',
-		width: '90vw'
+		borderTop: '1px solid rgba(0, 0, 0, .125)'
 	})
 );
