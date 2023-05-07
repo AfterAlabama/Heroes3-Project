@@ -5,26 +5,46 @@ import BuildIcon from '@mui/icons-material/Build';
 import CastleIcon from '@mui/icons-material/Castle';
 import blue from '@mui/material/colors/blue';
 import { useAppSelector } from '../../../../hooks/ReduxHooks';
-import Button from '@mui/material/Button';
 import LoginButton from '../Common/LoginButton';
 import { RouteNames } from '../../../../types/Enums/RouteNames';
-import { useNavigate } from 'react-router-dom';
+import { Link as ReactRouterLink } from 'react-router-dom';
 import IsLoading from '../../../Common/IsLoading/IsLoading';
+import Link from '@mui/material/Link';
+import pic from '../../../../assets/heroesoverview.jpg';
 
 const BlockGrid = () => {
 	const { isAuth } = useAppSelector((state) => state.mainReducer);
-	const navigate = useNavigate();
 
-	const blockClickhandler = (direction: string) => {
-		navigate(direction);
-		window.scrollTo(0,0)
+	const blockClickhandler = () => {
+		window.scrollTo(0, 0);
 	};
 
 	const authBlockCondition = isAuth ? (
 		<IsLoading>
-			<Button onClick={() => blockClickhandler(RouteNames.HEROES_HISTORY)}>
+			<Link
+				component={ReactRouterLink}
+				to={RouteNames.HEROES_HISTORY}
+				onClick={blockClickhandler}
+				sx={(theme) => ({
+					textDecoration: 'none',
+					color: 'white',
+					background: `linear-gradient(50deg, ${theme.palette.primary.main} 60%, transparent 100% ), url(${pic})`,
+					backgroundSize: '250%',
+					backgroundPosition: 'left',
+					padding: '15px 25px',
+					fontSize: 20,
+					borderRadius: '15px',
+					marginTop: '15px',
+					transition: 'all 0.5s ease',
+					'&:hover': {
+						transform: 'scale(1.2)',
+						boxShadow: '10px 10px 10px rgba(0,0,0,0.5)',
+						backgroundPosition: 'right',
+					},
+				})}
+			>
 				Смотреть
-			</Button>
+			</Link>
 		</IsLoading>
 	) : (
 		<IsLoading>
@@ -38,7 +58,7 @@ const BlockGrid = () => {
 			justifyContent='center'
 			spacing={12}
 			sx={{
-				mb:35
+				mb: 35,
 			}}
 		>
 			<Grid item>
