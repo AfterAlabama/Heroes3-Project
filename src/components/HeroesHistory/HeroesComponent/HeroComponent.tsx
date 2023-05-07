@@ -1,5 +1,4 @@
 import { useParams } from 'react-router-dom';
-import { useAppSelector } from '../../../hooks/ReduxHooks';
 import Paper from '@mui/material/Paper';
 import HeroComponentTitle from './HeroComponentTitle';
 import HeroComponentInfoAndPic from './HeroComponentInfoAndPic';
@@ -11,6 +10,7 @@ import HeroComponentLuck from './HeroComponentLuck';
 import HeroComponentMagic from './HeroComponentMagic';
 import HeroComponentSpecialties from './HeroComponentSpecialties';
 import HeroComponentDescription from './HeroComponentDescription';
+import { heroesArray } from '../../../heroes/HeroesArray';
 
 const HeroComponentContext = createContext<Hero>({} as Hero);
 
@@ -18,7 +18,6 @@ export const useHeroComponentContext = () => useContext(HeroComponentContext);
 
 const HeroComponent = () => {
 	const { name } = useParams();
-	const { heroesArray } = useAppSelector((state) => state.mainReducer);
 
 	const hero = heroesArray
 		.map((arr) => arr.filter((hero) => name && hero.name === name))

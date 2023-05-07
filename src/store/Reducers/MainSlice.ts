@@ -1,19 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { GetCookieValue } from "../../helpers/Cookie/GetCookieValues";
-import { Hero } from "../../heroes/Hero";
-import { CastleHeroes } from "../../heroes/Castle/CastleHeroes";
-import { ConfluxHeroes } from "../../heroes/Conflux/ConfluxHeroes";
-import { DungeonHeroes } from "../../heroes/Dungeon/DungeonHeroes";
-import { FortressHeroes } from "../../heroes/Fortress/FortressHeroes";
-import { InfernoHeroes } from "../../heroes/Inferno/InfernoHeroes";
-import { NecropolisHeroes } from "../../heroes/Necropolis/NecropolisHeroes";
-import { RampartHeroes } from "../../heroes/Rampart/RampartHeroes";
-import { StrongholdHeroes } from "../../heroes/Stronghold/StrongholdHeroes";
-import { TowerHeroes } from "../../heroes/Tower/TowerHeroes";
 
 interface SliceState {
   isAuth: boolean,
-  heroesArray: Hero[][]
   isLeftDrawerOpen: boolean,
   isAccountBeingCreated: boolean,
   isAccountCreated: boolean,
@@ -26,17 +15,6 @@ interface SliceState {
 
 const initialState: SliceState = {
   isAuth: GetCookieValue('Login') ? true : false,
-  heroesArray: [
-    CastleHeroes,
-    RampartHeroes,
-    TowerHeroes,
-    InfernoHeroes,
-    NecropolisHeroes,
-    StrongholdHeroes,
-    DungeonHeroes,
-    FortressHeroes,
-    ConfluxHeroes,
-  ],
   isLeftDrawerOpen: false,
   isAccountBeingCreated: false,
   isAccountCreated: false,
