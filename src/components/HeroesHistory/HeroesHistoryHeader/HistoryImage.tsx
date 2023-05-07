@@ -12,7 +12,7 @@ const HistoryImage = forwardRef<HTMLDivElement>((_, ref) => {
 				height: '100%',
 				display: 'flex',
 				alignItems: 'center',
-				transform: 'translate(1000px, 0)',
+				transform: 'translate(50px, 0)',
 			}}
 		>
 			<Box

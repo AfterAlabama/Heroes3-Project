@@ -10,7 +10,7 @@ const HistoryHeaderTextContent = forwardRef<HTMLDivElement>((_, ref) => {
 			sx={{
 				width: '100%',
 				height: '50%',
-				transform: 'translate(-1000px, 0)'
+				transform: 'translate(-50px, 0)'
 			}}
 		>
 			<Box

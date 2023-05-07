@@ -15,7 +15,7 @@ const HistoryHeaderImages = forwardRef<HTMLDivElement>((_, ref) => {
 				width: '100%',
 				height: '20%',
 				pt: 2,
-				transform: 'translate(0, 1000px)',
+				transform: 'translate(0, 50px)',
 			}}
 		>
 			<Box
