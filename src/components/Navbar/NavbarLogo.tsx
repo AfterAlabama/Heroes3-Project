@@ -1,13 +1,8 @@
-import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import { RouteNames } from '../../types/Enums/RouteNames';
-import { useAppSelector } from '../../hooks/ReduxHooks';
+import { Link } from 'react-router-dom';
 
 const NavbarLogo = () => {
-	const { isAuth } = useAppSelector(state => state.mainReducer)
-
-	const hrefCondition = isAuth ? RouteNames.AUTHED_DEFAULT : RouteNames.DEFAULT;
-
 	return (
 		<Typography
 			variant='h6'
@@ -15,7 +10,7 @@ const NavbarLogo = () => {
 			sx={{ flexGrow: 1, cursor: 'pointer' }}
 			
 		>
-			<Link href={hrefCondition} sx={{
+			<Link to={RouteNames.DEFAULT} style={{
 				color:'white',
 				textDecoration: 'none'
 			}} >HeroProgeny</Link>
