@@ -87,15 +87,18 @@ const NavbarMenu = () => {
 	);
 
 	return (
-		<IconButton
-			disabled={disabledCondition}
-			size='large'
-			edge='start'
-			color='inherit'
-			aria-label='menu'
-			sx={{ mr: 2 }}
-		>
-			<MenuIcon onClick={toggleDrawer(true)} />
+		<>
+			<IconButton
+				disabled={disabledCondition}
+				size='large'
+				edge='start'
+				color='inherit'
+				aria-label='menu'
+				sx={{ mr: 2 }}
+				onClick={toggleDrawer(true)}
+			>
+				<MenuIcon />
+			</IconButton>
 			<Drawer
 				anchor='left'
 				open={isLeftDrawerOpen}
@@ -103,7 +106,7 @@ const NavbarMenu = () => {
 			>
 				{list()}
 			</Drawer>
-		</IconButton>
+		</>
 	);
 };
 
