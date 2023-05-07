@@ -13,6 +13,7 @@ const HeroComponentMagic = () => {
 			<Box
 				sx={{
 					ml: 5,
+					cursor: 'default',
 				}}
 			>
 				<IsLoading>
@@ -22,10 +23,23 @@ const HeroComponentMagic = () => {
 					</Typography>
 				</IsLoading>
 				<IsLoading>
-					<Box fontSize={20}>
-						Изначальное заклинание:{' '}
-						{!initialSpells ? 'отсутствует' : initialSpells}
-					</Box>
+					<Typography
+						display={'flex'}
+						fontSize={20}
+					>
+						Изначальное заклинание:
+						{!initialSpells ? (
+							<Typography
+								fontSize={20}
+								pl={1}
+								color='grey'
+							>
+								отсутствует
+							</Typography>
+						) : (
+							initialSpells
+						)}
+					</Typography>
 				</IsLoading>
 			</Box>
 		</>

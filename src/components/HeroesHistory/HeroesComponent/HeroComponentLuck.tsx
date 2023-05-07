@@ -13,10 +13,10 @@ const HeroComponentLuck = () => {
       <CenteredFlex sx={{
         justifyContent:'space-around'
       }} >
-        <HeroComponentStat icon={<GiHorseshoe size={60} style={{
+        <HeroComponentStat icon={<GiHorseshoe size={50} style={{
           transform: 'rotate(180deg)'
         }} />} value={luck} />
-        <HeroComponentStat icon={<GiEagleEmblem size={60} />} value={morale} />
+        <HeroComponentStat icon={<GiEagleEmblem size={50} />} value={morale} />
       </CenteredFlex>
     </>
   )

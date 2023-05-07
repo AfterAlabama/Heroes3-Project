@@ -11,9 +11,8 @@ const HeroComponentDescription = () => {
       <HeroComponentSectionTitle text="Описание" />
       <IsLoading>
         <Typography sx={{
-          m:'0 5vh',
-
-        }} >{description}</Typography>
+          cursor: 'default'
+        }} m={'0 5vh 0 5vh'} fontSize={20} >{description}</Typography>
       </IsLoading>
     </>
   )
