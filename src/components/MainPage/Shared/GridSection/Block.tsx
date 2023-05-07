@@ -7,7 +7,7 @@ interface BlockProps {
 	BlockIcon: ReactElement<SVGSVGElement>;
 	BlockTitle: string;
 	BlockContent: string;
-	BlockButton?: ReactElement<HTMLButtonElement>;
+	BlockButton?: () => ReactElement<HTMLButtonElement>;
 }
 
 const Block: FC<BlockProps> = ({
@@ -24,6 +24,7 @@ const Block: FC<BlockProps> = ({
 				flexDirection: 'column',
 				p: 5,
 				boxShadow: '0 0 5px 5px rgba(51,51,255,0.2)',
+				transition: 'all 0.2s ease',
 				'&:hover': {
 					boxShadow: '0 0 10px 5px rgba(51,51,255,0.1)',
 					backgroundColor: 'white',
@@ -57,7 +58,7 @@ const Block: FC<BlockProps> = ({
 					{BlockContent}
 				</Typography>
 			</IsLoading>
-			{BlockButton && BlockButton}
+			{BlockButton && BlockButton()}
 		</CenteredFlex>
 	);
 };
