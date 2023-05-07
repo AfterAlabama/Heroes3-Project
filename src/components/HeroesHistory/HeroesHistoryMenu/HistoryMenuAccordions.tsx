@@ -8,6 +8,7 @@ interface AccordionsProps {
 }
 
 const HistoryMenuAccordions: FC<AccordionsProps> = ({ heroesArray }) => {
+
 	const showAccordions = heroesArray.map((hero, index) => (
 		<HistoryMenuAccordion
 			key={index}

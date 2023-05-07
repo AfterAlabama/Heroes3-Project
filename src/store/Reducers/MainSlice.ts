@@ -11,6 +11,7 @@ interface SliceState {
   isComponentLoading: boolean,
   isRegistrationSnackbarOpen: boolean,
   isPasswordSnackbarOpen: boolean,
+  heroesPage:number
 }
 
 const initialState: SliceState = {
@@ -23,6 +24,7 @@ const initialState: SliceState = {
   isComponentLoading: true,
   isPasswordSnackbarOpen: false,
   isRegistrationSnackbarOpen: false,
+  heroesPage: 1
 }
 
 export const MainSlice = createSlice({
@@ -56,6 +58,9 @@ export const MainSlice = createSlice({
     changeIsPasswordSnackbarOpen(state: SliceState, action: PayloadAction<boolean>){
       state.isPasswordSnackbarOpen = action.payload
     },
+    setHeroesPage(state: SliceState, action: PayloadAction<number>){
+      state.heroesPage = action.payload
+    }
   }
 })
 

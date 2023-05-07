@@ -9,16 +9,28 @@ import HistoryMenuAccordions from './HistoryMenuAccordions';
 import BackgroundImage from '../../Common/BackgroundImage/BackgroundImage';
 import BlackOverlay from '../../Common/BlackOverlay/BlackOverlay';
 import { heroesArray } from '../../../heroes/HeroesArray';
+import Pagination from '@mui/material/Pagination';
+import { ChangeEvent } from 'react';
 
 const HistoryMenuTabPanels = () => {
-	const { heroesMenuTabValue } = useAppSelector((state) => state.mainReducer);
+	const { heroesMenuTabValue, heroesPage } = useAppSelector((state) => state.mainReducer);
 	const dispatch = useAppDispatch();
-	const { changeHeroesMenuTabValue } = MainSlice.actions;
+	const { changeHeroesMenuTabValue, setHeroesPage } = MainSlice.actions;
 	const theme = useTheme();
 
 	const handleChangeIndex = (index: number) => {
 		dispatch(changeHeroesMenuTabValue(index));
 	};
+
+	const pageChangeHandler = (event: ChangeEvent<unknown>, value:number) => {
+		dispatch(setHeroesPage(value))
+	};
+
+	const getHeroesArray = (index:number) => {
+		if(heroesPage === 1) return heroesArray[index].slice(0, 8)
+		if(heroesPage === 2) return heroesArray[index].slice(8, 16)
+		return heroesArray[index].slice(16)
+	}
 
 	const menuPanelsArray = Object.values(Alignments).map((panel, index) => (
 		<HistoryMenuTabPanel
@@ -32,7 +44,7 @@ const HistoryMenuTabPanels = () => {
 					display: 'flex',
 					flexDirection: 'column',
 					position: 'relative',
-					overflow: 'hidden'
+					overflow: 'hidden',
 				}}
 			>
 				<BlackOverlay />
@@ -40,9 +52,29 @@ const HistoryMenuTabPanels = () => {
 					alt='Alignment city'
 					src={AlignmentPics[index]}
 					borderRadius='30px'
-					height ='125vh'
+					height='80vh'
 				/>
-				<HistoryMenuAccordions heroesArray={heroesArray[index]} />
+				<HistoryMenuAccordions heroesArray={getHeroesArray(index)} />
+				<Pagination
+					count={Math.ceil(heroesArray[index].length / 8)}
+					size='large'
+					color='primary'
+					page={heroesPage}
+					onChange={pageChangeHandler}
+					sx={{
+						color: 'white',
+						backgroundColor: 'rgba(255, 255, 255, 0.8)',
+						width: '20%',
+						display: 'flex',
+						alignItems: 'center',
+						justifyContent: 'center',
+						zIndex: 1,
+						p: 2,
+						borderRadius: '50%',
+						mb:5,
+						ml:25
+					}}
+				/>
 			</Box>
 		</HistoryMenuTabPanel>
 	));

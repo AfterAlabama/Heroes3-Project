@@ -33,7 +33,7 @@ export const MenuAccordion = styled((props: MenuAccordionProps) => (
 	'&:hover': {
 		boxShadow: ` 0px 4px 18px 3px ${
 			CastleHeroes.includes(hero) || TowerHeroes.includes(hero)
-				? blue[100]
+				? blue[800]
 				: RampartHeroes.includes(hero)
 				? theme.palette.success.light
 				: InfernoHeroes.includes(hero)
