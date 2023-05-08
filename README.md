@@ -15,14 +15,35 @@ This is a CSR React based project about the Heroes 3 Might & Magic, that is conf
 9) Everytime component loads it will have a neat looking [Load animation](https://github.com/AfterAlabama/Heroes3-Project/blob/master/src/components/Common/IsLoading/IsLoading.tsx)
 10) The [Main page](https://github.com/AfterAlabama/Heroes3-Project/tree/master/src/components/MainPage) will depend on whether the user is authorized or not.
 11) Navbar has a [Menu](https://github.com/AfterAlabama/Heroes3-Project/blob/master/src/components/Navbar/NavbarMenu.tsx) to navigate through the app. [Navbar content](https://github.com/AfterAlabama/Heroes3-Project/blob/master/src/components/Navbar/NavbarLogin.tsx) will also change if user registers.
-12) [Heroes history](https://github.com/AfterAlabama/Heroes3-Project/blob/master/src/components/HeroesHistory/HeroesHistoryMenu/HistoryMenu.tsx) will display all the heroes in the game, and it has a small [Characterization](https://github.com/AfterAlabama/Heroes3-Project/blob/master/src/components/HeroesHistory/HeroesComponent/HeroComponent.tsx) of each hero in the form of a resume.
+12) [Heroes history](https://github.com/AfterAlabama/Heroes3-Project/blob/master/src/components/HeroesHistory/HeroesHistoryMenu/HistoryMenu.tsx) will display all the heroes in the game, and it has a small [Characterization](https://github.com/AfterAlabama/Heroes3-Project/blob/master/src/components/HeroesHistory/HeroesComponent/HeroComponent.tsx) of each hero in the form of a resume
+13) Developer can see the bundle size of the project with an according NPM script
 
 
-# Launch
-
-To start a dev server:
+# NPM Scripts
+To start a development server:
 ```bash
  npm run dev
 #or
  yarn dev
+```
+
+To create a prod build:
+```bash
+ npm run build
+#or
+ yarn build
+```
+
+To launch a production server:
+```bash
+ npm run prod
+#or
+ yarn prod
+```
+
+To see the bundle size of the project:
+```bash
+ npm run bundle
+#or
+ yarn bundle
 ```
