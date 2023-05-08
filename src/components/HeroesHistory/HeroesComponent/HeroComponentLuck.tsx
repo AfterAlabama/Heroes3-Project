@@ -2,7 +2,8 @@ import { CenteredFlex } from "../../../styles/CenteredFlex";
 import { useHeroComponentContext } from "./HeroComponent";
 import HeroComponentSectionTitle from "./HeroComponentSectionTitle";
 import HeroComponentStat from "./HeroComponentStat";
-import { GiHorseshoe, GiEagleEmblem } from 'react-icons/gi'
+import { GiHorseshoe } from '@react-icons/all-files/gi/GiHorseshoe'
+import { GiEagleEmblem } from '@react-icons/all-files/gi/GiEagleEmblem'
 
 const HeroComponentLuck = () => {
   const { luck, morale } = useHeroComponentContext();

@@ -1,10 +1,11 @@
 import HeroComponentSectionTitle from './HeroComponentSectionTitle';
-import { GiBroadsword } from 'react-icons/gi';
+import { GiBroadsword } from '@react-icons/all-files/gi/GiBroadsword';
 import { useHeroComponentContext } from './HeroComponent';
 import HeroComponentStat from './HeroComponentStat';
 import { CenteredFlex } from '../../../styles/CenteredFlex';
-import { BsFillShieldFill } from 'react-icons/bs';
-import { GiOpenBook, GiBoltSpellCast } from 'react-icons/gi';
+import { BsFillShieldFill } from '@react-icons/all-files/bs/BsFillShieldFill';
+import { GiOpenBook } from '@react-icons/all-files/gi/GiOpenBook'
+import { GiBoltSpellCast } from '@react-icons/all-files/gi/GiBoltSpellCast';
 
 const HeroComponentStats = () => {
 	const { attack, defense, power, knowledge } = useHeroComponentContext();

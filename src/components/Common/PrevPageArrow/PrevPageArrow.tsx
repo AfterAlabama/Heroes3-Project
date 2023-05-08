@@ -1,4 +1,4 @@
-import { AiOutlineArrowLeft } from 'react-icons/ai';
+import { AiOutlineArrowLeft } from '@react-icons/all-files/ai/AiOutlineArrowLeft';
 import { CenteredFlex } from '../../../styles/CenteredFlex';
 import { useNavigate } from 'react-router-dom';
 

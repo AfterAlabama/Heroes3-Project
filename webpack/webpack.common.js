@@ -3,28 +3,27 @@ const HtmlPlugin = require('html-webpack-plugin')
 const RefresherPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
   resolve: {
     extensions: ['.ts', '.tsx', '.js']
   },
   entry: {
-    bundle: path.resolve(__dirname, 'src/index.tsx')
-  },
-  output: {
-    path: path.resolve(__dirname, 'build'),
-    filename: '[name].js',
-    publicPath: '/',
-    clean: true,
-    assetModuleFilename: '[name][ext]'
+    bundle: path.resolve(__dirname, '../src/index.tsx')
   },
   devServer: {
     static: {
-      directory: path.resolve(__dirname, 'build')
+      directory: path.resolve(__dirname, '../build')
     },
     port: 3000,
     open: true,
     hot: true,
     historyApiFallback: true
+  },
+  output: {
+    path: path.resolve(__dirname, '../build'),
+    filename: '[name].js',
+    publicPath: '/',
+    clean: true,
+    assetModuleFilename: '[name][ext]'
   },
   module: {
     rules: [
@@ -48,7 +47,7 @@ module.exports = {
   },
   plugins: [
     new HtmlPlugin({
-      template: path.resolve(__dirname, 'public/index.html')
+      template: path.resolve(__dirname, '../public/index.html')
     }),
     new RefresherPlugin()
   ]

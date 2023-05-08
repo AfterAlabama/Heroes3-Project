@@ -3,7 +3,7 @@ import IsLoading from '../../Common/IsLoading/IsLoading';
 import { useHeroComponentContext } from './HeroComponent';
 import HeroComponentSectionTitle from './HeroComponentSectionTitle';
 import Typography from '@mui/material/Typography';
-import { AiOutlineCheck } from 'react-icons/ai';
+import { AiOutlineCheck } from '@react-icons/all-files/ai/AiOutlineCheck';
 import { CenteredFlex } from '../../../styles/CenteredFlex';
 
 const HeroComponentSpecialties = () => {
