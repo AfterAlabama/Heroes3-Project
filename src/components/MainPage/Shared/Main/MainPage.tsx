@@ -1,8 +1,10 @@
 import Box from '@mui/material/Box';
-import { createContext, FC, ReactElement } from 'react';
+import { createContext, FC, ReactElement, useEffect } from 'react';
 import Footer from '../Footer/Footer';
 import BlockGrid from '../GridSection/BlockGrid';
 import Main from './Main';
+import { useAppDispatch } from '../../../../hooks/ReduxHooks';
+import { MainSlice } from '../../../../store/Reducers/MainSlice';
 
 interface MainPageProps {
 	Text: ReactElement<HTMLSpanElement>;
@@ -14,6 +16,13 @@ export const MainPageContext = createContext<MainPageProps>(
 );
 
 const MainPage: FC<MainPageProps> = ({ Text, loginButtonOrContent }) => {
+	const dispatch = useAppDispatch()
+	const { changeIsComponentLoading } = MainSlice.actions;
+
+	useEffect(() => {
+		dispatch(changeIsComponentLoading(true))
+	}, [])
+
 	return (
 		<MainPageContext.Provider value={{ Text, loginButtonOrContent }}>
 			<Box

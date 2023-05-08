@@ -87,6 +87,12 @@ const NavbarLogin = () => {
 				sx={{
 					ml: 2,
 					mr: 2,
+					transition: 'all 0.5s ease',
+					'&:hover': {
+						p: 1,
+						borderRadius: '15px',
+						boxShadow: '10px 10px 10px rgba(0,0,0,0.5)'
+					}
 				}}
 				onClick={leaveButtonClickHandler}
 				color='inherit'
@@ -99,6 +105,12 @@ const NavbarLogin = () => {
 				sx={{
 					ml: 2,
 					mr: 2,
+					transition: 'all 0.5s ease',
+					'&:hover': {
+						p: 1,
+						borderRadius: '15px',
+						boxShadow: '10px 10px 10px rgba(0,0,0,0.5)',
+					}
 				}}
 			>
 				Удалить Аккаунт
