@@ -5,5 +5,6 @@ export enum RouteNames {
   REGISTER_FORM = '/register',
   PASSWORD_CHANGE='/passwordchange',
   HEROES_HISTORY = '/history',
-  HERO = '/history/:name'
+  HERO = '/history/:name',
+  ARTIFACTS = '/artifacts'
 }

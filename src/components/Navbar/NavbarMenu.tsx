@@ -15,6 +15,7 @@ import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import { useNavigate } from 'react-router-dom';
 import { RouteNames } from '../../types/Enums/RouteNames';
 import { MainSlice } from '../../store/Reducers/MainSlice';
+import { GiSteeltoeBoots } from '@react-icons/all-files/gi/GiSteeltoeBoots'
 
 const NavbarMenu = () => {
 	const { isAuth, isLeftDrawerOpen } = useAppSelector(
@@ -25,8 +26,13 @@ const NavbarMenu = () => {
 
 	const navigate = useNavigate();
 
-	const clickHandler = (destination: string) => {
-		navigate(destination);
+	const clickHandler = (text: string) => {
+		if(text === 'Истории'){
+			navigate(RouteNames.HEROES_HISTORY)
+		} else
+		if(text === 'Артефакты'){
+			navigate(RouteNames.ARTIFACTS)
+		}
 	};
 
 	const toggleDrawer =
@@ -43,6 +49,8 @@ const NavbarMenu = () => {
 		};
 	const disabledCondition = isAuth ? false : true;
 
+
+
 	const list = () => (
 		<Box
 			sx={{ width: 250 }}
@@ -51,16 +59,16 @@ const NavbarMenu = () => {
 			onKeyDown={toggleDrawer(false)}
 		>
 			<List>
-				{['Истории', 'Starred', 'Send email', 'Drafts'].map((text) => (
+				{['Истории', 'Артефакты', 'Send email', 'Drafts'].map((text) => (
 					<ListItem
 						key={text}
 						disablePadding
 					>
 						<ListItemButton
-							onClick={() => clickHandler(RouteNames.HEROES_HISTORY)}
+							onClick={() => clickHandler(text)}
 						>
 							<ListItemIcon>
-								{text === 'Истории' && <AutoStoriesIcon />}
+								{text === 'Истории' ? <AutoStoriesIcon /> : text === 'Артефакты' && <GiSteeltoeBoots size={25} /> }
 							</ListItemIcon>
 							<ListItemText primary={text} />
 						</ListItemButton>
