@@ -3,8 +3,8 @@ interface ArtifactProperties {
 	pic: string;
 	rarity: string;
 	description: string;
-	price:number;
-	effect: string
+	price: number;
+	effect: string;
 }
 
 export class Artifact implements ArtifactProperties {
@@ -14,13 +14,13 @@ export class Artifact implements ArtifactProperties {
 		public rarity: string,
 		public description: string,
 		public price: number,
-		public effect:string
+		public effect: string
 	) {
 		this.name = name;
 		this.pic = pic;
 		this.rarity = rarity;
 		this.description = description;
 		this.price = price;
-		this.effect = effect
+		this.effect = effect;
 	}
 }
