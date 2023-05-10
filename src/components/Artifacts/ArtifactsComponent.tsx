@@ -1,6 +1,4 @@
 import Box from '@mui/material/Box';
-import Input from '@mui/material/Input';
-import InputLabel from '@mui/material/InputLabel';
 import { ArtifactArray } from '../../artifacts/ArtifactArray';
 import { ChangeEvent } from 'react';
 import ArtifactsBlock from './ArtifactsBlock';
@@ -10,17 +8,14 @@ import ArtifactsFilterSection from './ArtifactsFilterSection';
 import { useAppDispatch, useAppSelector } from '../../hooks/ReduxHooks';
 import { MainSlice } from '../../store/Reducers/MainSlice';
 import Typography from '@mui/material/Typography';
+import ArtifactsSearchBar from './ArtifactsSearchBar';
 
 const ArtifactsComponent = () => {
 	const dispatch = useAppDispatch();
 	const { artifactsPage, artifactsType, artifactsSlot, artifactsPrice, artifactsSearchQuery } = useAppSelector(
 		(state) => state.mainReducer
 	);
-	const { setArtifactsPage, setArtifactsSearchQuery } = MainSlice.actions;
-
-	const inputHandler = (e: ChangeEvent<HTMLInputElement>) => {
-		dispatch(setArtifactsSearchQuery(e.target.value))
-	}
+	const { setArtifactsPage } = MainSlice.actions;
 
 	const pageChangeHandler = (e: ChangeEvent<unknown>, value: number) => {
 		dispatch(setArtifactsPage(value));
@@ -76,10 +71,7 @@ const ArtifactsComponent = () => {
 		>
 			<ArtifactsTitle />
 			<ArtifactsFilterSection />
-			<Box mb={5}>
-				<InputLabel>Искать по названию</InputLabel>
-				<Input onChange={e => inputHandler(e as ChangeEvent<HTMLInputElement>)} placeholder='Крылья ангела...'  />
-			</Box>
+			<ArtifactsSearchBar />
 			<Box
 				sx={{
 					display: 'flex',
