@@ -13,10 +13,14 @@ import Typography from '@mui/material/Typography';
 
 const ArtifactsComponent = () => {
 	const dispatch = useAppDispatch();
-	const { artifactsPage, artifactsType, artifactsSlot, artifactsPrice } = useAppSelector(
+	const { artifactsPage, artifactsType, artifactsSlot, artifactsPrice, artifactsSearchQuery } = useAppSelector(
 		(state) => state.mainReducer
 	);
-	const { setArtifactsPage } = MainSlice.actions;
+	const { setArtifactsPage, setArtifactsSearchQuery } = MainSlice.actions;
+
+	const inputHandler = (e: ChangeEvent<HTMLInputElement>) => {
+		dispatch(setArtifactsSearchQuery(e.target.value))
+	}
 
 	const pageChangeHandler = (e: ChangeEvent<unknown>, value: number) => {
 		dispatch(setArtifactsPage(value));
@@ -44,6 +48,10 @@ const ArtifactsComponent = () => {
 				finalArray = finalArray.sort((objA, objB) => objB.price - objA.price)
 			}
 		}
+		
+		if(artifactsSearchQuery){
+			finalArray = finalArray.filter(artifact => artifact.name.toLowerCase().includes(artifactsSearchQuery.toLowerCase()))
+		}
 
 		if (finalArray.length >= 1) {
 			return finalArray
@@ -70,7 +78,7 @@ const ArtifactsComponent = () => {
 			<ArtifactsFilterSection />
 			<Box mb={5}>
 				<InputLabel>Искать по названию</InputLabel>
-				<Input placeholder='Крылья ангела...' />
+				<Input onChange={e => inputHandler(e as ChangeEvent<HTMLInputElement>)} placeholder='Крылья ангела...'  />
 			</Box>
 			<Box
 				sx={{

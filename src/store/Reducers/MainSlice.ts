@@ -17,6 +17,7 @@ interface SliceState {
   artifactsType: string;
   artifactsSlot: string;
   artifactsPrice: string;
+  artifactsSearchQuery: string
 }
 
 const initialState: SliceState = {
@@ -35,6 +36,7 @@ const initialState: SliceState = {
   artifactsType: '',
   artifactsSlot: '',
   artifactsPrice: '',
+  artifactsSearchQuery: '',
 }
 
 export const MainSlice = createSlice({
@@ -85,6 +87,9 @@ export const MainSlice = createSlice({
     },
     setArtifactsPrice(state: SliceState, action: PayloadAction<string>){
       state.artifactsPrice = action.payload
+    },
+    setArtifactsSearchQuery(state: SliceState, action: PayloadAction<string>){
+      state.artifactsSearchQuery = action.payload
     },
 
   }
