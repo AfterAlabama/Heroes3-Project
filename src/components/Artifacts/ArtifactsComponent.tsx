@@ -1,63 +1,64 @@
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Divider from '@mui/material/Divider';
 import Input from '@mui/material/Input';
 import InputLabel from '@mui/material/InputLabel';
-import Typography from '@mui/material/Typography';
 import { ArtifactArray } from '../../artifacts/ArtifactArray';
-import { ChangeEvent, useRef, useState } from 'react';
+import { ChangeEvent } from 'react';
 import ArtifactsBlock from './ArtifactsBlock';
 import Pagination from '@mui/material/Pagination';
-import { CenteredFlex } from '../../styles/CenteredFlex';
-import { AiOutlineArrowLeft } from '@react-icons/all-files/ai/AiOutlineArrowLeft';
-import { gsap } from 'gsap';
+import ArtifactsTitle from './ArtifactsTitle';
+import ArtifactsFilterSection from './ArtifactsFilterSection';
+import { useAppDispatch, useAppSelector } from '../../hooks/ReduxHooks';
+import { MainSlice } from '../../store/Reducers/MainSlice';
+import Typography from '@mui/material/Typography';
 
 const ArtifactsComponent = () => {
-	const [page, setPage] = useState(1);
-	const arrowRef = useRef<HTMLDivElement>({} as HTMLDivElement);
-	const [filtersOpened, setFiltersOpened] = useState(false);
+	const dispatch = useAppDispatch();
+	const { artifactsPage, artifactsType, artifactsSlot, artifactsPrice } = useAppSelector(
+		(state) => state.mainReducer
+	);
+	const { setArtifactsPage } = MainSlice.actions;
 
 	const pageChangeHandler = (e: ChangeEvent<unknown>, value: number) => {
-		setPage(value);
+		dispatch(setArtifactsPage(value));
 	};
 
-	const totalLength = ArtifactArray.reduce(
-		(accum, array) => accum + array.length,
-		0
-	);
-
-	const mouseOverHandler = () => {
-		gsap.to(arrowRef.current, {
-			rotate: !filtersOpened ? -90 : 90,
-			duration: 0.5,
-		});
-	};
-
-	const mouseOutHandler = () => {
-		gsap.to(arrowRef.current, {
-			rotate: !filtersOpened ? 0 : 90,
-			duration: 0.5,
-		});
-	};
-
-	const clickHandler = () => {
-		setFiltersOpened((prev) => !prev);
-		gsap.to(arrowRef.current, {
-			rotate: 90,
-			duration: 1,
-		});
-	};
+	let finalArray = ArtifactArray.flat();
 
 	const getArtifacts = () => {
-		return ArtifactArray.flat()
-			.slice((page - 1) * 20, (page - 1) * 20 + 20)
-			.map((artifact, index) => (
-				<ArtifactsBlock
-					key={index}
-					src={artifact.pic}
-					name={artifact.name}
-				/>
-			));
+		if (artifactsSlot && artifactsSlot !== 'Все') {
+			finalArray = finalArray.filter(
+				(artifact) => artifact.type === artifactsSlot
+			);
+		}
+		if (artifactsType && artifactsType !== 'Все') {
+			finalArray = finalArray.filter(
+				(artifact) => artifact.rarity === artifactsType
+			);
+		}
+
+		if(artifactsPrice && artifactsPrice !== 'Все'){
+			if(artifactsPrice === 'Less'){
+				finalArray = finalArray.sort((objA, objB) => objA.price - objB.price)
+			}
+			if(artifactsPrice === 'Greater'){
+				finalArray = finalArray.sort((objA, objB) => objB.price - objA.price)
+			}
+		}
+
+		if (finalArray.length >= 1) {
+			return finalArray
+				.slice((artifactsPage - 1) * 20, (artifactsPage - 1) * 20 + 20)
+				.map((artifact, index) => (
+					<ArtifactsBlock
+						key={index}
+						src={artifact.pic}
+						name={artifact.name}
+					/>
+				));
+		}
+		if (finalArray.length < 1) {
+			return <Typography>Ничего не найдено</Typography>;
+		}
 	};
 
 	return (
@@ -65,54 +66,8 @@ const ArtifactsComponent = () => {
 			mr={30}
 			ml={30}
 		>
-			<Box
-				mt={10}
-				mb={10}
-				sx={{
-					cursor: 'default',
-				}}
-			>
-				<Typography
-					variant='h3'
-					sx={(theme) => ({
-						color: theme.palette.primary.main,
-						mb: 2,
-					})}
-				>
-					Артефакты
-				</Typography>
-				<Divider />
-			</Box>
-			<CenteredFlex
-				sx={{
-					flexDirection: 'column',
-					gap: 2,
-				}}
-				mb={10}
-			>
-				<Button
-					sx={{
-						fontSize: 20,
-						gap: 2,
-					}}
-					onMouseEnter={mouseOverHandler}
-					onMouseLeave={mouseOutHandler}
-					onClick={clickHandler}
-				>
-					Сортировать
-					<Box ref={arrowRef}>
-						<AiOutlineArrowLeft />
-					</Box>
-				</Button>
-				<Box
-					sx={(theme) => ({
-						width: '500px',
-						height: '200px',
-						borderBottom: `1px solid ${theme.palette.primary.main}`,
-						borderTop: `1px solid ${theme.palette.primary.main}`,
-					})}
-				></Box>
-			</CenteredFlex>
+			<ArtifactsTitle />
+			<ArtifactsFilterSection />
 			<Box mb={5}>
 				<InputLabel>Искать по названию</InputLabel>
 				<Input placeholder='Крылья ангела...' />
@@ -127,9 +82,9 @@ const ArtifactsComponent = () => {
 				{getArtifacts()}
 			</Box>
 			<Pagination
-				page={page}
+				page={artifactsPage}
 				onChange={pageChangeHandler}
-				count={Math.ceil(totalLength / 20)}
+				count={Math.ceil(finalArray.length / 20)}
 			/>
 		</Box>
 	);

@@ -14,7 +14,8 @@ export class Artifact implements ArtifactProperties {
 		public rarity: string,
 		public description: string,
 		public price: number,
-		public effect: string
+		public effect: string,
+		public type: string
 	) {
 		this.name = name;
 		this.pic = pic;
@@ -22,5 +23,6 @@ export class Artifact implements ArtifactProperties {
 		this.description = description;
 		this.price = price;
 		this.effect = effect;
+		this.type = type;
 	}
 }

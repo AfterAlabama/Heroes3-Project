@@ -27,9 +27,7 @@ const HistoryMenuTabPanels = () => {
 	};
 
 	const getHeroesArray = (index:number) => {
-		if(heroesPage === 1) return heroesArray[index].slice(0, 8)
-		if(heroesPage === 2) return heroesArray[index].slice(8, 16)
-		return heroesArray[index].slice(16)
+		return heroesArray[index].slice((heroesPage - 1) * 8,(heroesPage - 1) * 8 + 8)
 	}
 
 	const menuPanelsArray = Object.values(Alignments).map((panel, index) => (

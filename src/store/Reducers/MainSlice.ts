@@ -11,7 +11,12 @@ interface SliceState {
   isComponentLoading: boolean,
   isRegistrationSnackbarOpen: boolean,
   isPasswordSnackbarOpen: boolean,
-  heroesPage:number
+  heroesPage:number;
+  artifactsPage:number;
+  isArtifactsFilterOpen: boolean;
+  artifactsType: string;
+  artifactsSlot: string;
+  artifactsPrice: string;
 }
 
 const initialState: SliceState = {
@@ -24,7 +29,12 @@ const initialState: SliceState = {
   isComponentLoading: true,
   isPasswordSnackbarOpen: false,
   isRegistrationSnackbarOpen: false,
-  heroesPage: 1
+  heroesPage: 1,
+  artifactsPage: 1,
+  isArtifactsFilterOpen: false,
+  artifactsType: '',
+  artifactsSlot: '',
+  artifactsPrice: '',
 }
 
 export const MainSlice = createSlice({
@@ -60,7 +70,23 @@ export const MainSlice = createSlice({
     },
     setHeroesPage(state: SliceState, action: PayloadAction<number>){
       state.heroesPage = action.payload
-    }
+    },
+    setArtifactsPage(state: SliceState, action: PayloadAction<number>){
+      state.artifactsPage = action.payload
+    },
+    setArtifactsFilter(state: SliceState, action: PayloadAction<boolean>){
+      state.isArtifactsFilterOpen = action.payload
+    },
+    setArtifactsType(state: SliceState, action: PayloadAction<string>){
+      state.artifactsType = action.payload
+    },
+    setArtifactsSlot(state: SliceState, action: PayloadAction<string>){
+      state.artifactsSlot = action.payload
+    },
+    setArtifactsPrice(state: SliceState, action: PayloadAction<string>){
+      state.artifactsPrice = action.payload
+    },
+
   }
 })
 
