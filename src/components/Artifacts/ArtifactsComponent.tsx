@@ -16,6 +16,7 @@ const ArtifactsComponent = () => {
 		(state) => state.mainReducer
 	);
 	const { setArtifactsPage } = MainSlice.actions;
+	
 
 	const pageChangeHandler = (e: ChangeEvent<unknown>, value: number) => {
 		dispatch(setArtifactsPage(value));
@@ -60,7 +61,10 @@ const ArtifactsComponent = () => {
 				));
 		}
 		if (finalArray.length < 1) {
-			return <Typography>Ничего не найдено</Typography>;
+			return <Typography color='primary' variant='h4' sx={{
+				cursor: 'default',
+				mb: 5
+			}} >Ничего не найдено</Typography>;
 		}
 	};
 
@@ -77,6 +81,7 @@ const ArtifactsComponent = () => {
 					display: 'flex',
 					flexWrap: 'wrap',
 					gap: 5,
+					mb: 5
 				}}
 			>
 				{getArtifacts()}
@@ -85,6 +90,10 @@ const ArtifactsComponent = () => {
 				page={artifactsPage}
 				onChange={pageChangeHandler}
 				count={Math.ceil(finalArray.length / 20)}
+				size='large'
+				sx={{
+					mb: 5,
+				}}
 			/>
 		</Box>
 	);

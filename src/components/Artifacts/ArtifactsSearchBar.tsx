@@ -18,10 +18,13 @@ const ArtifactsSearchBar = () => {
 
 	return (
 		<Box mb={5}>
-			<InputLabel>Искать по названию</InputLabel>
+			<InputLabel sx={{
+				fontSize: 22,
+				mb: 2
+			}} >Искать по названию</InputLabel>
 			<Input
 				onChange={(e) => inputHandler(e as ChangeEvent<HTMLInputElement>)}
-				placeholder='Крылья ангела...'
+				placeholder='Артефакт...'
 			/>
 		</Box>
 	);

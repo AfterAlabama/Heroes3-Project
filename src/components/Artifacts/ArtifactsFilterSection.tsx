@@ -8,6 +8,7 @@ import { ArtifactTypes } from '../../types/Enums/ArtifactTypes';
 import ArtifactsFilterOpeningButton from './ArtifactsFilterOpeningButton';
 import { useAppDispatch, useAppSelector } from '../../hooks/ReduxHooks';
 import { MainSlice } from '../../store/Reducers/MainSlice';
+import { useRef } from 'react';
 
 const ArtifactsFilterSection = () => {
 	const { artifactsType, artifactsPrice, artifactsSlot } = useAppSelector(
@@ -15,7 +16,10 @@ const ArtifactsFilterSection = () => {
 	);
 	const dispatch = useAppDispatch();
 	const { setArtifactsType, setArtifactsPrice, setArtifactsSlot } =
-		MainSlice.actions;
+		MainSlice.actions
+	;
+	
+	const filtersRef = useRef<HTMLDivElement>({} as HTMLDivElement);
 
 	const typeChangehandler = (e: SelectChangeEvent) => {
 		dispatch(setArtifactsType(e.target.value));
@@ -25,9 +29,9 @@ const ArtifactsFilterSection = () => {
 		dispatch(setArtifactsSlot(e.target.value));
 	};
 
-  const priceChangeHandler = (e: SelectChangeEvent) => {
-    dispatch(setArtifactsPrice(e.target.value));
-  }
+	const priceChangeHandler = (e: SelectChangeEvent) => {
+		dispatch(setArtifactsPrice(e.target.value));
+	};
 
 	return (
 		<CenteredFlex
@@ -37,20 +41,24 @@ const ArtifactsFilterSection = () => {
 			}}
 			mb={10}
 		>
-			<ArtifactsFilterOpeningButton />
+			<ArtifactsFilterOpeningButton filtersRef={filtersRef} />
 			<CenteredFlex
+				ref={filtersRef}
 				sx={(theme) => ({
 					width: '500px',
-					height: '200px',
+					height: '0px',
 					borderBottom: `1px solid ${theme.palette.primary.main}`,
-					backgroundColor: '#f4f4f4',
+					backgroundColor: '#F0F8FF',
 					borderTop: `1px solid ${theme.palette.primary.main}`,
+					alignItems: 'flex-start',
 					gap: 8,
+					overflow: 'hidden'
 				})}
 			>
 				<FormControl
 					sx={{
 						width: '100px',
+						mt:10
 					}}
 				>
 					<InputLabel>Слот</InputLabel>
@@ -58,6 +66,9 @@ const ArtifactsFilterSection = () => {
 						value={artifactsSlot}
 						label='Слот'
 						onChange={slotChangehandler}
+						sx={{
+							backgroundColor :'white',
+						}}
 					>
 						<MenuItem value='Все'>Все</MenuItem>
 						<MenuItem value={ArtifactTypes.NECK}>{ArtifactTypes.NECK}</MenuItem>
@@ -84,6 +95,7 @@ const ArtifactsFilterSection = () => {
 				<FormControl
 					sx={{
 						width: '100px',
+						mt:10
 					}}
 				>
 					<InputLabel id='type-label'>Тип</InputLabel>
@@ -92,6 +104,9 @@ const ArtifactsFilterSection = () => {
 						label='Тип'
 						value={artifactsType}
 						onChange={typeChangehandler}
+						sx={{
+							backgroundColor :'white',
+						}}
 					>
 						<MenuItem value='Все'>Все</MenuItem>
 						<MenuItem value={ArtifactRarity.MINOR}>
@@ -111,11 +126,19 @@ const ArtifactsFilterSection = () => {
 				<FormControl
 					sx={{
 						width: '100px',
+						mt:10
 					}}
 				>
 					<InputLabel>Цена</InputLabel>
-					<Select label='Цена' value={artifactsPrice} onChange={priceChangeHandler}>
-						<MenuItem value='Все' >Все</MenuItem>
+					<Select
+						label='Цена'
+						value={artifactsPrice}
+						onChange={priceChangeHandler}
+						sx={{
+							backgroundColor :'white',
+						}}
+					>
+						<MenuItem value='Все'>Все</MenuItem>
 						<MenuItem value='Less'>Самая низкая</MenuItem>
 						<MenuItem value='Greater'>Самая высокая</MenuItem>
 					</Select>

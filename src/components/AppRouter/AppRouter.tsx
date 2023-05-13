@@ -10,6 +10,7 @@ import { useAppSelector } from '../../hooks/ReduxHooks';
 import HeroesHistory from '../HeroesHistory/HeroesHistory/HeroesHistory';
 import HeroComponent from '../HeroesHistory/HeroesComponent/HeroComponent';
 import ArtifactsComponent from '../Artifacts/ArtifactsComponent';
+import Artifact from '../Artifacts/Artifact';
 
 const AppRouter = () => {
 	const { isAuth } = useAppSelector((state) => state.mainReducer);
@@ -45,6 +46,10 @@ const AppRouter = () => {
 			<Route
 				path={RouteNames.ARTIFACTS}
 				element={<ArtifactsComponent />}
+			/>
+			<Route
+				path={RouteNames.ARTIFACT}
+				element={<Artifact />}
 			/>
 			<Route
 				path={RouteNames.NOT_FOUND}
