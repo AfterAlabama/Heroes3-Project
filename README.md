@@ -47,3 +47,10 @@ To see the bundle size of the project:
 #or
  yarn bundle
 ```
+
+To run Tests:
+```bash
+ npm run test
+ #or
+ yarn test
+```
