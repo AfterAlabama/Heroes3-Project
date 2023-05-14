@@ -4,6 +4,7 @@ import Grid, { GridProps } from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { FC } from 'react';
 import { GetSxProp } from '../../../helpers/GetSxProp/GetSxProp';
+import IsLoading from '../IsLoading/IsLoading';
 
 //creates a customizable grid table wrapped in div (one grid item is a column with one th and corresponding td)
 
@@ -36,22 +37,25 @@ const GridTable: FC<GridTableProps> = ({
 			item
 			{...gridItemProps}
 		>
-			<Typography
-				mb={1}
-				fontWeight={'bold'}
-				sx={GetSxProp(thSx)}
-			>
-				{th[index]}
-			</Typography>
-			{items.map((item) => (
+			<IsLoading>
 				<Typography
-					key={item}
-					fontSize={15}
-					lineHeight={2}
-					sx={GetSxProp(tdSx)}
+					mb={1}
+					fontWeight={'bold'}
+					sx={GetSxProp(thSx)}
 				>
-					{item}
+					{th[index]}
 				</Typography>
+			</IsLoading>
+			{items.map((item) => (
+				<IsLoading key={item}>
+					<Typography
+						fontSize={15}
+						lineHeight={2}
+						sx={GetSxProp(tdSx)}
+					>
+						{item}
+					</Typography>
+				</IsLoading>
 			))}
 		</Grid>
 	));

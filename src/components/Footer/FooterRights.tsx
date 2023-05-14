@@ -1,6 +1,7 @@
 import Typography from '@mui/material/Typography';
 import { CenteredFlex } from '../../styles/Flex';
 import FooterIcons from './FooterIcons';
+import IsLoading from '../Common/IsLoading/IsLoading';
 
 const FooterRights = () => {
 	return (
@@ -11,9 +12,11 @@ const FooterRights = () => {
 				mr: 23,
 			}}
 		>
-			<Typography color='white'>
-				<>&copy;</> 2023 Hero Progeny. Все права сохранены.
-			</Typography>
+			<IsLoading>
+				<Typography color='white'>
+					<>&copy;</> 2023 Hero Progeny. Все права сохранены.
+				</Typography>
+			</IsLoading>
 			<FooterIcons />
 		</CenteredFlex>
 	);
