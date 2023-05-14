@@ -5,7 +5,7 @@ module.exports = {
 		'\\.(jpg|jpeg|png|svg|mp3)$': '<rootDir>/__mocks__/fileMock.js',
 		'\\.(css|scss)$': '<rootDir>/__mocks__/styleMock.js',
 	},
-	// transformIgnorePatterns: [
-	// 	'<rootDir>/node_modules/@mui/(?!material|material/colors)'
-	// ]
+	transformIgnorePatterns: [
+		'<rootDir>/node_modules/@mui/(?!material|material/colors)'
+	]
 };

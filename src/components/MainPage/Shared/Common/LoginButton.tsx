@@ -3,6 +3,7 @@ import blue from '@mui/material/colors/blue';
 import { useNavigate } from 'react-router-dom';
 import { RouteNames } from '../../../../types/Enums/RouteNames';
 import IsLoading from '../../../Common/IsLoading/IsLoading';
+import { TestIds } from '../../../../types/Enums/TestIds';
 
 const LoginButton = () => {
 	const navigate = useNavigate();
@@ -14,6 +15,7 @@ const LoginButton = () => {
 		<IsLoading>
 			<Button
 				onClick={loginButtonClickHandler}
+				data-testid={TestIds.AUTHLINK}
 				sx={{
 					mt: 2,
 					color: 'white',

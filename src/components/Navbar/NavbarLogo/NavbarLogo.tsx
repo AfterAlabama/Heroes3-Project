@@ -1,48 +1,51 @@
 import Typography from '@mui/material/Typography';
-import { RouteNames } from '../../types/Enums/RouteNames';
 import { Link as ReactRouterLink, useLocation } from 'react-router-dom';
 import Link from '@mui/material/Link';
+import { RouteNames } from '../../../types/Enums/RouteNames';
+import { TestIds } from '../../../types/Enums/TestIds';
 
 const NavbarLogo = () => {
 	const location = useLocation();
 
 	const navbarLinkCondition = () => {
-		if(location.pathname !== RouteNames.DEFAULT){
+		if (location.pathname !== RouteNames.DEFAULT) {
 			return (
 				<Link
-				component={ReactRouterLink}
-				to={RouteNames.DEFAULT}
-				sx={{
-					color:'white',
-					textDecoration: 'none',
-					cursor:'pointer',
-					transition: 'all 0.5s ease',
-					'&:hover': {
-						p: 1,
-						borderRadius: '15px',
-						boxShadow: '10px 10px 10px rgba(0,0,0,0.5)'
-					}
-				}}
-			>
-				HeroProgeny
-			</Link>
-			)
+					data-testid={TestIds.NAVBARLOGOLINK}
+					component={ReactRouterLink}
+					to={RouteNames.DEFAULT}
+					sx={{
+						color: 'white',
+						textDecoration: 'none',
+						cursor: 'pointer',
+						transition: 'all 0.5s ease',
+						'&:hover': {
+							p: 1,
+							borderRadius: '15px',
+							boxShadow: '10px 10px 10px rgba(0,0,0,0.5)',
+						},
+					}}
+				>
+					HeroProgeny
+				</Link>
+			);
 		}
 
 		return (
 			<Link
+				data-testid={TestIds.NAVBARLOGOLINK}
 				component={ReactRouterLink}
 				to={''}
 				sx={(theme) => ({
 					color: theme.palette.grey[400],
 					textDecoration: 'none',
-					cursor:'default'
+					cursor: 'default',
 				})}
 			>
 				HeroProgeny
 			</Link>
-		)
-	}
+		);
+	};
 
 	return (
 		<Typography
