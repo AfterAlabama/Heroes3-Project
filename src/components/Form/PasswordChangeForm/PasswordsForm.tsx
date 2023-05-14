@@ -12,7 +12,7 @@ import red from '@mui/material/colors/red';
 import { PasswordFormValues } from './PasswordChangeFormContent';
 import { useAppDispatch } from '../../../hooks/ReduxHooks';
 import { MainSlice } from '../../../store/Reducers/MainSlice';
-import { CenteredFlex } from '../../../styles/CenteredFlex';
+import { CenteredFlex } from '../../../styles/Flex';
 
 const PasswordsForm = forwardRef<
 	HTMLDivElement,

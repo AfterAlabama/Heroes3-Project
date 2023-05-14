@@ -2,9 +2,9 @@ import HeroComponentSectionTitle from './HeroComponentSectionTitle';
 import { GiBroadsword } from '@react-icons/all-files/gi/GiBroadsword';
 import { useHeroComponentContext } from './HeroComponent';
 import HeroComponentStat from './HeroComponentStat';
-import { CenteredFlex } from '../../../styles/CenteredFlex';
+import { CenteredFlex } from '../../../styles/Flex';
 import { BsFillShieldFill } from '@react-icons/all-files/bs/BsFillShieldFill';
-import { GiOpenBook } from '@react-icons/all-files/gi/GiOpenBook'
+import { GiOpenBook } from '@react-icons/all-files/gi/GiOpenBook';
 import { GiBoltSpellCast } from '@react-icons/all-files/gi/GiBoltSpellCast';
 
 const HeroComponentStats = () => {

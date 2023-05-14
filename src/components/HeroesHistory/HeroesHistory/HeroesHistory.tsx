@@ -1,4 +1,4 @@
-import Footer from '../../MainPage/Shared/Footer/Footer';
+import Footer from '../../Footer/Footer';
 import HistoryHeader from '../HeroesHistoryHeader/HistoryHeader';
 import HistoryMenu from '../HeroesHistoryMenu/HistoryMenu';
 

@@ -8,7 +8,7 @@ import StyledInput from '../Shared/StyledInput';
 import { RegisterFormValues } from './RegisterFormCard';
 import { FormContentContainer } from '../../../styles/FormContentContainer';
 import FormButtons from '../Shared/FormButtons';
-import { CenteredFlex } from '../../../styles/CenteredFlex';
+import { CenteredFlex } from '../../../styles/Flex';
 
 const RegisterFormContent: FC<FormContentProps<RegisterFormValues>> = ({
 	handleSubmit,
@@ -45,9 +45,11 @@ const RegisterFormContent: FC<FormContentProps<RegisterFormValues>> = ({
 	return (
 		<FormContentContainer height={formHeightCondition}>
 			<form onSubmit={handleSubmit}>
-				<CenteredFlex sx={{
-					flexDirection: 'column'
-				}} >
+				<CenteredFlex
+					sx={{
+						flexDirection: 'column',
+					}}
+				>
 					<FormTitle
 						height={-15}
 						text='Регистрация'

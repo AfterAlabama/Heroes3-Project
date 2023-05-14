@@ -3,7 +3,7 @@ import Paper from '@mui/material/Paper';
 import HeroComponentTitle from './HeroComponentTitle';
 import HeroComponentInfoAndPic from './HeroComponentInfoAndPic';
 import HeroComponentStats from './HeroComponentStats';
-import { CenteredFlex } from '../../../styles/CenteredFlex';
+import { CenteredFlex } from '../../../styles/Flex';
 import { createContext, useContext, useEffect } from 'react';
 import { Hero } from '../../../heroes/Hero';
 import HeroComponentLuck from './HeroComponentLuck';
@@ -27,9 +27,7 @@ const HeroComponent = () => {
 
 	const hero = heroesArray
 		.map((arr) => arr.filter((hero) => name && hero.name === name))
-		.filter((arr2) => arr2.length > 0)[0][0]
-	;
-	
+		.filter((arr2) => arr2.length > 0)[0][0];
 	useEffect(() => {
 		dispatch(changeIsComponentLoading(true));
 	}, []);

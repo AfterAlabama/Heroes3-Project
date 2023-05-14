@@ -1,5 +1,5 @@
 import { AiOutlineArrowLeft } from '@react-icons/all-files/ai/AiOutlineArrowLeft';
-import { CenteredFlex } from '../../../styles/CenteredFlex';
+import { CenteredFlex } from '../../../styles/Flex';
 import { useNavigate } from 'react-router-dom';
 
 const PrevPageArrow = () => {

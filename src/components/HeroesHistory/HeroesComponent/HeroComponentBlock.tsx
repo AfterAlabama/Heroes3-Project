@@ -1,6 +1,6 @@
 import IsLoading from '../../Common/IsLoading/IsLoading';
 import Typography from '@mui/material/Typography';
-import { CenteredFlex } from '../../../styles/CenteredFlex';
+import { CenteredFlex } from '../../../styles/Flex';
 import { FC, ReactElement } from 'react';
 
 interface HeroComponentBlockProps {

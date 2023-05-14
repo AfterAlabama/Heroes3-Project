@@ -10,7 +10,7 @@ import RegisterLink from './RegisterLink';
 import { AuthFormValues } from './AuthFormCard';
 import AuthFormHelperText from './AuthFormHelperText';
 import { FormContentContainer } from '../../../styles/FormContentContainer';
-import { CenteredFlex } from '../../../styles/CenteredFlex';
+import { CenteredFlex } from '../../../styles/Flex';
 
 export interface FormContentProps<T extends object> {
 	handleSubmit: (e: FormEvent<HTMLFormElement>) => void;
@@ -45,9 +45,11 @@ const AuthFormContent: FC<FormContentProps<AuthFormValues>> = ({
 	return (
 		<FormContentContainer height={formHeightCondition}>
 			<form onSubmit={handleSubmit}>
-				<CenteredFlex sx={{
-					flexDirection: 'column'
-				}} >
+				<CenteredFlex
+					sx={{
+						flexDirection: 'column',
+					}}
+				>
 					<FormTitle
 						height={-5}
 						text='Вход в аккаунт'

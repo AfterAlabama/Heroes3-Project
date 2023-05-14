@@ -7,7 +7,7 @@ import StyledInput from '../Shared/StyledInput';
 import red from '@mui/material/colors/red';
 import { EmailFormValues } from './PasswordChangeFormContent';
 import FormButtons from '../Shared/FormButtons';
-import { CenteredFlex } from '../../../styles/CenteredFlex';
+import { CenteredFlex } from '../../../styles/Flex';
 
 export const EmailForm = forwardRef<
 	HTMLDivElement,
@@ -37,9 +37,12 @@ export const EmailForm = forwardRef<
 
 		return (
 			<form onSubmit={handleSubmit}>
-				<CenteredFlex sx={{
-					flexDirection: 'column'
-				}} ref={ref}>
+				<CenteredFlex
+					sx={{
+						flexDirection: 'column',
+					}}
+					ref={ref}
+				>
 					<FormTitle
 						height={-5}
 						text='Введите email'

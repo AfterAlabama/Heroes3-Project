@@ -3,6 +3,7 @@ import { FC, ReactNode, useEffect, useRef } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../hooks/ReduxHooks';
 import { MainSlice } from '../../../store/Reducers/MainSlice';
 import { SxProps, Theme } from '@mui/material/styles';
+import { GetSxProp } from '../../../helpers/GetSxProp/GetSxProp';
 
 interface IsLoadingProps {
 	children: ReactNode;
@@ -25,10 +26,8 @@ const IsLoading: FC<IsLoadingProps> = ({ children, sx = [] }) => {
 		};
 	}, []);
 
-	const sxCondition = [...(Array.isArray(sx) ? sx : [sx])];
-
 	const loadingCondition = isComponentLoading ? (
-		<Skeleton animation={'wave'} sx={sxCondition}>{children}</Skeleton>
+		<Skeleton animation={'wave'} sx={GetSxProp(sx)}>{children}</Skeleton>
 	) : (
 		<>{children}</>
 	);

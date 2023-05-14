@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import Typography from '@mui/material/Typography';
-import { CenteredFlex } from '../../../styles/CenteredFlex';
+import { CenteredFlex } from '../../../styles/Flex';
 import IsLoading from '../../Common/IsLoading/IsLoading';
 
 const HeroComponentStat = ({
@@ -11,9 +11,11 @@ const HeroComponentStat = ({
 	value: number;
 }) => {
 	return (
-		<CenteredFlex sx={{
-			flexDirection: 'column'
-		}} >
+		<CenteredFlex
+			sx={{
+				flexDirection: 'column',
+			}}
+		>
 			<IsLoading>
 				<CenteredFlex
 					sx={(theme) => ({
@@ -26,8 +28,8 @@ const HeroComponentStat = ({
 							backgroundColor: theme.palette.primary.main,
 							color: 'white',
 							boxShadow: '10px 10px 10px rgba(0,0,0,0.5)',
-							transform: 'scale(1.2)'
-						}
+							transform: 'scale(1.2)',
+						},
 					})}
 				>
 					{icon}

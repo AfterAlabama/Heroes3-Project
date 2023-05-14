@@ -1,6 +1,5 @@
 import Box from '@mui/material/Box';
 import { createContext, FC, ReactElement, useEffect } from 'react';
-import Footer from '../Footer/Footer';
 import BlockGrid from '../GridSection/BlockGrid';
 import Main from './Main';
 import { useAppDispatch } from '../../../../hooks/ReduxHooks';
@@ -32,7 +31,6 @@ const MainPage: FC<MainPageProps> = ({ Text, loginButtonOrContent }) => {
 			>
 				<Main />
 				<BlockGrid />
-				<Footer />
 			</Box>
 		</MainPageContext.Provider>
 	);

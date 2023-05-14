@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import { CenteredFlex } from '../../styles/CenteredFlex';
+import { CenteredFlex } from '../../styles/Flex';
 import { Link as ReactRouterLink } from 'react-router-dom';
 import { RouteNames } from '../../types/Enums/RouteNames';
 import Link from '@mui/material/Link';

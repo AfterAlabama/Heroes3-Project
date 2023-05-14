@@ -1,4 +1,4 @@
-import { CenteredFlex } from '../../styles/CenteredFlex';
+import { CenteredFlex } from '../../styles/Flex';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
@@ -16,9 +16,7 @@ const ArtifactsFilterSection = () => {
 	);
 	const dispatch = useAppDispatch();
 	const { setArtifactsType, setArtifactsPrice, setArtifactsSlot } =
-		MainSlice.actions
-	;
-	
+		MainSlice.actions;
 	const filtersRef = useRef<HTMLDivElement>({} as HTMLDivElement);
 
 	const typeChangehandler = (e: SelectChangeEvent) => {
@@ -52,13 +50,13 @@ const ArtifactsFilterSection = () => {
 					borderTop: `1px solid ${theme.palette.primary.main}`,
 					alignItems: 'flex-start',
 					gap: 8,
-					overflow: 'hidden'
+					overflow: 'hidden',
 				})}
 			>
 				<FormControl
 					sx={{
 						width: '100px',
-						mt:10
+						mt: 10,
 					}}
 				>
 					<InputLabel>Слот</InputLabel>
@@ -67,7 +65,7 @@ const ArtifactsFilterSection = () => {
 						label='Слот'
 						onChange={slotChangehandler}
 						sx={{
-							backgroundColor :'white',
+							backgroundColor: 'white',
 						}}
 					>
 						<MenuItem value='Все'>Все</MenuItem>
@@ -95,7 +93,7 @@ const ArtifactsFilterSection = () => {
 				<FormControl
 					sx={{
 						width: '100px',
-						mt:10
+						mt: 10,
 					}}
 				>
 					<InputLabel id='type-label'>Тип</InputLabel>
@@ -105,7 +103,7 @@ const ArtifactsFilterSection = () => {
 						value={artifactsType}
 						onChange={typeChangehandler}
 						sx={{
-							backgroundColor :'white',
+							backgroundColor: 'white',
 						}}
 					>
 						<MenuItem value='Все'>Все</MenuItem>
@@ -126,7 +124,7 @@ const ArtifactsFilterSection = () => {
 				<FormControl
 					sx={{
 						width: '100px',
-						mt:10
+						mt: 10,
 					}}
 				>
 					<InputLabel>Цена</InputLabel>
@@ -135,7 +133,7 @@ const ArtifactsFilterSection = () => {
 						value={artifactsPrice}
 						onChange={priceChangeHandler}
 						sx={{
-							backgroundColor :'white',
+							backgroundColor: 'white',
 						}}
 					>
 						<MenuItem value='Все'>Все</MenuItem>

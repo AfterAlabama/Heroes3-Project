@@ -12,5 +12,21 @@ export const CenteredFlex = styled(
 )(() => ({
 	display: 'flex',
 	alignItems: 'center',
-	justifyContent: 'center'
+	justifyContent: 'center',
+	cursor: 'default'
+}));
+
+export const ColumnedFlex = styled(
+	forwardRef<HTMLDivElement, BoxProps>((props: BoxProps, ref) => (
+		<MuiBox
+			ref={ref}
+			{...props}
+		/>
+	))
+)(() => ({
+	display: 'flex',
+	alignItems: 'center',
+	justifyContent: 'center',
+	flexDirection: 'column',
+	cursor: 'default'
 }));

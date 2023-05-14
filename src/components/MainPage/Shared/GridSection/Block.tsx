@@ -1,6 +1,6 @@
 import Typography from '@mui/material/Typography';
 import { FC, ReactElement } from 'react';
-import { CenteredFlex } from '../../../../styles/CenteredFlex';
+import { CenteredFlex } from '../../../../styles/Flex';
 import IsLoading from '../../../Common/IsLoading/IsLoading';
 
 interface BlockProps {

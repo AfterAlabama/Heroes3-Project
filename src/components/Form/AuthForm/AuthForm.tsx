@@ -7,7 +7,7 @@ import AuthFormSnackbar from './AuthFormSnackbar';
 const AuthForm = () => {
 	return (
 		<>
-			<FormContainer>
+			<FormContainer data-testid='authForm'>
 				<BackgroundImage
 					alt='authPic'
 					src={authPic}
