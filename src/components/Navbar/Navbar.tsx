@@ -3,7 +3,7 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import NavbarLogin from './NavbarLogin';
 import NavbarMenu from './NavbarMenu';
-import NavbarLogo from './NavbarLogo/NavbarLogo';
+import NavbarLogo from './NavbarLogo';
 
 const Navbar = () => {
 	return (

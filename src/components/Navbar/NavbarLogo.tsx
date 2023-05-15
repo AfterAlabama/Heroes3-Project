@@ -1,8 +1,7 @@
 import Typography from '@mui/material/Typography';
 import { Link as ReactRouterLink, useLocation } from 'react-router-dom';
 import Link from '@mui/material/Link';
-import { RouteNames } from '../../../types/Enums/RouteNames';
-import { TestIds } from '../../../types/Enums/TestIds';
+import { RouteNames } from '../../types/Enums/RouteNames';
 
 const NavbarLogo = () => {
 	const location = useLocation();
@@ -11,7 +10,6 @@ const NavbarLogo = () => {
 		if (location.pathname !== RouteNames.DEFAULT) {
 			return (
 				<Link
-					data-testid={TestIds.NAVBARLOGOLINK}
 					component={ReactRouterLink}
 					to={RouteNames.DEFAULT}
 					sx={{
@@ -33,7 +31,6 @@ const NavbarLogo = () => {
 
 		return (
 			<Link
-				data-testid={TestIds.NAVBARLOGOLINK}
 				component={ReactRouterLink}
 				to={''}
 				sx={(theme) => ({
