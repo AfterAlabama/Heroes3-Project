@@ -1,37 +1,21 @@
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
-import { DeleteCookie } from '../../helpers/Cookie/DeleteCookie';
 import { GetCookieValue } from '../../helpers/Cookie/GetCookieValues';
-import { useAppDispatch, useAppSelector } from '../../hooks/ReduxHooks';
+import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
+import PermIdentityIcon from '@mui/icons-material/PermIdentity';
+import { useRef } from 'react';
+import { useAppDispatch } from '../../hooks/ReduxHooks';
+import { useNavigate } from 'react-router-dom';
 import { MainSlice } from '../../store/Reducers/MainSlice';
 import { RouteNames } from '../../types/Enums/RouteNames';
-import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
-import { useRef } from 'react';
-import PermIdentityIcon from '@mui/icons-material/PermIdentity';
-import { useNavigate } from 'react-router-dom';
+import { DeleteCookie } from '../../helpers/Cookie/DeleteCookie';
 
-const NavbarLogin = () => {
-	const { isAuth } = useAppSelector((state) => state.mainReducer);
+const NavbarAuthContent = () => {
+	const picRef = useRef<SVGSVGElement>({} as SVGSVGElement);
 	const dispatch = useAppDispatch();
 	const { changeAuth } = MainSlice.actions;
-	const picRef = useRef<SVGSVGElement>({} as SVGSVGElement);
-	const navigate = useNavigate()
-
-	const leaveButtonClickHandler = () => {
-		dispatch(changeAuth(false));
-		navigate(RouteNames.DEFAULT)
-	};
-
-	const deleteAccountButtonClickHandler = () => {
-		dispatch(changeAuth(false));
-		DeleteCookie('email');
-		DeleteCookie('password');
-		DeleteCookie('name');
-		DeleteCookie('Login')
-		navigate(RouteNames.DEFAULT)
-	};
+	const navigate = useNavigate();
 
 	const avatarMouseEnterHandler = () => {
 		picRef.current.style.display = 'flex';
@@ -41,7 +25,21 @@ const NavbarLogin = () => {
 		picRef.current.style.display = 'none';
 	};
 
-	const LoginCondition = isAuth ? (
+	const leaveButtonClickHandler = () => {
+		dispatch(changeAuth(false));
+		navigate(RouteNames.DEFAULT);
+	};
+
+	const deleteAccountButtonClickHandler = () => {
+		dispatch(changeAuth(false));
+		DeleteCookie('email');
+		DeleteCookie('password');
+		DeleteCookie('name');
+		DeleteCookie('Login');
+		navigate(RouteNames.DEFAULT);
+	};
+
+	return (
 		<>
 			<Typography
 				sx={{
@@ -91,8 +89,8 @@ const NavbarLogin = () => {
 					'&:hover': {
 						p: 1,
 						borderRadius: '15px',
-						boxShadow: '10px 10px 10px rgba(0,0,0,0.5)'
-					}
+						boxShadow: '10px 10px 10px rgba(0,0,0,0.5)',
+					},
 				}}
 				onClick={leaveButtonClickHandler}
 				color='inherit'
@@ -110,31 +108,13 @@ const NavbarLogin = () => {
 						p: 1,
 						borderRadius: '15px',
 						boxShadow: '10px 10px 10px rgba(0,0,0,0.5)',
-					}
+					},
 				}}
 			>
 				Удалить Аккаунт
 			</Button>
 		</>
-	) : (
-		<Button
-			sx={{
-				ml: 2,
-				marginRight: 2,
-			}}
-			color='inherit'
-		>
-			<Link
-				href={RouteNames.AUTH_FORM}
-				color='inherit'
-				underline='none'
-			>
-				Войти
-			</Link>
-		</Button>
 	);
-
-	return <>{LoginCondition}</>;
 };
 
-export default NavbarLogin;
+export default NavbarAuthContent;

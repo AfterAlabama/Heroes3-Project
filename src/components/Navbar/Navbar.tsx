@@ -1,9 +1,9 @@
 import Box from '@mui/material/Box';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import NavbarLogin from './NavbarLogin';
 import NavbarMenu from './NavbarMenu';
 import NavbarLogo from './NavbarLogo';
+import NavbarContent from './NavbarContent';
 
 const Navbar = () => {
 	return (
@@ -15,7 +15,7 @@ const Navbar = () => {
 				<Toolbar>
 					<NavbarMenu />
 					<NavbarLogo />
-					<NavbarLogin />
+					<NavbarContent />
 				</Toolbar>
 			</AppBar>
 		</Box>
