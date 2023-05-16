@@ -17,7 +17,8 @@ interface SliceState {
   artifactsType: string;
   artifactsSlot: string;
   artifactsPrice: string;
-  artifactsSearchQuery: string
+  artifactsSearchQuery: string;
+  profilePicFile: File | null
 }
 
 const initialState: SliceState = {
@@ -37,6 +38,7 @@ const initialState: SliceState = {
   artifactsSlot: '',
   artifactsPrice: '',
   artifactsSearchQuery: '',
+  profilePicFile: null
 }
 
 export const MainSlice = createSlice({
@@ -91,7 +93,9 @@ export const MainSlice = createSlice({
     setArtifactsSearchQuery(state: SliceState, action: PayloadAction<string>){
       state.artifactsSearchQuery = action.payload
     },
-
+    setProfilePic(state: SliceState, action: PayloadAction<File>){
+      state.profilePicFile = action.payload
+    }
   }
 })
 
