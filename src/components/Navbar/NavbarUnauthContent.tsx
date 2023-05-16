@@ -1,25 +1,29 @@
-import Button from "@mui/material/Button";
-import Link from "@mui/material/Link";
-import { RouteNames } from "../../types/Enums/RouteNames";
+import { Link as ReactRouterLink } from 'react-router-dom';
+import Link from '@mui/material/Link';
+import { RouteNames } from '../../types/Enums/RouteNames';
 
 const NavbarUnauthContent = () => {
-  return (
-    <Button
-			sx={{
-				ml: 2,
-				marginRight: 2,
-			}}
-			color='inherit'
-		>
+	return (
+		<>
 			<Link
-				href={RouteNames.AUTH_FORM}
-				color='inherit'
-				underline='none'
+				component={ReactRouterLink}
+				to={RouteNames.AUTH_FORM}
+				sx={{
+					color:'white',
+					textDecoration: 'none',
+					fontSize: 20,
+					borderRadius: '15px',
+					transition: 'all 0.5s ease',
+					'&:hover': {
+						p: 1,
+						boxShadow: '10px 10px 10px rgba(0,0,0,0.5)',
+					},
+				}}
 			>
 				Войти
 			</Link>
-		</Button>
-  )
-}
+		</>
+	);
+};
 
-export default NavbarUnauthContent
+export default NavbarUnauthContent;

@@ -48,9 +48,6 @@ const NavbarLogo = () => {
 		<Typography
 			variant='h6'
 			component='div'
-			sx={{
-				flexGrow: 1,
-			}}
 		>
 			{navbarLinkCondition()}
 		</Typography>
