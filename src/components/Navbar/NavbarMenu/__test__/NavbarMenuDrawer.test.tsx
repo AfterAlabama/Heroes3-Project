@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import { AppStore } from '../../../store/store';
+import { AppStore } from '../../../../store/store';
 import { MemoryRouter } from 'react-router-dom';
 import NavbarMenuDrawer from '../NavbarMenuDrawer';
-import { MainSlice } from '../../../store/Reducers/MainSlice';
+import { MainSlice } from '../../../../store/Reducers/MainSlice';
 
 describe('Navbar Menu Drawer', () => {
 	test('Drawer opens and closes on state change', async () => {

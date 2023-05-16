@@ -1,9 +1,9 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import NavbarLogo from '../NavbarLogo';
 import { MemoryRouter } from 'react-router-dom';
-import { RouteNames } from '../../../types/Enums/RouteNames';
+import { RouteNames } from '../../../../types/Enums/RouteNames';
 import { Provider } from 'react-redux';
-import { AppStore } from '../../../store/store';
+import { AppStore } from '../../../../store/store';
 
 describe('Navbar Logo Link', () => {
 	test('Link works when not on the main page', () => {

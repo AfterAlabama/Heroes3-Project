@@ -1,6 +1,6 @@
 import { Link as ReactRouterLink } from 'react-router-dom';
 import Link from '@mui/material/Link';
-import { RouteNames } from '../../types/Enums/RouteNames';
+import { RouteNames } from '../../../types/Enums/RouteNames';
 
 const NavbarUnauthContent = () => {
 	return (
@@ -9,7 +9,7 @@ const NavbarUnauthContent = () => {
 				component={ReactRouterLink}
 				to={RouteNames.AUTH_FORM}
 				sx={{
-					color:'white',
+					color: 'white',
 					textDecoration: 'none',
 					fontSize: 20,
 					borderRadius: '15px',

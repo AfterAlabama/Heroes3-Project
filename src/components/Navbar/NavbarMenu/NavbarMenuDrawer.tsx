@@ -1,14 +1,14 @@
 import Drawer from '@mui/material/Drawer';
-import { useAppSelector } from '../../hooks/ReduxHooks';
+import { useAppSelector } from '../../../hooks/ReduxHooks';
 import { KeyboardEvent, MouseEvent } from 'react';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import { GiSteeltoeBoots } from '@react-icons/all-files/gi/GiSteeltoeBoots';
 import { useNavigate } from 'react-router-dom';
-import { RouteNames } from '../../types/Enums/RouteNames';
-import { NavbarMenuItems } from '../../types/Enums/NavbarMenuItems';
-import MenuList from '../Common/MenuList/MenuList';
+import { RouteNames } from '../../../types/Enums/RouteNames';
+import { NavbarMenuItems } from '../../../types/Enums/NavbarMenuItems';
+import MenuList from '../../Common/MenuList/MenuList';
 
 const NavbarMenuDrawer = ({
 	toggleDrawer,

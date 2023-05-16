@@ -1,8 +1,8 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import NavbarMenuIcon from '../NavbarMenuIcon';
 import { Provider } from 'react-redux';
-import { AppStore } from '../../../store/store';
-import { MainSlice } from '../../../store/Reducers/MainSlice';
+import { AppStore } from '../../../../store/store';
+import { MainSlice } from '../../../../store/Reducers/MainSlice';
 import React from 'react';
 describe('Navbar Menu Icon', () => {
 	const toggleDrawer = jest.fn();

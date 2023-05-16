@@ -1,5 +1,5 @@
-import { useAppDispatch } from '../../hooks/ReduxHooks';
-import { MainSlice } from '../../store/Reducers/MainSlice';
+import { useAppDispatch } from '../../../hooks/ReduxHooks';
+import { MainSlice } from '../../../store/Reducers/MainSlice';
 import NavbarMenuIcon from './NavbarMenuIcon';
 import NavbarMenuDrawer from './NavbarMenuDrawer';
 

@@ -1,7 +1,7 @@
 import Typography from '@mui/material/Typography';
 import { Link as ReactRouterLink, useLocation } from 'react-router-dom';
 import Link from '@mui/material/Link';
-import { RouteNames } from '../../types/Enums/RouteNames';
+import { RouteNames } from '../../../types/Enums/RouteNames';
 
 const NavbarLogo = () => {
 	const location = useLocation();

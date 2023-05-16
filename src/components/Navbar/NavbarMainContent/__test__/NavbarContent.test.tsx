@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import { AppStore } from '../../../store/store';
+import { AppStore } from '../../../../store/store';
 import { Provider } from 'react-redux';
 import NavbarContent from '../NavbarContent';
-import { MainSlice } from '../../../store/Reducers/MainSlice';
+import { MainSlice } from '../../../../store/Reducers/MainSlice';
 
 describe('Navbar Content', () => {
 	test('NavbarAuthContent is displayed', () => {
