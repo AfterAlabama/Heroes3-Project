@@ -33,6 +33,7 @@ const GridTable: FC<GridTableProps> = ({
 }) => {
 	const displayTableContent = td.map((items, index) => (
 		<Grid
+			component='article'
 			key={index}
 			item
 			{...gridItemProps}
@@ -63,6 +64,7 @@ const GridTable: FC<GridTableProps> = ({
 	return (
 		<Box sx={GetSxProp(wrapperSx)}>
 			<Grid
+				component='section'
 				container
 				{...gridContainerProps}
 			>

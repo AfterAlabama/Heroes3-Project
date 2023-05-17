@@ -5,16 +5,17 @@ import AcUnitIcon from '@mui/icons-material/AcUnit';
 import { useContext } from 'react';
 import { MainPageContext } from './MainPage';
 import IsLoading from '../../../Common/IsLoading/IsLoading';
+import { ColumnedFlex } from '../../../../styles/Flex';
 
-const MainContent = () => {
+const MainPageHeaderContent = () => {
 	const { Text, loginButtonOrContent } = useContext(MainPageContext);
 
 	return (
-		<Box
+		<ColumnedFlex
+			component='section'
 			sx={{
-				display: 'flex',
-				flexDirection: 'column',
 				width: '25%',
+				alignItems: 'stretch',
 			}}
 		>
 			<IsLoading>
@@ -23,21 +24,21 @@ const MainContent = () => {
 						fontSize: 14,
 						color: 'grey',
 						display: 'flex',
-						alignItems: 'center',
-						cursor: 'default',
+						gap: 0.5,
 					}}
 				>
 					<AcUnitIcon /> Абсолютно бесплатное пользование
 				</Typography>
 			</IsLoading>
-			<IsLoading sx={() => ({
-				width: '80%',
-				height: '100%'
-			})} >
+			<IsLoading
+				sx={() => ({
+					width: '80%',
+					height: '100%',
+				})}
+			>
 				<Box
 					sx={{
 						fontSize: 75,
-						cursor: 'default',
 					}}
 				>
 					Война Позабытых
@@ -54,8 +55,8 @@ const MainContent = () => {
 			</IsLoading>
 			{Text}
 			{loginButtonOrContent}
-		</Box>
+		</ColumnedFlex>
 	);
 };
 
-export default MainContent;
+export default MainPageHeaderContent;

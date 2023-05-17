@@ -1,13 +1,16 @@
-import { MainPageCaption } from '../../../styles/MainPageCaption';
+import Typography from '@mui/material/Typography';
 import IsLoading from '../../Common/IsLoading/IsLoading';
 
 const AuthText = () => {
 	return (
 		<IsLoading>
-			<MainPageCaption>
+			<Typography sx={{
+				cursor: 'default',
+				mt: 1
+			}} >
 				Погрузитесь в мир удивительных баталий и отважных героев из всемилюбимой
 				серии Heroes Might & Magic 3!
-			</MainPageCaption>
+			</Typography>
 		</IsLoading>
 	);
 };

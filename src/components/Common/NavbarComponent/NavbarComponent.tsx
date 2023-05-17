@@ -14,7 +14,7 @@ interface NavbarProps {
 const NavbarComponent: FC<NavbarProps> = ({ children, navbarSxProp = [] }) => {
 	return (
 		<Box component='nav'>
-			<AppBar position='static'>
+			<AppBar component='section' position='static'>
 				<Toolbar sx={GetSxProp(navbarSxProp)}>{children}</Toolbar>
 			</AppBar>
 		</Box>

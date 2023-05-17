@@ -6,6 +6,7 @@ import IsLoading from '../Common/IsLoading/IsLoading';
 const FooterCaption = () => {
 	return (
 		<ColumnedFlex
+			component='article'
 			sx={{
 				alignItems: 'flex-start',
 				maxWidth: '23%',

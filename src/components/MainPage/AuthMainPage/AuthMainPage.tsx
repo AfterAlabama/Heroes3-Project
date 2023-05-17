@@ -1,6 +1,6 @@
 import MainPage from '../Shared/Main/MainPage';
 import AuthText from './AuthText';
-import AuthContent from './AuthContent';
+import AuthContent from './MainPageIcons';
 
 const AuthMainPage = () => {
 	return (

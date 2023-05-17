@@ -12,6 +12,7 @@ const NavbarUnauthContent = () => {
 					color: 'white',
 					textDecoration: 'none',
 					fontSize: 20,
+					mr: 5,
 					borderRadius: '15px',
 					transition: 'all 0.5s ease',
 					'&:hover': {

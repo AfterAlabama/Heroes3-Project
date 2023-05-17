@@ -1,13 +1,13 @@
 import Typography from '@mui/material/Typography';
 import { FC, ReactElement } from 'react';
-import { CenteredFlex } from '../../../../styles/Flex';
+import { ColumnedFlex } from '../../../../styles/Flex';
 import IsLoading from '../../../Common/IsLoading/IsLoading';
 
 interface BlockProps {
 	BlockIcon: ReactElement<SVGSVGElement>;
 	BlockTitle: string;
 	BlockContent: string;
-	BlockButton?: () => ReactElement<HTMLButtonElement>;
+	BlockButton: ReactElement<HTMLButtonElement>;
 }
 
 const Block: FC<BlockProps> = ({
@@ -17,12 +17,12 @@ const Block: FC<BlockProps> = ({
 	BlockButton,
 }) => {
 	return (
-		<CenteredFlex
+		<ColumnedFlex
+			component='article'
 			sx={{
-				height: '100%',
-				width: '100%',
-				flexDirection: 'column',
-				p: 5,
+				gap:2,
+				p:5,
+				width: '500px',
 				boxShadow: '0 0 5px 5px rgba(51,51,255,0.2)',
 				transition: 'all 0.2s ease',
 				'&:hover': {
@@ -35,12 +35,6 @@ const Block: FC<BlockProps> = ({
 			<IsLoading>
 				<Typography
 					variant='h4'
-					sx={{
-						textAlign: 'center',
-						cursor: 'default',
-						mb: 1,
-						mt: 1,
-					}}
 				>
 					{BlockTitle}
 				</Typography>
@@ -50,16 +44,14 @@ const Block: FC<BlockProps> = ({
 					sx={{
 						color: 'gray',
 						textAlign: 'center',
-						cursor: 'default',
-						width: '50%',
-						mb: 1,
+						width: '60%',
 					}}
 				>
 					{BlockContent}
 				</Typography>
 			</IsLoading>
-			{BlockButton && BlockButton()}
-		</CenteredFlex>
+			{BlockButton}
+		</ColumnedFlex>
 	);
 };
 

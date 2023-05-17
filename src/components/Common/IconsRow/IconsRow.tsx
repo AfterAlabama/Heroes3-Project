@@ -13,6 +13,7 @@ const IconsRow = ({
 }) => {
 	return (
 		<CenteredFlex
+			component='article'
 			sx={GetSxProp(sx)}
 			//default styles
 			color='white'
