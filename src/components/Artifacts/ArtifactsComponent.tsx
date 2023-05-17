@@ -5,18 +5,21 @@ import ArtifactsBlock from './ArtifactsBlock';
 import Pagination from '@mui/material/Pagination';
 import ArtifactsTitle from './ArtifactsTitle';
 import ArtifactsFilterSection from './ArtifactsFilterSection';
-import { useAppDispatch, useAppSelector } from '../../hooks/ReduxHooks';
+import { useAppDispatch, useAppSelector } from '../../hooks/reduxHooks';
 import { MainSlice } from '../../store/Reducers/MainSlice';
 import Typography from '@mui/material/Typography';
 import ArtifactsSearchBar from './ArtifactsSearchBar';
 
 const ArtifactsComponent = () => {
 	const dispatch = useAppDispatch();
-	const { artifactsPage, artifactsType, artifactsSlot, artifactsPrice, artifactsSearchQuery } = useAppSelector(
-		(state) => state.mainReducer
-	);
+	const {
+		artifactsPage,
+		artifactsType,
+		artifactsSlot,
+		artifactsPrice,
+		artifactsSearchQuery,
+	} = useAppSelector((state) => state.mainReducer);
 	const { setArtifactsPage } = MainSlice.actions;
-	
 
 	const pageChangeHandler = (e: ChangeEvent<unknown>, value: number) => {
 		dispatch(setArtifactsPage(value));
@@ -36,17 +39,19 @@ const ArtifactsComponent = () => {
 			);
 		}
 
-		if(artifactsPrice && artifactsPrice !== 'Все'){
-			if(artifactsPrice === 'Less'){
-				finalArray = finalArray.sort((objA, objB) => objA.price - objB.price)
+		if (artifactsPrice && artifactsPrice !== 'Все') {
+			if (artifactsPrice === 'Less') {
+				finalArray = finalArray.sort((objA, objB) => objA.price - objB.price);
 			}
-			if(artifactsPrice === 'Greater'){
-				finalArray = finalArray.sort((objA, objB) => objB.price - objA.price)
+			if (artifactsPrice === 'Greater') {
+				finalArray = finalArray.sort((objA, objB) => objB.price - objA.price);
 			}
 		}
-		
-		if(artifactsSearchQuery){
-			finalArray = finalArray.filter(artifact => artifact.name.toLowerCase().includes(artifactsSearchQuery.toLowerCase()))
+
+		if (artifactsSearchQuery) {
+			finalArray = finalArray.filter((artifact) =>
+				artifact.name.toLowerCase().includes(artifactsSearchQuery.toLowerCase())
+			);
 		}
 
 		if (finalArray.length >= 1) {
@@ -61,10 +66,18 @@ const ArtifactsComponent = () => {
 				));
 		}
 		if (finalArray.length < 1) {
-			return <Typography color='primary' variant='h4' sx={{
-				cursor: 'default',
-				mb: 5
-			}} >Ничего не найдено</Typography>;
+			return (
+				<Typography
+					color='primary'
+					variant='h4'
+					sx={{
+						cursor: 'default',
+						mb: 5,
+					}}
+				>
+					Ничего не найдено
+				</Typography>
+			);
 		}
 	};
 
@@ -81,7 +94,7 @@ const ArtifactsComponent = () => {
 					display: 'flex',
 					flexWrap: 'wrap',
 					gap: 5,
-					mb: 5
+					mb: 5,
 				}}
 			>
 				{getArtifacts()}

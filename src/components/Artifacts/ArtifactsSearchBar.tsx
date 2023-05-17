@@ -3,7 +3,7 @@ import Input from '@mui/material/Input';
 import InputLabel from '@mui/material/InputLabel';
 import { ChangeEvent } from 'react';
 import { MainSlice } from '../../store/Reducers/MainSlice';
-import { useAppDispatch } from '../../hooks/ReduxHooks';
+import { useAppDispatch } from '../../hooks/reduxHooks';
 import { useDebounce } from '../../hooks/useDebounce';
 
 const ArtifactsSearchBar = () => {
@@ -14,14 +14,18 @@ const ArtifactsSearchBar = () => {
 		dispatch(setArtifactsSearchQuery(e.target.value));
 	};
 
-  const inputHandler = useDebounce(inputStateChange)
+	const inputHandler = useDebounce(inputStateChange);
 
 	return (
 		<Box mb={5}>
-			<InputLabel sx={{
-				fontSize: 22,
-				mb: 2
-			}} >Искать по названию</InputLabel>
+			<InputLabel
+				sx={{
+					fontSize: 22,
+					mb: 2,
+				}}
+			>
+				Искать по названию
+			</InputLabel>
 			<Input
 				onChange={(e) => inputHandler(e as ChangeEvent<HTMLInputElement>)}
 				placeholder='Артефакт...'

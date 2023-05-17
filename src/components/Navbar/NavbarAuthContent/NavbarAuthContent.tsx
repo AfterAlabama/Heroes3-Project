@@ -1,4 +1,4 @@
-import { useAppDispatch } from '../../../hooks/ReduxHooks';
+import { useAppDispatch } from '../../../hooks/reduxHooks';
 import { useNavigate } from 'react-router-dom';
 import { MainSlice } from '../../../store/Reducers/MainSlice';
 import { RouteNames } from '../../../types/Enums/RouteNames';

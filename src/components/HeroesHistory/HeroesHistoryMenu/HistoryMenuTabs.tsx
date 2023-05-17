@@ -1,7 +1,7 @@
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import { SyntheticEvent } from 'react';
-import { useAppDispatch, useAppSelector } from '../../../hooks/ReduxHooks';
+import { useAppDispatch, useAppSelector } from '../../../hooks/reduxHooks';
 import { MainSlice } from '../../../store/Reducers/MainSlice';
 import { Alignments } from '../../../types/Enums/Alignments';
 import AppBar from '@mui/material/AppBar';

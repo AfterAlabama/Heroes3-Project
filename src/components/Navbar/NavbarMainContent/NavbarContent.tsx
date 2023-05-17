@@ -1,5 +1,5 @@
 import NavbarAuthContent from '../NavbarAuthContent/NavbarAuthContent';
-import { useAppSelector } from '../../../hooks/ReduxHooks';
+import { useAppSelector } from '../../../hooks/reduxHooks';
 import NavbarUnauthContent from '../NavbarUnauthContent/NavbarUnauthContent';
 
 const NavbarContent = () => {

@@ -3,7 +3,7 @@ import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import { ChangeEvent, useRef } from 'react';
 import Box from '@mui/material/Box';
-import { useAppDispatch, useAppSelector } from '../../../hooks/ReduxHooks';
+import { useAppDispatch, useAppSelector } from '../../../hooks/reduxHooks';
 import { MainSlice } from '../../../store/Reducers/MainSlice';
 
 const NavbarAvatar = () => {

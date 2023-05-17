@@ -5,7 +5,7 @@ import { RegValidationHandler } from '../../../helpers/FormValidation/RegValidat
 import { useEffect, useRef } from 'react';
 import { CreateCookie } from '../../../helpers/Cookie/CreateCookie';
 import { useNavigate } from 'react-router-dom';
-import { useAppDispatch } from '../../../hooks/ReduxHooks';
+import { useAppDispatch } from '../../../hooks/reduxHooks';
 import { MainSlice } from '../../../store/Reducers/MainSlice';
 import RegisterFormContent from './RegisterFormContent';
 import BackdropComponent from '../../Common/Backdrop/BackdropComponent';
@@ -21,9 +21,12 @@ export interface RegisterFormValues {
 }
 
 const RegisterFormCard = () => {
-	
 	const dispatch = useAppDispatch();
-	const { changeIsAccountBeingCreated, changeIsAccountCreated, changeIsRegistrationSnackbarOpen } = MainSlice.actions;
+	const {
+		changeIsAccountBeingCreated,
+		changeIsAccountCreated,
+		changeIsRegistrationSnackbarOpen,
+	} = MainSlice.actions;
 	const timer1 = useRef<number>(undefined!);
 	const timer2 = useRef<number>(undefined!);
 	const timer3 = useRef<number>(undefined!);
@@ -31,7 +34,7 @@ const RegisterFormCard = () => {
 
 	const regSubmitHandler = (
 		values: RegisterFormValues,
-		{ setSubmitting }: {setSubmitting: (isSubmitting: boolean) => void}
+		{ setSubmitting }: { setSubmitting: (isSubmitting: boolean) => void }
 	) => {
 		dispatch(changeIsAccountBeingCreated(true));
 
@@ -52,7 +55,7 @@ const RegisterFormCard = () => {
 		}, 4000);
 
 		timer3.current = window.setTimeout(() => {
-			dispatch(changeIsRegistrationSnackbarOpen(true))
+			dispatch(changeIsRegistrationSnackbarOpen(true));
 		}, 4000);
 	};
 
@@ -98,12 +101,8 @@ const RegisterFormCard = () => {
 							/>
 							<BackdropComponent
 								openCondition={isSubmitting}
-								loadingComponent={
-									<RegisterLoading />
-								}
-								successComponent={
-									<RegisterSuccess />
-								}
+								loadingComponent={<RegisterLoading />}
+								successComponent={<RegisterSuccess />}
 							/>
 						</>
 					)}

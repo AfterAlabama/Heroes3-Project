@@ -1,7 +1,7 @@
 import MuiAlert, { AlertProps } from '@mui/material/Alert';
 import Snackbar from '@mui/material/Snackbar';
 import { forwardRef } from 'react';
-import { useAppDispatch, useAppSelector } from '../../../hooks/ReduxHooks';
+import { useAppDispatch, useAppSelector } from '../../../hooks/reduxHooks';
 import { MainSlice } from '../../../store/Reducers/MainSlice';
 
 const Alert = forwardRef<HTMLDivElement, AlertProps>(function Alert(
@@ -24,9 +24,7 @@ const AuthFormSnackbar = () => {
 	);
 	const dispatch = useAppDispatch();
 	const { changeIsPasswordSnackbarOpen, changeIsRegistrationSnackbarOpen } =
-		MainSlice.actions
-	;
-
+		MainSlice.actions;
 	const handleClose = () => {
 		if (isRegistrationSnackbarOpen) {
 			dispatch(changeIsRegistrationSnackbarOpen(false));
@@ -37,10 +35,10 @@ const AuthFormSnackbar = () => {
 
 	const openCondition = isRegistrationSnackbarOpen
 		? isRegistrationSnackbarOpen
-		: isPasswordSnackbarOpen
-	;
-
-	const textCondition = isRegistrationSnackbarOpen ? 'Регистрация прошла успешно!' : 'Пароль был успешно изменён!';
+		: isPasswordSnackbarOpen;
+	const textCondition = isRegistrationSnackbarOpen
+		? 'Регистрация прошла успешно!'
+		: 'Пароль был успешно изменён!';
 
 	return (
 		<Snackbar

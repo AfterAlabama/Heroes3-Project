@@ -10,7 +10,7 @@ import StyledInput from '../Shared/StyledInput';
 import SubmitButton from '../Shared/SubmitButton';
 import red from '@mui/material/colors/red';
 import { PasswordFormValues } from './PasswordChangeFormContent';
-import { useAppDispatch } from '../../../hooks/ReduxHooks';
+import { useAppDispatch } from '../../../hooks/reduxHooks';
 import { MainSlice } from '../../../store/Reducers/MainSlice';
 import { CenteredFlex } from '../../../styles/Flex';
 

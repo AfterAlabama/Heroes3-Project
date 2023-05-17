@@ -14,7 +14,7 @@ import { heroesArray } from '../../../heroes/HeroesArray';
 import Box from '@mui/material/Box';
 import PrevPageArrow from '../../Common/PrevPageArrow/PrevPageArrow';
 import { MainSlice } from '../../../store/Reducers/MainSlice';
-import { useAppDispatch } from '../../../hooks/ReduxHooks';
+import { useAppDispatch } from '../../../hooks/reduxHooks';
 
 const HeroComponentContext = createContext<Hero>({} as Hero);
 

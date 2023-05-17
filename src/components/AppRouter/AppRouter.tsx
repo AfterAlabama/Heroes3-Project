@@ -6,7 +6,7 @@ import RegisterForm from '../Form/RegisterForm/RegisterForm';
 import PasswordChangeForm from '../Form/PasswordChangeForm/PasswordChangeForm';
 import UnAuthMainPage from '../MainPage/UnAuthMainPage/UnAuthMainPage';
 import AuthMainPage from '../MainPage/AuthMainPage/AuthMainPage';
-import { useAppSelector } from '../../hooks/ReduxHooks';
+import { useAppSelector } from '../../hooks/reduxHooks';
 import HeroesHistory from '../HeroesHistory/HeroesHistory/HeroesHistory';
 import HeroComponent from '../HeroesHistory/HeroesComponent/HeroComponent';
 import ArtifactsComponent from '../Artifacts/ArtifactsComponent';

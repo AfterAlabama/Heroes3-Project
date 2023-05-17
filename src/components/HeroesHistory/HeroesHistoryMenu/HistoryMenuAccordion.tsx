@@ -1,8 +1,6 @@
-import { useAppDispatch, useAppSelector } from '../../../hooks/ReduxHooks';
+import { useAppDispatch, useAppSelector } from '../../../hooks/reduxHooks';
 import { MainSlice } from '../../../store/Reducers/MainSlice';
-import {
-	MenuAccordion,
-} from '../../../styles/Accordion';
+import { MenuAccordion } from '../../../styles/Accordion';
 import { FC } from 'react';
 import HistoryMenuAccordionHead from './HistoryMenuAccordionHead';
 import HistoryMenuAccordionContent from './HistoryMenuAccordionContent';
@@ -16,7 +14,7 @@ interface HistoryMenuAccordionProps {
 	heroSpec: string;
 	heroPic: string;
 	hero: Hero;
-	heroDescription: string
+	heroDescription: string;
 }
 
 const HistoryMenuAccordion: FC<HistoryMenuAccordionProps> = ({
@@ -25,17 +23,17 @@ const HistoryMenuAccordion: FC<HistoryMenuAccordionProps> = ({
 	heroSpec,
 	heroPic,
 	hero,
-	heroDescription
+	heroDescription,
 }) => {
 	const dispatch = useAppDispatch();
 	const { toggleAccordion } = MainSlice.actions;
 	const { isAccordionExpended } = useAppSelector((state) => state.mainReducer);
-	const navigate = useNavigate()
+	const navigate = useNavigate();
 
-	const mouseClickHandler = (name:string) => {
-		navigate(`${RouteNames.HEROES_HISTORY}/${name}`)
-		window.scrollTo(0,0)
-	}
+	const mouseClickHandler = (name: string) => {
+		navigate(`${RouteNames.HEROES_HISTORY}/${name}`);
+		window.scrollTo(0, 0);
+	};
 
 	const mouseEnterHandler = () => {
 		dispatch(toggleAccordion(panelNumber));

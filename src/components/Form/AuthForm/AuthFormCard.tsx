@@ -4,7 +4,7 @@ import CardContent from '@mui/material/CardContent';
 import Card from '@mui/material/Card';
 import { AuthValidationHandler } from '../../../helpers/FormValidation/AuthValidationHandler';
 import { useNavigate } from 'react-router-dom';
-import { useAppDispatch } from '../../../hooks/ReduxHooks';
+import { useAppDispatch } from '../../../hooks/reduxHooks';
 import { RouteNames } from '../../../types/Enums/RouteNames';
 import { MainSlice } from '../../../store/Reducers/MainSlice';
 import { CreateCookie } from '../../../helpers/Cookie/CreateCookie';
@@ -24,11 +24,11 @@ const AuthFormCard = () => {
 		{ setSubmitting }: { setSubmitting: (isSubmitting: boolean) => void }
 	) => {
 		dispatch(changeAuth(true));
-		CreateCookie('Login', 'Logged', 365)
+		CreateCookie('Login', 'Logged', 365);
 		setSubmitting(false);
 		navigate(RouteNames.DEFAULT);
 	};
-  
+
 	return (
 		<Card>
 			<CardContent>

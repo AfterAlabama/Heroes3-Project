@@ -1,6 +1,6 @@
 import SwipeableViews from 'react-swipeable-views-react-18-fix';
 import HistoryMenuTabPanel from './HistoryMenuTabPanel';
-import { useAppDispatch, useAppSelector } from '../../../hooks/ReduxHooks';
+import { useAppDispatch, useAppSelector } from '../../../hooks/reduxHooks';
 import { MainSlice } from '../../../store/Reducers/MainSlice';
 import useTheme from '@mui/material/styles/useTheme';
 import { AlignmentPics, Alignments } from '../../../types/Enums/Alignments';
@@ -13,7 +13,9 @@ import Pagination from '@mui/material/Pagination';
 import { ChangeEvent } from 'react';
 
 const HistoryMenuTabPanels = () => {
-	const { heroesMenuTabValue, heroesPage } = useAppSelector((state) => state.mainReducer);
+	const { heroesMenuTabValue, heroesPage } = useAppSelector(
+		(state) => state.mainReducer
+	);
 	const dispatch = useAppDispatch();
 	const { changeHeroesMenuTabValue, setHeroesPage } = MainSlice.actions;
 	const theme = useTheme();
@@ -22,13 +24,16 @@ const HistoryMenuTabPanels = () => {
 		dispatch(changeHeroesMenuTabValue(index));
 	};
 
-	const pageChangeHandler = (event: ChangeEvent<unknown>, value:number) => {
-		dispatch(setHeroesPage(value))
+	const pageChangeHandler = (event: ChangeEvent<unknown>, value: number) => {
+		dispatch(setHeroesPage(value));
 	};
 
-	const getHeroesArray = (index:number) => {
-		return heroesArray[index].slice((heroesPage - 1) * 8,(heroesPage - 1) * 8 + 8)
-	}
+	const getHeroesArray = (index: number) => {
+		return heroesArray[index].slice(
+			(heroesPage - 1) * 8,
+			(heroesPage - 1) * 8 + 8
+		);
+	};
 
 	const menuPanelsArray = Object.values(Alignments).map((panel, index) => (
 		<HistoryMenuTabPanel
@@ -69,8 +74,8 @@ const HistoryMenuTabPanels = () => {
 						zIndex: 1,
 						p: 2,
 						borderRadius: '50%',
-						mb:5,
-						ml:25
+						mb: 5,
+						ml: 25,
 					}}
 				/>
 			</Box>

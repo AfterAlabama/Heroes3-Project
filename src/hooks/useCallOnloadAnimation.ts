@@ -1,13 +1,13 @@
-import { useEffect } from "react";
-import { MainSlice } from "../store/Reducers/MainSlice";
-import { useAppDispatch } from "./ReduxHooks";
+import { useEffect } from 'react';
+import { MainSlice } from '../store/Reducers/MainSlice';
+import { useAppDispatch } from './reduxHooks';
 
 //triggers a skeleton animation on load
 export const useCallOnloadAnimation = () => {
-  const dispatch = useAppDispatch();
+	const dispatch = useAppDispatch();
 	const { changeIsComponentLoading } = MainSlice.actions;
 
-  useEffect(() => {
-    dispatch(changeIsComponentLoading(true));
-  }, [])
-}
+	useEffect(() => {
+		dispatch(changeIsComponentLoading(true));
+	}, []);
+};

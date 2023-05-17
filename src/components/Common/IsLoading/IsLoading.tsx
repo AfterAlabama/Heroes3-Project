@@ -1,6 +1,6 @@
 import Skeleton from '@mui/material/Skeleton';
 import { FC, ReactNode, useEffect, useRef } from 'react';
-import { useAppDispatch, useAppSelector } from '../../../hooks/ReduxHooks';
+import { useAppDispatch, useAppSelector } from '../../../hooks/reduxHooks';
 import { MainSlice } from '../../../store/Reducers/MainSlice';
 import { SxProps, Theme } from '@mui/material/styles';
 import { GetSxProp } from '../../../helpers/GetSxProp/GetSxProp';
@@ -27,7 +27,12 @@ const IsLoading: FC<IsLoadingProps> = ({ children, sx = [] }) => {
 	}, []);
 
 	const loadingCondition = isComponentLoading ? (
-		<Skeleton animation={'wave'} sx={GetSxProp(sx)}>{children}</Skeleton>
+		<Skeleton
+			animation={'wave'}
+			sx={GetSxProp(sx)}
+		>
+			{children}
+		</Skeleton>
 	) : (
 		<>{children}</>
 	);

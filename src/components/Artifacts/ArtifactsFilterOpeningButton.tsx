@@ -3,14 +3,16 @@ import Button from '@mui/material/Button';
 import { AiOutlineArrowLeft } from '@react-icons/all-files/ai/AiOutlineArrowLeft';
 import { gsap } from 'gsap';
 import { FC, MutableRefObject, useRef } from 'react';
-import { useAppDispatch, useAppSelector } from '../../hooks/ReduxHooks';
+import { useAppDispatch, useAppSelector } from '../../hooks/reduxHooks';
 import { MainSlice } from '../../store/Reducers/MainSlice';
 
 interface OpeningButtonsProps {
 	filtersRef: MutableRefObject<HTMLDivElement>;
 }
 
-const ArtifactsFilterOpeningButton: FC<OpeningButtonsProps> = ({ filtersRef }) => {
+const ArtifactsFilterOpeningButton: FC<OpeningButtonsProps> = ({
+	filtersRef,
+}) => {
 	const arrowRef = useRef<HTMLDivElement>({} as HTMLDivElement);
 	const dispatch = useAppDispatch();
 	const { isArtifactsFilterOpen } = useAppSelector(
@@ -41,7 +43,7 @@ const ArtifactsFilterOpeningButton: FC<OpeningButtonsProps> = ({ filtersRef }) =
 
 			gsap.to(filtersRef.current, {
 				duration: 0.5,
-				height: '0px'
+				height: '0px',
 			});
 		}
 	};
@@ -57,9 +59,8 @@ const ArtifactsFilterOpeningButton: FC<OpeningButtonsProps> = ({ filtersRef }) =
 			gsap.to(filtersRef.current, {
 				duration: 0.7,
 				height: '200px',
-			})
+			});
 
-			
 			dispatch(setArtifactsFilter(true));
 		} else {
 			gsap.to(arrowRef.current, {
@@ -71,10 +72,8 @@ const ArtifactsFilterOpeningButton: FC<OpeningButtonsProps> = ({ filtersRef }) =
 			gsap.to(filtersRef.current, {
 				duration: 0.7,
 				height: '0px',
-				ease: 'power2'
-			})
-
-		
+				ease: 'power2',
+			});
 
 			dispatch(setArtifactsFilter(false));
 		}

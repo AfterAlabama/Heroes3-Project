@@ -1,7 +1,7 @@
 import { KeyboardEvent, MouseEvent } from 'react';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import { useAppSelector } from '../../../hooks/ReduxHooks';
+import { useAppSelector } from '../../../hooks/reduxHooks';
 
 const NavbarMenuIcon = ({
 	toggleDrawer,

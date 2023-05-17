@@ -6,7 +6,7 @@ import FormControl from '@mui/material/FormControl';
 import { ArtifactRarity } from '../../types/Enums/ArtifactRarity';
 import { ArtifactTypes } from '../../types/Enums/ArtifactTypes';
 import ArtifactsFilterOpeningButton from './ArtifactsFilterOpeningButton';
-import { useAppDispatch, useAppSelector } from '../../hooks/ReduxHooks';
+import { useAppDispatch, useAppSelector } from '../../hooks/reduxHooks';
 import { MainSlice } from '../../store/Reducers/MainSlice';
 import { useRef } from 'react';
 

@@ -3,7 +3,7 @@ import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import BuildIcon from '@mui/icons-material/Build';
 import CastleIcon from '@mui/icons-material/Castle';
 import blue from '@mui/material/colors/blue';
-import { useAppSelector } from '../../../../hooks/ReduxHooks';
+import { useAppSelector } from '../../../../hooks/reduxHooks';
 import { RouteNames } from '../../../../types/Enums/RouteNames';
 import IsLoading from '../../../Common/IsLoading/IsLoading';
 import pic1 from '../../../../assets/heroesoverview.jpg';
