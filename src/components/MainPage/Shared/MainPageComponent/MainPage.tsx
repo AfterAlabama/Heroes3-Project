@@ -1,9 +1,8 @@
 import Box from '@mui/material/Box';
-import { createContext, FC, ReactElement, useEffect } from 'react';
-import { useAppDispatch } from '../../../../hooks/ReduxHooks';
-import { MainSlice } from '../../../../store/Reducers/MainSlice';
+import { createContext, FC, ReactElement } from 'react';
 import BlockStack from '../BlockSection/BlockStack';
 import MainPageHeader from './MainPageHeader';
+import { useCallOnloadAnimation } from '../../../../hooks/useCallOnloadAnimation';
 
 interface MainPageProps {
 	Text: ReactElement<HTMLSpanElement>;
@@ -15,13 +14,8 @@ export const MainPageContext = createContext<MainPageProps>(
 );
 
 const MainPage: FC<MainPageProps> = ({ Text, loginButtonOrContent }) => {
-	const dispatch = useAppDispatch();
-	const { changeIsComponentLoading } = MainSlice.actions;
-
-	useEffect(() => {
-		dispatch(changeIsComponentLoading(true));
-	}, []);
-
+	useCallOnloadAnimation()
+	
 	return (
 		<MainPageContext.Provider value={{ Text, loginButtonOrContent }}>
 			<Box

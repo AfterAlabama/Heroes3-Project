@@ -1,6 +1,6 @@
 import { RouteNames } from '../../../types/Enums/RouteNames';
 import NavigationButton from '../../Common/NavigationButton/NavigationButton';
-import MainPage from '../Shared/Main/MainPage';
+import MainPage from '../Shared/MainPageComponent/MainPage';
 import UnAuthText from './UnAuthText';
 
 const UnAuthMainPage = () => {

@@ -1,4 +1,4 @@
-import MainPage from '../Shared/Main/MainPage';
+import MainPage from '../Shared/MainPageComponent/MainPage';
 import AuthText from './AuthText';
 import AuthContent from './MainPageIcons';
 
