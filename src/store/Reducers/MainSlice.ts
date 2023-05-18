@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { GetCookieValue } from "../../helpers/Cookie/GetCookieValues";
+import { CookieNames } from "../../types/Enums/CookieNames";
 
 interface SliceState {
   isAuth: boolean,
@@ -18,11 +19,11 @@ interface SliceState {
   artifactsSlot: string;
   artifactsPrice: string;
   artifactsSearchQuery: string;
-  profilePicFile: File | null
+  profilePicFile: string | null
 }
 
 const initialState: SliceState = {
-  isAuth: GetCookieValue('Login') ? true : false,
+  isAuth: GetCookieValue(CookieNames.ISLOGGED) ? true : false,
   isLeftDrawerOpen: false,
   isAccountBeingCreated: false,
   isAccountCreated: false,
@@ -93,7 +94,7 @@ export const MainSlice = createSlice({
     setArtifactsSearchQuery(state: SliceState, action: PayloadAction<string>){
       state.artifactsSearchQuery = action.payload
     },
-    setProfilePic(state: SliceState, action: PayloadAction<File>){
+    setProfilePic(state: SliceState, action: PayloadAction<string>){
       state.profilePicFile = action.payload
     }
   }

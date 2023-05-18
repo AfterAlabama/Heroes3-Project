@@ -5,7 +5,7 @@ import HistoryMenuTitle from './HistoryMenuTitle';
 
 const HistoryMenu = () => {
 	return (
-		<Box sx={{
+		<Box component='main' sx={{
 			mb: -15
 		}} >
 			<HistoryMenuTitle />

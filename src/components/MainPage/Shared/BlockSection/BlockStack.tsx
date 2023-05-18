@@ -57,7 +57,7 @@ const BlockStack = () => {
 									textDecoration: 'none',
 									color: 'white',
 									background: `linear-gradient(50deg, #1976d2 60%, transparent 100% ), url(${
-										index === 1 ? pic1 : index === 2 ? pic2 : pic3
+										index === 0 ? pic1 : index === 1 ? pic2 : pic3
 									})`,
 									backgroundSize: '250%',
 									backgroundPosition: 'left',

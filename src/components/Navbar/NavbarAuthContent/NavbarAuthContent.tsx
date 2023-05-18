@@ -7,6 +7,7 @@ import { CenteredFlex } from '../../../styles/Flex';
 import NavbarAvatar from './NavbarAvatar';
 import NavbarCaption from './NavbarCaption';
 import NavbarButton from '../../Common/NavbarButton/NavbarButton';
+import { CookieNames } from '../../../types/Enums/CookieNames';
 
 const NavbarAuthContent = () => {
 	const dispatch = useAppDispatch();
@@ -20,10 +21,10 @@ const NavbarAuthContent = () => {
 
 	const deleteAccountButtonClickHandler = () => {
 		dispatch(changeAuth(false));
-		DeleteCookie('email');
-		DeleteCookie('password');
-		DeleteCookie('name');
-		DeleteCookie('Login');
+		DeleteCookie(CookieNames.EMAIL);
+		DeleteCookie(CookieNames.PASSWORD);
+		DeleteCookie(CookieNames.NAME);
+		DeleteCookie(CookieNames.ISLOGGED);
 		navigate(RouteNames.DEFAULT);
 	};
 

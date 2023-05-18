@@ -31,6 +31,7 @@ const HistoryHeader = () => {
 	return (
 		<Box
 			onLoad={loadHandler}
+			component='header'
 			sx={{
 				width: '100%',
 				height: '100vh',

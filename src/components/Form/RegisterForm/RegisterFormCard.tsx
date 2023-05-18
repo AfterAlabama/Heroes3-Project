@@ -12,6 +12,7 @@ import BackdropComponent from '../../Common/Backdrop/BackdropComponent';
 import RegisterLoading from './RegisterLoading';
 import RegisterSuccess from './RegisterSuccess';
 import { RouteNames } from '../../../types/Enums/RouteNames';
+import { CookieNames } from '../../../types/Enums/CookieNames';
 
 export interface RegisterFormValues {
 	email: string;
@@ -43,11 +44,11 @@ const RegisterFormCard = () => {
 			dispatch(changeIsAccountCreated(true));
 		}, 2000);
 
-		CreateCookie('name', values.name, 365);
+		CreateCookie(CookieNames.NAME, values.name, 365);
 
-		CreateCookie('email', values.email, 365);
+		CreateCookie(CookieNames.EMAIL, values.email, 365);
 
-		CreateCookie('password', values.password, 365);
+		CreateCookie(CookieNames.PASSWORD, values.password, 365);
 
 		timer2.current = window.setTimeout(() => {
 			setSubmitting(false);

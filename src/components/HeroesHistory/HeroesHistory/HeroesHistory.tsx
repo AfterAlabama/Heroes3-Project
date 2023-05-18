@@ -1,4 +1,3 @@
-import Footer from '../../Footer/Footer';
 import HistoryHeader from '../HeroesHistoryHeader/HistoryHeader';
 import HistoryMenu from '../HeroesHistoryMenu/HistoryMenu';
 
@@ -7,7 +6,6 @@ const HeroesHistory = () => {
 		<>
 			<HistoryHeader />
 			<HistoryMenu />
-			<Footer />
 		</>
 	);
 };

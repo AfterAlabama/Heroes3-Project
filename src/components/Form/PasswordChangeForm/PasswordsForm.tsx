@@ -13,6 +13,7 @@ import { PasswordFormValues } from './PasswordChangeFormContent';
 import { useAppDispatch } from '../../../hooks/reduxHooks';
 import { MainSlice } from '../../../store/Reducers/MainSlice';
 import { CenteredFlex } from '../../../styles/Flex';
+import { CookieNames } from '../../../types/Enums/CookieNames';
 
 const PasswordsForm = forwardRef<
 	HTMLDivElement,
@@ -39,7 +40,7 @@ const PasswordsForm = forwardRef<
 				: grey[100];
 		const submitHandler = (e: FormEvent<HTMLFormElement>) => {
 			e.preventDefault();
-			CreateCookie('password', values.password, 365);
+			CreateCookie(CookieNames.PASSWORD, values.password, 365);
 			timer1.current = window.setTimeout(() => {
 				navigate(RouteNames.AUTH_FORM);
 				dispatch(changeIsPasswordSnackbarOpen(true));

@@ -12,9 +12,10 @@ const NavbarAvatar = () => {
 	const { setProfilePic } = MainSlice.actions;
 	const { profilePicFile } = useAppSelector((state) => state.mainReducer);
 
-	const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+	const changeHandler = async (e: ChangeEvent<HTMLInputElement>) => {
 		if (e.target.files) {
-			dispatch(setProfilePic(e.target.files[0]));
+			const imageUrl = URL.createObjectURL(e.target.files[0]);
+			dispatch(setProfilePic(imageUrl));
 		}
 	};
 
@@ -56,7 +57,7 @@ const NavbarAvatar = () => {
 			{profilePicFile ? (
 				<Box
 					component='img'
-					src={URL.createObjectURL(profilePicFile)}
+					src={profilePicFile}
 					sx={{
 						height: '100%',
 						width: '100%',
