@@ -1,18 +1,18 @@
 import Typography from "@mui/material/Typography";
 import { useHeroComponentContext } from "./HeroComponent";
-import HeroComponentSectionTitle from "./HeroComponentSectionTitle";
 import IsLoading from "../../Common/IsLoading/IsLoading";
+import ResumeSectionHeader from "../../Common/ResumeSectionHeader/ResumeSectionHeader";
 
 const HeroComponentDescription = () => {
   const { description } = useHeroComponentContext()
 
   return (
     <>
-      <HeroComponentSectionTitle text="Описание" />
+      <ResumeSectionHeader text="Описание" />
       <IsLoading>
         <Typography sx={{
           cursor: 'default'
-        }} m={'0 5vh 0 5vh'} fontSize={20} >{description}</Typography>
+        }} mr={5} fontSize={20} >{description}</Typography>
       </IsLoading>
     </>
   )

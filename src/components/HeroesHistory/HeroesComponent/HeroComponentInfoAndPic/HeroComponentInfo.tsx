@@ -1,5 +1,5 @@
 import Box from '@mui/material/Box';
-import { useHeroComponentContext } from './HeroComponent';
+import { useHeroComponentContext } from '../HeroComponent';
 import HeroComponentInfoBox from './HeroComponentInfoBox';
 
 const HeroComponentInfo = () => {
@@ -12,7 +12,10 @@ const HeroComponentInfo = () => {
 	];
 
 	return (
-		<Box sx={{ flex: 5, width: '100%', }}>
+		<Box
+			component='section'
+			sx={{ flex: 5 }}
+		>
 			{infoBoxList.map((array, index) => (
 				<HeroComponentInfoBox
 					key={index}

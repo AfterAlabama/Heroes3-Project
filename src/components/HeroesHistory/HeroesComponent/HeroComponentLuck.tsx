@@ -1,20 +1,19 @@
 import { CenteredFlex } from '../../../styles/Flex';
 import { useHeroComponentContext } from './HeroComponent';
-import HeroComponentSectionTitle from './HeroComponentSectionTitle';
-import HeroComponentStat from './HeroComponentStat';
+import HeroComponentStat from './HeroComponentStats/HeroComponentStat';
 import { GiHorseshoe } from '@react-icons/all-files/gi/GiHorseshoe';
 import { GiEagleEmblem } from '@react-icons/all-files/gi/GiEagleEmblem';
+import ResumeSectionHeader from '../../Common/ResumeSectionHeader/ResumeSectionHeader';
 
 const HeroComponentLuck = () => {
 	const { luck, morale } = useHeroComponentContext();
 
 	return (
 		<>
-			<HeroComponentSectionTitle text='Удача и Мораль' />
+			<ResumeSectionHeader text='Удача и Мораль' />
 			<CenteredFlex
-				sx={{
-					justifyContent: 'space-around',
-				}}
+				component='section'
+				gap={10}
 			>
 				<HeroComponentStat
 					icon={

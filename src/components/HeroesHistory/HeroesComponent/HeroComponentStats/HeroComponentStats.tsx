@@ -1,29 +1,43 @@
-import HeroComponentSectionTitle from './HeroComponentSectionTitle';
 import { GiBroadsword } from '@react-icons/all-files/gi/GiBroadsword';
-import { useHeroComponentContext } from './HeroComponent';
+import { useHeroComponentContext } from '../HeroComponent';
 import HeroComponentStat from './HeroComponentStat';
-import { CenteredFlex } from '../../../styles/Flex';
+import { CenteredFlex } from '../../../../styles/Flex';
 import { BsFillShieldFill } from '@react-icons/all-files/bs/BsFillShieldFill';
 import { GiOpenBook } from '@react-icons/all-files/gi/GiOpenBook';
 import { GiBoltSpellCast } from '@react-icons/all-files/gi/GiBoltSpellCast';
+import ResumeSectionHeader from '../../../Common/ResumeSectionHeader/ResumeSectionHeader';
 
 const HeroComponentStats = () => {
 	const { attack, defense, power, knowledge } = useHeroComponentContext();
 
 	const getIcon = (index: number) => {
-		if (index === 0) return <GiBroadsword size={50} />;
-		if (index === 1) return <BsFillShieldFill size={50} />;
-		if (index === 2) return <GiBoltSpellCast size={50} />;
-		return <GiOpenBook size={60} />;
+		const statIcons = [
+			<GiBroadsword
+				size={50}
+				key={0}
+			/>,
+			<BsFillShieldFill
+				size={50}
+				key={1}
+			/>,
+			<GiBoltSpellCast
+				size={50}
+				key={2}
+			/>,
+			<GiOpenBook
+				size={60}
+				key={3}
+			/>,
+		];
+		return statIcons[index];
 	};
 
 	return (
 		<>
-			<HeroComponentSectionTitle text='Характеристики' />
+			<ResumeSectionHeader text='Характеристики' />
 			<CenteredFlex
-				sx={{
-					gap: 10,
-				}}
+				component='section'
+				gap={10}
 			>
 				{[attack, defense, power, knowledge].map((stat, index) => (
 					<HeroComponentStat

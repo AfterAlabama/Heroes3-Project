@@ -7,11 +7,10 @@ const HeroComponentTitle = () => {
 	return (
 		<IsLoading sx={{mt:-5}} >
 			<Typography
+				variant='h1'
 				sx={(theme) => ({
 					fontSize: 60,
 					color: theme.palette.primary.main,
-					cursor: 'default',
-					mb: 5
 				})}
 			>
 				{name} Резюме

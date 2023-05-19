@@ -1,23 +1,17 @@
-import Box from '@mui/material/Box';
 import IsLoading from '../../Common/IsLoading/IsLoading';
 import { useHeroComponentContext } from './HeroComponent';
-import HeroComponentSectionTitle from './HeroComponentSectionTitle';
 import Typography from '@mui/material/Typography';
 import { AiOutlineCheck } from '@react-icons/all-files/ai/AiOutlineCheck';
 import { CenteredFlex } from '../../../styles/Flex';
+import ResumeSectionHeader from '../../Common/ResumeSectionHeader/ResumeSectionHeader';
 
 const HeroComponentSpecialties = () => {
 	const { baseSpecialties } = useHeroComponentContext();
 
 	return (
 		<>
-			<HeroComponentSectionTitle text='Навыки' />
-			<Box
-				ml={5}
-				sx={{
-					cursor: 'default',
-				}}
-			>
+			<ResumeSectionHeader text='Навыки' />
+			<>
 				{baseSpecialties.map((spec, index) => (
 					<IsLoading key={index}>
 						<CenteredFlex
@@ -25,23 +19,16 @@ const HeroComponentSpecialties = () => {
 								justifyContent: 'flex-start',
 							}}
 						>
-							<Box
-								sx={(theme) => ({
-									color: theme.palette.primary.main,
-								})}
-							>
-								<AiOutlineCheck size={20} />
-							</Box>
+							<AiOutlineCheck size={20} color='#1976d2' />
 							<Typography
 								fontSize={20}
-								ml={0.5}
 							>
 								{spec}
 							</Typography>
 						</CenteredFlex>
 					</IsLoading>
 				))}
-			</Box>
+			</>
 		</>
 	);
 };

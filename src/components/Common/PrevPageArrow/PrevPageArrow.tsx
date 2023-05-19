@@ -11,6 +11,7 @@ const PrevPageArrow = () => {
 
 	return (
 		<CenteredFlex
+			component='article'
 			sx={(theme) => ({
 				border: 'solid 1px grey',
 				cursor: 'pointer',
