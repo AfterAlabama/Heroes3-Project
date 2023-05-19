@@ -1,23 +1,30 @@
+import Box from '@mui/material/Box';
 import { FC } from 'react';
 
 interface BackgroundImageProps {
 	alt: string;
 	src: string;
 	borderRadius?: string;
-	height?: string
+	height?: string;
 }
 
-const BackgroundImage: FC<BackgroundImageProps> = ({ alt, src, borderRadius, height }) => {
+const BackgroundImage: FC<BackgroundImageProps> = ({
+	alt,
+	src,
+	borderRadius,
+	height,
+}) => {
 	return (
-		<img
+		<Box
+			component='img'
 			alt={alt}
 			src={src}
-			style={{
+			sx={{
 				position: 'absolute',
 				zIndex: -1,
 				width: '100%',
 				height: height ? height : '100%',
-				borderRadius: borderRadius
+				borderRadius: borderRadius,
 			}}
 		/>
 	);

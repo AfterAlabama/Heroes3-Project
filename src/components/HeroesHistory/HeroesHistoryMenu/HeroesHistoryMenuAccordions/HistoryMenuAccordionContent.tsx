@@ -1,5 +1,5 @@
 import Typography from "@mui/material/Typography";
-import { MenuAccordionDetails } from "../../../styles/Accordion";
+import { MenuAccordionDetails } from "../../../../styles/Accordion";
 import { FC } from "react";
 
 interface HistoryMenuAccordionContentProps {

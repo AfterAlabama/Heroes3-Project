@@ -1,12 +1,12 @@
-import { useAppDispatch, useAppSelector } from '../../../hooks/reduxHooks';
-import { MainSlice } from '../../../store/Reducers/MainSlice';
-import { MenuAccordion } from '../../../styles/Accordion';
+import { useAppDispatch, useAppSelector } from '../../../../hooks/reduxHooks';
+import { MainSlice } from '../../../../store/Reducers/MainSlice';
+import { MenuAccordion } from '../../../../styles/Accordion';
 import { FC } from 'react';
 import HistoryMenuAccordionHead from './HistoryMenuAccordionHead';
-import HistoryMenuAccordionContent from './HistoryMenuAccordionContent';
-import { Hero } from '../../../heroes/Hero';
+import { Hero } from '../../../../heroes/Hero';
 import { useNavigate } from 'react-router-dom';
-import { RouteNames } from '../../../types/Enums/RouteNames';
+import { RouteNames } from '../../../../types/Enums/RouteNames';
+import HistoryMenuAccordionContent from './HistoryMenuAccordionContent';
 
 interface HistoryMenuAccordionProps {
 	panelNumber: string;
@@ -30,28 +30,28 @@ const HistoryMenuAccordion: FC<HistoryMenuAccordionProps> = ({
 	const { isAccordionExpended } = useAppSelector((state) => state.mainReducer);
 	const navigate = useNavigate();
 
-	const mouseClickHandler = (name: string) => {
+	const accordionMouseClickHandler = (name: string) => {
 		navigate(`${RouteNames.HEROES_HISTORY}/${name}`);
 		window.scrollTo(0, 0);
 	};
 
-	const mouseEnterHandler = () => {
+	const accordionMouseEnterHandler = () => {
 		dispatch(toggleAccordion(panelNumber));
 	};
 
-	const mouseLeaveHandler = () => {
+	const accordionMouseLeaveHandler = () => {
 		dispatch(toggleAccordion(false));
 	};
 
-	const expandedCondition = isAccordionExpended === panelNumber;
+	const accordionExpandedCondition = isAccordionExpended === panelNumber;
 
 	return (
 		<MenuAccordion
-			expanded={expandedCondition}
-			onMouseEnter={mouseEnterHandler}
-			onMouseLeave={mouseLeaveHandler}
+			expanded={accordionExpandedCondition}
+			onMouseEnter={accordionMouseEnterHandler}
+			onMouseLeave={accordionMouseLeaveHandler}
 			hero={hero}
-			onClick={() => mouseClickHandler(hero.name)}
+			onClick={() => accordionMouseClickHandler(hero.name)}
 		>
 			<HistoryMenuAccordionHead
 				panelNumber={panelNumber}

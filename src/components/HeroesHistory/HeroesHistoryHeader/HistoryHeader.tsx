@@ -1,14 +1,15 @@
-import Box from '@mui/material/Box';
-import HistoryImage from './HistoryImage';
 import HistoryHeaderTextContent from './HistoryHeaderTextContent';
-import HistoryHeaderImages from './HistoryHeaderImages';
 import { useRef } from 'react';
 import { gsap } from 'gsap';
+import { CenteredFlex, ColumnedFlex } from '../../../styles/Flex';
+import HistoryHeaderLeftImages from './HistoryHeaderLeftImages';
+import HistoryHeaderRightImage from './HistoryHeaderRightImage';
 
 const HistoryHeader = () => {
-	const imageRef = useRef<HTMLDivElement>({} as HTMLDivElement);
-	const headerTextContentRef = useRef<HTMLDivElement>({} as HTMLDivElement);
-	const headerImagesRef = useRef<HTMLDivElement>({} as HTMLDivElement);
+	const [imageRef, headerTextContentRef, headerImagesRef] = Array(3)
+		.fill(null)
+		.map(() => useRef<HTMLDivElement>({} as HTMLDivElement))
+	;
 
 	const loadHandler = () => {
 		gsap.to(headerTextContentRef.current, {
@@ -29,32 +30,26 @@ const HistoryHeader = () => {
 	};
 
 	return (
-		<Box
+		<CenteredFlex
 			onLoad={loadHandler}
 			component='header'
 			sx={{
 				width: '100%',
 				height: '100vh',
-				display: 'flex',
-				alignItems: 'center',
 				justifyContent: 'space-around',
 			}}
 		>
-			<Box
+			<ColumnedFlex
 				sx={{
 					width: '45%',
 					height: '100%',
-					display: 'flex',
-					alignItems: 'center',
-					justifyContent: 'center',
-					flexDirection: 'column',
 				}}
 			>
 				<HistoryHeaderTextContent ref={headerTextContentRef} />
-				<HistoryHeaderImages ref={headerImagesRef} />
-			</Box>
-			<HistoryImage ref={imageRef} />
-		</Box>
+				<HistoryHeaderLeftImages ref={headerImagesRef} />
+			</ColumnedFlex>
+			<HistoryHeaderRightImage ref={imageRef} />
+		</CenteredFlex>
 	);
 };
 

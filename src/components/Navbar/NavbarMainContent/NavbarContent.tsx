@@ -1,6 +1,6 @@
 import NavbarAuthContent from '../NavbarAuthContent/NavbarAuthContent';
 import { useAppSelector } from '../../../hooks/reduxHooks';
-import NavbarUnauthContent from '../NavbarUnauthContent/NavbarUnauthContent';
+import NavbarUnauthContent from '../NavbarUnauthContent';
 
 const NavbarContent = () => {
 	const { isAuth } = useAppSelector((state) => state.mainReducer);

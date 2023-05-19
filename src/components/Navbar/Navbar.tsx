@@ -1,8 +1,8 @@
-import NavbarMenu from '../NavbarMenu/NavbarMenu';
-import NavbarLogo from '../NavbarLogo/NavbarLogo';
-import NavbarContent from '../NavbarMainContent/NavbarContent';
-import { CenteredFlex } from '../../../styles/Flex';
-import NavbarComponent from '../../Common/NavbarComponent/NavbarComponent';
+import NavbarMenu from './NavbarMenu/NavbarMenu';
+import NavbarLogo from './NavbarLogo/NavbarLogo';
+import NavbarContent from './NavbarMainContent/NavbarContent';
+import { CenteredFlex } from '../../styles/Flex';
+import NavbarComponent from '../Common/NavbarComponent/NavbarComponent';
 
 const Navbar = () => {
 	return (

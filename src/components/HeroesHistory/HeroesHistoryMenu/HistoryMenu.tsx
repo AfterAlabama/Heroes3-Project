@@ -1,30 +1,27 @@
-import Box from '@mui/material/Box';
 import HistoryMenuTabs from './HistoryMenuTabs';
-import HistoryMenuTabPanels from './HistoryMenuTabPanels';
+import HistoryMenuTabPanels from './HeroesHistoryMenuTabPanels/HistoryMenuTabPanels';
 import HistoryMenuTitle from './HistoryMenuTitle';
+import { ColumnedFlex } from '../../../styles/Flex';
 
 const HistoryMenu = () => {
 	return (
-		<Box component='main' sx={{
-			mb: -15
-		}} >
+		<ColumnedFlex
+			component='main'
+			gap={5}
+		>
 			<HistoryMenuTitle />
-			<Box
+			<ColumnedFlex
+				component='section'
 				sx={{
 					bgcolor: 'background.paper',
-					height: '130vh',
-					display: 'flex',
-					alignItems: 'center',
-					flexDirection: 'column',
-					ml: 10,
-					mr: 10,
-					mb:30
+					height: '100vh',
+					justifyContent: 'flex-start',
 				}}
 			>
 				<HistoryMenuTabs />
 				<HistoryMenuTabPanels />
-			</Box>
-		</Box>
+			</ColumnedFlex>
+		</ColumnedFlex>
 	);
 };
 
