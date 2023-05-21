@@ -3,8 +3,9 @@ import Button from '@mui/material/Button';
 import { AiOutlineArrowLeft } from '@react-icons/all-files/ai/AiOutlineArrowLeft';
 import { gsap } from 'gsap';
 import { FC, MutableRefObject, useRef } from 'react';
-import { useAppDispatch, useAppSelector } from '../../hooks/reduxHooks';
-import { MainSlice } from '../../store/Reducers/MainSlice';
+import { useAppDispatch, useAppSelector } from '../../../hooks/reduxHooks';
+import { MainSlice } from '../../../store/Reducers/MainSlice';
+import IsLoading from '../../Common/IsLoading/IsLoading';
 
 interface OpeningButtonsProps {
 	filtersRef: MutableRefObject<HTMLDivElement>;
@@ -80,20 +81,22 @@ const ArtifactsFilterOpeningButton: FC<OpeningButtonsProps> = ({
 	};
 
 	return (
-		<Button
-			sx={{
-				fontSize: 20,
-				gap: 2,
-			}}
-			onMouseEnter={mouseEnterHandler}
-			onMouseLeave={mouseLeaveHandler}
-			onClick={clickHandler}
-		>
-			Сортировать
-			<Box ref={arrowRef}>
-				<AiOutlineArrowLeft />
-			</Box>
-		</Button>
+		<IsLoading>
+			<Button
+				sx={{
+					fontSize: 20,
+					gap: 2,
+				}}
+				onMouseEnter={mouseEnterHandler}
+				onMouseLeave={mouseLeaveHandler}
+				onClick={clickHandler}
+			>
+				Сортировать
+				<Box ref={arrowRef}>
+					<AiOutlineArrowLeft />
+				</Box>
+			</Button>
+		</IsLoading>
 	);
 };
 

@@ -5,6 +5,7 @@ import { ChangeEvent } from 'react';
 import { MainSlice } from '../../store/Reducers/MainSlice';
 import { useAppDispatch } from '../../hooks/reduxHooks';
 import { useDebounce } from '../../hooks/useDebounce';
+import IsLoading from '../Common/IsLoading/IsLoading';
 
 const ArtifactsSearchBar = () => {
 	const { setArtifactsSearchQuery } = MainSlice.actions;
@@ -17,19 +18,26 @@ const ArtifactsSearchBar = () => {
 	const inputHandler = useDebounce(inputStateChange);
 
 	return (
-		<Box mb={5}>
-			<InputLabel
-				sx={{
-					fontSize: 22,
-					mb: 2,
-				}}
-			>
-				Искать по названию
-			</InputLabel>
-			<Input
-				onChange={(e) => inputHandler(e as ChangeEvent<HTMLInputElement>)}
-				placeholder='Артефакт...'
-			/>
+		<Box
+			mb={10}
+			component='article'
+		>
+			<IsLoading>
+				<InputLabel
+					sx={{
+						fontSize: 22,
+						mb: 2,
+					}}
+				>
+					Искать по названию
+				</InputLabel>
+			</IsLoading>
+			<IsLoading>
+				<Input
+					onChange={(e) => inputHandler(e as ChangeEvent<HTMLInputElement>)}
+					placeholder='Артефакт...'
+				/>
+			</IsLoading>
 		</Box>
 	);
 };

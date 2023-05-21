@@ -18,14 +18,14 @@ const ResumeSectionHeader: FC<ResumeSectionHeaderProps> = ({ text, sx = [] }) =>
     pb: 1,
     borderRadius: '0 0 0 20px',
     m: '40px 0',
-    cursor: 'default',
+    cursor: 'default'
   };
 
 	return (
 		<Typography
 			variant='h2'
 			sx={{
-        ...defaultStyle, ...GetSxProp(sx)
+        ...defaultStyle, ...GetSxProp(sx)[0]
       }}
 		>
 			{text}
