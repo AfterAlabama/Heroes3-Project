@@ -1,3 +1,4 @@
+import { Link as ReactRouterLink } from 'react-router-dom'
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import { RouteNames } from '../../../types/Enums/RouteNames';
@@ -14,7 +15,8 @@ const RegisterLink = () => {
 			>
 				Ещё нет аккаунта?
 				<Link
-					href={RouteNames.REGISTER_FORM}
+					component={ReactRouterLink}
+					to={RouteNames.REGISTER_FORM}
 					sx={{
 						cursor: 'pointer',
 					}}

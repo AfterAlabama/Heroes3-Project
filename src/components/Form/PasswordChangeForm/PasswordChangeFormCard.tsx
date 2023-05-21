@@ -1,38 +1,26 @@
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import { Formik } from 'formik';
-import { PasswordValidationHandler } from '../../../helpers/FormValidation/PasswordValidationHandler';
-import PasswordChangeFormContent from './PasswordChangeFormContent';
+import { EmailForm } from './EmailForm';
+import PasswordsForm from './PasswordsForm';
+import { useRef } from 'react';
+import { FormContentContainer } from '../../../styles/FormContentContainer';
 
 const PasswordChangeFormCard = () => {
+	const [emailFormRef, passwordFormRef] = Array(2)
+		.fill(null)
+		.map(() => useRef<HTMLDivElement>({} as HTMLDivElement));
+
 	return (
-		<Card>
+		<Card component='section'>
 			<CardContent>
-				<Formik
-					initialValues={{ email: '', password: '', confirmedPassword: '' }}
-					validate={PasswordValidationHandler}
-					onSubmit={() => {}}
-				>
-					{({
-						values,
-						errors,
-						touched,
-						handleChange,
-						handleBlur,
-						handleSubmit,
-						isSubmitting,
-					}) => (
-						<PasswordChangeFormContent
-							errors={errors}
-							touched={touched}
-							values={values}
-							handleBlur={handleBlur}
-							handleChange={handleChange}
-							handleSubmit={handleSubmit}
-							isSubmitting={isSubmitting}
-						/>
-					)}
-				</Formik>
+				<FormContentContainer height='50vh' >
+					<EmailForm
+						ref={emailFormRef}
+						emailFormRef={emailFormRef}
+						passwordFormRef={passwordFormRef}
+					/>
+					<PasswordsForm ref={passwordFormRef} />
+				</FormContentContainer>
 			</CardContent>
 		</Card>
 	);

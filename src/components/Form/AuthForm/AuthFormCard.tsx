@@ -1,5 +1,4 @@
 import { Formik } from 'formik';
-import AuthFormContent from './AuthFormContent';
 import CardContent from '@mui/material/CardContent';
 import Card from '@mui/material/Card';
 import { AuthValidationHandler } from '../../../helpers/FormValidation/AuthValidationHandler';
@@ -9,6 +8,8 @@ import { RouteNames } from '../../../types/Enums/RouteNames';
 import { MainSlice } from '../../../store/Reducers/MainSlice';
 import { CreateCookie } from '../../../helpers/Cookie/CreateCookie';
 import { CookieNames } from '../../../types/Enums/CookieNames';
+import AuthFormCardContent from './AuthFormCardContent';
+import { FormEvent } from 'react';
 
 export interface AuthFormValues {
 	email: string;
@@ -31,7 +32,7 @@ const AuthFormCard = () => {
 	};
 
 	return (
-		<Card>
+		<Card component='section' >
 			<CardContent>
 				<Formik
 					initialValues={{ email: '', password: '' }}
@@ -47,8 +48,8 @@ const AuthFormCard = () => {
 						handleSubmit,
 						isSubmitting,
 					}) => (
-						<AuthFormContent
-							handleSubmit={handleSubmit}
+						<AuthFormCardContent
+							handleSubmit={handleSubmit as (e?: FormEvent<HTMLDivElement>) => void}
 							handleBlur={handleBlur}
 							handleChange={handleChange}
 							isSubmitting={isSubmitting}

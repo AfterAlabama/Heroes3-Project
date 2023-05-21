@@ -4,62 +4,86 @@ import { FormEvent, forwardRef, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CreateCookie } from '../../../helpers/Cookie/CreateCookie';
 import { RouteNames } from '../../../types/Enums/RouteNames';
-import { FormContentProps } from '../AuthForm/AuthFormContent';
 import FormTitle from '../Shared/FormTitle';
 import StyledInput from '../Shared/StyledInput';
 import SubmitButton from '../Shared/SubmitButton';
 import red from '@mui/material/colors/red';
-import { PasswordFormValues } from './PasswordChangeFormContent';
 import { useAppDispatch } from '../../../hooks/reduxHooks';
 import { MainSlice } from '../../../store/Reducers/MainSlice';
-import { CenteredFlex } from '../../../styles/Flex';
+import { ColumnedFlex } from '../../../styles/Flex';
 import { CookieNames } from '../../../types/Enums/CookieNames';
+import { Formik, FormikErrors, FormikTouched } from 'formik';
+import { PasswordFormValidationHandler } from '../../../helpers/FormValidation/PasswordChangeValidationHandler';
 
-const PasswordsForm = forwardRef<
-	HTMLDivElement,
-	FormContentProps<PasswordFormValues>
->(
-	(
-		{ values, errors, touched, handleChange, handleBlur, isSubmitting },
-		ref
+export interface PasswordFormValidationProps {
+	password: string;
+	confirmedPassword: string;
+}
+
+const PasswordsForm = forwardRef<HTMLDivElement>((_, ref) => {
+	const navigate = useNavigate();
+	const timer1 = useRef<number>(0);
+	const dispatch = useAppDispatch();
+	const { changeIsPasswordSnackbarOpen } = MainSlice.actions;
+
+	const submitCondition = (
+		touched: FormikTouched<PasswordFormValidationProps>,
+		errors: FormikErrors<PasswordFormValidationProps>
 	) => {
-		const navigate = useNavigate();
-		const timer1 = useRef<number>(undefined!);
-		const dispatch = useAppDispatch();
-		const { changeIsPasswordSnackbarOpen } = MainSlice.actions;
-
-		const submitCondition =
+		if (
 			(touched.password && errors.password) ||
 			(touched.confirmedPassword && errors.confirmedPassword)
-				? red[100]
-				: touched.password &&
-				  !errors.password &&
-				  touched.confirmedPassword &&
-				  !errors.confirmedPassword
-				? green[100]
-				: grey[100];
-		const submitHandler = (e: FormEvent<HTMLFormElement>) => {
-			e.preventDefault();
-			CreateCookie(CookieNames.PASSWORD, values.password, 365);
-			timer1.current = window.setTimeout(() => {
-				navigate(RouteNames.AUTH_FORM);
-				dispatch(changeIsPasswordSnackbarOpen(true));
-			}, 500);
+		)
+			return red[100];
+		if (
+			touched.password &&
+			!errors.password &&
+			touched.confirmedPassword &&
+			!errors.confirmedPassword
+		)
+			return green[100];
+		return grey[100];
+	};
+
+	useEffect(() => {
+		return () => {
+			clearTimeout(timer1.current);
 		};
+	}, []);
 
-		useEffect(() => {
-			return () => {
-				clearTimeout(timer1.current);
-			};
-		}, []);
+	const passwordSubmitHandler = (
+		values: PasswordFormValidationProps,
+		{ setSubmitting }: { setSubmitting: (isSubmitting: boolean) => void }
+	) => {
+		CreateCookie(CookieNames.PASSWORD, values.password, 365);
+		setSubmitting(false);
+		timer1.current = window.setTimeout(() => {
+			navigate(RouteNames.AUTH_FORM);
+			dispatch(changeIsPasswordSnackbarOpen(true));
+		}, 500);
+	};
 
-		return (
-			<form onSubmit={submitHandler}>
-				<CenteredFlex
+	return (
+		<Formik
+			initialValues={{ password: '', confirmedPassword: '' }}
+			validate={PasswordFormValidationHandler}
+			onSubmit={passwordSubmitHandler}
+		>
+			{({
+				values,
+				errors,
+				touched,
+				handleChange,
+				handleBlur,
+				handleSubmit,
+				isSubmitting,
+			}) => (
+				<ColumnedFlex
+					component='form'
+					onSubmit={handleSubmit as (e?: FormEvent<HTMLDivElement>) => void}
 					ref={ref}
 					sx={{
-						flexDirection: 'column',
-						display: 'none',
+						display:'none'
 					}}
 				>
 					<FormTitle
@@ -86,13 +110,13 @@ const PasswordsForm = forwardRef<
 					/>
 					<SubmitButton
 						isSubmitting={isSubmitting}
-						SubmitCondition={submitCondition}
+						SubmitCondition={submitCondition(touched, errors)}
 						buttonText='Готово'
 					/>
-				</CenteredFlex>
-			</form>
-		);
-	}
-);
+				</ColumnedFlex>
+			)}
+		</Formik>
+	);
+});
 
 export default PasswordsForm;

@@ -3,11 +3,13 @@ import BackgroundImage from '../../Common/BackgroundImage/BackgroundImage';
 import AuthFormCard from './AuthFormCard';
 import { FormContainer } from '../../../styles/FormContainer';
 import AuthFormSnackbar from './AuthFormSnackbar';
+import { useCallOnloadAnimation } from '../../../hooks/useCallOnloadAnimation';
 
 const AuthForm = () => {
+	useCallOnloadAnimation()
 	return (
 		<>
-			<FormContainer data-testid='authForm'>
+			<FormContainer>
 				<BackgroundImage
 					alt='authPic'
 					src={authPic}

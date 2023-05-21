@@ -1,4 +1,5 @@
 import FormHelperText from '@mui/material/FormHelperText';
+import { Link as ReactRouterLink} from 'react-router-dom'
 import Link from '@mui/material/Link';
 import { RouteNames } from '../../../types/Enums/RouteNames';
 import IsLoading from '../../Common/IsLoading/IsLoading';
@@ -18,7 +19,8 @@ const AuthFormHelperText = () => {
 				}}
 			>
 				<Link
-					href={RouteNames.PASSWORD_CHANGE}
+					component={ReactRouterLink}
+					to={RouteNames.PASSWORD_CHANGE}
 					sx={{
 						color: 'grey',
 						textDecoration: 'none',

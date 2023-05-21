@@ -1,21 +1,24 @@
-import Box from '@mui/material/Box';
 import LeaveButton from './LeaveButton';
 import SubmitButton from './SubmitButton';
 import { FC } from 'react';
+import { CenteredFlex } from '../../../styles/Flex';
 
 interface FormButtonsProps {
-  isSubmitting: boolean;
-  submitCondition: string;
-  buttonText:string;
-	clickHandler?: () => void;
-	margin?: number 
+	isSubmitting: boolean;
+	submitCondition: string;
+	buttonText: string;
+	margin?: number;
 }
 
-const FormButtons: FC<FormButtonsProps> = ({ isSubmitting, submitCondition, buttonText, clickHandler, margin }) => {
+const FormButtons: FC<FormButtonsProps> = ({
+	isSubmitting,
+	submitCondition,
+	buttonText,
+	margin,
+}) => {
 	return (
-		<Box
+		<CenteredFlex
 			sx={{
-				display: 'flex',
 				width: '100%',
 				justifyContent: 'space-around',
 			}}
@@ -24,11 +27,10 @@ const FormButtons: FC<FormButtonsProps> = ({ isSubmitting, submitCondition, butt
 			<SubmitButton
 				isSubmitting={isSubmitting}
 				SubmitCondition={submitCondition}
-				buttonText= {buttonText}
+				buttonText={buttonText}
 				margin={margin && margin}
-				clickHandler={clickHandler && clickHandler}
 			/>
-		</Box>
+		</CenteredFlex>
 	);
 };
 

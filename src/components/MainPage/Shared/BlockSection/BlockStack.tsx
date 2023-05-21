@@ -78,7 +78,6 @@ const BlockStack = () => {
 								buttonText='Войти'
 								direction={RouteNames.AUTH_FORM}
 								ButtonSxProp={{
-									width: 'fit-content',
 									transition: 'all ease 0.5s',
 									'&:hover': {
 										transform: 'translateY(10px)',

@@ -19,7 +19,6 @@ const FormTitle: FC<FormTitleProps> = ({ text, height }) => {
 			<Typography
 				variant='h3'
 				sx={{
-					cursor: 'default',
 					color: blue[400],
 					mb: 7,
 					mt: -5,

@@ -2,12 +2,12 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { Formik } from 'formik';
 import { RegValidationHandler } from '../../../helpers/FormValidation/RegValidationHandler';
-import { useEffect, useRef } from 'react';
+import { FormEvent, useEffect, useRef } from 'react';
 import { CreateCookie } from '../../../helpers/Cookie/CreateCookie';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../../../hooks/reduxHooks';
 import { MainSlice } from '../../../store/Reducers/MainSlice';
-import RegisterFormContent from './RegisterFormContent';
+import RegisterFormContent from './RegisterFormCardContent';
 import BackdropComponent from '../../Common/Backdrop/BackdropComponent';
 import RegisterLoading from './RegisterLoading';
 import RegisterSuccess from './RegisterSuccess';
@@ -28,9 +28,9 @@ const RegisterFormCard = () => {
 		changeIsAccountCreated,
 		changeIsRegistrationSnackbarOpen,
 	} = MainSlice.actions;
-	const timer1 = useRef<number>(undefined!);
-	const timer2 = useRef<number>(undefined!);
-	const timer3 = useRef<number>(undefined!);
+	const timer1 = useRef<number>(0);
+	const timer2 = useRef<number>(0);
+	const timer3 = useRef<number>(0);
 	const navigate = useNavigate();
 
 	const regSubmitHandler = (
@@ -69,7 +69,7 @@ const RegisterFormCard = () => {
 	}, []);
 
 	return (
-		<Card>
+		<Card component='section'>
 			<CardContent>
 				<Formik
 					initialValues={{
@@ -92,7 +92,9 @@ const RegisterFormCard = () => {
 					}) => (
 						<>
 							<RegisterFormContent
-								handleSubmit={handleSubmit}
+								handleSubmit={
+									handleSubmit as (e?: FormEvent<HTMLDivElement>) => void
+								}
 								handleBlur={handleBlur}
 								handleChange={handleChange}
 								isSubmitting={isSubmitting}
