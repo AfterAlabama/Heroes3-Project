@@ -44,7 +44,7 @@ describe('Navbar Content', () => {
 		);
 
 		expect(
-			screen.getByRole('button', {
+			screen.getByRole('link', {
 				name: /войти/i,
 			})
 		).toBeInTheDocument();
