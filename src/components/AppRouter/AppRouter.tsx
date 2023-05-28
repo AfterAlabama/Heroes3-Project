@@ -7,10 +7,16 @@ import PasswordChangeForm from '../Form/PasswordChangeForm/PasswordChangeForm';
 import UnAuthMainPage from '../MainPage/UnAuthMainPage/UnAuthMainPage';
 import AuthMainPage from '../MainPage/AuthMainPage/AuthMainPage';
 import { useAppSelector } from '../../hooks/reduxHooks';
-import HeroesHistory from '../HeroesHistory/HeroesHistory';
 import HeroComponent from '../HeroesHistory/HeroesComponent/HeroComponent';
-import ArtifactsComponent from '../Artifacts/ArtifactsComponent';
 import ArtifactsResume from '../Artifacts/ArtifactResume/ArtifactsResume';
+import { Suspense, lazy } from 'react';
+import LoadingPage from '../Common/LoadingPage/LoadingPage';
+
+const HeroesHistory = lazy(() => import('../HeroesHistory/HeroesHistory'));
+
+const ArtifactsComponent = lazy(
+	() => import('../Artifacts/ArtifactsComponent')
+);
 
 const AppRouter = () => {
 	const { isAuth } = useAppSelector((state) => state.mainReducer);
@@ -37,7 +43,11 @@ const AppRouter = () => {
 			/>
 			<Route
 				path={RouteNames.HEROES_HISTORY}
-				element={<HeroesHistory />}
+				element={
+					<Suspense fallback={<LoadingPage />}>
+						<HeroesHistory />
+					</Suspense>
+				}
 			/>
 			<Route
 				path={RouteNames.HERO}
@@ -45,7 +55,11 @@ const AppRouter = () => {
 			/>
 			<Route
 				path={RouteNames.ARTIFACTS}
-				element={<ArtifactsComponent />}
+				element={
+					<Suspense fallback={<LoadingPage />}>
+						<ArtifactsComponent />
+					</Suspense>
+				}
 			/>
 			<Route
 				path={RouteNames.ARTIFACT}
