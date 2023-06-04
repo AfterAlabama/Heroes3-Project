@@ -58,8 +58,8 @@ const PasswordsForm = forwardRef<HTMLDivElement>((_, ref) => {
 		CreateCookie(CookieNames.PASSWORD, values.password, 365);
 		setSubmitting(false);
 		timer1.current = window.setTimeout(() => {
-			navigate(RouteNames.AUTH_FORM);
 			dispatch(changeIsPasswordSnackbarOpen(true));
+			navigate(RouteNames.AUTH_FORM);
 		}, 500);
 	};
 
