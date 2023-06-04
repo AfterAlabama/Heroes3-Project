@@ -1,9 +1,8 @@
 import Skeleton from '@mui/material/Skeleton';
 import { FC, ReactNode, useEffect, useRef } from 'react';
-import { useAppDispatch, useAppSelector } from '../../../hooks/reduxHooks';
-import { MainSlice } from '../../../store/Reducers/MainSlice';
 import { SxProps, Theme } from '@mui/material/styles';
 import { GetSxProp } from '../../../helpers/GetSxProp/GetSxProp';
+import { useGetStateVariables } from '../../../hooks/useGetStateVariables';
 
 interface IsLoadingProps {
 	children: ReactNode;
@@ -11,9 +10,8 @@ interface IsLoadingProps {
 }
 
 const IsLoading: FC<IsLoadingProps> = ({ children, sx = [] }) => {
-	const { isComponentLoading } = useAppSelector((state) => state.mainReducer);
-	const dispatch = useAppDispatch();
-	const { changeIsComponentLoading } = MainSlice.actions;
+	const { changeIsComponentLoading, dispatch, isComponentLoading } =
+		useGetStateVariables();
 	const timer = useRef(0);
 
 	useEffect(() => {

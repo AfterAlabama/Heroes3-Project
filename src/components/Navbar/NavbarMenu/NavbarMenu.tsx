@@ -1,11 +1,9 @@
-import { useAppDispatch } from '../../../hooks/reduxHooks';
-import { MainSlice } from '../../../store/Reducers/MainSlice';
 import NavbarMenuIcon from './NavbarMenuIcon';
 import NavbarMenuDrawer from './NavbarMenuDrawer';
+import { useGetStateVariables } from '../../../hooks/useGetStateVariables';
 
 const NavbarMenu = () => {
-	const dispatch = useAppDispatch();
-	const { changeLeftDrawer } = MainSlice.actions;
+	const { changeLeftDrawer, dispatch } = useGetStateVariables();
 
 	const toggleDrawer =
 		(open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {

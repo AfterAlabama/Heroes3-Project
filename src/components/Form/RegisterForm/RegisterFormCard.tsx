@@ -5,14 +5,13 @@ import { RegValidationHandler } from '../../../helpers/FormValidation/RegValidat
 import { FormEvent, useEffect, useRef } from 'react';
 import { CreateCookie } from '../../../helpers/Cookie/CreateCookie';
 import { useNavigate } from 'react-router-dom';
-import { useAppDispatch } from '../../../hooks/reduxHooks';
-import { MainSlice } from '../../../store/Reducers/MainSlice';
 import RegisterFormContent from './RegisterFormCardContent';
 import BackdropComponent from '../../Common/Backdrop/BackdropComponent';
 import RegisterLoading from './RegisterLoading';
 import RegisterSuccess from './RegisterSuccess';
 import { RouteNames } from '../../../types/Enums/RouteNames';
 import { CookieNames } from '../../../types/Enums/CookieNames';
+import { useGetStateVariables } from '../../../hooks/useGetStateVariables';
 
 export interface RegisterFormValues {
 	email: string;
@@ -22,12 +21,13 @@ export interface RegisterFormValues {
 }
 
 const RegisterFormCard = () => {
-	const dispatch = useAppDispatch();
 	const {
+		dispatch,
 		changeIsAccountBeingCreated,
 		changeIsAccountCreated,
 		changeIsRegistrationSnackbarOpen,
-	} = MainSlice.actions;
+	} = useGetStateVariables();
+
 	const timer1 = useRef<number>(0);
 	const timer2 = useRef<number>(0);
 	const timer3 = useRef<number>(0);

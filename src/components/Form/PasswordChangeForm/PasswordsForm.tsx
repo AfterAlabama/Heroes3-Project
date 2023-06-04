@@ -8,12 +8,11 @@ import FormTitle from '../Shared/FormTitle';
 import StyledInput from '../Shared/StyledInput';
 import SubmitButton from '../Shared/SubmitButton';
 import red from '@mui/material/colors/red';
-import { useAppDispatch } from '../../../hooks/reduxHooks';
-import { MainSlice } from '../../../store/Reducers/MainSlice';
 import { ColumnedFlex } from '../../../styles/Flex';
 import { CookieNames } from '../../../types/Enums/CookieNames';
 import { Formik, FormikErrors, FormikTouched } from 'formik';
 import { PasswordFormValidationHandler } from '../../../helpers/FormValidation/PasswordChangeValidationHandler';
+import { useGetStateVariables } from '../../../hooks/useGetStateVariables';
 
 export interface PasswordFormValidationProps {
 	password: string;
@@ -23,8 +22,7 @@ export interface PasswordFormValidationProps {
 const PasswordsForm = forwardRef<HTMLDivElement>((_, ref) => {
 	const navigate = useNavigate();
 	const timer1 = useRef<number>(0);
-	const dispatch = useAppDispatch();
-	const { changeIsPasswordSnackbarOpen } = MainSlice.actions;
+	const { changeIsPasswordSnackbarOpen, dispatch } = useGetStateVariables();
 
 	const submitCondition = (
 		touched: FormikTouched<PasswordFormValidationProps>,
@@ -83,7 +81,7 @@ const PasswordsForm = forwardRef<HTMLDivElement>((_, ref) => {
 					onSubmit={handleSubmit as (e?: FormEvent<HTMLDivElement>) => void}
 					ref={ref}
 					sx={{
-						display:'none'
+						display: 'none',
 					}}
 				>
 					<FormTitle

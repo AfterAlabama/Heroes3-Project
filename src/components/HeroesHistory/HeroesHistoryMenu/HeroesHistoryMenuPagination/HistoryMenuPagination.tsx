@@ -1,13 +1,10 @@
 import Pagination from '@mui/material/Pagination';
 import { heroesArray } from '../../../../game/Heroes/HeroesArray';
-import { useAppDispatch, useAppSelector } from '../../../../hooks/reduxHooks';
 import { ChangeEvent } from 'react';
-import { MainSlice } from '../../../../store/Reducers/MainSlice';
+import { useGetStateVariables } from '../../../../hooks/useGetStateVariables';
 
 const HistoryMenuPagination = ({ arrayIndex }: { arrayIndex: number }) => {
-	const { heroesPage } = useAppSelector((state) => state.mainReducer);
-	const { setHeroesPage } = MainSlice.actions;
-	const dispatch = useAppDispatch();
+	const { setHeroesPage, heroesPage, dispatch } = useGetStateVariables();
 
 	const pageChangeHandler = (event: ChangeEvent<unknown>, value: number) => {
 		dispatch(setHeroesPage(value));

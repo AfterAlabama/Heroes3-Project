@@ -1,5 +1,3 @@
-import { useAppDispatch, useAppSelector } from '../../../../hooks/reduxHooks';
-import { MainSlice } from '../../../../store/Reducers/MainSlice';
 import { MenuAccordion } from '../../../../styles/Accordion';
 import { FC } from 'react';
 import HistoryMenuAccordionHead from './HistoryMenuAccordionHead';
@@ -7,6 +5,7 @@ import { Hero } from '../../../../game/Heroes/Hero';
 import { useNavigate } from 'react-router-dom';
 import { RouteNames } from '../../../../types/Enums/RouteNames';
 import HistoryMenuAccordionContent from './HistoryMenuAccordionContent';
+import { useGetStateVariables } from '../../../../hooks/useGetStateVariables';
 
 interface HistoryMenuAccordionProps {
 	panelNumber: string;
@@ -25,9 +24,8 @@ const HistoryMenuAccordion: FC<HistoryMenuAccordionProps> = ({
 	hero,
 	heroDescription,
 }) => {
-	const dispatch = useAppDispatch();
-	const { toggleAccordion } = MainSlice.actions;
-	const { isAccordionExpended } = useAppSelector((state) => state.mainReducer);
+	const { isAccordionExpended, toggleAccordion, dispatch } =
+		useGetStateVariables();
 	const navigate = useNavigate();
 
 	const accordionMouseClickHandler = (name: string) => {

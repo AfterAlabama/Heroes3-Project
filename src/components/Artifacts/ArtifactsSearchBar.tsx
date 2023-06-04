@@ -2,14 +2,12 @@ import Box from '@mui/material/Box';
 import Input from '@mui/material/Input';
 import InputLabel from '@mui/material/InputLabel';
 import { ChangeEvent } from 'react';
-import { MainSlice } from '../../store/Reducers/MainSlice';
-import { useAppDispatch } from '../../hooks/reduxHooks';
 import { useDebounce } from '../../hooks/useDebounce';
 import IsLoading from '../Common/IsLoading/IsLoading';
+import { useGetStateVariables } from '../../hooks/useGetStateVariables';
 
 const ArtifactsSearchBar = () => {
-	const { setArtifactsSearchQuery } = MainSlice.actions;
-	const dispatch = useAppDispatch();
+	const { dispatch, setArtifactsSearchQuery  } = useGetStateVariables()
 
 	const inputStateChange = (e: ChangeEvent<HTMLInputElement>) => {
 		dispatch(setArtifactsSearchQuery(e.target.value));
@@ -34,7 +32,7 @@ const ArtifactsSearchBar = () => {
 			</IsLoading>
 			<IsLoading>
 				<Input
-					onChange={(e) => inputHandler(e as ChangeEvent<HTMLInputElement>)}
+					onChange={inputHandler}
 					placeholder='Артефакт...'
 				/>
 			</IsLoading>

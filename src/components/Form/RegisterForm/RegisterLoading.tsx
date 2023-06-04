@@ -1,12 +1,10 @@
 import CircularProgress from '@mui/material/CircularProgress';
 import blue from '@mui/material/colors/blue';
-import { useAppSelector } from '../../../hooks/reduxHooks';
 import { BackdropCaption } from '../../../styles/BackdropCaption';
+import { useGetStateVariables } from '../../../hooks/useGetStateVariables';
 
 const RegisterLoading = () => {
-	const { isAccountBeingCreated } = useAppSelector(
-		(state) => state.mainReducer
-	);
+	const { isAccountBeingCreated } = useGetStateVariables();
 
 	return (
 		<>

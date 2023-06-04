@@ -1,10 +1,10 @@
 import CheckIcon from '@mui/icons-material/Check';
 import blue from '@mui/material/colors/blue';
-import { useAppSelector } from '../../../hooks/reduxHooks';
 import { BackdropCaption } from '../../../styles/BackdropCaption';
+import { useGetStateVariables } from '../../../hooks/useGetStateVariables';
 
 const RegisterSuccess = () => {
-	const { isAccountCreated } = useAppSelector((state) => state.mainReducer);
+	const { isAccountCreated } = useGetStateVariables();
 
 	return (
 		<>

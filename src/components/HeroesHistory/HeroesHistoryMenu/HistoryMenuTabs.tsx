@@ -1,17 +1,14 @@
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import { SyntheticEvent } from 'react';
-import { useAppDispatch, useAppSelector } from '../../../hooks/reduxHooks';
-import { MainSlice } from '../../../store/Reducers/MainSlice';
 import { Alignments } from '../../../types/Enums/Alignments';
 import AppBar from '@mui/material/AppBar';
 import blue from '@mui/material/colors/blue';
 import { Theme } from '@mui/material';
+import { useGetStateVariables } from '../../../hooks/useGetStateVariables';
 
 const HistoryMenuTabs = () => {
-	const { heroesMenuTabValue } = useAppSelector((state) => state.mainReducer);
-	const dispatch = useAppDispatch();
-	const { changeHeroesMenuTabValue } = MainSlice.actions;
+	const { changeHeroesMenuTabValue, dispatch, heroesMenuTabValue } = useGetStateVariables();
 
 	const tabsChangeHandler = (_: SyntheticEvent, newValue: number) => {
 		dispatch(changeHeroesMenuTabValue(newValue));

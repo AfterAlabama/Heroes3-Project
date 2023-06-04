@@ -3,14 +3,11 @@ import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import { ChangeEvent, useRef } from 'react';
 import Box from '@mui/material/Box';
-import { useAppDispatch, useAppSelector } from '../../../hooks/reduxHooks';
-import { MainSlice } from '../../../store/Reducers/MainSlice';
+import { useGetStateVariables } from '../../../hooks/useGetStateVariables';
 
 const NavbarAvatar = () => {
 	const inputRef = useRef<HTMLInputElement>({} as HTMLInputElement);
-	const dispatch = useAppDispatch();
-	const { setProfilePic } = MainSlice.actions;
-	const { profilePicFile } = useAppSelector((state) => state.mainReducer);
+	const { profilePicFile, setProfilePic, dispatch } = useGetStateVariables();
 
 	const changeHandler = async (e: ChangeEvent<HTMLInputElement>) => {
 		if (e.target.files) {

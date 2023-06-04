@@ -1,14 +1,14 @@
 import { KeyboardEvent, MouseEvent } from 'react';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import { useAppSelector } from '../../../hooks/reduxHooks';
+import { useGetStateVariables } from '../../../hooks/useGetStateVariables';
 
 const NavbarMenuIcon = ({
 	toggleDrawer,
 }: {
 	toggleDrawer: (open: boolean) => (event: KeyboardEvent | MouseEvent) => void;
 }) => {
-	const { isAuth } = useAppSelector((state) => state.mainReducer);
+	const { isAuth } = useGetStateVariables();
 
 	return (
 		<IconButton

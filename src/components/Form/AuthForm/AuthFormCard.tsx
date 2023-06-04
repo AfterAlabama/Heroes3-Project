@@ -3,13 +3,12 @@ import CardContent from '@mui/material/CardContent';
 import Card from '@mui/material/Card';
 import { AuthValidationHandler } from '../../../helpers/FormValidation/AuthValidationHandler';
 import { useNavigate } from 'react-router-dom';
-import { useAppDispatch } from '../../../hooks/reduxHooks';
 import { RouteNames } from '../../../types/Enums/RouteNames';
-import { MainSlice } from '../../../store/Reducers/MainSlice';
 import { CreateCookie } from '../../../helpers/Cookie/CreateCookie';
 import { CookieNames } from '../../../types/Enums/CookieNames';
 import AuthFormCardContent from './AuthFormCardContent';
 import { FormEvent } from 'react';
+import { useGetStateVariables } from '../../../hooks/useGetStateVariables';
 
 export interface AuthFormValues {
 	email: string;
@@ -17,8 +16,7 @@ export interface AuthFormValues {
 }
 
 const AuthFormCard = () => {
-	const dispatch = useAppDispatch();
-	const { changeAuth } = MainSlice.actions;
+	const { changeAuth, dispatch } = useGetStateVariables();
 	const navigate = useNavigate();
 
 	const submitHandler = (

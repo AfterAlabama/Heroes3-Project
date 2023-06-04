@@ -6,25 +6,28 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import { ArtifactTypes } from '../../../types/Enums/ArtifactTypes';
 import { ArtifactRarity } from '../../../types/Enums/ArtifactRarity';
-import { useAppDispatch, useAppSelector } from '../../../hooks/reduxHooks';
-import { MainSlice } from '../../../store/Reducers/MainSlice';
 import { AnyAction } from '@reduxjs/toolkit';
 import IsLoading from '../../Common/IsLoading/IsLoading';
+import { useGetStateVariables } from '../../../hooks/useGetStateVariables';
 
 const ArtifactsFilter = forwardRef<HTMLDivElement>((_, ref) => {
-	const { artifactsType, artifactsPrice, artifactsSlot } = useAppSelector(
-		(state) => state.mainReducer
-	);
-	const dispatch = useAppDispatch();
-	const { setArtifactsType, setArtifactsPrice, setArtifactsSlot, setArtifactsPage } =
-		MainSlice.actions;
+	const {
+		setArtifactsType,
+		setArtifactsPrice,
+		setArtifactsSlot,
+		setArtifactsPage,
+		dispatch,
+		artifactsType,
+		artifactsPrice,
+		artifactsSlot,
+	} = useGetStateVariables();
 
 	const selectChangeHandler = (
 		e: SelectChangeEvent,
 		stateFunc: (state: string) => AnyAction
 	) => {
 		dispatch(stateFunc(e.target.value));
-		dispatch(setArtifactsPage(1))
+		dispatch(setArtifactsPage(1));
 	};
 
 	const filterParams = [

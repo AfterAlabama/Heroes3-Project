@@ -1,5 +1,4 @@
 import Drawer from '@mui/material/Drawer';
-import { useAppSelector } from '../../../hooks/reduxHooks';
 import { KeyboardEvent, MouseEvent } from 'react';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
@@ -9,13 +8,14 @@ import { useNavigate } from 'react-router-dom';
 import { RouteNames } from '../../../types/Enums/RouteNames';
 import { NavbarMenuItems } from '../../../types/Enums/NavbarMenuItems';
 import MenuList from '../../Common/MenuList/MenuList';
+import { useGetStateVariables } from '../../../hooks/useGetStateVariables';
 
 const NavbarMenuDrawer = ({
 	toggleDrawer,
 }: {
 	toggleDrawer: (open: boolean) => (event: KeyboardEvent | MouseEvent) => void;
 }) => {
-	const { isLeftDrawerOpen } = useAppSelector((state) => state.mainReducer);
+	const { isLeftDrawerOpen } = useGetStateVariables();
 	const navigate = useNavigate();
 
 	const navbarListItemClickHandler = (listItem: string) => {

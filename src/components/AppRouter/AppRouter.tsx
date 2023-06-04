@@ -6,11 +6,11 @@ import RegisterForm from '../Form/RegisterForm/RegisterForm';
 import PasswordChangeForm from '../Form/PasswordChangeForm/PasswordChangeForm';
 import UnAuthMainPage from '../MainPage/UnAuthMainPage/UnAuthMainPage';
 import AuthMainPage from '../MainPage/AuthMainPage/AuthMainPage';
-import { useAppSelector } from '../../hooks/reduxHooks';
 import HeroComponent from '../HeroesHistory/HeroesComponent/HeroComponent';
 import ArtifactsResume from '../Artifacts/ArtifactResume/ArtifactsResume';
 import { Suspense, lazy } from 'react';
 import LoadingPage from '../Common/LoadingPage/LoadingPage';
+import { useGetStateVariables } from '../../hooks/useGetStateVariables';
 
 const HeroesHistory = lazy(() => import('../HeroesHistory/HeroesHistory'));
 
@@ -19,7 +19,7 @@ const ArtifactsComponent = lazy(
 );
 
 const AppRouter = () => {
-	const { isAuth } = useAppSelector((state) => state.mainReducer);
+	const { isAuth } = useGetStateVariables()
 
 	const isAuthCondition = isAuth ? <AuthMainPage /> : <UnAuthMainPage />;
 

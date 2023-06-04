@@ -1,14 +1,12 @@
 import Pagination from '@mui/material/Pagination';
-import { MainSlice } from '../../../store/Reducers/MainSlice';
 import { ChangeEvent } from 'react';
-import { useAppDispatch, useAppSelector } from '../../../hooks/reduxHooks';
 import { Artifact } from '../../../game/Artifacts/Artifact';
 import IsLoading from '../../Common/IsLoading/IsLoading';
+import { useGetStateVariables } from '../../../hooks/useGetStateVariables';
 
 const ArtifactsPagination = ({ finalArray }: { finalArray: Artifact[] }) => {
-	const { artifactsPage } = useAppSelector((state) => state.mainReducer);
-	const dispatch = useAppDispatch();
-	const { setArtifactsPage } = MainSlice.actions;
+	const { setArtifactsPage, dispatch, artifactsPage } = useGetStateVariables();
+	
 	const pageChangeHandler = (e: ChangeEvent<unknown>, value: number) => {
 		dispatch(setArtifactsPage(value));
 	};

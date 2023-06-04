@@ -1,10 +1,10 @@
-import { useAppSelector } from '../../hooks/reduxHooks';
 import Typography from '@mui/material/Typography';
 import { ArtifactArray } from '../../game/Artifacts/ArtifactArray';
 import { ReactElement } from 'react';
 import ArtifactsBlock from './ArtifactBlock/ArtifactsBlock';
 import ArtifactsBlocks from './ArtifactBlock/ArtifactsBlocks';
 import ArtifactsPagination from './ArtifactsPagination/ArtifactsPagination';
+import { useGetStateVariables } from '../../hooks/useGetStateVariables';
 
 const ArtifactsList = () => {
 	const {
@@ -13,7 +13,7 @@ const ArtifactsList = () => {
 		artifactsSlot,
 		artifactsPrice,
 		artifactsSearchQuery,
-	} = useAppSelector((state) => state.mainReducer);
+	} = useGetStateVariables();
 
 	let finalArray = ArtifactArray.flat();
 	const getArtifacts = (): ReactElement | ReactElement[] => {

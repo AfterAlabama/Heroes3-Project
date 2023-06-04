@@ -1,6 +1,4 @@
-import { useAppDispatch } from '../../../hooks/reduxHooks';
 import { useNavigate } from 'react-router-dom';
-import { MainSlice } from '../../../store/Reducers/MainSlice';
 import { RouteNames } from '../../../types/Enums/RouteNames';
 import { DeleteCookie } from '../../../helpers/Cookie/DeleteCookie';
 import { CenteredFlex } from '../../../styles/Flex';
@@ -8,10 +6,10 @@ import NavbarAvatar from './NavbarAvatar';
 import NavbarCaption from './NavbarCaption';
 import NavbarButton from '../../Common/NavbarButton/NavbarButton';
 import { CookieNames } from '../../../types/Enums/CookieNames';
+import { useGetStateVariables } from '../../../hooks/useGetStateVariables';
 
 const NavbarAuthContent = () => {
-	const dispatch = useAppDispatch();
-	const { changeAuth } = MainSlice.actions;
+	const { changeAuth, dispatch } = useGetStateVariables();
 	const navigate = useNavigate();
 
 	const leaveButtonClickHandler = () => {

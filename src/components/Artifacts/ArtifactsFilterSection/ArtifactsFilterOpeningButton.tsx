@@ -3,9 +3,8 @@ import Button from '@mui/material/Button';
 import { AiOutlineArrowLeft } from '@react-icons/all-files/ai/AiOutlineArrowLeft';
 import { gsap } from 'gsap';
 import { FC, MutableRefObject, useRef } from 'react';
-import { useAppDispatch, useAppSelector } from '../../../hooks/reduxHooks';
-import { MainSlice } from '../../../store/Reducers/MainSlice';
 import IsLoading from '../../Common/IsLoading/IsLoading';
+import { useGetStateVariables } from '../../../hooks/useGetStateVariables';
 
 interface OpeningButtonsProps {
 	filtersRef: MutableRefObject<HTMLDivElement>;
@@ -15,11 +14,8 @@ const ArtifactsFilterOpeningButton: FC<OpeningButtonsProps> = ({
 	filtersRef,
 }) => {
 	const arrowRef = useRef<HTMLDivElement>({} as HTMLDivElement);
-	const dispatch = useAppDispatch();
-	const { isArtifactsFilterOpen } = useAppSelector(
-		(state) => state.mainReducer
-	);
-	const { setArtifactsFilter } = MainSlice.actions;
+	const { setArtifactsFilter, isArtifactsFilterOpen, dispatch } =
+		useGetStateVariables();
 
 	const mouseEnterHandler = () => {
 		if (!isArtifactsFilterOpen) {

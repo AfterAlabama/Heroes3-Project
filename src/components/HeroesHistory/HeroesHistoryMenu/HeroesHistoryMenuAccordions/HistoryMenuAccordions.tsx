@@ -1,10 +1,10 @@
 import Box from '@mui/material/Box';
 import HistoryMenuAccordion from './HistoryMenuAccordion';
 import { heroesArray } from '../../../../game/Heroes/HeroesArray';
-import { useAppSelector } from '../../../../hooks/reduxHooks';
+import { useGetStateVariables } from '../../../../hooks/useGetStateVariables';
 
 const HistoryMenuAccordions = ({ arrayIndex }: { arrayIndex: number }) => {
-	const { heroesPage } = useAppSelector((state) => state.mainReducer);
+	const { heroesPage } = useGetStateVariables();
 
 	const getHeroesArray = (index: number) => {
 		return heroesArray[index].slice(
