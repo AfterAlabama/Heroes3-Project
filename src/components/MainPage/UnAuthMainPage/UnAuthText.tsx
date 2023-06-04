@@ -19,6 +19,7 @@ const UnAuthText = () => {
 						},
 					}}
 					to={RouteNames.AUTH_FORM}
+					onClick={() => window.scrollTo(0,0)}
 				>
 					Войдите
 				</Link>{' '}
