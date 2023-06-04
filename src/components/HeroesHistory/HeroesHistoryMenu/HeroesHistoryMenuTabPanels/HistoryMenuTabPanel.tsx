@@ -42,7 +42,7 @@ const HistoryMenuTabPanel: FC<TabPanelProps> = ({
 						alt='Alignment city'
 						src={AlignmentPics[arrayIndex]}
 						borderRadius='30px'
-						height='80vh'
+						height='85vh'
 					/>
 					<HistoryMenuAccordions arrayIndex={arrayIndex} />
 					<HistoryMenuPagination arrayIndex={arrayIndex} />
