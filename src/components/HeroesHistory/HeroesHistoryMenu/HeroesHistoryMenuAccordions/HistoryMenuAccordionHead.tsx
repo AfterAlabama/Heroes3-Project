@@ -2,7 +2,7 @@ import Box from '@mui/material/Box';
 import { MenuAccordionSummary } from '../../../../styles/Accordion';
 import Typography from '@mui/material/Typography';
 import { FC } from 'react';
-import { Hero } from '../../../../heroes/Hero';
+import { Hero } from '../../../../game/Heroes/Hero';
 
 interface HistorymenuAccordionHeadprops {
 	panelNumber: string;
@@ -33,7 +33,8 @@ const HistoryMenuAccordionHead: FC<HistorymenuAccordionHeadprops> = ({
 					height: 40,
 					borderRadius: '5px',
 					mr: 3,
-				}} />
+				}}
+			/>
 			<Box>
 				<Typography>{heroName}</Typography>
 				<Typography

@@ -2,7 +2,7 @@ import Pagination from '@mui/material/Pagination';
 import { MainSlice } from '../../../store/Reducers/MainSlice';
 import { ChangeEvent } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../hooks/reduxHooks';
-import { Artifact } from '../../../artifacts/Artifact';
+import { Artifact } from '../../../game/Artifacts/Artifact';
 import IsLoading from '../../Common/IsLoading/IsLoading';
 
 const ArtifactsPagination = ({ finalArray }: { finalArray: Artifact[] }) => {

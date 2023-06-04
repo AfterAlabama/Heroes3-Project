@@ -1,5 +1,5 @@
 import Pagination from '@mui/material/Pagination';
-import { heroesArray } from '../../../../heroes/HeroesArray';
+import { heroesArray } from '../../../../game/Heroes/HeroesArray';
 import { useAppDispatch, useAppSelector } from '../../../../hooks/reduxHooks';
 import { ChangeEvent } from 'react';
 import { MainSlice } from '../../../../store/Reducers/MainSlice';

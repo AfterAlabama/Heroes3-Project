@@ -6,15 +6,15 @@ import MuiAccordionSummary, {
 	AccordionSummaryProps,
 } from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
-import { Hero } from '../heroes/Hero';
-import { CastleHeroes } from '../heroes/Castle/CastleHeroes';
-import { TowerHeroes } from '../heroes/Tower/TowerHeroes';
-import { RampartHeroes } from '../heroes/Rampart/RampartHeroes';
-import { InfernoHeroes } from '../heroes/Inferno/InfernoHeroes';
-import { NecropolisHeroes } from '../heroes/Necropolis/NecropolisHeroes';
-import { StrongholdHeroes } from '../heroes/Stronghold/StrongholdHeroes';
-import { FortressHeroes } from '../heroes/Fortress/FortressHeroes';
-import { DungeonHeroes } from '../heroes/Dungeon/DungeonHeroes';
+import { Hero } from '../game/Heroes/Hero';
+import { CastleHeroes } from '../game/Heroes/Castle/CastleHeroes';
+import { TowerHeroes } from '../game/Heroes/Tower/TowerHeroes';
+import { RampartHeroes } from '../game/Heroes/Rampart/RampartHeroes';
+import { InfernoHeroes } from '../game/Heroes/Inferno/InfernoHeroes';
+import { NecropolisHeroes } from '../game/Heroes/Necropolis/NecropolisHeroes';
+import { StrongholdHeroes } from '../game/Heroes/Stronghold/StrongholdHeroes';
+import { FortressHeroes } from '../game/Heroes/Fortress/FortressHeroes';
+import { DungeonHeroes } from '../game/Heroes/Dungeon/DungeonHeroes';
 
 interface MenuAccordionProps extends AccordionProps {
 	hero: Hero;
@@ -100,6 +100,6 @@ export const MenuAccordionSummary = styled(
 export const MenuAccordionDetails = styled(MuiAccordionDetails)(
 	({ theme }) => ({
 		padding: theme.spacing(2),
-		borderTop: '1px solid rgba(0, 0, 0, .125)'
+		borderTop: '1px solid rgba(0, 0, 0, .125)',
 	})
 );

@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box';
 import HistoryMenuAccordion from './HistoryMenuAccordion';
-import { heroesArray } from '../../../../heroes/HeroesArray';
+import { heroesArray } from '../../../../game/Heroes/HeroesArray';
 import { useAppSelector } from '../../../../hooks/reduxHooks';
 
 const HistoryMenuAccordions = ({ arrayIndex }: { arrayIndex: number }) => {

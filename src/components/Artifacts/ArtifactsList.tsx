@@ -1,6 +1,6 @@
 import { useAppSelector } from '../../hooks/reduxHooks';
 import Typography from '@mui/material/Typography';
-import { ArtifactArray } from '../../artifacts/ArtifactArray';
+import { ArtifactArray } from '../../game/Artifacts/ArtifactArray';
 import { ReactElement } from 'react';
 import ArtifactsBlock from './ArtifactBlock/ArtifactsBlock';
 import ArtifactsBlocks from './ArtifactBlock/ArtifactsBlocks';

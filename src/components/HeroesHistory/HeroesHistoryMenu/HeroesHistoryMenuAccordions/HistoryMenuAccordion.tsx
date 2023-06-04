@@ -3,7 +3,7 @@ import { MainSlice } from '../../../../store/Reducers/MainSlice';
 import { MenuAccordion } from '../../../../styles/Accordion';
 import { FC } from 'react';
 import HistoryMenuAccordionHead from './HistoryMenuAccordionHead';
-import { Hero } from '../../../../heroes/Hero';
+import { Hero } from '../../../../game/Heroes/Hero';
 import { useNavigate } from 'react-router-dom';
 import { RouteNames } from '../../../../types/Enums/RouteNames';
 import HistoryMenuAccordionContent from './HistoryMenuAccordionContent';

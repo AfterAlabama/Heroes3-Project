@@ -45,7 +45,7 @@ const NavbarMenuDrawer = ({
 				onKeyDown={toggleDrawer(false)}
 			>
 				<MenuList
-					listItems={['Истории', 'Артефакты', 'Send email', 'Drafts']}
+					listItems={['Истории', 'Артефакты', 'Юниты', 'Арена']}
 					listItemButtonClickHandler={navbarListItemClickHandler}
 					listItemIconCondition={listItemIconCondition}
 				/>

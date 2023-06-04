@@ -39,6 +39,7 @@ const ArtifactsResumeInfo = () => {
 					sx={(theme) => ({
 						justifyContent: 'space-between',
 						width: '85%',
+						mr:10,
 						borderBottom: `5px solid ${theme.palette.primary.main}`,
 					})}
 				>
