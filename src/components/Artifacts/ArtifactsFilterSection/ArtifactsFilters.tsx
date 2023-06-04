@@ -16,7 +16,7 @@ const ArtifactsFilter = forwardRef<HTMLDivElement>((_, ref) => {
 		(state) => state.mainReducer
 	);
 	const dispatch = useAppDispatch();
-	const { setArtifactsType, setArtifactsPrice, setArtifactsSlot } =
+	const { setArtifactsType, setArtifactsPrice, setArtifactsSlot, setArtifactsPage } =
 		MainSlice.actions;
 
 	const selectChangeHandler = (
@@ -24,6 +24,7 @@ const ArtifactsFilter = forwardRef<HTMLDivElement>((_, ref) => {
 		stateFunc: (state: string) => AnyAction
 	) => {
 		dispatch(stateFunc(e.target.value));
+		dispatch(setArtifactsPage(1))
 	};
 
 	const filterParams = [
