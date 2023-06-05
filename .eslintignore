@@ -2,3 +2,4 @@ webpack
 jest.config.js
 __mocks__
 babel.config.js
+firebase

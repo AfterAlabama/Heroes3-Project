@@ -7,6 +7,8 @@ import NavbarCaption from './NavbarCaption';
 import NavbarButton from '../../Common/NavbarButton/NavbarButton';
 import { CookieNames } from '../../../types/Enums/CookieNames';
 import { useGetStateVariables } from '../../../hooks/useGetStateVariables';
+import { deleteObject, list, ref } from 'firebase/storage';
+import { storage } from '../../../firebase/firebase';
 
 const NavbarAuthContent = () => {
 	const { changeAuth, dispatch } = useGetStateVariables();
@@ -23,6 +25,12 @@ const NavbarAuthContent = () => {
 		DeleteCookie(CookieNames.PASSWORD);
 		DeleteCookie(CookieNames.NAME);
 		DeleteCookie(CookieNames.ISLOGGED);
+		const imgList = ref(storage, 'images');
+		list(imgList).then(response => {
+			if(response.items.length > 0){
+				deleteObject(response.items[0])
+			}
+		})
 		navigate(RouteNames.DEFAULT);
 	};
 

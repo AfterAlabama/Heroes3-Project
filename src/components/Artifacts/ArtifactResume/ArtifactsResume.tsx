@@ -17,9 +17,9 @@ const ArtifactsResume = () => {
 	useCallOnloadAnimation();
 	const { name } = useParams();
 
-	const artifact = ArtifactArray.flat().filter(
+	const artifact = ArtifactArray.flat().find(
 		(artifact) => artifact.name === name
-	)[0];
+	) as Required<Artifact>;
 
 	return (
 		<ColumnedFlex

@@ -4,17 +4,38 @@ import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import { ChangeEvent, useRef } from 'react';
 import Box from '@mui/material/Box';
 import { useGetStateVariables } from '../../../hooks/useGetStateVariables';
+import {
+	ref,
+	uploadBytes,
+	getDownloadURL,
+	list,
+	deleteObject,
+} from 'firebase/storage';
+import { storage } from '../../../firebase/firebase';
+import { useGetProfilePic } from '../../../hooks/useGetProfilePic';
 
 const NavbarAvatar = () => {
 	const inputRef = useRef<HTMLInputElement>({} as HTMLInputElement);
 	const { profilePicFile, setProfilePic, dispatch } = useGetStateVariables();
+	useGetProfilePic()
 
-	const changeHandler = async (e: ChangeEvent<HTMLInputElement>) => {
+	const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
 		if (e.target.files) {
-			const imageUrl = URL.createObjectURL(e.target.files[0]);
-			dispatch(setProfilePic(imageUrl));
+			const imgList = ref(storage, 'images');
+			list(imgList).then((response) => {
+				if (response.items.length > 0) {
+					deleteObject(response.items[0]);
+				}
+			});
+			const imgRef = ref(storage, `images/${e.target.files[0].name}`);
+			uploadBytes(imgRef, e.target.files[0]).then(() => {
+				getDownloadURL(imgRef).then((url) => {
+					dispatch(setProfilePic(url));
+				});
+			});
 		}
 	};
+
 
 	return (
 		<Avatar
