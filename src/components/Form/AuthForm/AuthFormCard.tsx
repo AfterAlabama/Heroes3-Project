@@ -16,14 +16,14 @@ export interface AuthFormValues {
 }
 
 const AuthFormCard = () => {
-	const { changeAuth, dispatch } = useGetStateVariables();
+	const { setAuth, dispatch } = useGetStateVariables();
 	const navigate = useNavigate();
 
 	const submitHandler = (
 		values: AuthFormValues,
 		{ setSubmitting }: { setSubmitting: (isSubmitting: boolean) => void }
 	) => {
-		dispatch(changeAuth(true));
+		dispatch(setAuth(true));
 		CreateCookie(CookieNames.ISLOGGED, 'Logged', 365);
 		setSubmitting(false);
 		navigate(RouteNames.DEFAULT);

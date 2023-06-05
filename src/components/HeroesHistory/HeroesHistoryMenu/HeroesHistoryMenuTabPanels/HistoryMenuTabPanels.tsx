@@ -5,11 +5,11 @@ import { Alignments } from '../../../../types/Enums/Alignments';
 import { useGetStateVariables } from '../../../../hooks/useGetStateVariables';
 
 const HistoryMenuTabPanels = () => {
-	const { changeHeroesMenuTabValue, dispatch, heroesMenuTabValue } = useGetStateVariables();
+	const { setHeroesMenuTabValue, dispatch, heroesMenuTabValue } = useGetStateVariables();
 	const theme = useTheme();
 
 	const handleChangeIndex = (index: number) => {
-		dispatch(changeHeroesMenuTabValue(index));
+		dispatch(setHeroesMenuTabValue(index));
 	};
 
 	const axisCondition = theme.direction === 'rtl' ? 'x-reverse' : 'x';

@@ -8,10 +8,10 @@ import { Theme } from '@mui/material';
 import { useGetStateVariables } from '../../../hooks/useGetStateVariables';
 
 const HistoryMenuTabs = () => {
-	const { changeHeroesMenuTabValue, dispatch, heroesMenuTabValue } = useGetStateVariables();
+	const { setHeroesMenuTabValue, dispatch, heroesMenuTabValue } = useGetStateVariables();
 
 	const tabsChangeHandler = (_: SyntheticEvent, newValue: number) => {
-		dispatch(changeHeroesMenuTabValue(newValue));
+		dispatch(setHeroesMenuTabValue(newValue));
 	};
 
 	const getTabColor = (index: number, theme: Theme) => {

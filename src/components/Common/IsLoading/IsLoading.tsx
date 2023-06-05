@@ -10,13 +10,13 @@ interface IsLoadingProps {
 }
 
 const IsLoading: FC<IsLoadingProps> = ({ children, sx = [] }) => {
-	const { changeIsComponentLoading, dispatch, isComponentLoading } =
+	const { setIsComponentLoading, dispatch, isComponentLoading } =
 		useGetStateVariables();
 	const timer = useRef(0);
 
 	useEffect(() => {
 		timer.current = window.setTimeout(() => {
-			dispatch(changeIsComponentLoading(false));
+			dispatch(setIsComponentLoading(false));
 		}, 1000);
 
 		return () => {

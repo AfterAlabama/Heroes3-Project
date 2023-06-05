@@ -3,7 +3,7 @@ import NavbarMenuDrawer from './NavbarMenuDrawer';
 import { useGetStateVariables } from '../../../hooks/useGetStateVariables';
 
 const NavbarMenu = () => {
-	const { changeLeftDrawer, dispatch } = useGetStateVariables();
+	const { setLeftDrawer, dispatch } = useGetStateVariables();
 
 	const toggleDrawer =
 		(open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
@@ -15,7 +15,7 @@ const NavbarMenu = () => {
 				return;
 			}
 
-			dispatch(changeLeftDrawer(open));
+			dispatch(setLeftDrawer(open));
 		};
 
 	return (

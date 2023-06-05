@@ -11,16 +11,16 @@ import { deleteObject, list, ref } from 'firebase/storage';
 import { storage } from '../../../firebase/firebase';
 
 const NavbarAuthContent = () => {
-	const { changeAuth, dispatch } = useGetStateVariables();
+	const { setAuth, dispatch } = useGetStateVariables();
 	const navigate = useNavigate();
 
 	const leaveButtonClickHandler = () => {
-		dispatch(changeAuth(false));
+		dispatch(setAuth(false));
 		navigate(RouteNames.DEFAULT);
 	};
 
 	const deleteAccountButtonClickHandler = () => {
-		dispatch(changeAuth(false));
+		dispatch(setAuth(false));
 		DeleteCookie(CookieNames.EMAIL);
 		DeleteCookie(CookieNames.PASSWORD);
 		DeleteCookie(CookieNames.NAME);

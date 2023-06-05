@@ -22,15 +22,15 @@ const AuthFormSnackbar = () => {
 		isRegistrationSnackbarOpen,
 		isPasswordSnackbarOpen,
 		dispatch,
-		changeIsPasswordSnackbarOpen,
-		changeIsRegistrationSnackbarOpen,
+		setIsPasswordSnackbarOpen,
+		setIsRegistrationSnackbarOpen,
 	} = useGetStateVariables();
 
 	const handleClose = () => {
 		if (isRegistrationSnackbarOpen) {
-			dispatch(changeIsRegistrationSnackbarOpen(false));
+			dispatch(setIsRegistrationSnackbarOpen(false));
 		} else {
-			dispatch(changeIsPasswordSnackbarOpen(false));
+			dispatch(setIsPasswordSnackbarOpen(false));
 		}
 	};
 

@@ -24,7 +24,7 @@ const HistoryMenuAccordion: FC<HistoryMenuAccordionProps> = ({
 	hero,
 	heroDescription,
 }) => {
-	const { isAccordionExpended, toggleAccordion, dispatch } =
+	const { isAccordionExpended, setAccordion, dispatch } =
 		useGetStateVariables();
 	const navigate = useNavigate();
 
@@ -34,11 +34,11 @@ const HistoryMenuAccordion: FC<HistoryMenuAccordionProps> = ({
 	};
 
 	const accordionMouseEnterHandler = () => {
-		dispatch(toggleAccordion(panelNumber));
+		dispatch(setAccordion(panelNumber));
 	};
 
 	const accordionMouseLeaveHandler = () => {
-		dispatch(toggleAccordion(false));
+		dispatch(setAccordion(false));
 	};
 
 	const accordionExpandedCondition = isAccordionExpended === panelNumber;

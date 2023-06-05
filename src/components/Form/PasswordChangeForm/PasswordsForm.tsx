@@ -22,7 +22,7 @@ export interface PasswordFormValidationProps {
 const PasswordsForm = forwardRef<HTMLDivElement>((_, ref) => {
 	const navigate = useNavigate();
 	const timer1 = useRef<number>(0);
-	const { changeIsPasswordSnackbarOpen, dispatch } = useGetStateVariables();
+	const { setIsPasswordSnackbarOpen, dispatch } = useGetStateVariables();
 
 	const submitCondition = (
 		touched: FormikTouched<PasswordFormValidationProps>,
@@ -56,7 +56,7 @@ const PasswordsForm = forwardRef<HTMLDivElement>((_, ref) => {
 		CreateCookie(CookieNames.PASSWORD, values.password, 365);
 		setSubmitting(false);
 		timer1.current = window.setTimeout(() => {
-			dispatch(changeIsPasswordSnackbarOpen(true));
+			dispatch(setIsPasswordSnackbarOpen(true));
 			navigate(RouteNames.AUTH_FORM);
 		}, 500);
 	};

@@ -6,7 +6,7 @@ This is a CSR React based project about the Heroes 3 Might & Magic, that is conf
 # About the project
 1) Types folder contains all the [Properties](https://github.com/AfterAlabama/Heroes3-Project/tree/master/src/types/Enums) of the heroes. 
 2) Styles folder contains all the [Default MUI styles](https://github.com/AfterAlabama/Heroes3-Project/tree/master/src/styles) for certain components.
-3) The project uses Redux Toolkit and has one [Main slice](https://github.com/AfterAlabama/Heroes3-Project/blob/master/src/store/Reducers/MainSlice.ts) for the entire app. 
+3) The project uses Redux Toolkit and has slices relative to the parts of the app. 
 4) Heroes folder contains all the [Hero objects](https://github.com/AfterAlabama/Heroes3-Project/tree/master/src/heroes) in the OOP style. 
 5) The project uses Cookies for [Registration](https://github.com/AfterAlabama/Heroes3-Project/tree/master/src/components/Form/RegisterForm) and [Authorization](https://github.com/AfterAlabama/Heroes3-Project/tree/master/src/components/Form/AuthForm). For the time being only one account is possible per computer. Cookie's expire date is one year. Helpers folder contains all the Cookie related functions. [Watch Cookies here...](https://github.com/AfterAlabama/Heroes3-Project/tree/master/src/helpers/Cookie)
 6) The user can also [Change their password](https://github.com/AfterAlabama/Heroes3-Project/tree/master/src/components/Form/PasswordChangeForm) after registering.
@@ -17,6 +17,7 @@ This is a CSR React based project about the Heroes 3 Might & Magic, that is conf
 11) Navbar has a [Menu](https://github.com/AfterAlabama/Heroes3-Project/blob/master/src/components/Navbar/NavbarMenu.tsx) to navigate through the app. [Navbar content](https://github.com/AfterAlabama/Heroes3-Project/blob/master/src/components/Navbar/NavbarLogin.tsx) will also change if user registers.
 12) [Heroes history](https://github.com/AfterAlabama/Heroes3-Project/blob/master/src/components/HeroesHistory/HeroesHistoryMenu/HistoryMenu.tsx) will display all the heroes in the game, and it has a small [Characterization](https://github.com/AfterAlabama/Heroes3-Project/blob/master/src/components/HeroesHistory/HeroesComponent/HeroComponent.tsx) of each hero in the form of a resume
 13) Developer can see the bundle size of the project with an according NPM script
+14) If authorized user picks out a profile picture it gets stored with Firebase. If user deletes their account, so will the picture be deleted
 
 
 # NPM Scripts

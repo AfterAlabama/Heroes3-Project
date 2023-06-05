@@ -23,9 +23,9 @@ export interface RegisterFormValues {
 const RegisterFormCard = () => {
 	const {
 		dispatch,
-		changeIsAccountBeingCreated,
-		changeIsAccountCreated,
-		changeIsRegistrationSnackbarOpen,
+		setIsAccountBeingCreated,
+		setIsAccountCreated,
+		setIsRegistrationSnackbarOpen,
 	} = useGetStateVariables();
 
 	const timer1 = useRef<number>(0);
@@ -37,11 +37,11 @@ const RegisterFormCard = () => {
 		values: RegisterFormValues,
 		{ setSubmitting }: { setSubmitting: (isSubmitting: boolean) => void }
 	) => {
-		dispatch(changeIsAccountBeingCreated(true));
+		dispatch(setIsAccountBeingCreated(true));
 
 		timer1.current = window.setTimeout(() => {
-			dispatch(changeIsAccountBeingCreated(false));
-			dispatch(changeIsAccountCreated(true));
+			dispatch(setIsAccountBeingCreated(false));
+			dispatch(setIsAccountCreated(true));
 		}, 2000);
 
 		CreateCookie(CookieNames.NAME, values.name, 365);
@@ -56,7 +56,7 @@ const RegisterFormCard = () => {
 		}, 4000);
 
 		timer3.current = window.setTimeout(() => {
-			dispatch(changeIsRegistrationSnackbarOpen(true));
+			dispatch(setIsRegistrationSnackbarOpen(true));
 		}, 4000);
 	};
 
