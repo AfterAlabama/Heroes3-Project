@@ -5,7 +5,9 @@ import IsLoading from '../../Common/IsLoading/IsLoading';
 const ArtifactsResumeTitle = () => {
 	const { name } = useArtifactsResumeContext();
 	return (
-		<IsLoading>
+		<IsLoading sx={{
+			mt:5
+		}} >
 			<Typography
 				color='primary'
 				variant='h1'

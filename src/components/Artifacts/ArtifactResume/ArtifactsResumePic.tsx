@@ -5,7 +5,13 @@ import IsLoading from '../../Common/IsLoading/IsLoading';
 const ArtifactsResumePic = () => {
 	const { pic } = useArtifactsResumeContext();
 	return (
-		<IsLoading>
+		<IsLoading sx={{
+			alignSelf: 'center',
+			borderRadius: '50%',
+			height: 250,
+			width: 150,
+			mt: -5
+		}} >
 			<Box
 				component='img'
 				src={pic}
