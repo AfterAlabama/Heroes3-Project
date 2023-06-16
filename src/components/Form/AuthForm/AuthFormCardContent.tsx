@@ -19,8 +19,7 @@ export interface AuthFormCardContentProps<T extends object> {
 	isSubmitting: boolean;
 	errors: FormikErrors<T>;
 	touched: FormikTouched<T>;
-	values: T;
-	clickHandler?: () => void;
+	values: T
 }
 
 const AuthFormCardContent: FC<AuthFormCardContentProps<AuthFormValues>> = ({

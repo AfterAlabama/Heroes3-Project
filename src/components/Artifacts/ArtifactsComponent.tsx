@@ -2,7 +2,7 @@ import Box from '@mui/material/Box';
 import ArtifactsTitle from './ArtifactsTitle';
 import ArtifactsFilterSection from './ArtifactsFilterSection/ArtifactsFilterSection';
 import ArtifactsSearchBar from './ArtifactsSearchBar';
-import ArtifactsList from './ArtifactsList';
+import ArtifactsList from './ArtifactsList/ArtifactsList';
 import { useCallOnloadAnimation } from '../../hooks/useCallOnloadAnimation';
 
 const ArtifactsComponent = () => {

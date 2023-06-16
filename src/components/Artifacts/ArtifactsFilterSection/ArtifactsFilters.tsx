@@ -2,54 +2,20 @@ import { forwardRef } from 'react';
 import { CenteredFlex } from '../../../styles/Flex';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
-import { ArtifactTypes } from '../../../types/Enums/ArtifactTypes';
-import { ArtifactRarity } from '../../../types/Enums/ArtifactRarity';
-import { AnyAction } from '@reduxjs/toolkit';
 import IsLoading from '../../Common/IsLoading/IsLoading';
 import { useGetStateVariables } from '../../../hooks/useGetStateVariables';
+import { FilterParams } from './Logic/FilterParams';
+import ArtifactsFilterSelectValues from './ArtifactsFilterSelectValues';
 
 const ArtifactsFilter = forwardRef<HTMLDivElement>((_, ref) => {
 	const {
 		setArtifactsType,
 		setArtifactsPrice,
 		setArtifactsSlot,
-		setArtifactsPage,
-		dispatch,
 		artifactsType,
 		artifactsPrice,
 		artifactsSlot,
 	} = useGetStateVariables();
-
-	const selectChangeHandler = (
-		e: SelectChangeEvent,
-		stateFunc: (state: string) => AnyAction
-	) => {
-		dispatch(stateFunc(e.target.value));
-		dispatch(setArtifactsPage(1));
-	};
-
-	const filterParams = [
-		{
-			label: 'Слот',
-			value: artifactsSlot,
-			stateFunc: setArtifactsSlot,
-			items: ArtifactTypes,
-		},
-		{
-			label: 'Тип',
-			value: artifactsType,
-			stateFunc: setArtifactsType,
-			items: ArtifactRarity,
-		},
-		{
-			label: 'Цена',
-			value: artifactsPrice,
-			stateFunc: setArtifactsPrice,
-			items: ['Самая низкая', 'Самая высокая'],
-		},
-	];
 
 	return (
 		<CenteredFlex
@@ -66,7 +32,14 @@ const ArtifactsFilter = forwardRef<HTMLDivElement>((_, ref) => {
 				overflow: 'hidden',
 			})}
 		>
-			{filterParams.map((array, index) => (
+			{FilterParams(
+				setArtifactsType,
+				setArtifactsPrice,
+				setArtifactsSlot,
+				artifactsType,
+				artifactsPrice,
+				artifactsSlot
+			).map((array, index) => (
 				<FormControl
 					component='article'
 					key={index}
@@ -78,26 +51,7 @@ const ArtifactsFilter = forwardRef<HTMLDivElement>((_, ref) => {
 					<IsLoading>
 						<InputLabel>{array.label}</InputLabel>
 					</IsLoading>
-					<IsLoading>
-						<Select
-							value={array.value}
-							label={array.label}
-							onChange={(e) => selectChangeHandler(e, array.stateFunc)}
-							sx={{
-								backgroundColor: 'white',
-							}}
-						>
-							<MenuItem value='Все'>Все</MenuItem>
-							{Object.values(array.items).map((value, index) => (
-								<MenuItem
-									key={index}
-									value={value}
-								>
-									{value}
-								</MenuItem>
-							))}
-						</Select>
-					</IsLoading>
+					<ArtifactsFilterSelectValues array={array} />
 				</FormControl>
 			))}
 		</CenteredFlex>
